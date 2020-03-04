@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Net;
+using Newtonsoft.Json;
 
 namespace kilr_application
 {
@@ -11,11 +12,11 @@ namespace kilr_application
     {
         public API() { }
 
-        public void Get(String endpoint)
+        public T Get<T>(String endpoint)
         {
             var json = new WebClient().DownloadString("http://i430228.hera.fhict.nl/api/" + endpoint + ".php");
 
-            Console.WriteLine(json);
+            return JsonConvert.DeserializeObject<T>(json);
         }
     }
 }
