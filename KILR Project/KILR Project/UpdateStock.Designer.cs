@@ -38,13 +38,13 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnGoBack = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnUpdt = new System.Windows.Forms.Button();
             this.stockNameLbl = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -70,7 +70,7 @@
             this.Jupiterlbl.Location = new System.Drawing.Point(194, 0);
             this.Jupiterlbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Jupiterlbl.Name = "Jupiterlbl";
-            this.Jupiterlbl.Size = new System.Drawing.Size(315, 45);
+            this.Jupiterlbl.Size = new System.Drawing.Size(390, 54);
             this.Jupiterlbl.TabIndex = 6;
             this.Jupiterlbl.Text = "Update Stock Details";
             // 
@@ -80,7 +80,7 @@
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.Location = new System.Drawing.Point(552, 23);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(120, 20);
+            this.label4.Size = new System.Drawing.Size(152, 25);
             this.label4.TabIndex = 32;
             this.label4.Text = "Current Amount";
             // 
@@ -90,7 +90,7 @@
             this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label10.Location = new System.Drawing.Point(31, 22);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(134, 20);
+            this.label10.Size = new System.Drawing.Size(171, 25);
             this.label10.TabIndex = 31;
             this.label10.Text = "Minimum Amount";
             // 
@@ -100,7 +100,7 @@
             this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label9.Location = new System.Drawing.Point(296, 22);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(137, 20);
+            this.label9.Size = new System.Drawing.Size(175, 25);
             this.label9.TabIndex = 30;
             this.label9.Text = "Maximum Amount";
             // 
@@ -108,21 +108,21 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(287, 46);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(156, 25);
+            this.textBox1.Size = new System.Drawing.Size(156, 29);
             this.textBox1.TabIndex = 33;
             // 
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(541, 46);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(156, 25);
+            this.textBox2.Size = new System.Drawing.Size(156, 29);
             this.textBox2.TabIndex = 34;
             // 
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(21, 46);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(156, 25);
+            this.textBox3.Size = new System.Drawing.Size(156, 29);
             this.textBox3.TabIndex = 35;
             // 
             // groupBox1
@@ -140,17 +140,17 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Update Stock Amount";
             // 
-            // button2
+            // btnGoBack
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(182)))), ((int)(((byte)(3)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.Location = new System.Drawing.Point(12, 269);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(153, 74);
-            this.button2.TabIndex = 37;
-            this.button2.Text = "Go Back";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnGoBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(182)))), ((int)(((byte)(3)))));
+            this.btnGoBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGoBack.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnGoBack.Location = new System.Drawing.Point(12, 269);
+            this.btnGoBack.Name = "btnGoBack";
+            this.btnGoBack.Size = new System.Drawing.Size(153, 74);
+            this.btnGoBack.TabIndex = 37;
+            this.btnGoBack.Text = "Go Back";
+            this.btnGoBack.UseVisualStyleBackColor = false;
             // 
             // groupBox2
             // 
@@ -169,14 +169,14 @@
             // 
             this.textBox4.Location = new System.Drawing.Point(21, 44);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(156, 25);
+            this.textBox4.Size = new System.Drawing.Size(156, 29);
             this.textBox4.TabIndex = 35;
             // 
             // textBox6
             // 
             this.textBox6.Location = new System.Drawing.Point(287, 44);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(156, 25);
+            this.textBox6.Size = new System.Drawing.Size(156, 29);
             this.textBox6.TabIndex = 33;
             // 
             // label2
@@ -185,7 +185,7 @@
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.Location = new System.Drawing.Point(68, 20);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 20);
+            this.label2.Size = new System.Drawing.Size(64, 25);
             this.label2.TabIndex = 31;
             this.label2.Text = "Name";
             // 
@@ -195,21 +195,21 @@
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.Location = new System.Drawing.Point(342, 20);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(50, 20);
+            this.label3.Size = new System.Drawing.Size(64, 25);
             this.label3.TabIndex = 30;
             this.label3.Text = "Status";
             // 
-            // button1
+            // btnUpdt
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(182)))), ((int)(((byte)(3)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(203, 269);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(494, 74);
-            this.button1.TabIndex = 38;
-            this.button1.Text = "Update";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnUpdt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(182)))), ((int)(((byte)(3)))));
+            this.btnUpdt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdt.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnUpdt.Location = new System.Drawing.Point(203, 269);
+            this.btnUpdt.Name = "btnUpdt";
+            this.btnUpdt.Size = new System.Drawing.Size(494, 74);
+            this.btnUpdt.TabIndex = 38;
+            this.btnUpdt.Text = "Update";
+            this.btnUpdt.UseVisualStyleBackColor = false;
             // 
             // stockNameLbl
             // 
@@ -217,20 +217,20 @@
             this.stockNameLbl.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.stockNameLbl.Location = new System.Drawing.Point(281, 61);
             this.stockNameLbl.Name = "stockNameLbl";
-            this.stockNameLbl.Size = new System.Drawing.Size(146, 32);
+            this.stockNameLbl.Size = new System.Drawing.Size(182, 41);
             this.stockNameLbl.TabIndex = 39;
             this.stockNameLbl.Text = "Stock Name";
             // 
             // UpdateStock
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(121)))), ((int)(((byte)(3)))));
             this.ClientSize = new System.Drawing.Size(711, 346);
             this.Controls.Add(this.stockNameLbl);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnUpdt);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnGoBack);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -260,13 +260,13 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnGoBack;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnUpdt;
         private System.Windows.Forms.Label stockNameLbl;
     }
 }

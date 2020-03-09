@@ -32,33 +32,33 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.employeesPage = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.button6 = new System.Windows.Forms.Button();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.btnFilter = new System.Windows.Forms.Button();
+            this.chckbxEmps = new System.Windows.Forms.CheckBox();
+            this.chckbxAdmin = new System.Windows.Forms.CheckBox();
+            this.chkbxManagers = new System.Windows.Forms.CheckBox();
             this.HeaderPanel = new System.Windows.Forms.Panel();
             this.Jupiterlbl = new System.Windows.Forms.Label();
             this.gbSearch = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnEmpInfo = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.tbFindEmployee = new System.Windows.Forms.TextBox();
             this.lbEmployees = new System.Windows.Forms.ListBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.cbPostition = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbEmail = new System.Windows.Forms.TextBox();
+            this.tbAddress = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.tb = new System.Windows.Forms.TextBox();
+            this.cbShift = new System.Windows.Forms.ComboBox();
+            this.cbDep = new System.Windows.Forms.ComboBox();
+            this.tbSurname = new System.Windows.Forms.TextBox();
             this.tbFName = new System.Windows.Forms.TextBox();
             this.shiftLbl = new System.Windows.Forms.Label();
             this.departmentLbl = new System.Windows.Forms.Label();
             this.lastNamelbl = new System.Windows.Forms.Label();
             this.firstNamelbl = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.stockPage = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -81,6 +81,9 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.button7 = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBox8 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.lbDepartments = new System.Windows.Forms.ListBox();
@@ -90,9 +93,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.button7 = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.employeesPage.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -133,19 +133,19 @@
             this.employeesPage.Controls.Add(this.gbSearch);
             this.employeesPage.Controls.Add(this.lbEmployees);
             this.employeesPage.Controls.Add(this.groupBox2);
-            this.employeesPage.Location = new System.Drawing.Point(4, 27);
+            this.employeesPage.Location = new System.Drawing.Point(4, 32);
             this.employeesPage.Name = "employeesPage";
             this.employeesPage.Padding = new System.Windows.Forms.Padding(3);
-            this.employeesPage.Size = new System.Drawing.Size(925, 484);
+            this.employeesPage.Size = new System.Drawing.Size(925, 479);
             this.employeesPage.TabIndex = 0;
             this.employeesPage.Text = "Employees";
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.button6);
-            this.groupBox4.Controls.Add(this.checkBox3);
-            this.groupBox4.Controls.Add(this.checkBox2);
-            this.groupBox4.Controls.Add(this.checkBox1);
+            this.groupBox4.Controls.Add(this.btnFilter);
+            this.groupBox4.Controls.Add(this.chckbxEmps);
+            this.groupBox4.Controls.Add(this.chckbxAdmin);
+            this.groupBox4.Controls.Add(this.chkbxManagers);
             this.groupBox4.Location = new System.Drawing.Point(237, 292);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(192, 175);
@@ -153,49 +153,49 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Filter by Job Position";
             // 
-            // button6
+            // btnFilter
             // 
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(182)))), ((int)(((byte)(3)))));
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Location = new System.Drawing.Point(33, 124);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(130, 45);
-            this.button6.TabIndex = 11;
-            this.button6.Text = "Filter";
-            this.button6.UseVisualStyleBackColor = false;
+            this.btnFilter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(182)))), ((int)(((byte)(3)))));
+            this.btnFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFilter.Location = new System.Drawing.Point(33, 124);
+            this.btnFilter.Name = "btnFilter";
+            this.btnFilter.Size = new System.Drawing.Size(130, 45);
+            this.btnFilter.TabIndex = 11;
+            this.btnFilter.Text = "Filter";
+            this.btnFilter.UseVisualStyleBackColor = false;
             // 
-            // checkBox3
+            // chckbxEmps
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.checkBox3.Location = new System.Drawing.Point(33, 87);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(101, 24);
-            this.checkBox3.TabIndex = 2;
-            this.checkBox3.Text = "Employees";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.chckbxEmps.AutoSize = true;
+            this.chckbxEmps.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.chckbxEmps.Location = new System.Drawing.Point(33, 87);
+            this.chckbxEmps.Name = "chckbxEmps";
+            this.chckbxEmps.Size = new System.Drawing.Size(126, 29);
+            this.chckbxEmps.TabIndex = 2;
+            this.chckbxEmps.Text = "Employees";
+            this.chckbxEmps.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // chckbxAdmin
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.checkBox2.Location = new System.Drawing.Point(33, 57);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(129, 24);
-            this.checkBox2.TabIndex = 1;
-            this.checkBox2.Text = "Administration";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.chckbxAdmin.AutoSize = true;
+            this.chckbxAdmin.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.chckbxAdmin.Location = new System.Drawing.Point(33, 57);
+            this.chckbxAdmin.Name = "chckbxAdmin";
+            this.chckbxAdmin.Size = new System.Drawing.Size(162, 29);
+            this.chckbxAdmin.TabIndex = 1;
+            this.chckbxAdmin.Text = "Administration";
+            this.chckbxAdmin.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // chkbxManagers
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.checkBox1.Location = new System.Drawing.Point(33, 27);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(96, 24);
-            this.checkBox1.TabIndex = 0;
-            this.checkBox1.Text = "Managers";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.chkbxManagers.AutoSize = true;
+            this.chkbxManagers.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.chkbxManagers.Location = new System.Drawing.Point(33, 27);
+            this.chkbxManagers.Name = "chkbxManagers";
+            this.chkbxManagers.Size = new System.Drawing.Size(119, 29);
+            this.chkbxManagers.TabIndex = 0;
+            this.chkbxManagers.Text = "Managers";
+            this.chkbxManagers.UseVisualStyleBackColor = true;
             // 
             // HeaderPanel
             // 
@@ -215,14 +215,14 @@
             this.Jupiterlbl.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Jupiterlbl.Location = new System.Drawing.Point(355, -1);
             this.Jupiterlbl.Name = "Jupiterlbl";
-            this.Jupiterlbl.Size = new System.Drawing.Size(173, 45);
+            this.Jupiterlbl.Size = new System.Drawing.Size(212, 54);
             this.Jupiterlbl.TabIndex = 10;
             this.Jupiterlbl.Text = "Employees";
             // 
             // gbSearch
             // 
             this.gbSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(121)))), ((int)(((byte)(3)))));
-            this.gbSearch.Controls.Add(this.button1);
+            this.gbSearch.Controls.Add(this.btnEmpInfo);
             this.gbSearch.Controls.Add(this.label1);
             this.gbSearch.Controls.Add(this.tbFindEmployee);
             this.gbSearch.Location = new System.Drawing.Point(8, 292);
@@ -232,23 +232,23 @@
             this.gbSearch.TabStop = false;
             this.gbSearch.Text = "Search by Employee number";
             // 
-            // button1
+            // btnEmpInfo
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(182)))), ((int)(((byte)(3)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(31, 70);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(130, 99);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Employee Information";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnEmpInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(182)))), ((int)(((byte)(3)))));
+            this.btnEmpInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEmpInfo.Location = new System.Drawing.Point(31, 70);
+            this.btnEmpInfo.Name = "btnEmpInfo";
+            this.btnEmpInfo.Size = new System.Drawing.Size(130, 99);
+            this.btnEmpInfo.TabIndex = 9;
+            this.btnEmpInfo.Text = "Employee Information";
+            this.btnEmpInfo.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(38, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 15);
+            this.label1.Size = new System.Drawing.Size(139, 20);
             this.label1.TabIndex = 8;
             this.label1.Text = "Employee number:";
             // 
@@ -256,37 +256,37 @@
             // 
             this.tbFindEmployee.Location = new System.Drawing.Point(31, 41);
             this.tbFindEmployee.Name = "tbFindEmployee";
-            this.tbFindEmployee.Size = new System.Drawing.Size(132, 23);
+            this.tbFindEmployee.Size = new System.Drawing.Size(132, 27);
             this.tbFindEmployee.TabIndex = 7;
             // 
             // lbEmployees
             // 
             this.lbEmployees.FormattingEnabled = true;
-            this.lbEmployees.ItemHeight = 15;
+            this.lbEmployees.ItemHeight = 20;
             this.lbEmployees.Location = new System.Drawing.Point(433, 58);
             this.lbEmployees.Name = "lbEmployees";
-            this.lbEmployees.Size = new System.Drawing.Size(484, 409);
+            this.lbEmployees.Size = new System.Drawing.Size(484, 404);
             this.lbEmployees.TabIndex = 9;
             // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(121)))), ((int)(((byte)(3)))));
             this.groupBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.groupBox2.Controls.Add(this.comboBox3);
+            this.groupBox2.Controls.Add(this.cbPostition);
             this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.textBox2);
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.tbEmail);
+            this.groupBox2.Controls.Add(this.tbAddress);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.comboBox2);
-            this.groupBox2.Controls.Add(this.comboBox1);
-            this.groupBox2.Controls.Add(this.tb);
+            this.groupBox2.Controls.Add(this.cbShift);
+            this.groupBox2.Controls.Add(this.cbDep);
+            this.groupBox2.Controls.Add(this.tbSurname);
             this.groupBox2.Controls.Add(this.tbFName);
             this.groupBox2.Controls.Add(this.shiftLbl);
             this.groupBox2.Controls.Add(this.departmentLbl);
             this.groupBox2.Controls.Add(this.lastNamelbl);
             this.groupBox2.Controls.Add(this.firstNamelbl);
-            this.groupBox2.Controls.Add(this.button4);
+            this.groupBox2.Controls.Add(this.btnAdd);
             this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox2.Location = new System.Drawing.Point(8, 58);
             this.groupBox2.Name = "groupBox2";
@@ -295,13 +295,13 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Add Employee";
             // 
-            // comboBox3
+            // cbPostition
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(87, 137);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(123, 23);
-            this.comboBox3.TabIndex = 17;
+            this.cbPostition.FormattingEnabled = true;
+            this.cbPostition.Location = new System.Drawing.Point(87, 137);
+            this.cbPostition.Name = "cbPostition";
+            this.cbPostition.Size = new System.Drawing.Size(123, 28);
+            this.cbPostition.TabIndex = 17;
             // 
             // label3
             // 
@@ -309,23 +309,23 @@
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.Location = new System.Drawing.Point(22, 137);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 17);
+            this.label3.Size = new System.Drawing.Size(74, 23);
             this.label3.TabIndex = 16;
             this.label3.Text = "Position:";
             // 
-            // textBox2
+            // tbEmail
             // 
-            this.textBox2.Location = new System.Drawing.Point(290, 66);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(123, 23);
-            this.textBox2.TabIndex = 15;
+            this.tbEmail.Location = new System.Drawing.Point(290, 66);
+            this.tbEmail.Name = "tbEmail";
+            this.tbEmail.Size = new System.Drawing.Size(123, 27);
+            this.tbEmail.TabIndex = 15;
             // 
-            // textBox1
+            // tbAddress
             // 
-            this.textBox1.Location = new System.Drawing.Point(290, 33);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(123, 23);
-            this.textBox1.TabIndex = 14;
+            this.tbAddress.Location = new System.Drawing.Point(290, 33);
+            this.tbAddress.Name = "tbAddress";
+            this.tbAddress.Size = new System.Drawing.Size(123, 27);
+            this.tbAddress.TabIndex = 14;
             // 
             // label7
             // 
@@ -333,7 +333,7 @@
             this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label7.Location = new System.Drawing.Point(242, 65);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(43, 17);
+            this.label7.Size = new System.Drawing.Size(55, 23);
             this.label7.TabIndex = 13;
             this.label7.Text = "Email:";
             // 
@@ -343,38 +343,38 @@
             this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label8.Location = new System.Drawing.Point(233, 32);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(52, 17);
+            this.label8.Size = new System.Drawing.Size(74, 23);
             this.label8.TabIndex = 12;
-            this.label8.Text = "Adress:";
+            this.label8.Text = "Address:";
             // 
-            // comboBox2
+            // cbShift
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(290, 103);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(123, 23);
-            this.comboBox2.TabIndex = 11;
+            this.cbShift.FormattingEnabled = true;
+            this.cbShift.Location = new System.Drawing.Point(290, 103);
+            this.cbShift.Name = "cbShift";
+            this.cbShift.Size = new System.Drawing.Size(123, 28);
+            this.cbShift.TabIndex = 11;
             // 
-            // comboBox1
+            // cbDep
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(87, 103);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(123, 23);
-            this.comboBox1.TabIndex = 9;
+            this.cbDep.FormattingEnabled = true;
+            this.cbDep.Location = new System.Drawing.Point(87, 103);
+            this.cbDep.Name = "cbDep";
+            this.cbDep.Size = new System.Drawing.Size(123, 28);
+            this.cbDep.TabIndex = 9;
             // 
-            // tb
+            // tbSurname
             // 
-            this.tb.Location = new System.Drawing.Point(87, 66);
-            this.tb.Name = "tb";
-            this.tb.Size = new System.Drawing.Size(123, 23);
-            this.tb.TabIndex = 10;
+            this.tbSurname.Location = new System.Drawing.Point(87, 66);
+            this.tbSurname.Name = "tbSurname";
+            this.tbSurname.Size = new System.Drawing.Size(123, 27);
+            this.tbSurname.TabIndex = 10;
             // 
             // tbFName
             // 
             this.tbFName.Location = new System.Drawing.Point(87, 33);
             this.tbFName.Name = "tbFName";
-            this.tbFName.Size = new System.Drawing.Size(123, 23);
+            this.tbFName.Size = new System.Drawing.Size(123, 27);
             this.tbFName.TabIndex = 9;
             // 
             // shiftLbl
@@ -383,7 +383,7 @@
             this.shiftLbl.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.shiftLbl.Location = new System.Drawing.Point(248, 103);
             this.shiftLbl.Name = "shiftLbl";
-            this.shiftLbl.Size = new System.Drawing.Size(38, 17);
+            this.shiftLbl.Size = new System.Drawing.Size(49, 23);
             this.shiftLbl.TabIndex = 8;
             this.shiftLbl.Text = "Shift:";
             // 
@@ -393,7 +393,7 @@
             this.departmentLbl.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.departmentLbl.Location = new System.Drawing.Point(1, 103);
             this.departmentLbl.Name = "departmentLbl";
-            this.departmentLbl.Size = new System.Drawing.Size(84, 17);
+            this.departmentLbl.Size = new System.Drawing.Size(106, 23);
             this.departmentLbl.TabIndex = 7;
             this.departmentLbl.Text = "Department:";
             // 
@@ -403,7 +403,7 @@
             this.lastNamelbl.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lastNamelbl.Location = new System.Drawing.Point(6, 67);
             this.lastNamelbl.Name = "lastNamelbl";
-            this.lastNamelbl.Size = new System.Drawing.Size(75, 17);
+            this.lastNamelbl.Size = new System.Drawing.Size(95, 23);
             this.lastNamelbl.TabIndex = 6;
             this.lastNamelbl.Text = "Last Name:";
             // 
@@ -413,21 +413,21 @@
             this.firstNamelbl.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.firstNamelbl.Location = new System.Drawing.Point(7, 33);
             this.firstNamelbl.Name = "firstNamelbl";
-            this.firstNamelbl.Size = new System.Drawing.Size(77, 17);
+            this.firstNamelbl.Size = new System.Drawing.Size(97, 23);
             this.firstNamelbl.TabIndex = 5;
             this.firstNamelbl.Text = "First Name:";
             // 
-            // button4
+            // btnAdd
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(182)))), ((int)(((byte)(3)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(292, 155);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(124, 45);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "Add";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.Button4_Click);
+            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(182)))), ((int)(((byte)(3)))));
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Location = new System.Drawing.Point(292, 155);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(124, 45);
+            this.btnAdd.TabIndex = 4;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.Button4_Click);
             // 
             // stockPage
             // 
@@ -436,10 +436,10 @@
             this.stockPage.Controls.Add(this.groupBox1);
             this.stockPage.Controls.Add(this.lbStock);
             this.stockPage.Controls.Add(this.Stock);
-            this.stockPage.Location = new System.Drawing.Point(4, 27);
+            this.stockPage.Location = new System.Drawing.Point(4, 32);
             this.stockPage.Name = "stockPage";
             this.stockPage.Padding = new System.Windows.Forms.Padding(3);
-            this.stockPage.Size = new System.Drawing.Size(925, 484);
+            this.stockPage.Size = new System.Drawing.Size(925, 479);
             this.stockPage.TabIndex = 1;
             this.stockPage.Text = "Stock";
             // 
@@ -468,7 +468,7 @@
             // 
             this.textBox3.Location = new System.Drawing.Point(123, 146);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(124, 23);
+            this.textBox3.Size = new System.Drawing.Size(124, 27);
             this.textBox3.TabIndex = 19;
             // 
             // label4
@@ -477,7 +477,7 @@
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.Location = new System.Drawing.Point(13, 146);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(103, 17);
+            this.label4.Size = new System.Drawing.Size(129, 23);
             this.label4.TabIndex = 18;
             this.label4.Text = "Amount  Stock:";
             // 
@@ -485,7 +485,7 @@
             // 
             this.textBox6.Location = new System.Drawing.Point(123, 108);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(124, 23);
+            this.textBox6.Size = new System.Drawing.Size(124, 27);
             this.textBox6.TabIndex = 17;
             // 
             // label10
@@ -494,7 +494,7 @@
             this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label10.Location = new System.Drawing.Point(10, 109);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(107, 17);
+            this.label10.Size = new System.Drawing.Size(136, 23);
             this.label10.TabIndex = 16;
             this.label10.Text = "Minimum Stock:";
             // 
@@ -502,7 +502,7 @@
             // 
             this.textBox5.Location = new System.Drawing.Point(123, 69);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(124, 23);
+            this.textBox5.Size = new System.Drawing.Size(124, 27);
             this.textBox5.TabIndex = 15;
             // 
             // label9
@@ -511,7 +511,7 @@
             this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label9.Location = new System.Drawing.Point(6, 69);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(110, 17);
+            this.label9.Size = new System.Drawing.Size(140, 23);
             this.label9.TabIndex = 14;
             this.label9.Text = "Maximum Stock:";
             // 
@@ -519,7 +519,7 @@
             // 
             this.textBox4.Location = new System.Drawing.Point(123, 33);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(123, 23);
+            this.textBox4.Size = new System.Drawing.Size(123, 27);
             this.textBox4.TabIndex = 9;
             // 
             // stockNameLbl
@@ -528,7 +528,7 @@
             this.stockNameLbl.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.stockNameLbl.Location = new System.Drawing.Point(15, 33);
             this.stockNameLbl.Name = "stockNameLbl";
-            this.stockNameLbl.Size = new System.Drawing.Size(101, 17);
+            this.stockNameLbl.Size = new System.Drawing.Size(129, 23);
             this.stockNameLbl.TabIndex = 5;
             this.stockNameLbl.Text = "Name of Stock:";
             // 
@@ -562,7 +562,7 @@
             this.stockIDlb.AutoSize = true;
             this.stockIDlb.Location = new System.Drawing.Point(13, 37);
             this.stockIDlb.Name = "stockIDlb";
-            this.stockIDlb.Size = new System.Drawing.Size(56, 15);
+            this.stockIDlb.Size = new System.Drawing.Size(69, 20);
             this.stockIDlb.TabIndex = 8;
             this.stockIDlb.Text = "Stock ID:";
             // 
@@ -570,7 +570,7 @@
             // 
             this.tbFindStock.Location = new System.Drawing.Point(75, 34);
             this.tbFindStock.Name = "tbFindStock";
-            this.tbFindStock.Size = new System.Drawing.Size(171, 23);
+            this.tbFindStock.Size = new System.Drawing.Size(171, 27);
             this.tbFindStock.TabIndex = 7;
             // 
             // btnFind
@@ -598,10 +598,10 @@
             // lbStock
             // 
             this.lbStock.FormattingEnabled = true;
-            this.lbStock.ItemHeight = 15;
+            this.lbStock.ItemHeight = 20;
             this.lbStock.Location = new System.Drawing.Point(334, 66);
             this.lbStock.Name = "lbStock";
-            this.lbStock.Size = new System.Drawing.Size(559, 394);
+            this.lbStock.Size = new System.Drawing.Size(559, 384);
             this.lbStock.TabIndex = 15;
             // 
             // Stock
@@ -622,7 +622,7 @@
             this.Stocklbl.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Stocklbl.Location = new System.Drawing.Point(396, 0);
             this.Stocklbl.Name = "Stocklbl";
-            this.Stocklbl.Size = new System.Drawing.Size(97, 45);
+            this.Stocklbl.Size = new System.Drawing.Size(118, 54);
             this.Stocklbl.TabIndex = 10;
             this.Stocklbl.Text = "Stock";
             // 
@@ -633,9 +633,9 @@
             this.tabPage1.Controls.Add(this.groupBox5);
             this.tabPage1.Controls.Add(this.lbDepartments);
             this.tabPage1.Controls.Add(this.panel2);
-            this.tabPage1.Location = new System.Drawing.Point(4, 27);
+            this.tabPage1.Location = new System.Drawing.Point(4, 32);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(925, 484);
+            this.tabPage1.Size = new System.Drawing.Size(925, 479);
             this.tabPage1.TabIndex = 3;
             this.tabPage1.Text = "Departments";
             // 
@@ -667,12 +667,40 @@
             this.groupBox5.Text = "Search by Deparment name or number";
             this.groupBox5.Enter += new System.EventHandler(this.GroupBox5_Enter);
             // 
+            // button7
+            // 
+            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(182)))), ((int)(((byte)(3)))));
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button7.Location = new System.Drawing.Point(184, 37);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(163, 78);
+            this.button7.TabIndex = 20;
+            this.button7.Text = "Department Information";
+            this.button7.UseVisualStyleBackColor = false;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(31, 74);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(136, 20);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Department Name\r\n";
+            // 
+            // textBox8
+            // 
+            this.textBox8.Location = new System.Drawing.Point(23, 92);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(142, 27);
+            this.textBox8.TabIndex = 9;
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(32, 19);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(118, 15);
+            this.label11.Size = new System.Drawing.Size(152, 20);
             this.label11.TabIndex = 8;
             this.label11.Text = "Department Number";
             // 
@@ -680,13 +708,13 @@
             // 
             this.textBox7.Location = new System.Drawing.Point(23, 37);
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(142, 23);
+            this.textBox7.Size = new System.Drawing.Size(142, 27);
             this.textBox7.TabIndex = 7;
             // 
             // lbDepartments
             // 
             this.lbDepartments.FormattingEnabled = true;
-            this.lbDepartments.ItemHeight = 15;
+            this.lbDepartments.ItemHeight = 20;
             this.lbDepartments.Location = new System.Drawing.Point(36, 67);
             this.lbDepartments.Name = "lbDepartments";
             this.lbDepartments.Size = new System.Drawing.Size(855, 244);
@@ -710,7 +738,7 @@
             this.label6.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label6.Location = new System.Drawing.Point(348, -2);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(204, 45);
+            this.label6.Size = new System.Drawing.Size(253, 54);
             this.label6.TabIndex = 10;
             this.label6.Text = "Departments";
             // 
@@ -719,9 +747,9 @@
             this.statisticsPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(121)))), ((int)(((byte)(3)))));
             this.statisticsPage.Controls.Add(this.pictureBox1);
             this.statisticsPage.Controls.Add(this.panel1);
-            this.statisticsPage.Location = new System.Drawing.Point(4, 27);
+            this.statisticsPage.Location = new System.Drawing.Point(4, 32);
             this.statisticsPage.Name = "statisticsPage";
-            this.statisticsPage.Size = new System.Drawing.Size(925, 484);
+            this.statisticsPage.Size = new System.Drawing.Size(925, 479);
             this.statisticsPage.TabIndex = 2;
             this.statisticsPage.Text = "Statistics";
             // 
@@ -753,41 +781,13 @@
             this.label2.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.Location = new System.Drawing.Point(355, -1);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(144, 45);
+            this.label2.Size = new System.Drawing.Size(177, 54);
             this.label2.TabIndex = 10;
             this.label2.Text = "Statistics";
             // 
-            // button7
-            // 
-            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(182)))), ((int)(((byte)(3)))));
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button7.Location = new System.Drawing.Point(184, 37);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(163, 78);
-            this.button7.TabIndex = 20;
-            this.button7.Text = "Department Information";
-            this.button7.UseVisualStyleBackColor = false;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(31, 74);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(106, 15);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Department Name\r\n";
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(23, 92);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(142, 23);
-            this.textBox8.TabIndex = 9;
-            // 
             // Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(933, 519);
             this.Controls.Add(this.tabControl1);
@@ -837,15 +837,15 @@
         private System.Windows.Forms.TextBox tbFindEmployee;
         private System.Windows.Forms.ListBox lbEmployees;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox tb;
+        private System.Windows.Forms.ComboBox cbShift;
+        private System.Windows.Forms.ComboBox cbDep;
+        private System.Windows.Forms.TextBox tbSurname;
         private System.Windows.Forms.TextBox tbFName;
         private System.Windows.Forms.Label shiftLbl;
         private System.Windows.Forms.Label departmentLbl;
         private System.Windows.Forms.Label lastNamelbl;
         private System.Windows.Forms.Label firstNamelbl;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.ListBox lbStock;
         private System.Windows.Forms.Panel Stock;
         private System.Windows.Forms.Label Stocklbl;
@@ -858,17 +858,17 @@
         private System.Windows.Forms.TextBox tbFindStock;
         private System.Windows.Forms.Button btnFind;
         private System.Windows.Forms.Button btnRemoveStock;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox cbPostition;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbEmail;
+        private System.Windows.Forms.TextBox tbAddress;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TabPage statisticsPage;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnEmpInfo;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Label label11;
@@ -884,10 +884,10 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Button btnFilter;
+        private System.Windows.Forms.CheckBox chckbxEmps;
+        private System.Windows.Forms.CheckBox chckbxAdmin;
+        private System.Windows.Forms.CheckBox chkbxManagers;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox8;

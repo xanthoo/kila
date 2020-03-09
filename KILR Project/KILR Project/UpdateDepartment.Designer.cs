@@ -32,24 +32,24 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.Jupiterlbl = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.tbDepName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbMaxEmps = new System.Windows.Forms.TextBox();
+            this.tbMinEmps = new System.Windows.Forms.TextBox();
+            this.tbTotlEmps = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lbDepartmentEmployees = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnRmvEmp = new System.Windows.Forms.Button();
+            this.btnAddEmp = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.tbFindEmployee = new System.Windows.Forms.TextBox();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnRmvSelEmp = new System.Windows.Forms.Button();
+            this.btnGoBack = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -74,18 +74,18 @@
             this.Jupiterlbl.Location = new System.Drawing.Point(190, 8);
             this.Jupiterlbl.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.Jupiterlbl.Name = "Jupiterlbl";
-            this.Jupiterlbl.Size = new System.Drawing.Size(408, 45);
+            this.Jupiterlbl.Size = new System.Drawing.Size(508, 54);
             this.Jupiterlbl.TabIndex = 6;
             this.Jupiterlbl.Text = "Update Department Details";
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.btnUpdate);
+            this.groupBox1.Controls.Add(this.tbDepName);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.tbMaxEmps);
+            this.groupBox1.Controls.Add(this.tbMinEmps);
+            this.groupBox1.Controls.Add(this.tbTotlEmps);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label3);
@@ -96,12 +96,24 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Update Department details";
             // 
-            // textBox4
+            // btnUpdate
             // 
-            this.textBox4.Location = new System.Drawing.Point(266, 27);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(129, 25);
-            this.textBox4.TabIndex = 46;
+            this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(182)))), ((int)(((byte)(3)))));
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdate.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnUpdate.Location = new System.Drawing.Point(8, 158);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(387, 69);
+            this.btnUpdate.TabIndex = 45;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = false;
+            // 
+            // tbDepName
+            // 
+            this.tbDepName.Location = new System.Drawing.Point(266, 27);
+            this.tbDepName.Name = "tbDepName";
+            this.tbDepName.Size = new System.Drawing.Size(129, 29);
+            this.tbDepName.TabIndex = 46;
             // 
             // label1
             // 
@@ -109,30 +121,30 @@
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(111, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(149, 21);
+            this.label1.Size = new System.Drawing.Size(187, 28);
             this.label1.TabIndex = 45;
             this.label1.Text = "Department Name:";
             // 
-            // textBox3
+            // tbMaxEmps
             // 
-            this.textBox3.Location = new System.Drawing.Point(266, 126);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(129, 25);
-            this.textBox3.TabIndex = 44;
+            this.tbMaxEmps.Location = new System.Drawing.Point(266, 126);
+            this.tbMaxEmps.Name = "tbMaxEmps";
+            this.tbMaxEmps.Size = new System.Drawing.Size(129, 29);
+            this.tbMaxEmps.TabIndex = 44;
             // 
-            // textBox2
+            // tbMinEmps
             // 
-            this.textBox2.Location = new System.Drawing.Point(266, 91);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(129, 25);
-            this.textBox2.TabIndex = 43;
+            this.tbMinEmps.Location = new System.Drawing.Point(266, 91);
+            this.tbMinEmps.Name = "tbMinEmps";
+            this.tbMinEmps.Size = new System.Drawing.Size(129, 29);
+            this.tbMinEmps.TabIndex = 43;
             // 
-            // textBox1
+            // tbTotlEmps
             // 
-            this.textBox1.Location = new System.Drawing.Point(266, 58);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(129, 25);
-            this.textBox1.TabIndex = 42;
+            this.tbTotlEmps.Location = new System.Drawing.Point(266, 58);
+            this.tbTotlEmps.Name = "tbTotlEmps";
+            this.tbTotlEmps.Size = new System.Drawing.Size(129, 29);
+            this.tbTotlEmps.TabIndex = 42;
             // 
             // label10
             // 
@@ -140,7 +152,7 @@
             this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label10.Location = new System.Drawing.Point(10, 126);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(250, 21);
+            this.label10.Size = new System.Drawing.Size(315, 28);
             this.label10.TabIndex = 41;
             this.label10.Text = "Maximum amount of employees:\r\n";
             // 
@@ -150,7 +162,7 @@
             this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label7.Location = new System.Drawing.Point(13, 91);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(247, 21);
+            this.label7.Size = new System.Drawing.Size(312, 28);
             this.label7.TabIndex = 39;
             this.label7.Text = "Minimum amount of employees:\r\n";
             // 
@@ -160,17 +172,17 @@
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.Location = new System.Drawing.Point(47, 58);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(213, 21);
+            this.label3.Size = new System.Drawing.Size(267, 28);
             this.label3.TabIndex = 35;
             this.label3.Text = "Total amount of employees:\r\n";
             // 
             // lbDepartmentEmployees
             // 
             this.lbDepartmentEmployees.FormattingEnabled = true;
-            this.lbDepartmentEmployees.ItemHeight = 17;
+            this.lbDepartmentEmployees.ItemHeight = 21;
             this.lbDepartmentEmployees.Location = new System.Drawing.Point(429, 113);
             this.lbDepartmentEmployees.Name = "lbDepartmentEmployees";
-            this.lbDepartmentEmployees.Size = new System.Drawing.Size(263, 378);
+            this.lbDepartmentEmployees.Size = new System.Drawing.Size(263, 361);
             this.lbDepartmentEmployees.TabIndex = 39;
             // 
             // label2
@@ -179,14 +191,14 @@
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.Location = new System.Drawing.Point(424, 85);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(268, 25);
+            this.label2.Size = new System.Drawing.Size(340, 32);
             this.label2.TabIndex = 40;
             this.label2.Text = "Employees in this department";
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Controls.Add(this.button6);
+            this.groupBox2.Controls.Add(this.btnRmvEmp);
+            this.groupBox2.Controls.Add(this.btnAddEmp);
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.tbFindEmployee);
             this.groupBox2.Location = new System.Drawing.Point(12, 336);
@@ -196,12 +208,34 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Update Department Employees";
             // 
+            // btnRmvEmp
+            // 
+            this.btnRmvEmp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(182)))), ((int)(((byte)(3)))));
+            this.btnRmvEmp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRmvEmp.Location = new System.Drawing.Point(8, 59);
+            this.btnRmvEmp.Name = "btnRmvEmp";
+            this.btnRmvEmp.Size = new System.Drawing.Size(173, 69);
+            this.btnRmvEmp.TabIndex = 43;
+            this.btnRmvEmp.Text = "Remove Employee from this Department";
+            this.btnRmvEmp.UseVisualStyleBackColor = false;
+            // 
+            // btnAddEmp
+            // 
+            this.btnAddEmp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(182)))), ((int)(((byte)(3)))));
+            this.btnAddEmp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddEmp.Location = new System.Drawing.Point(204, 59);
+            this.btnAddEmp.Name = "btnAddEmp";
+            this.btnAddEmp.Size = new System.Drawing.Size(171, 69);
+            this.btnAddEmp.TabIndex = 42;
+            this.btnAddEmp.Text = "Add Employee to this Department";
+            this.btnAddEmp.UseVisualStyleBackColor = false;
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(58, 31);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(123, 17);
+            this.label11.Size = new System.Drawing.Size(155, 23);
             this.label11.TabIndex = 10;
             this.label11.Text = "Employee number:";
             // 
@@ -209,74 +243,40 @@
             // 
             this.tbFindEmployee.Location = new System.Drawing.Point(187, 28);
             this.tbFindEmployee.Name = "tbFindEmployee";
-            this.tbFindEmployee.Size = new System.Drawing.Size(151, 25);
+            this.tbFindEmployee.Size = new System.Drawing.Size(151, 29);
             this.tbFindEmployee.TabIndex = 9;
             // 
-            // button6
+            // btnRmvSelEmp
             // 
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(182)))), ((int)(((byte)(3)))));
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Location = new System.Drawing.Point(204, 59);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(171, 69);
-            this.button6.TabIndex = 42;
-            this.button6.Text = "Add Employee to this Department";
-            this.button6.UseVisualStyleBackColor = false;
+            this.btnRmvSelEmp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(182)))), ((int)(((byte)(3)))));
+            this.btnRmvSelEmp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRmvSelEmp.Location = new System.Drawing.Point(429, 497);
+            this.btnRmvSelEmp.Name = "btnRmvSelEmp";
+            this.btnRmvSelEmp.Size = new System.Drawing.Size(263, 69);
+            this.btnRmvSelEmp.TabIndex = 44;
+            this.btnRmvSelEmp.Text = "Remove Selected Employee";
+            this.btnRmvSelEmp.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // btnGoBack
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(182)))), ((int)(((byte)(3)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(8, 59);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(173, 69);
-            this.button1.TabIndex = 43;
-            this.button1.Text = "Remove Employee from this Department";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(182)))), ((int)(((byte)(3)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(429, 497);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(263, 69);
-            this.button2.TabIndex = 44;
-            this.button2.Text = "Remove Selected Employee";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(182)))), ((int)(((byte)(3)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button3.Location = new System.Drawing.Point(8, 158);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(387, 69);
-            this.button3.TabIndex = 45;
-            this.button3.Text = "Update";
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(182)))), ((int)(((byte)(3)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button4.Location = new System.Drawing.Point(12, 505);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(401, 61);
-            this.button4.TabIndex = 47;
-            this.button4.Text = "Go Back";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnGoBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(182)))), ((int)(((byte)(3)))));
+            this.btnGoBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGoBack.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnGoBack.Location = new System.Drawing.Point(12, 505);
+            this.btnGoBack.Name = "btnGoBack";
+            this.btnGoBack.Size = new System.Drawing.Size(401, 61);
+            this.btnGoBack.TabIndex = 47;
+            this.btnGoBack.Text = "Go Back";
+            this.btnGoBack.UseVisualStyleBackColor = false;
             // 
             // UpdateDepartment
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(121)))), ((int)(((byte)(3)))));
             this.ClientSize = new System.Drawing.Size(729, 586);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnGoBack);
+            this.Controls.Add(this.btnRmvSelEmp);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lbDepartmentEmployees);
@@ -305,20 +305,20 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox tbDepName;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbMaxEmps;
+        private System.Windows.Forms.TextBox tbMinEmps;
+        private System.Windows.Forms.TextBox tbTotlEmps;
         private System.Windows.Forms.ListBox lbDepartmentEmployees;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox tbFindEmployee;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnRmvEmp;
+        private System.Windows.Forms.Button btnAddEmp;
+        private System.Windows.Forms.Button btnRmvSelEmp;
+        private System.Windows.Forms.Button btnGoBack;
     }
 }
