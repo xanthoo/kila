@@ -35,7 +35,6 @@
             this.tbEmail = new System.Windows.Forms.TextBox();
             this.emailLbl = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.linkForgotPassword = new System.Windows.Forms.LinkLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -46,16 +45,16 @@
             this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(182)))), ((int)(((byte)(3)))));
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnLogin.Location = new System.Drawing.Point(212, 196);
+            this.btnLogin.Location = new System.Drawing.Point(185, 196);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(106, 36);
+            this.btnLogin.Size = new System.Drawing.Size(156, 36);
             this.btnLogin.TabIndex = 11;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = false;
             // 
             // tbPassword
             // 
-            this.tbPassword.Location = new System.Drawing.Point(185, 152);
+            this.tbPassword.Location = new System.Drawing.Point(186, 152);
             this.tbPassword.Name = "tbPassword";
             this.tbPassword.Size = new System.Drawing.Size(155, 22);
             this.tbPassword.TabIndex = 10;
@@ -98,16 +97,6 @@
             this.panel1.Size = new System.Drawing.Size(527, 53);
             this.panel1.TabIndex = 12;
             // 
-            // linkForgotPassword
-            // 
-            this.linkForgotPassword.AutoSize = true;
-            this.linkForgotPassword.Location = new System.Drawing.Point(203, 247);
-            this.linkForgotPassword.Name = "linkForgotPassword";
-            this.linkForgotPassword.Size = new System.Drawing.Size(125, 13);
-            this.linkForgotPassword.TabIndex = 13;
-            this.linkForgotPassword.TabStop = true;
-            this.linkForgotPassword.Text = "Forgot your password?";
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
@@ -123,7 +112,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(121)))), ((int)(((byte)(3)))));
             this.ClientSize = new System.Drawing.Size(527, 288);
-            this.Controls.Add(this.linkForgotPassword);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.tbPassword);
@@ -149,7 +137,6 @@
         private System.Windows.Forms.TextBox tbEmail;
         private System.Windows.Forms.Label emailLbl;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.LinkLabel linkForgotPassword;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

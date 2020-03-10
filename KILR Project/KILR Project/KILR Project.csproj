@@ -64,6 +64,8 @@
     <Compile Include="DepartmentInformation.Designer.cs">
       <DependentUpon>DepartmentInformation.cs</DependentUpon>
     </Compile>
+    <Compile Include="Product.cs" />
+    <Compile Include="StockManager.cs" />
     <Compile Include="UpdateDepartment.cs">
       <SubType>Form</SubType>
     </Compile>

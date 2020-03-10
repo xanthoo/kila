@@ -38,18 +38,17 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
             this.btnUpdtDetails = new System.Windows.Forms.Button();
             this.btnGoBack = new System.Windows.Forms.Button();
             this.btnRmv = new System.Windows.Forms.Button();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.HeaderPanel.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -71,7 +70,7 @@
             this.Jupiterlbl.AutoSize = true;
             this.Jupiterlbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(182)))), ((int)(((byte)(3)))));
             this.Jupiterlbl.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Jupiterlbl.Location = new System.Drawing.Point(237, 0);
+            this.Jupiterlbl.Location = new System.Drawing.Point(114, 0);
             this.Jupiterlbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Jupiterlbl.Name = "Jupiterlbl";
             this.Jupiterlbl.Size = new System.Drawing.Size(335, 45);
@@ -82,7 +81,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(104, 105);
+            this.label5.Location = new System.Drawing.Point(99, 105);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(33, 17);
             this.label5.TabIndex = 27;
@@ -91,7 +90,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(104, 67);
+            this.label3.Location = new System.Drawing.Point(99, 67);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(33, 17);
             this.label3.TabIndex = 26;
@@ -100,7 +99,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(104, 27);
+            this.label2.Location = new System.Drawing.Point(99, 27);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(33, 17);
             this.label2.TabIndex = 25;
@@ -159,14 +158,52 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Personal details";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(284, 103);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(33, 17);
+            this.label1.TabIndex = 31;
+            this.label1.Text = "Text";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.Location = new System.Drawing.Point(234, 101);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(44, 20);
+            this.label6.TabIndex = 30;
+            this.label6.Text = "Shift:";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(284, 67);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(33, 17);
+            this.label17.TabIndex = 27;
+            this.label17.Text = "Text";
+            // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(104, 144);
+            this.label13.Location = new System.Drawing.Point(99, 144);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(33, 17);
             this.label13.TabIndex = 29;
             this.label13.Text = "Text";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label18.Location = new System.Drawing.Point(180, 26);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(101, 20);
+            this.label18.TabIndex = 22;
+            this.label18.Text = "Departments:";
             // 
             // label14
             // 
@@ -178,42 +215,33 @@
             this.label14.TabIndex = 28;
             this.label14.Text = "Adress:";
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Location = new System.Drawing.Point(402, 70);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(381, 192);
-            this.groupBox2.TabIndex = 35;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Professional details";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(297, 67);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(33, 17);
-            this.label17.TabIndex = 27;
-            this.label17.Text = "Text";
-            // 
             // label20
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label20.Location = new System.Drawing.Point(207, 67);
+            this.label20.Location = new System.Drawing.Point(194, 67);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(87, 20);
             this.label20.TabIndex = 24;
             this.label20.Text = "Date Hired:";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(284, 29);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(33, 17);
+            this.label22.TabIndex = 26;
+            this.label22.Text = "Text";
             // 
             // btnUpdtDetails
             // 
             this.btnUpdtDetails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(182)))), ((int)(((byte)(3)))));
             this.btnUpdtDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdtDetails.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnUpdtDetails.Location = new System.Drawing.Point(443, 268);
+            this.btnUpdtDetails.Location = new System.Drawing.Point(389, 70);
             this.btnUpdtDetails.Name = "btnUpdtDetails";
-            this.btnUpdtDetails.Size = new System.Drawing.Size(340, 68);
+            this.btnUpdtDetails.Size = new System.Drawing.Size(127, 192);
             this.btnUpdtDetails.TabIndex = 36;
             this.btnUpdtDetails.Text = "Update Details";
             this.btnUpdtDetails.UseVisualStyleBackColor = false;
@@ -237,59 +265,20 @@
             this.btnRmv.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnRmv.Location = new System.Drawing.Point(176, 268);
             this.btnRmv.Name = "btnRmv";
-            this.btnRmv.Size = new System.Drawing.Size(261, 68);
+            this.btnRmv.Size = new System.Drawing.Size(340, 68);
             this.btnRmv.TabIndex = 38;
             this.btnRmv.Text = "Remove Employee";
             this.btnRmv.UseVisualStyleBackColor = false;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(297, 29);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(33, 17);
-            this.label22.TabIndex = 26;
-            this.label22.Text = "Text";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label18.Location = new System.Drawing.Point(193, 26);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(101, 20);
-            this.label18.TabIndex = 22;
-            this.label18.Text = "Departments:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(297, 103);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(33, 17);
-            this.label1.TabIndex = 31;
-            this.label1.Text = "Text";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.Location = new System.Drawing.Point(247, 101);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(44, 20);
-            this.label6.TabIndex = 30;
-            this.label6.Text = "Shift:";
             // 
             // EmployeeInformation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(121)))), ((int)(((byte)(3)))));
-            this.ClientSize = new System.Drawing.Size(795, 345);
+            this.ClientSize = new System.Drawing.Size(531, 345);
             this.Controls.Add(this.btnRmv);
             this.Controls.Add(this.btnGoBack);
             this.Controls.Add(this.btnUpdtDetails);
-            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.HeaderPanel);
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -319,7 +308,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Button btnUpdtDetails;
