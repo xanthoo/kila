@@ -113,6 +113,8 @@
     <Compile Include="UpdateEmployee.Designer.cs">
       <DependentUpon>UpdateEmployee.cs</DependentUpon>
     </Compile>
+    <Compile Include="User.cs" />
+    <Compile Include="UserManager.cs" />
     <EmbeddedResource Include="AddEmployeesToDept.resx">
       <DependentUpon>AddEmployeesToDept.cs</DependentUpon>
     </EmbeddedResource>
