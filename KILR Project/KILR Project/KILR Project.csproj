@@ -67,6 +67,7 @@
       <DependentUpon>DepartmentInformation.cs</DependentUpon>
     </Compile>
     <Compile Include="Employee.cs" />
+    <Compile Include="EmployeeManager.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="StockManager.cs" />
     <Compile Include="UpdateDepartment.cs">
