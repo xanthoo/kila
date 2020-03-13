@@ -67,6 +67,7 @@
       <DependentUpon>DepartmentInformation.cs</DependentUpon>
     </Compile>
     <Compile Include="Employee.cs" />
+    <Compile Include="EmployeeManager.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="StockManager.cs" />
     <Compile Include="UpdateDepartment.cs">
@@ -113,6 +114,8 @@
     <Compile Include="UpdateEmployee.Designer.cs">
       <DependentUpon>UpdateEmployee.cs</DependentUpon>
     </Compile>
+    <Compile Include="User.cs" />
+    <Compile Include="UserManager.cs" />
     <EmbeddedResource Include="AddEmployeesToDept.resx">
       <DependentUpon>AddEmployeesToDept.cs</DependentUpon>
     </EmbeddedResource>
