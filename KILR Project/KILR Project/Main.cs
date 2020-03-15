@@ -12,11 +12,12 @@ namespace KILR_Project
 {
     public partial class Main : Form
     {
+        
         public Main()
         {
             InitializeComponent();
+            
         }
-
         private void Button4_Click(object sender, EventArgs e)
         {
 
@@ -31,6 +32,20 @@ namespace KILR_Project
         {
             CreateDepartment createDepartmentForm = new CreateDepartment(this);
             createDepartmentForm.Show();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+
+            if (lbDepartments.SelectedIndex > -1)
+            {
+                DepartmentInformation departmentInfoForm = new DepartmentInformation(this);
+                CreateDepartment createDepartmentForm = new CreateDepartment(this);
+                var result = createDepartmentForm.tbDepartmentName.Text;
+                result = departmentInfoForm.lblDepartmentName.Text;
+                departmentInfoForm.Show();
+
+            }
         }
     }
 }

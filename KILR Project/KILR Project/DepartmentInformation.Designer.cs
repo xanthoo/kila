@@ -32,7 +32,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.Jupiterlbl = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.stockNameLbl = new System.Windows.Forms.Label();
+            this.lblDepartmentName = new System.Windows.Forms.Label();
             this.lbDepEmps = new System.Windows.Forms.ListBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
@@ -83,7 +83,7 @@
             this.Jupiterlbl.Location = new System.Drawing.Point(167, 8);
             this.Jupiterlbl.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.Jupiterlbl.Name = "Jupiterlbl";
-            this.Jupiterlbl.Size = new System.Drawing.Size(455, 54);
+            this.Jupiterlbl.Size = new System.Drawing.Size(366, 45);
             this.Jupiterlbl.TabIndex = 6;
             this.Jupiterlbl.Text = "Department Information";
             // 
@@ -93,24 +93,24 @@
             this.label1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(337, 34);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 37);
+            this.label1.Size = new System.Drawing.Size(35, 30);
             this.label1.TabIndex = 32;
             this.label1.Text = "ID";
             // 
-            // stockNameLbl
+            // lblDepartmentName
             // 
-            this.stockNameLbl.AutoSize = true;
-            this.stockNameLbl.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.stockNameLbl.Location = new System.Drawing.Point(248, 2);
-            this.stockNameLbl.Name = "stockNameLbl";
-            this.stockNameLbl.Size = new System.Drawing.Size(275, 41);
-            this.stockNameLbl.TabIndex = 31;
-            this.stockNameLbl.Text = "Department Name";
+            this.lblDepartmentName.AutoSize = true;
+            this.lblDepartmentName.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblDepartmentName.Location = new System.Drawing.Point(248, 2);
+            this.lblDepartmentName.Name = "lblDepartmentName";
+            this.lblDepartmentName.Size = new System.Drawing.Size(220, 32);
+            this.lblDepartmentName.TabIndex = 31;
+            this.lblDepartmentName.Text = "Department Name";
             // 
             // lbDepEmps
             // 
             this.lbDepEmps.FormattingEnabled = true;
-            this.lbDepEmps.ItemHeight = 21;
+            this.lbDepEmps.ItemHeight = 17;
             this.lbDepEmps.Location = new System.Drawing.Point(415, 172);
             this.lbDepEmps.Name = "lbDepEmps";
             this.lbDepEmps.Size = new System.Drawing.Size(280, 361);
@@ -120,7 +120,7 @@
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.stockNameLbl);
+            this.panel2.Controls.Add(this.lblDepartmentName);
             this.panel2.Location = new System.Drawing.Point(0, 75);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(856, 66);
@@ -132,7 +132,7 @@
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.Location = new System.Drawing.Point(410, 144);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(340, 32);
+            this.label2.Size = new System.Drawing.Size(268, 25);
             this.label2.TabIndex = 33;
             this.label2.Text = "Employees in this department";
             // 
@@ -142,7 +142,7 @@
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.Location = new System.Drawing.Point(57, 33);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(267, 28);
+            this.label3.Size = new System.Drawing.Size(213, 21);
             this.label3.TabIndex = 35;
             this.label3.Text = "Total amount of employees:\r\n";
             // 
@@ -151,7 +151,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(276, 36);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(72, 23);
+            this.label4.Size = new System.Drawing.Size(58, 17);
             this.label4.TabIndex = 36;
             this.label4.Text = "Amount";
             // 
@@ -177,7 +177,7 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(276, 105);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(72, 23);
+            this.label9.Size = new System.Drawing.Size(58, 17);
             this.label9.TabIndex = 42;
             this.label9.Text = "Amount";
             // 
@@ -186,7 +186,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(274, 137);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(41, 23);
+            this.label6.Size = new System.Drawing.Size(33, 17);
             this.label6.TabIndex = 38;
             this.label6.Text = "Text";
             // 
@@ -196,7 +196,7 @@
             this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label10.Location = new System.Drawing.Point(20, 101);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(315, 28);
+            this.label10.Size = new System.Drawing.Size(250, 21);
             this.label10.TabIndex = 41;
             this.label10.Text = "Maximum amount of employees:\r\n";
             // 
@@ -206,7 +206,7 @@
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.Location = new System.Drawing.Point(160, 134);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(135, 28);
+            this.label5.Size = new System.Drawing.Size(110, 21);
             this.label5.TabIndex = 37;
             this.label5.Text = "Date Created:";
             // 
@@ -215,7 +215,7 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(276, 70);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(72, 23);
+            this.label8.Size = new System.Drawing.Size(58, 17);
             this.label8.TabIndex = 40;
             this.label8.Text = "Amount";
             // 
@@ -225,7 +225,7 @@
             this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label7.Location = new System.Drawing.Point(23, 66);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(312, 28);
+            this.label7.Size = new System.Drawing.Size(247, 21);
             this.label7.TabIndex = 39;
             this.label7.Text = "Minimum amount of employees:\r\n";
             // 
@@ -258,7 +258,7 @@
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(38, 23);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(155, 23);
+            this.label11.Size = new System.Drawing.Size(123, 17);
             this.label11.TabIndex = 8;
             this.label11.Text = "Employee number:";
             // 
@@ -266,7 +266,7 @@
             // 
             this.tbFindEmployee.Location = new System.Drawing.Point(31, 41);
             this.tbFindEmployee.Name = "tbFindEmployee";
-            this.tbFindEmployee.Size = new System.Drawing.Size(132, 29);
+            this.tbFindEmployee.Size = new System.Drawing.Size(132, 25);
             this.tbFindEmployee.TabIndex = 7;
             // 
             // groupBox4
@@ -299,7 +299,7 @@
             this.chkbxEmps.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.chkbxEmps.Location = new System.Drawing.Point(33, 87);
             this.chkbxEmps.Name = "chkbxEmps";
-            this.chkbxEmps.Size = new System.Drawing.Size(126, 29);
+            this.chkbxEmps.Size = new System.Drawing.Size(101, 24);
             this.chkbxEmps.TabIndex = 2;
             this.chkbxEmps.Text = "Employees";
             this.chkbxEmps.UseVisualStyleBackColor = true;
@@ -310,7 +310,7 @@
             this.chkbxAdmin.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.chkbxAdmin.Location = new System.Drawing.Point(33, 57);
             this.chkbxAdmin.Name = "chkbxAdmin";
-            this.chkbxAdmin.Size = new System.Drawing.Size(162, 29);
+            this.chkbxAdmin.Size = new System.Drawing.Size(129, 24);
             this.chkbxAdmin.TabIndex = 1;
             this.chkbxAdmin.Text = "Administration";
             this.chkbxAdmin.UseVisualStyleBackColor = true;
@@ -321,7 +321,7 @@
             this.chckbxMngrs.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.chckbxMngrs.Location = new System.Drawing.Point(33, 27);
             this.chckbxMngrs.Name = "chckbxMngrs";
-            this.chckbxMngrs.Size = new System.Drawing.Size(119, 29);
+            this.chckbxMngrs.Size = new System.Drawing.Size(96, 24);
             this.chckbxMngrs.TabIndex = 0;
             this.chckbxMngrs.Text = "Managers";
             this.chckbxMngrs.UseVisualStyleBackColor = true;
@@ -364,7 +364,7 @@
             // 
             // DepartmentInformation
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(121)))), ((int)(((byte)(3)))));
             this.ClientSize = new System.Drawing.Size(709, 635);
@@ -403,7 +403,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label Jupiterlbl;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label stockNameLbl;
         private System.Windows.Forms.ListBox lbDepEmps;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
@@ -428,5 +427,6 @@
         private System.Windows.Forms.Button btnEditDep;
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.Button btnGo;
+        public System.Windows.Forms.Label lblDepartmentName;
     }
 }

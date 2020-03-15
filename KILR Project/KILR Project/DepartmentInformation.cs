@@ -12,9 +12,14 @@ namespace KILR_Project
 {
     public partial class DepartmentInformation : Form
     {
-        public DepartmentInformation()
+        Main mainDepartmentInfo;
+        CreateDepartment createDepartmentForm;
+        public DepartmentInformation(Main mainForm)
         {
             InitializeComponent();
+
+            
+
         }
     }
 }

@@ -32,11 +32,11 @@
             this.label6 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.depNamelbl = new System.Windows.Forms.Label();
-            this.txtbxDepName = new System.Windows.Forms.TextBox();
+            this.tbDepartmentName = new System.Windows.Forms.TextBox();
             this.btnConfirm = new System.Windows.Forms.Button();
             this.tbMinPeople = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtbxMaxPeople = new System.Windows.Forms.TextBox();
+            this.tbMaxPeople = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnGoBack = new System.Windows.Forms.Button();
@@ -76,12 +76,12 @@
             this.depNamelbl.TabIndex = 17;
             this.depNamelbl.Text = "Department Name:";
             // 
-            // txtbxDepName
+            // tbDepartmentName
             // 
-            this.txtbxDepName.Location = new System.Drawing.Point(70, 61);
-            this.txtbxDepName.Name = "txtbxDepName";
-            this.txtbxDepName.Size = new System.Drawing.Size(146, 23);
-            this.txtbxDepName.TabIndex = 18;
+            this.tbDepartmentName.Location = new System.Drawing.Point(70, 61);
+            this.tbDepartmentName.Name = "tbDepartmentName";
+            this.tbDepartmentName.Size = new System.Drawing.Size(146, 23);
+            this.tbDepartmentName.TabIndex = 18;
             // 
             // btnConfirm
             // 
@@ -113,12 +113,12 @@
             this.label1.TabIndex = 20;
             this.label1.Text = "Number of minimum employees:\r\n";
             // 
-            // txtbxMaxPeople
+            // tbMaxPeople
             // 
-            this.txtbxMaxPeople.Location = new System.Drawing.Point(70, 187);
-            this.txtbxMaxPeople.Name = "txtbxMaxPeople";
-            this.txtbxMaxPeople.Size = new System.Drawing.Size(146, 23);
-            this.txtbxMaxPeople.TabIndex = 23;
+            this.tbMaxPeople.Location = new System.Drawing.Point(70, 187);
+            this.tbMaxPeople.Name = "tbMaxPeople";
+            this.tbMaxPeople.Size = new System.Drawing.Size(146, 23);
+            this.tbMaxPeople.TabIndex = 23;
             // 
             // label2
             // 
@@ -132,8 +132,8 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.txtbxDepName);
-            this.groupBox1.Controls.Add(this.txtbxMaxPeople);
+            this.groupBox1.Controls.Add(this.tbDepartmentName);
+            this.groupBox1.Controls.Add(this.tbMaxPeople);
             this.groupBox1.Controls.Add(this.depNamelbl);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
@@ -186,13 +186,13 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label depNamelbl;
-        private System.Windows.Forms.TextBox txtbxDepName;
         private System.Windows.Forms.Button btnConfirm;
-        private System.Windows.Forms.TextBox tbMinPeople;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtbxMaxPeople;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnGoBack;
+        public System.Windows.Forms.TextBox tbDepartmentName;
+        public System.Windows.Forms.TextBox tbMinPeople;
+        public System.Windows.Forms.TextBox tbMaxPeople;
     }
 }
