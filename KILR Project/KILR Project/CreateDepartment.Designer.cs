@@ -34,7 +34,7 @@
             this.depNamelbl = new System.Windows.Forms.Label();
             this.txtbxDepName = new System.Windows.Forms.TextBox();
             this.btnConfirm = new System.Windows.Forms.Button();
-            this.textBox2txtbxMinPeople = new System.Windows.Forms.TextBox();
+            this.tbMinPeople = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtbxMaxPeople = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -51,7 +51,7 @@
             this.label6.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label6.Location = new System.Drawing.Point(31, -1);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(362, 54);
+            this.label6.Size = new System.Drawing.Size(291, 45);
             this.label6.TabIndex = 10;
             this.label6.Text = "Create Department";
             // 
@@ -72,7 +72,7 @@
             this.depNamelbl.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.depNamelbl.Location = new System.Drawing.Point(67, 27);
             this.depNamelbl.Name = "depNamelbl";
-            this.depNamelbl.Size = new System.Drawing.Size(187, 28);
+            this.depNamelbl.Size = new System.Drawing.Size(149, 21);
             this.depNamelbl.TabIndex = 17;
             this.depNamelbl.Text = "Department Name:";
             // 
@@ -80,7 +80,7 @@
             // 
             this.txtbxDepName.Location = new System.Drawing.Point(70, 61);
             this.txtbxDepName.Name = "txtbxDepName";
-            this.txtbxDepName.Size = new System.Drawing.Size(146, 27);
+            this.txtbxDepName.Size = new System.Drawing.Size(146, 23);
             this.txtbxDepName.TabIndex = 18;
             // 
             // btnConfirm
@@ -94,13 +94,14 @@
             this.btnConfirm.TabIndex = 19;
             this.btnConfirm.Text = "Confirm";
             this.btnConfirm.UseVisualStyleBackColor = false;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
-            // textBox2txtbxMinPeople
+            // tbMinPeople
             // 
-            this.textBox2txtbxMinPeople.Location = new System.Drawing.Point(70, 121);
-            this.textBox2txtbxMinPeople.Name = "textBox2txtbxMinPeople";
-            this.textBox2txtbxMinPeople.Size = new System.Drawing.Size(146, 27);
-            this.textBox2txtbxMinPeople.TabIndex = 21;
+            this.tbMinPeople.Location = new System.Drawing.Point(70, 121);
+            this.tbMinPeople.Name = "tbMinPeople";
+            this.tbMinPeople.Size = new System.Drawing.Size(146, 23);
+            this.tbMinPeople.TabIndex = 21;
             // 
             // label1
             // 
@@ -108,7 +109,7 @@
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(14, 86);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(316, 28);
+            this.label1.Size = new System.Drawing.Size(250, 21);
             this.label1.TabIndex = 20;
             this.label1.Text = "Number of minimum employees:\r\n";
             // 
@@ -116,7 +117,7 @@
             // 
             this.txtbxMaxPeople.Location = new System.Drawing.Point(70, 187);
             this.txtbxMaxPeople.Name = "txtbxMaxPeople";
-            this.txtbxMaxPeople.Size = new System.Drawing.Size(146, 27);
+            this.txtbxMaxPeople.Size = new System.Drawing.Size(146, 23);
             this.txtbxMaxPeople.TabIndex = 23;
             // 
             // label2
@@ -125,7 +126,7 @@
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.Location = new System.Drawing.Point(14, 152);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(319, 28);
+            this.label2.Size = new System.Drawing.Size(253, 21);
             this.label2.TabIndex = 22;
             this.label2.Text = "Number of maximum employees:\r\n";
             // 
@@ -136,7 +137,7 @@
             this.groupBox1.Controls.Add(this.depNamelbl);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.textBox2txtbxMinPeople);
+            this.groupBox1.Controls.Add(this.tbMinPeople);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupBox1.Location = new System.Drawing.Point(36, 65);
             this.groupBox1.Name = "groupBox1";
@@ -156,10 +157,11 @@
             this.btnGoBack.TabIndex = 25;
             this.btnGoBack.Text = "Go Back";
             this.btnGoBack.UseVisualStyleBackColor = false;
+            this.btnGoBack.Click += new System.EventHandler(this.btnGoBack_Click);
             // 
             // CreateDepartment
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(121)))), ((int)(((byte)(3)))));
             this.ClientSize = new System.Drawing.Size(338, 465);
@@ -186,7 +188,7 @@
         private System.Windows.Forms.Label depNamelbl;
         private System.Windows.Forms.TextBox txtbxDepName;
         private System.Windows.Forms.Button btnConfirm;
-        private System.Windows.Forms.TextBox textBox2txtbxMinPeople;
+        private System.Windows.Forms.TextBox tbMinPeople;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtbxMaxPeople;
         private System.Windows.Forms.Label label2;

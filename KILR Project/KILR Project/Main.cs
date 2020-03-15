@@ -26,5 +26,11 @@ namespace KILR_Project
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            CreateDepartment createDepartmentForm = new CreateDepartment(this);
+            createDepartmentForm.Show();
+        }
     }
 }
