@@ -41,8 +41,7 @@ namespace KILR_Project
             {
                 DepartmentInformation departmentInfoForm = new DepartmentInformation(this);
                 CreateDepartment createDepartmentForm = new CreateDepartment(this);
-                var result = createDepartmentForm.tbDepartmentName.Text;
-                result = departmentInfoForm.lblDepartmentName.Text;
+               
                 departmentInfoForm.Show();
 
             }
