@@ -7,16 +7,37 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace KILR_Project
 {
     public partial class Main : Form
     {
-        
+
+        private DB db;
+
         public Main()
         {
             InitializeComponent();
-            
+
+            db = new DB();
+
+            string query = "SELECT * FROM department";
+
+            //open connection
+            if (db.OpenConnection() == true)
+            {
+                MySqlCommand cmd = new MySqlCommand(query, db.Connection);
+
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    Console.WriteLine(dataReader);
+                }
+                dataReader.Close();
+
+                db.CloseConnection();
+            }
         }
         private void Button4_Click(object sender, EventArgs e)
         {
