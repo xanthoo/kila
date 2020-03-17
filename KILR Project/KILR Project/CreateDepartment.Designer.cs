@@ -107,11 +107,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(14, 86);
+            this.label1.Location = new System.Drawing.Point(87, 97);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(250, 21);
+            this.label1.Size = new System.Drawing.Size(111, 21);
             this.label1.TabIndex = 20;
-            this.label1.Text = "Number of minimum employees:\r\n";
+            this.label1.Text = "Staff number:";
             // 
             // tbMaxPeople
             // 
@@ -124,11 +124,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(14, 152);
+            this.label2.Location = new System.Drawing.Point(87, 163);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(253, 21);
+            this.label2.Size = new System.Drawing.Size(99, 21);
             this.label2.TabIndex = 22;
-            this.label2.Text = "Number of maximum employees:\r\n";
+            this.label2.Text = "Manager ID:";
             // 
             // groupBox1
             // 

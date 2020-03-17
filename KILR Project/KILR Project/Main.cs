@@ -14,30 +14,32 @@ namespace KILR_Project
     public partial class Main : Form
     {
 
-        private DB db;
 
+        string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=kilrdb;";
         public Main()
         {
             InitializeComponent();
 
-            db = new DB();
 
-            string query = "SELECT * FROM department";
-
-            //open connection
-            if (db.OpenConnection() == true)
+            try
             {
-                MySqlCommand cmd = new MySqlCommand(query, db.Connection);
+                MySqlConnection connection = new MySqlConnection(connectionString);
+                DataTable dt = new DataTable();
+                MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM department", connection);
+                connection.Open();
 
-                MySqlDataReader dataReader = cmd.ExecuteReader();
-                while (dataReader.Read())
-                {
-                    Console.WriteLine(dataReader);
-                }
-                dataReader.Close();
-
-                db.CloseConnection();
+                adapter.Fill(dt);
+                lbDepartments.DataSource = null;
+                lbDepartments.DataSource = dt;
+                lbDepartments.DisplayMember = "name";
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
+
         }
         private void Button4_Click(object sender, EventArgs e)
         {
@@ -62,8 +64,29 @@ namespace KILR_Project
             {
                 DepartmentInformation departmentInfoForm = new DepartmentInformation(this);
                 CreateDepartment createDepartmentForm = new CreateDepartment(this);
-               
+
                 departmentInfoForm.Show();
+
+            }
+        }
+
+        private void textBox8_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                MySqlConnection connection = new MySqlConnection(connectionString);
+                DataTable dt = new DataTable();
+                MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM department WHERE name LIKE '%"+textBox8.Text+"%'", connection);
+                connection.Open();
+
+                adapter.Fill(dt);
+                lbDepartments.DataSource = null;
+                lbDepartments.DataSource = dt;
+                lbDepartments.DisplayMember = "name";
+            }
+            catch (Exception ex)
+            {
+
 
             }
         }

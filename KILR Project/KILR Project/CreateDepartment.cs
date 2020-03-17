@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace KILR_Project
 {
@@ -20,18 +21,28 @@ namespace KILR_Project
         }
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            if (tbDepartmentName.Text.Length > 0)
-            {
-                if (tbMaxPeople.Text.Length > 0)
-                {
-                    if (tbMinPeople.Text.Length > 0)
-                    {
-                        var result = ("Department name: " + tbDepartmentName.Text + " | " + " Min employees: " + tbMinPeople.Text + " | " + " Max employees: " + tbMaxPeople.Text);
+            string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=kilrdb;";
+            string query = "INSERT INTO department(`id`, `name`, `staffamount`, `managerid`) VALUES (NULL, '" + tbDepartmentName.Text + "', '" + tbMaxPeople.Text + "', '" + tbMinPeople.Text + "')";
+            MySqlConnection databaseConnection = new MySqlConnection(connectionString);
+            MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
+            commandDatabase.CommandTimeout = 60;
 
-                        mainDepartmentInfo.lbDepartments.Items.Add(result);
-                    }
-                }
+
+            try
+            {
+                databaseConnection.Open();
+                MySqlDataReader myReader = commandDatabase.ExecuteReader();
+
+                MessageBox.Show("Department succesfully created");
+
+                databaseConnection.Close();
             }
+            catch (Exception ex)
+            {
+                // Show any error message.
+                MessageBox.Show(ex.Message);
+            }
+
        
         }
 

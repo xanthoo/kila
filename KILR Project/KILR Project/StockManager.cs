@@ -10,8 +10,7 @@ namespace KILR_Project
     {
         private string name;
         private List<Product> stocks;
-        private decimal totalRevenue;
-        public decimal TotalRevenue { get { return this.totalRevenue; } set { this.totalRevenue = value; } }
+
         public StockManager(string name)
         {
             this.name = name;
@@ -21,31 +20,19 @@ namespace KILR_Project
         {
             stocks.Add(p);
         }
-        public bool DisableStock(Product p)
+        public bool RemoveStock(Product p)
         {
-            if (CheckIfStockExists(p.ID) == false && (p.IsActive == false))
+            if (CheckIfStockExists(p.ID) == false)
             {
                 return false;
             }
             else
             {
-                p.IsActive = false;
+                stocks.Remove(p);
                 return true;
             }
         }
-        public bool EnableStock(Product p)
-        {
-            if (CheckIfStockExists(p.ID) == false && (p.IsActive == true))
-            {
-                return false;
-            }
-            else
-            {
-                p.IsActive = true;
-                return true;
-            }
-        }
-        public Product FindStock(int id)
+        public Product FindProduct(int id)
         {
             foreach (Product p in stocks)
             {
@@ -56,7 +43,7 @@ namespace KILR_Project
             }
             return null;
         }
-        public List<Product> GetAllStocks()
+        public List<Product> GetAllProducts()
         {
             List<Product> getStocks = new List<Product>();
             foreach (Product item in stocks)
@@ -75,14 +62,6 @@ namespace KILR_Project
                 }
             }
             return false;
-        }
-        public decimal Sell(Product p)
-        {
-           return TotalRevenue += p.SellingPrice;
-        }
-        public decimal Buy (Product p)
-        {
-            return TotalRevenue -= p.SellingPrice;
         }
     }   
 }

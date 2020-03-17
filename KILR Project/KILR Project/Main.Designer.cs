@@ -84,15 +84,13 @@
             this.button7 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.textBox8 = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.lbDepartments = new System.Windows.Forms.ListBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.statisticsPage = new System.Windows.Forms.TabPage();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
+            this.lbDepartments = new System.Windows.Forms.ListBox();
             this.tabControl1.SuspendLayout();
             this.employeesPage.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -658,8 +656,6 @@
             this.groupBox5.Controls.Add(this.button7);
             this.groupBox5.Controls.Add(this.label5);
             this.groupBox5.Controls.Add(this.textBox8);
-            this.groupBox5.Controls.Add(this.label11);
-            this.groupBox5.Controls.Add(this.textBox7);
             this.groupBox5.Location = new System.Drawing.Point(454, 328);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(353, 133);
@@ -684,7 +680,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(31, 74);
+            this.label5.Location = new System.Drawing.Point(20, 37);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(106, 15);
             this.label5.TabIndex = 10;
@@ -692,35 +688,11 @@
             // 
             // textBox8
             // 
-            this.textBox8.Location = new System.Drawing.Point(23, 92);
+            this.textBox8.Location = new System.Drawing.Point(23, 67);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(142, 23);
             this.textBox8.TabIndex = 9;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(32, 19);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(118, 15);
-            this.label11.TabIndex = 8;
-            this.label11.Text = "Department Number";
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(23, 37);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(142, 23);
-            this.textBox7.TabIndex = 7;
-            // 
-            // lbDepartments
-            // 
-            this.lbDepartments.FormattingEnabled = true;
-            this.lbDepartments.ItemHeight = 15;
-            this.lbDepartments.Location = new System.Drawing.Point(36, 67);
-            this.lbDepartments.Name = "lbDepartments";
-            this.lbDepartments.Size = new System.Drawing.Size(855, 244);
-            this.lbDepartments.TabIndex = 16;
+            this.textBox8.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
             // 
             // panel2
             // 
@@ -786,6 +758,15 @@
             this.label2.Size = new System.Drawing.Size(144, 45);
             this.label2.TabIndex = 10;
             this.label2.Text = "Statistics";
+            // 
+            // lbDepartments
+            // 
+            this.lbDepartments.FormattingEnabled = true;
+            this.lbDepartments.ItemHeight = 15;
+            this.lbDepartments.Location = new System.Drawing.Point(36, 67);
+            this.lbDepartments.Name = "lbDepartments";
+            this.lbDepartments.Size = new System.Drawing.Size(855, 244);
+            this.lbDepartments.TabIndex = 16;
             // 
             // Main
             // 
@@ -873,8 +854,6 @@
         private System.Windows.Forms.Button btnEmpInfo;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox6;
