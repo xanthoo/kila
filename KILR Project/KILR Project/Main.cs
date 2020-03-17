@@ -90,5 +90,37 @@ namespace KILR_Project
 
             }
         }
+
+        private void BtnAddStock_Click(object sender, EventArgs e)
+        {
+            string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=kilrdb;";
+            string query = "INSERT INTO product(`productid`, `productname`, `quantity`,`sellingprice`,`buyingprice',`stockactivity')" +
+                " VALUES (NULL, '" + tbDepartmentName.Text + "', '" + tbMaxPeople.Text + "', '" + tbMinPeople.Text + "')";
+            MySqlConnection databaseConnection = new MySqlConnection(connectionString);
+            MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
+            commandDatabase.CommandTimeout = 60;
+
+
+            try
+            {
+                databaseConnection.Open();
+                MySqlDataReader myReader = commandDatabase.ExecuteReader();
+
+                MessageBox.Show("Department succesfully created");
+
+                databaseConnection.Close();
+            }
+            catch (Exception ex)
+            {
+                // Show any error message.
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void StockPage_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

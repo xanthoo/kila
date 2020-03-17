@@ -61,10 +61,6 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.stockPage = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
@@ -73,8 +69,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.stockIDlb = new System.Windows.Forms.Label();
             this.tbFindStock = new System.Windows.Forms.TextBox();
-            this.btnFind = new System.Windows.Forms.Button();
-            this.btnRemoveStock = new System.Windows.Forms.Button();
+            this.btnStockInfo = new System.Windows.Forms.Button();
             this.lbStock = new System.Windows.Forms.ListBox();
             this.Stock = new System.Windows.Forms.Panel();
             this.Stocklbl = new System.Windows.Forms.Label();
@@ -84,13 +79,21 @@
             this.button7 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.textBox8 = new System.Windows.Forms.TextBox();
+            this.lbDepartments = new System.Windows.Forms.ListBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.statisticsPage = new System.Windows.Forms.TabPage();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.lbDepartments = new System.Windows.Forms.ListBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.btnBuy = new System.Windows.Forms.Button();
+            this.btnSell = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.employeesPage.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -440,15 +443,16 @@
             this.stockPage.Size = new System.Drawing.Size(925, 484);
             this.stockPage.TabIndex = 1;
             this.stockPage.Text = "Stock";
+            this.stockPage.Click += new System.EventHandler(this.StockPage_Click);
             // 
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(121)))), ((int)(((byte)(3)))));
             this.groupBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.groupBox3.Controls.Add(this.textBox3);
-            this.groupBox3.Controls.Add(this.label4);
-            this.groupBox3.Controls.Add(this.textBox6);
-            this.groupBox3.Controls.Add(this.label10);
+            this.groupBox3.Controls.Add(this.textBox7);
+            this.groupBox3.Controls.Add(this.label13);
+            this.groupBox3.Controls.Add(this.textBox9);
+            this.groupBox3.Controls.Add(this.label14);
             this.groupBox3.Controls.Add(this.textBox5);
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Controls.Add(this.textBox4);
@@ -457,44 +461,10 @@
             this.groupBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox3.Location = new System.Drawing.Point(40, 66);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(253, 226);
+            this.groupBox3.Size = new System.Drawing.Size(253, 264);
             this.groupBox3.TabIndex = 17;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Add/Change Stock";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(123, 146);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(124, 23);
-            this.textBox3.TabIndex = 19;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(13, 146);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(103, 17);
-            this.label4.TabIndex = 18;
-            this.label4.Text = "Amount  Stock:";
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(123, 108);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(124, 23);
-            this.textBox6.TabIndex = 17;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label10.Location = new System.Drawing.Point(10, 109);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(107, 17);
-            this.label10.TabIndex = 16;
-            this.label10.Text = "Minimum Stock:";
             // 
             // textBox5
             // 
@@ -507,11 +477,11 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label9.Location = new System.Drawing.Point(6, 69);
+            this.label9.Location = new System.Drawing.Point(33, 69);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(110, 17);
+            this.label9.Size = new System.Drawing.Size(64, 17);
             this.label9.TabIndex = 14;
-            this.label9.Text = "Maximum Stock:";
+            this.label9.Text = "Quantity:";
             // 
             // textBox4
             // 
@@ -524,36 +494,40 @@
             // 
             this.stockNameLbl.AutoSize = true;
             this.stockNameLbl.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.stockNameLbl.Location = new System.Drawing.Point(15, 33);
+            this.stockNameLbl.Location = new System.Drawing.Point(50, 33);
             this.stockNameLbl.Name = "stockNameLbl";
-            this.stockNameLbl.Size = new System.Drawing.Size(101, 17);
+            this.stockNameLbl.Size = new System.Drawing.Size(47, 17);
             this.stockNameLbl.TabIndex = 5;
-            this.stockNameLbl.Text = "Name of Stock:";
+            this.stockNameLbl.Text = "Name:";
             // 
             // btnAddStock
             // 
             this.btnAddStock.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(182)))), ((int)(((byte)(3)))));
             this.btnAddStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddStock.Location = new System.Drawing.Point(123, 175);
+            this.btnAddStock.Location = new System.Drawing.Point(18, 182);
             this.btnAddStock.Name = "btnAddStock";
-            this.btnAddStock.Size = new System.Drawing.Size(124, 45);
+            this.btnAddStock.Size = new System.Drawing.Size(229, 66);
             this.btnAddStock.TabIndex = 4;
             this.btnAddStock.Text = "Add";
             this.btnAddStock.UseVisualStyleBackColor = false;
+            this.btnAddStock.Click += new System.EventHandler(this.BtnAddStock_Click);
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(121)))), ((int)(((byte)(3)))));
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.btnSell);
+            this.groupBox1.Controls.Add(this.btnBuy);
             this.groupBox1.Controls.Add(this.stockIDlb);
             this.groupBox1.Controls.Add(this.tbFindStock);
-            this.groupBox1.Controls.Add(this.btnFind);
-            this.groupBox1.Controls.Add(this.btnRemoveStock);
-            this.groupBox1.Location = new System.Drawing.Point(40, 312);
+            this.groupBox1.Controls.Add(this.btnStockInfo);
+            this.groupBox1.Location = new System.Drawing.Point(652, 66);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(253, 148);
+            this.groupBox1.Size = new System.Drawing.Size(253, 374);
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Search by Stock ID";
+            this.groupBox1.Text = "Manipulate Stock";
             // 
             // stockIDlb
             // 
@@ -571,35 +545,24 @@
             this.tbFindStock.Size = new System.Drawing.Size(171, 23);
             this.tbFindStock.TabIndex = 7;
             // 
-            // btnFind
+            // btnStockInfo
             // 
-            this.btnFind.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(182)))), ((int)(((byte)(3)))));
-            this.btnFind.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFind.Location = new System.Drawing.Point(129, 85);
-            this.btnFind.Name = "btnFind";
-            this.btnFind.Size = new System.Drawing.Size(117, 51);
-            this.btnFind.TabIndex = 6;
-            this.btnFind.Text = "Stock Information";
-            this.btnFind.UseVisualStyleBackColor = false;
-            // 
-            // btnRemoveStock
-            // 
-            this.btnRemoveStock.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(182)))), ((int)(((byte)(3)))));
-            this.btnRemoveStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRemoveStock.Location = new System.Drawing.Point(6, 85);
-            this.btnRemoveStock.Name = "btnRemoveStock";
-            this.btnRemoveStock.Size = new System.Drawing.Size(117, 51);
-            this.btnRemoveStock.TabIndex = 5;
-            this.btnRemoveStock.Text = "Mark Stock as active/Inactive";
-            this.btnRemoveStock.UseVisualStyleBackColor = false;
+            this.btnStockInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(182)))), ((int)(((byte)(3)))));
+            this.btnStockInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStockInfo.Location = new System.Drawing.Point(6, 76);
+            this.btnStockInfo.Name = "btnStockInfo";
+            this.btnStockInfo.Size = new System.Drawing.Size(239, 51);
+            this.btnStockInfo.TabIndex = 6;
+            this.btnStockInfo.Text = "Stock Information";
+            this.btnStockInfo.UseVisualStyleBackColor = false;
             // 
             // lbStock
             // 
             this.lbStock.FormattingEnabled = true;
             this.lbStock.ItemHeight = 15;
-            this.lbStock.Location = new System.Drawing.Point(334, 66);
+            this.lbStock.Location = new System.Drawing.Point(299, 66);
             this.lbStock.Name = "lbStock";
-            this.lbStock.Size = new System.Drawing.Size(559, 379);
+            this.lbStock.Size = new System.Drawing.Size(337, 409);
             this.lbStock.TabIndex = 15;
             // 
             // Stock
@@ -694,6 +657,15 @@
             this.textBox8.TabIndex = 9;
             this.textBox8.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
             // 
+            // lbDepartments
+            // 
+            this.lbDepartments.FormattingEnabled = true;
+            this.lbDepartments.ItemHeight = 15;
+            this.lbDepartments.Location = new System.Drawing.Point(36, 67);
+            this.lbDepartments.Name = "lbDepartments";
+            this.lbDepartments.Size = new System.Drawing.Size(855, 244);
+            this.lbDepartments.TabIndex = 16;
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(182)))), ((int)(((byte)(3)))));
@@ -759,14 +731,80 @@
             this.label2.TabIndex = 10;
             this.label2.Text = "Statistics";
             // 
-            // lbDepartments
+            // textBox7
             // 
-            this.lbDepartments.FormattingEnabled = true;
-            this.lbDepartments.ItemHeight = 15;
-            this.lbDepartments.Location = new System.Drawing.Point(36, 67);
-            this.lbDepartments.Name = "lbDepartments";
-            this.lbDepartments.Size = new System.Drawing.Size(855, 244);
-            this.lbDepartments.TabIndex = 16;
+            this.textBox7.Location = new System.Drawing.Point(122, 139);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(124, 23);
+            this.textBox7.TabIndex = 23;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label13.Location = new System.Drawing.Point(11, 139);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(86, 17);
+            this.label13.TabIndex = 22;
+            this.label13.Text = "Buying Price:\r\n";
+            // 
+            // textBox9
+            // 
+            this.textBox9.Location = new System.Drawing.Point(122, 103);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(123, 23);
+            this.textBox9.TabIndex = 21;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label14.Location = new System.Drawing.Point(14, 103);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(83, 17);
+            this.label14.TabIndex = 20;
+            this.label14.Text = "Selling Price:";
+            // 
+            // btnBuy
+            // 
+            this.btnBuy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(182)))), ((int)(((byte)(3)))));
+            this.btnBuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuy.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnBuy.Location = new System.Drawing.Point(8, 213);
+            this.btnBuy.Name = "btnBuy";
+            this.btnBuy.Size = new System.Drawing.Size(239, 51);
+            this.btnBuy.TabIndex = 9;
+            this.btnBuy.Text = "Buy";
+            this.btnBuy.UseVisualStyleBackColor = false;
+            // 
+            // btnSell
+            // 
+            this.btnSell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(182)))), ((int)(((byte)(3)))));
+            this.btnSell.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSell.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnSell.Location = new System.Drawing.Point(8, 296);
+            this.btnSell.Name = "btnSell";
+            this.btnSell.Size = new System.Drawing.Size(239, 51);
+            this.btnSell.TabIndex = 10;
+            this.btnSell.Text = "Sell";
+            this.btnSell.UseVisualStyleBackColor = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.Location = new System.Drawing.Point(87, 141);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(69, 21);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "Amount";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(38, 165);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(171, 23);
+            this.textBox1.TabIndex = 11;
             // 
             // Main
             // 
@@ -839,8 +877,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label stockIDlb;
         private System.Windows.Forms.TextBox tbFindStock;
-        private System.Windows.Forms.Button btnFind;
-        private System.Windows.Forms.Button btnRemoveStock;
+        private System.Windows.Forms.Button btnStockInfo;
         private System.Windows.Forms.ComboBox cbPostition;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox tbEmail;
@@ -856,13 +893,9 @@
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Button btnFilter;
         private System.Windows.Forms.CheckBox chckbxEmps;
@@ -872,6 +905,14 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox8;
         public System.Windows.Forms.ListBox lbDepartments;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnSell;
+        private System.Windows.Forms.Button btnBuy;
     }
 }
 

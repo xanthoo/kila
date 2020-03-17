@@ -16,5 +16,10 @@ namespace KILR_Project
         {
             InitializeComponent();
         }
+
+        private void BtnUpdate_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

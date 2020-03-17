@@ -74,7 +74,7 @@
             this.Jupiterlbl.Location = new System.Drawing.Point(190, 8);
             this.Jupiterlbl.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.Jupiterlbl.Name = "Jupiterlbl";
-            this.Jupiterlbl.Size = new System.Drawing.Size(508, 54);
+            this.Jupiterlbl.Size = new System.Drawing.Size(408, 45);
             this.Jupiterlbl.TabIndex = 6;
             this.Jupiterlbl.Text = "Update Department Details";
             // 
@@ -107,12 +107,13 @@
             this.btnUpdate.TabIndex = 45;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.BtnUpdate_Click);
             // 
             // tbDepName
             // 
             this.tbDepName.Location = new System.Drawing.Point(266, 27);
             this.tbDepName.Name = "tbDepName";
-            this.tbDepName.Size = new System.Drawing.Size(129, 29);
+            this.tbDepName.Size = new System.Drawing.Size(129, 25);
             this.tbDepName.TabIndex = 46;
             // 
             // label1
@@ -121,7 +122,7 @@
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(111, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(187, 28);
+            this.label1.Size = new System.Drawing.Size(149, 21);
             this.label1.TabIndex = 45;
             this.label1.Text = "Department Name:";
             // 
@@ -129,21 +130,21 @@
             // 
             this.tbMaxEmps.Location = new System.Drawing.Point(266, 126);
             this.tbMaxEmps.Name = "tbMaxEmps";
-            this.tbMaxEmps.Size = new System.Drawing.Size(129, 29);
+            this.tbMaxEmps.Size = new System.Drawing.Size(129, 25);
             this.tbMaxEmps.TabIndex = 44;
             // 
             // tbMinEmps
             // 
             this.tbMinEmps.Location = new System.Drawing.Point(266, 91);
             this.tbMinEmps.Name = "tbMinEmps";
-            this.tbMinEmps.Size = new System.Drawing.Size(129, 29);
+            this.tbMinEmps.Size = new System.Drawing.Size(129, 25);
             this.tbMinEmps.TabIndex = 43;
             // 
             // tbTotlEmps
             // 
             this.tbTotlEmps.Location = new System.Drawing.Point(266, 58);
             this.tbTotlEmps.Name = "tbTotlEmps";
-            this.tbTotlEmps.Size = new System.Drawing.Size(129, 29);
+            this.tbTotlEmps.Size = new System.Drawing.Size(129, 25);
             this.tbTotlEmps.TabIndex = 42;
             // 
             // label10
@@ -152,7 +153,7 @@
             this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label10.Location = new System.Drawing.Point(10, 126);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(315, 28);
+            this.label10.Size = new System.Drawing.Size(250, 21);
             this.label10.TabIndex = 41;
             this.label10.Text = "Maximum amount of employees:\r\n";
             // 
@@ -162,7 +163,7 @@
             this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label7.Location = new System.Drawing.Point(13, 91);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(312, 28);
+            this.label7.Size = new System.Drawing.Size(247, 21);
             this.label7.TabIndex = 39;
             this.label7.Text = "Minimum amount of employees:\r\n";
             // 
@@ -172,14 +173,14 @@
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.Location = new System.Drawing.Point(47, 58);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(267, 28);
+            this.label3.Size = new System.Drawing.Size(213, 21);
             this.label3.TabIndex = 35;
             this.label3.Text = "Total amount of employees:\r\n";
             // 
             // lbDepartmentEmployees
             // 
             this.lbDepartmentEmployees.FormattingEnabled = true;
-            this.lbDepartmentEmployees.ItemHeight = 21;
+            this.lbDepartmentEmployees.ItemHeight = 17;
             this.lbDepartmentEmployees.Location = new System.Drawing.Point(429, 113);
             this.lbDepartmentEmployees.Name = "lbDepartmentEmployees";
             this.lbDepartmentEmployees.Size = new System.Drawing.Size(263, 361);
@@ -191,7 +192,7 @@
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.Location = new System.Drawing.Point(424, 85);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(340, 32);
+            this.label2.Size = new System.Drawing.Size(268, 25);
             this.label2.TabIndex = 40;
             this.label2.Text = "Employees in this department";
             // 
@@ -235,7 +236,7 @@
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(58, 31);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(155, 23);
+            this.label11.Size = new System.Drawing.Size(123, 17);
             this.label11.TabIndex = 10;
             this.label11.Text = "Employee number:";
             // 
@@ -243,7 +244,7 @@
             // 
             this.tbFindEmployee.Location = new System.Drawing.Point(187, 28);
             this.tbFindEmployee.Name = "tbFindEmployee";
-            this.tbFindEmployee.Size = new System.Drawing.Size(151, 29);
+            this.tbFindEmployee.Size = new System.Drawing.Size(151, 25);
             this.tbFindEmployee.TabIndex = 9;
             // 
             // btnRmvSelEmp
@@ -271,7 +272,7 @@
             // 
             // UpdateDepartment
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(121)))), ((int)(((byte)(3)))));
             this.ClientSize = new System.Drawing.Size(729, 586);
