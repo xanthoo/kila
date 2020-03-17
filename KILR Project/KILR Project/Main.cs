@@ -19,8 +19,13 @@ namespace KILR_Project
         public Main()
         {
             InitializeComponent();
+            PopulateList();
 
 
+
+        }
+
+        public void PopulateList() {
             try
             {
                 MySqlConnection connection = new MySqlConnection(connectionString);
@@ -37,10 +42,9 @@ namespace KILR_Project
             {
                 MessageBox.Show(ex.Message);
             }
-
-
-
         }
+
+
         private void Button4_Click(object sender, EventArgs e)
         {
 
@@ -62,7 +66,10 @@ namespace KILR_Project
 
             if (lbDepartments.SelectedIndex > -1)
             {
-                DepartmentInformation departmentInfoForm = new DepartmentInformation(this);
+                System.Data.DataRowView selectedItem = lbDepartments.SelectedItem as System.Data.DataRowView;
+                var relevantID = (int)selectedItem.Row.ItemArray[0];
+                
+                DepartmentInformation departmentInfoForm = new DepartmentInformation(this, relevantID);
                 CreateDepartment createDepartmentForm = new CreateDepartment(this);
 
                 departmentInfoForm.Show();

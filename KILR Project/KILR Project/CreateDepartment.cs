@@ -22,7 +22,8 @@ namespace KILR_Project
         private void btnConfirm_Click(object sender, EventArgs e)
         {
             string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=kilrdb;";
-            string query = "INSERT INTO department(`id`, `name`, `staffamount`, `managerid`) VALUES (NULL, '" + tbDepartmentName.Text + "', '" + tbMaxPeople.Text + "', '" + tbMinPeople.Text + "')";
+          //  string query = "INSERT INTO department(`id`, `name`, `staffamount`, `managerid`) VALUES (NULL, '" + tbDepartmentName.Text + "', '" + tbMaxPeople.Text + "', '" + tbMinPeople.Text + "')";
+            string query = "INSERT INTO department(`id`, `name`, `staffamount`, `managerid`,`date`) VALUES (NULL, '" + tbDepartmentName.Text + "', '" + tbMaxPeople.Text + "', '" + tbMinPeople.Text + "', '" + DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss") + "')";
             MySqlConnection databaseConnection = new MySqlConnection(connectionString);
             MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
             commandDatabase.CommandTimeout = 60;
@@ -34,7 +35,7 @@ namespace KILR_Project
                 MySqlDataReader myReader = commandDatabase.ExecuteReader();
 
                 MessageBox.Show("Department succesfully created");
-
+                mainDepartmentInfo.PopulateList();
                 databaseConnection.Close();
             }
             catch (Exception ex)
