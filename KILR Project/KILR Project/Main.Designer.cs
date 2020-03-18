@@ -61,12 +61,20 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.stockPage = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.tbStockBuying = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.tbStockPrice = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.tbStockQuantity = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.tbStockName = new System.Windows.Forms.TextBox();
             this.stockNameLbl = new System.Windows.Forms.Label();
             this.btnAddStock = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.tbStockAmount = new System.Windows.Forms.TextBox();
+            this.btnSell = new System.Windows.Forms.Button();
+            this.btnBuy = new System.Windows.Forms.Button();
             this.stockIDlb = new System.Windows.Forms.Label();
             this.tbFindStock = new System.Windows.Forms.TextBox();
             this.btnStockInfo = new System.Windows.Forms.Button();
@@ -86,14 +94,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.btnBuy = new System.Windows.Forms.Button();
-            this.btnSell = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.employeesPage.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -449,13 +449,13 @@
             // 
             this.groupBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(121)))), ((int)(((byte)(3)))));
             this.groupBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.groupBox3.Controls.Add(this.textBox7);
+            this.groupBox3.Controls.Add(this.tbStockBuying);
             this.groupBox3.Controls.Add(this.label13);
-            this.groupBox3.Controls.Add(this.textBox9);
+            this.groupBox3.Controls.Add(this.tbStockPrice);
             this.groupBox3.Controls.Add(this.label14);
-            this.groupBox3.Controls.Add(this.textBox5);
+            this.groupBox3.Controls.Add(this.tbStockQuantity);
             this.groupBox3.Controls.Add(this.label9);
-            this.groupBox3.Controls.Add(this.textBox4);
+            this.groupBox3.Controls.Add(this.tbStockName);
             this.groupBox3.Controls.Add(this.stockNameLbl);
             this.groupBox3.Controls.Add(this.btnAddStock);
             this.groupBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -466,12 +466,47 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Add/Change Stock";
             // 
-            // textBox5
+            // tbStockBuying
             // 
-            this.textBox5.Location = new System.Drawing.Point(123, 69);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(124, 23);
-            this.textBox5.TabIndex = 15;
+            this.tbStockBuying.Location = new System.Drawing.Point(122, 139);
+            this.tbStockBuying.Name = "tbStockBuying";
+            this.tbStockBuying.Size = new System.Drawing.Size(124, 23);
+            this.tbStockBuying.TabIndex = 23;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label13.Location = new System.Drawing.Point(11, 139);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(86, 17);
+            this.label13.TabIndex = 22;
+            this.label13.Text = "Buying Price:\r\n";
+            // 
+            // tbStockPrice
+            // 
+            this.tbStockPrice.Location = new System.Drawing.Point(122, 103);
+            this.tbStockPrice.Name = "tbStockPrice";
+            this.tbStockPrice.Size = new System.Drawing.Size(123, 23);
+            this.tbStockPrice.TabIndex = 21;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label14.Location = new System.Drawing.Point(14, 103);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(83, 17);
+            this.label14.TabIndex = 20;
+            this.label14.Text = "Selling Price:";
+            // 
+            // tbStockQuantity
+            // 
+            this.tbStockQuantity.Location = new System.Drawing.Point(123, 69);
+            this.tbStockQuantity.Name = "tbStockQuantity";
+            this.tbStockQuantity.Size = new System.Drawing.Size(124, 23);
+            this.tbStockQuantity.TabIndex = 15;
+            this.tbStockQuantity.TextChanged += new System.EventHandler(this.TextBox5_TextChanged);
             // 
             // label9
             // 
@@ -483,12 +518,12 @@
             this.label9.TabIndex = 14;
             this.label9.Text = "Quantity:";
             // 
-            // textBox4
+            // tbStockName
             // 
-            this.textBox4.Location = new System.Drawing.Point(123, 33);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(123, 23);
-            this.textBox4.TabIndex = 9;
+            this.tbStockName.Location = new System.Drawing.Point(123, 33);
+            this.tbStockName.Name = "tbStockName";
+            this.tbStockName.Size = new System.Drawing.Size(123, 23);
+            this.tbStockName.TabIndex = 9;
             // 
             // stockNameLbl
             // 
@@ -516,7 +551,7 @@
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(121)))), ((int)(((byte)(3)))));
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.tbStockAmount);
             this.groupBox1.Controls.Add(this.btnSell);
             this.groupBox1.Controls.Add(this.btnBuy);
             this.groupBox1.Controls.Add(this.stockIDlb);
@@ -528,6 +563,49 @@
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Manipulate Stock";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.Location = new System.Drawing.Point(87, 141);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(69, 21);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "Amount";
+            // 
+            // tbStockAmount
+            // 
+            this.tbStockAmount.Location = new System.Drawing.Point(38, 165);
+            this.tbStockAmount.Name = "tbStockAmount";
+            this.tbStockAmount.Size = new System.Drawing.Size(171, 23);
+            this.tbStockAmount.TabIndex = 11;
+            // 
+            // btnSell
+            // 
+            this.btnSell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(182)))), ((int)(((byte)(3)))));
+            this.btnSell.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSell.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnSell.Location = new System.Drawing.Point(8, 296);
+            this.btnSell.Name = "btnSell";
+            this.btnSell.Size = new System.Drawing.Size(239, 51);
+            this.btnSell.TabIndex = 10;
+            this.btnSell.Text = "Increase";
+            this.btnSell.UseVisualStyleBackColor = false;
+            this.btnSell.Click += new System.EventHandler(this.BtnSell_Click);
+            // 
+            // btnBuy
+            // 
+            this.btnBuy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(182)))), ((int)(((byte)(3)))));
+            this.btnBuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuy.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnBuy.Location = new System.Drawing.Point(8, 213);
+            this.btnBuy.Name = "btnBuy";
+            this.btnBuy.Size = new System.Drawing.Size(239, 51);
+            this.btnBuy.TabIndex = 9;
+            this.btnBuy.Text = "Decrease";
+            this.btnBuy.UseVisualStyleBackColor = false;
+            this.btnBuy.Click += new System.EventHandler(this.BtnBuy_Click);
             // 
             // stockIDlb
             // 
@@ -551,10 +629,11 @@
             this.btnStockInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStockInfo.Location = new System.Drawing.Point(6, 76);
             this.btnStockInfo.Name = "btnStockInfo";
-            this.btnStockInfo.Size = new System.Drawing.Size(239, 51);
+            this.btnStockInfo.Size = new System.Drawing.Size(241, 51);
             this.btnStockInfo.TabIndex = 6;
             this.btnStockInfo.Text = "Stock Information";
             this.btnStockInfo.UseVisualStyleBackColor = false;
+            this.btnStockInfo.Click += new System.EventHandler(this.BtnStockInfo_Click);
             // 
             // lbStock
             // 
@@ -731,81 +810,6 @@
             this.label2.TabIndex = 10;
             this.label2.Text = "Statistics";
             // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(122, 139);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(124, 23);
-            this.textBox7.TabIndex = 23;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label13.Location = new System.Drawing.Point(11, 139);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(86, 17);
-            this.label13.TabIndex = 22;
-            this.label13.Text = "Buying Price:\r\n";
-            // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point(122, 103);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(123, 23);
-            this.textBox9.TabIndex = 21;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label14.Location = new System.Drawing.Point(14, 103);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(83, 17);
-            this.label14.TabIndex = 20;
-            this.label14.Text = "Selling Price:";
-            // 
-            // btnBuy
-            // 
-            this.btnBuy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(182)))), ((int)(((byte)(3)))));
-            this.btnBuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuy.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnBuy.Location = new System.Drawing.Point(8, 213);
-            this.btnBuy.Name = "btnBuy";
-            this.btnBuy.Size = new System.Drawing.Size(239, 51);
-            this.btnBuy.TabIndex = 9;
-            this.btnBuy.Text = "Buy";
-            this.btnBuy.UseVisualStyleBackColor = false;
-            // 
-            // btnSell
-            // 
-            this.btnSell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(182)))), ((int)(((byte)(3)))));
-            this.btnSell.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSell.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnSell.Location = new System.Drawing.Point(8, 296);
-            this.btnSell.Name = "btnSell";
-            this.btnSell.Size = new System.Drawing.Size(239, 51);
-            this.btnSell.TabIndex = 10;
-            this.btnSell.Text = "Sell";
-            this.btnSell.UseVisualStyleBackColor = false;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(87, 141);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(69, 21);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "Amount";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(38, 165);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(171, 23);
-            this.textBox1.TabIndex = 11;
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -816,6 +820,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Main";
             this.Text = "Jupiter Control App";
+            this.Load += new System.EventHandler(this.Main_Load);
             this.tabControl1.ResumeLayout(false);
             this.employeesPage.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
@@ -871,7 +876,7 @@
         private System.Windows.Forms.Panel Stock;
         private System.Windows.Forms.Label Stocklbl;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox tbStockName;
         private System.Windows.Forms.Label stockNameLbl;
         private System.Windows.Forms.Button btnAddStock;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -893,7 +898,7 @@
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox tbStockQuantity;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.GroupBox groupBox4;
@@ -905,12 +910,12 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox8;
         public System.Windows.Forms.ListBox lbDepartments;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox tbStockBuying;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox tbStockPrice;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbStockAmount;
         private System.Windows.Forms.Button btnSell;
         private System.Windows.Forms.Button btnBuy;
     }

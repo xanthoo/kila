@@ -3,24 +3,42 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
+using System.Data;
 
 namespace KILR_Project
 {
     public class StockManager
     {
+        string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=kilrdb;";
         private string name;
-        private List<Product> stocks;
-
-        private decimal totalRevenue;
-        public decimal TotalRevenue { get { return this.totalRevenue; } set { this.totalRevenue = value; } }
         public StockManager(string name)
         {
             this.name = name;
-            stocks = new List<Product>();
         }
-        public void AddStock(Product p)
+        public bool AddStock(Product p)
         {
-            stocks.Add(p);
+            string query = "INSERT INTO product(`productid`, `productname`, `quantity`,`sellingprice`,`buyingprice`,`stockactivity`) VALUES(NULL, '" + p.Name + "', '" + p.Quanitity + "', '" + p.SellingPrice + "', '" + p.BuyingPrice + "', 1)";
+
+            MySqlConnection databaseConnection = new MySqlConnection(connectionString);
+            MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
+            commandDatabase.CommandTimeout = 60;
+
+
+            try
+            {
+                databaseConnection.Open();
+                MySqlDataReader myReader = commandDatabase.ExecuteReader();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+            finally
+            {
+                databaseConnection.Close();
+            }
         }
         public bool DisableStock(Product p)
         {
@@ -42,30 +60,42 @@ namespace KILR_Project
                 }
                 else
                 {
-                    stocks.Remove(p);
+                    GetAllStocks().Remove(p);
                     p.IsActive = true;
                     return true;
                 }
         }
         public Product FindStock(int id)
         {
-            foreach (Product p in stocks)
+            foreach (Product p in GetAllStocks())
             {
+                if (p.ID == id)
+                {
+                    return p;
+                }
             }
             return null;
         }
         public List<Product> GetAllStocks()
         {
-            List<Product> getStocks = new List<Product>();
-            foreach (Product item in stocks)
+            List<Product> products = new List<Product>();
+            products.Clear();
+            MySqlConnection connection = new MySqlConnection(connectionString);
+            string sql = " SELECT * FROM product;";
+            MySqlCommand cmd = new MySqlCommand(sql, connection);
+            connection.Open();
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while(reader.Read())
             {
-                getStocks.Add(item);
+                products.Add(new Product(Convert.ToInt32(reader[0]), reader[1].ToString(), Convert.ToInt32(reader[2]), Convert.ToDecimal(reader[3]), Convert.ToDecimal(reader[4]), Convert.ToBoolean(reader[5])));
+               
             }
-            return getStocks;
+            connection.Close();
+            return products;
         }
         public bool CheckIfStockExists(int id)
         {
-            foreach (Product item in stocks)
+            foreach (Product item in GetAllStocks())
             {
                 if (id == item.ID)
                 {
@@ -74,13 +104,27 @@ namespace KILR_Project
             }
             return false;
         }
-        public decimal Sell(Product p)
+        public void Increase(Product p, int amount)
         {
-            return TotalRevenue += p.SellingPrice;
+            p.Quanitity += amount;
+            MySqlConnection connection = new MySqlConnection(connectionString);
+            string sql = " UPDATE `product` SET `quantity` = '"+p.Quanitity+"' WHERE `product`.`productid` = "+p.ID+";";
+            MySqlCommand cmd = new MySqlCommand(sql, connection);
+            cmd.Parameters.AddWithValue("@quantity", p.Quanitity);
+            connection.Open();
+            int effectedRows = cmd.ExecuteNonQuery();
+            connection.Close();
         }
-        public decimal Buy(Product p)
+        public void Decrease(Product p, int amount)
         {
-            return TotalRevenue -= p.SellingPrice;
+            p.Quanitity -= amount;
+            MySqlConnection connection = new MySqlConnection(connectionString);
+            string sql = " UPDATE `product` SET `quantity` = '" + p.Quanitity + "' WHERE `product`.`productid` = " + p.ID + ";";
+            MySqlCommand cmd = new MySqlCommand(sql, connection);
+            cmd.Parameters.AddWithValue("@quantity", p.Quanitity);
+            connection.Open();
+            int effectedRows = cmd.ExecuteNonQuery();
+            connection.Close();
         }
     }
 
