@@ -32,6 +32,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.Jupiterlbl = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.quantitylbl = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.pricelbl = new System.Windows.Forms.Label();
             this.buyingLbl = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -43,8 +45,6 @@
             this.btnGoBack = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.quantitylbl = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -89,6 +89,24 @@
             this.groupBox3.Size = new System.Drawing.Size(671, 59);
             this.groupBox3.TabIndex = 29;
             this.groupBox3.TabStop = false;
+            // 
+            // quantitylbl
+            // 
+            this.quantitylbl.AutoSize = true;
+            this.quantitylbl.Location = new System.Drawing.Point(543, 25);
+            this.quantitylbl.Name = "quantitylbl";
+            this.quantitylbl.Size = new System.Drawing.Size(0, 17);
+            this.quantitylbl.TabIndex = 22;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.Location = new System.Drawing.Point(428, 23);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(109, 20);
+            this.label4.TabIndex = 21;
+            this.label4.Text = "Total Quantity:";
             // 
             // pricelbl
             // 
@@ -166,6 +184,7 @@
             this.btnUpdStock.TabIndex = 32;
             this.btnUpdStock.Text = "Update Stock Details";
             this.btnUpdStock.UseVisualStyleBackColor = false;
+            this.btnUpdStock.Click += new System.EventHandler(this.BtnUpdStock_Click);
             // 
             // btnGoBack
             // 
@@ -199,24 +218,6 @@
             this.label2.Size = new System.Drawing.Size(69, 25);
             this.label2.TabIndex = 35;
             this.label2.Text = "Status:";
-            // 
-            // quantitylbl
-            // 
-            this.quantitylbl.AutoSize = true;
-            this.quantitylbl.Location = new System.Drawing.Point(543, 25);
-            this.quantitylbl.Name = "quantitylbl";
-            this.quantitylbl.Size = new System.Drawing.Size(0, 17);
-            this.quantitylbl.TabIndex = 22;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(428, 23);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(109, 20);
-            this.label4.TabIndex = 21;
-            this.label4.Text = "Total Quantity:";
             // 
             // label3
             // 

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.Text.RegularExpressions;
 
 namespace KILR_Project
 {
@@ -96,17 +97,37 @@ namespace KILR_Project
             {
                 string name = tbStockName.Text;
                 int quantity = Convert.ToInt32(tbStockQuantity.Text);
-                decimal sellingPrice = Convert.ToDecimal(tbStockPrice.Text);
-                decimal buyingPrice = Convert.ToDecimal(tbStockBuying.Text);
-                if (sm.AddStock(new Product(0, name, quantity, sellingPrice, buyingPrice, true)) == true)
+                decimal sellingPrice = Math.Round(Convert.ToDecimal(tbStockPrice.Text), 2);
+                decimal buyingPrice = Math.Round(Convert.ToDecimal(tbStockBuying.Text), 2);
+                if (Regex.IsMatch(name, "^[A-Z]{1}[a-z]{2,30}$"))
                 {
-      
-                    MessageBox.Show("Stock succesfully created!");
-                    RefreshStock();
+                    if (Regex.IsMatch(quantity.ToString(), "^[0-9]{0,7}$"))
+                    {
+                        if (Regex.IsMatch(sellingPrice.ToString(), "^[0-9]{0,9}$") && Regex.IsMatch(buyingPrice.ToString(), "^[0-9]{0,9}$"))
+                            {
+                            if (sm.AddStock(new Product(0, name, quantity, sellingPrice, buyingPrice, true)) == true)
+                            {
+                                MessageBox.Show("Stock succesfully created!");
+                                RefreshStock();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Check your connection to the database");
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Price has not been set correctly", "Make sure the information provided is correct", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Quantity number is too large!");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Check your connection to the database");
+                    MessageBox.Show("Product name must start with a capital letter and it must have a length of 3 to 30 characters!");
                 }
             }
             catch (Exception ex)
@@ -133,7 +154,7 @@ namespace KILR_Project
                 if (sm.CheckIfStockExists(id) != false)
                 {
                     Product stock = sm.FindStock(id);
-                    StockDetails sd = new StockDetails(stock, this);
+                    StockDetails sd = new StockDetails(stock, this, sm);
                     this.Visible = false;
                     sd.Show();
                 }
@@ -209,6 +230,15 @@ namespace KILR_Project
             }
 
         }
+        private void Main_Load(object sender, EventArgs e)
+        {
+   
+        }
+
+        private void BtnRefresh_Click(object sender, EventArgs e)
+        {
+            RefreshStock();
+        }
         public void RefreshStock()
         {
             sm.GetAllStocks();
@@ -219,9 +249,27 @@ namespace KILR_Project
             }
         }
 
-        private void Main_Load(object sender, EventArgs e)
+        private void BtnFilterStock_Click(object sender, EventArgs e)
         {
-   
+            sm.GetAllStocks();
+            lbStock.Items.Clear();
+            foreach (Product p in sm.GetAllStocks())
+            {
+                if (cbActive.Checked == true)
+                {
+                    if (p.IsActive == true)
+                    {
+                        lbStock.Items.Add(p.GetInfo());
+                    }
+                }
+                if(cbInactive.Checked == true)
+                {
+                    if(p.IsActive == false)
+                    {
+                        lbStock.Items.Add(p.GetInfo());
+                    }
+                }
+            }
         }
     }
 }
