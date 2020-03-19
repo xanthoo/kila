@@ -9,6 +9,10 @@ namespace KILR_Project
     class EmployeeManager
     {
         List<Employee> employees;
+        public EmployeeManager()
+        {
+            employees = new List<Employee>();
+        }
         public List<Employee> GetAllEmployees()
         {
             return employees;
@@ -17,7 +21,7 @@ namespace KILR_Project
         {
             foreach (Employee employee in employees)
             {
-                if(employee.Id == id)
+                if(employee.EmployeeId == id)
                 {
                     return employee;
                 }
@@ -28,7 +32,17 @@ namespace KILR_Project
         {
             employees.Add(e);
         }
-        public bool RemoveEmployee(Employee e)
+        public void RemoveEmployee(Employee e)
+        {
+            for (int i = 0; i < employees.Count; i++)
+            {
+                if(employees[i] == e)
+                {
+                    employees.RemoveAt(i);
+                }
+            }
+        }
+        public bool CheckIfEmployeeExists(Employee e)
         {
             foreach (Employee employee in employees)
             {

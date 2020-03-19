@@ -210,6 +210,7 @@
             this.btnUpdt.TabIndex = 38;
             this.btnUpdt.Text = "Update";
             this.btnUpdt.UseVisualStyleBackColor = false;
+            this.btnUpdt.Click += new System.EventHandler(this.BtnUpdt_Click);
             // 
             // stockNameLbl
             // 
