@@ -16,12 +16,12 @@ namespace KILR_Project
 
 
         string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=kilrdb;";
+       
+
         public Main()
         {
             InitializeComponent();
-            PopulateList();
-
-
+            PopulateList();     
 
         }
 

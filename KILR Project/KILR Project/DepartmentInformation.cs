@@ -15,6 +15,7 @@ namespace KILR_Project
     {
         Main mainDepartmentInfo;
         CreateDepartment createDepartmentForm;
+        DepartmentInformation depInfo;
 
         int departmentId;
         string connectionString;
@@ -62,6 +63,14 @@ namespace KILR_Project
 
         private void btnGo_Click(object sender, EventArgs e)
         {
+            this.Close();
+        }
+
+        private void btnEditDep_Click(object sender, EventArgs e)
+        {
+ 
+            EditDepartment editDepartmentForm = new EditDepartment(this.mainDepartmentInfo,depInfo, departmentId);
+            editDepartmentForm.Show();
             this.Close();
         }
     }

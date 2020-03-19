@@ -55,6 +55,8 @@
             this.btnEditDep = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
             this.btnGo = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -88,22 +90,22 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(271, 32);
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(301, 33);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 30);
+            this.label1.Size = new System.Drawing.Size(25, 30);
             this.label1.TabIndex = 32;
-            this.label1.Text = "ID";
+            this.label1.Text = "0";
             // 
             // lblDepartmentName
             // 
             this.lblDepartmentName.AutoSize = true;
             this.lblDepartmentName.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblDepartmentName.Location = new System.Drawing.Point(254, 0);
+            this.lblDepartmentName.Location = new System.Drawing.Point(303, 5);
             this.lblDepartmentName.Name = "lblDepartmentName";
-            this.lblDepartmentName.Size = new System.Drawing.Size(220, 32);
+            this.lblDepartmentName.Size = new System.Drawing.Size(28, 32);
             this.lblDepartmentName.TabIndex = 31;
-            this.lblDepartmentName.Text = "Department Name";
+            this.lblDepartmentName.Text = "0";
             // 
             // lbDepEmps
             // 
@@ -117,6 +119,8 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.label10);
+            this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.lblDepartmentName);
             this.panel2.Location = new System.Drawing.Point(0, 75);
@@ -314,6 +318,7 @@
             this.btnEditDep.TabIndex = 45;
             this.btnEditDep.Text = "Edit Department Details";
             this.btnEditDep.UseVisualStyleBackColor = false;
+            this.btnEditDep.Click += new System.EventHandler(this.btnEditDep_Click);
             // 
             // btnRemove
             // 
@@ -340,6 +345,26 @@
             this.btnGo.Text = "Go Back";
             this.btnGo.UseVisualStyleBackColor = false;
             this.btnGo.Click += new System.EventHandler(this.btnGo_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label9.Location = new System.Drawing.Point(81, 5);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(226, 32);
+            this.label9.TabIndex = 33;
+            this.label9.Text = "Department Name:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label10.Location = new System.Drawing.Point(122, 33);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(185, 32);
+            this.label10.TabIndex = 34;
+            this.label10.Text = "Department ID:";
             // 
             // DepartmentInformation
             // 
@@ -405,5 +430,7 @@
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.Button btnGo;
         public System.Windows.Forms.Label lblDepartmentName;
+        public System.Windows.Forms.Label label10;
+        public System.Windows.Forms.Label label9;
     }
 }

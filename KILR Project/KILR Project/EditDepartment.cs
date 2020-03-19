@@ -8,32 +8,36 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
-
 namespace KILR_Project
 {
-    public partial class CreateDepartment : Form
+    public partial class EditDepartment : Form
     {
+        DepartmentInformation depInfo;
         Main mainDepartmentInfo;
-        public CreateDepartment(Main mainForm)
+        int departmentId;
+
+        public EditDepartment(Main mainForm,DepartmentInformation infoForm, int DepartmentID)
         {
             InitializeComponent();
+            depInfo = infoForm;
+            departmentId = DepartmentID;
             mainDepartmentInfo = mainForm;
         }
+
         private void btnConfirm_Click(object sender, EventArgs e)
         {
             string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=kilrdb;";
-            string query = "INSERT INTO department(`id`, `name`, `staffamount`, `managerid`,`date`) VALUES (NULL, '" + tbDepartmentName.Text + "', '" + tbMaxPeople.Text + "', '" + tbMinPeople.Text + "', '" + DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss") + "')";
+            string query = "UPDATE `department` SET `name`='" + tbDepartmentName.Text + "',`staffamount`='" + tbMaxPeople.Text + "',`managerid`='" + tbMinPeople.Text + "' WHERE id =" + departmentId;
             MySqlConnection databaseConnection = new MySqlConnection(connectionString);
             MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
             commandDatabase.CommandTimeout = 60;
-
 
             try
             {
                 databaseConnection.Open();
                 MySqlDataReader myReader = commandDatabase.ExecuteReader();
 
-                MessageBox.Show("Department succesfully created");
+                MessageBox.Show("Department succesfully edited");
                 mainDepartmentInfo.PopulateList();
                 databaseConnection.Close();
             }
@@ -42,8 +46,6 @@ namespace KILR_Project
                 // Show any error message.
                 MessageBox.Show(ex.Message);
             }
-
-       
         }
 
         private void btnGoBack_Click(object sender, EventArgs e)
