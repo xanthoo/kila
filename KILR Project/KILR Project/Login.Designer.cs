@@ -32,8 +32,8 @@
             this.btnLogin = new System.Windows.Forms.Button();
             this.tbPassword = new System.Windows.Forms.TextBox();
             this.passwordLbl = new System.Windows.Forms.Label();
-            this.tbEmail = new System.Windows.Forms.TextBox();
-            this.emailLbl = new System.Windows.Forms.Label();
+            this.tbUsername = new System.Windows.Forms.TextBox();
+            this.usernameLbl = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
@@ -51,6 +51,7 @@
             this.btnLogin.TabIndex = 11;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // tbPassword
             // 
@@ -69,22 +70,22 @@
             this.passwordLbl.TabIndex = 9;
             this.passwordLbl.Text = "Password";
             // 
-            // tbEmail
+            // tbUsername
             // 
-            this.tbEmail.Location = new System.Drawing.Point(186, 95);
-            this.tbEmail.Name = "tbEmail";
-            this.tbEmail.Size = new System.Drawing.Size(155, 22);
-            this.tbEmail.TabIndex = 8;
+            this.tbUsername.Location = new System.Drawing.Point(186, 95);
+            this.tbUsername.Name = "tbUsername";
+            this.tbUsername.Size = new System.Drawing.Size(155, 22);
+            this.tbUsername.TabIndex = 8;
             // 
-            // emailLbl
+            // usernameLbl
             // 
-            this.emailLbl.AutoSize = true;
-            this.emailLbl.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.emailLbl.Location = new System.Drawing.Point(234, 72);
-            this.emailLbl.Name = "emailLbl";
-            this.emailLbl.Size = new System.Drawing.Size(46, 20);
-            this.emailLbl.TabIndex = 7;
-            this.emailLbl.Text = "Email";
+            this.usernameLbl.AutoSize = true;
+            this.usernameLbl.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.usernameLbl.Location = new System.Drawing.Point(224, 72);
+            this.usernameLbl.Name = "usernameLbl";
+            this.usernameLbl.Size = new System.Drawing.Size(75, 20);
+            this.usernameLbl.TabIndex = 7;
+            this.usernameLbl.Text = "Username";
             // 
             // panel1
             // 
@@ -116,8 +117,8 @@
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.tbPassword);
             this.Controls.Add(this.passwordLbl);
-            this.Controls.Add(this.tbEmail);
-            this.Controls.Add(this.emailLbl);
+            this.Controls.Add(this.tbUsername);
+            this.Controls.Add(this.usernameLbl);
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Login";
@@ -134,8 +135,8 @@
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.TextBox tbPassword;
         private System.Windows.Forms.Label passwordLbl;
-        private System.Windows.Forms.TextBox tbEmail;
-        private System.Windows.Forms.Label emailLbl;
+        private System.Windows.Forms.TextBox tbUsername;
+        private System.Windows.Forms.Label usernameLbl;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
     }

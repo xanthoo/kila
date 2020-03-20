@@ -17,9 +17,12 @@ namespace KILR_Project
 
         string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=kilrdb;";
         StockManager sm;
-        public Main()
+        User user;
+        public Main(object user)
         {
             InitializeComponent();
+            this.user = user as User;
+
             sm = new StockManager("Kristian");
 
             try
@@ -40,6 +43,7 @@ namespace KILR_Project
             }
             RefreshStock();
         }
+
         private void Button4_Click(object sender, EventArgs e)
         {
 
