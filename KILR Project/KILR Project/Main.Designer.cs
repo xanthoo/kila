@@ -44,6 +44,8 @@
             this.tbFindEmployee = new System.Windows.Forms.TextBox();
             this.lbEmployees = new System.Windows.Forms.ListBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cbShift = new System.Windows.Forms.ComboBox();
+            this.cbPostition = new System.Windows.Forms.ComboBox();
             this.tbHWage = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -99,8 +101,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.cbPostition = new System.Windows.Forms.ComboBox();
-            this.cbShift = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.employeesPage.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -150,6 +150,7 @@
             this.employeesPage.Size = new System.Drawing.Size(925, 484);
             this.employeesPage.TabIndex = 0;
             this.employeesPage.Text = "Employees";
+            this.employeesPage.Click += new System.EventHandler(this.EmployeesPage_Click);
             // 
             // groupBox4
             // 
@@ -309,6 +310,30 @@
             this.groupBox2.TabIndex = 12;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Add Employee";
+            // 
+            // cbShift
+            // 
+            this.cbShift.FormattingEnabled = true;
+            this.cbShift.Items.AddRange(new object[] {
+            "Night",
+            "Day",
+            "Afternoon"});
+            this.cbShift.Location = new System.Drawing.Point(290, 103);
+            this.cbShift.Name = "cbShift";
+            this.cbShift.Size = new System.Drawing.Size(123, 23);
+            this.cbShift.TabIndex = 23;
+            // 
+            // cbPostition
+            // 
+            this.cbPostition.FormattingEnabled = true;
+            this.cbPostition.Items.AddRange(new object[] {
+            "Employee",
+            "Manager",
+            "Administrator"});
+            this.cbPostition.Location = new System.Drawing.Point(87, 136);
+            this.cbPostition.Name = "cbPostition";
+            this.cbPostition.Size = new System.Drawing.Size(123, 23);
+            this.cbPostition.TabIndex = 22;
             // 
             // tbHWage
             // 
@@ -889,30 +914,6 @@
             this.label2.Size = new System.Drawing.Size(144, 45);
             this.label2.TabIndex = 10;
             this.label2.Text = "Statistics";
-            // 
-            // cbPostition
-            // 
-            this.cbPostition.FormattingEnabled = true;
-            this.cbPostition.Items.AddRange(new object[] {
-            "Employee",
-            "Manager",
-            "Administrator"});
-            this.cbPostition.Location = new System.Drawing.Point(87, 136);
-            this.cbPostition.Name = "cbPostition";
-            this.cbPostition.Size = new System.Drawing.Size(123, 23);
-            this.cbPostition.TabIndex = 22;
-            // 
-            // cbShift
-            // 
-            this.cbShift.FormattingEnabled = true;
-            this.cbShift.Items.AddRange(new object[] {
-            "Night",
-            "Day",
-            "Afternoon"});
-            this.cbShift.Location = new System.Drawing.Point(290, 103);
-            this.cbShift.Name = "cbShift";
-            this.cbShift.Size = new System.Drawing.Size(123, 23);
-            this.cbShift.TabIndex = 23;
             // 
             // Main
             // 

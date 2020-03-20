@@ -13,6 +13,7 @@ namespace KILR_Project
 {
     public partial class EditDepartment : Form
     {
+        DepartmentManager dm;
         DepartmentInformation depInfo;
         Main mainDepartmentInfo;
         int departmentId;
@@ -23,6 +24,7 @@ namespace KILR_Project
             depInfo = infoForm;
             departmentId = DepartmentID;
             mainDepartmentInfo = mainForm;
+            RefreshList();
         }
 
         private void btnConfirm_Click(object sender, EventArgs e)
@@ -68,5 +70,33 @@ namespace KILR_Project
         {
             this.Close();
         }
+
+        private void EditDepartment_Load(object sender, EventArgs e)
+        {
+
+        }
+        private void RefreshList()
+        {
+            lbDepartmentEmployees.Items.Clear();
+            Department d = dm.GetDepartment(departmentId);
+            foreach (Employee e in d.GetEmployees())
+            {
+                lbDepartmentEmployees.Items.Add(e.GetInfo());
+            }
+        }
+        //private Department FoundDepartment()
+        //{
+        //    Department d = dm.GetDepartment(departmentId);
+        //    return d;
+
+        //}
+        //private void RefreshList()
+        //{
+        //    lbDepartmentEmployees.Items.Clear();
+        //    foreach (Employee e in FoundDepartment().GetEmployees())
+        //    {
+        //        lbDepartmentEmployees.Items.Add(e.GetInfo());
+        //    }
+        //}
     }
 }

@@ -19,15 +19,16 @@ namespace KILR_Project
         string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=kilrdb;";
         StockManager sm;
         User user;
-        Employee employee;
         EmployeeManager empMang;
+        DepartmentManager dm;
         public Main(object user)
         {
             InitializeComponent();
             this.user = user as User;
 
-            sm = new StockManager("Kristian");
+            sm = new StockManager("Product Manager");
             empMang = new EmployeeManager();
+            dm = new DepartmentManager("Jupiter Managers");
 
             PopulateDepartmentsList();
             PopulateEmployeesList();
@@ -37,29 +38,36 @@ namespace KILR_Project
         private void Button4_Click(object sender, EventArgs e)
         {
             string HireDate = DateTime.Today.ToString("yyyy-MM-dd");
-            empMang.AddEmployee(tbFName.Text, tbSurname.Text, cbDep.SelectedIndex, (Position)cbPostition.SelectedIndex, tbEmail.Text, tbAddress.Text, (Shift)cbShift.SelectedIndex, HireDate, Convert.ToDouble(tbHWage.Text));
+            Department dep = dm.GetDepartmentByName(cbDep.SelectedItem.ToString());
+            empMang.AddEmployee(tbFName.Text, tbSurname.Text, dep, (Position)cbPostition.SelectedIndex, tbEmail.Text, tbAddress.Text, (Shift)cbShift.SelectedIndex, HireDate, Convert.ToDouble(tbHWage.Text));
             PopulateEmployeesList();
         }
 
         public void PopulateDepartmentsList()
         {
-            try
-            {
-                MySqlConnection connection = new MySqlConnection(connectionString);
-                DataTable dt = new DataTable();
-                MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM department", connection);
-                connection.Open();
+            //try
+            //{
+            //    MySqlConnection connection = new MySqlConnection(connectionString);
+            //    DataTable dt = new DataTable();
+            //    MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM department", connection);
+            //    connection.Open();
 
-                adapter.Fill(dt);
-                lbDepartments.DataSource = dt;
-                lbDepartments.DisplayMember = "name";
+            //    adapter.Fill(dt);
+            //    lbDepartments.DataSource = dt;
+            //    lbDepartments.DisplayMember = "name";
 
-                cbDep.DataSource = dt;
-                cbDep.DisplayMember = "name";
-            }
-            catch (Exception ex)
+            //    cbDep.DataSource = dt;
+            //    cbDep.DisplayMember = "name";
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
+            lbDepartments.Items.Clear();
+            foreach(Department d in dm.GetDepartments())
             {
-                MessageBox.Show(ex.Message);
+                lbDepartments.Items.Add(d.GetInfo());
+                cbDep.Items.Add(d.Name);
             }
         }
 
@@ -82,7 +90,7 @@ namespace KILR_Project
                 System.Data.DataRowView selectedItem = lbDepartments.SelectedItem as System.Data.DataRowView;
                 var relevantID = (int)selectedItem.Row.ItemArray[0];
 
-                DepartmentInformation departmentInfoForm = new DepartmentInformation(this, relevantID);
+                DepartmentInformation departmentInfoForm = new DepartmentInformation(this, relevantID, this.dm);
                 CreateDepartment createDepartmentForm = new CreateDepartment(this);
 
                 departmentInfoForm.Show();
@@ -337,10 +345,16 @@ namespace KILR_Project
             {
                 PopulateEmployeesList();
                 PopulateDepartmentsList();
+                RefreshStock();
             }
         }
 
         private void HeaderPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void EmployeesPage_Click(object sender, EventArgs e)
         {
 
         }

@@ -237,6 +237,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EditDepartment";
             this.Text = "EditDepartment";
+            this.Load += new System.EventHandler(this.EditDepartment_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);

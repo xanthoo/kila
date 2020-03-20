@@ -98,10 +98,11 @@ namespace KILR_Project
             }
             return null;
         }
-        public void AddEmployee(string fName, string lastName, int dep, Position position, string email, string address, Shift shift, String HireDate, double hourlyWage)
+        public void AddEmployee(string fName, string lastName, Department d, Position position, string email, string address, Shift shift, String HireDate, double hourlyWage)
         {
+            
             string query = "INSERT INTO employee(`id`, `firstname`, `lastname`, `email`, `address`,`department`, `position`, `shift`, `hiredate`, `hourlywage`) VALUES (NULL, '" +
-                fName + "', '" + lastName + "', '" + email  + "', '" + address + "', '" + dep + "', '" + position + "', '" + shift + "', '" + HireDate + "', '" + hourlyWage + "')";
+            fName + "', '" + lastName + "', '" + email  + "', '" + address + "', '" + d.Id + "', '" + position + "', '" + shift + "', '" + HireDate + "', '" + hourlyWage + "')";
             MySqlConnection databaseConnection = new MySqlConnection(connectionString);
             MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
             MySqlDataReader MyReader;
@@ -146,5 +147,16 @@ namespace KILR_Project
             }
             return false;
         }
+        public List<Employee>GetAssoicatedEmployees(Department d)
+        {
+            List<Employee> employees = new List<Employee>();
+            foreach(Employee e in d.GetEmployees())
+            {
+                employees.Add(e);
+            }
+            return employees;
+        }
+
+
     }
 }
