@@ -49,15 +49,19 @@ namespace KILR_Project
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
-            MySqlConnection connection = new MySqlConnection(connectionString);
-            MySqlCommand commandDatabase = new MySqlCommand("DELETE from department where id=" + departmentId, connection);
-            commandDatabase.CommandTimeout = 60;
-            connection.Open();
-            MySqlDataReader myReader = commandDatabase.ExecuteReader();
-            mainDepartmentInfo.PopulateList();
+            if (DialogResult.Yes == MessageBox.Show("Do you want to delete this department ?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning))
+            {
+                MySqlConnection connection = new MySqlConnection(connectionString);
+                MySqlCommand commandDatabase = new MySqlCommand("DELETE from department where id=" + departmentId, connection);
+                commandDatabase.CommandTimeout = 60;
+                connection.Open();
+                MySqlDataReader myReader = commandDatabase.ExecuteReader();
+                mainDepartmentInfo.PopulateList();
 
-            MessageBox.Show("The department has been deleted!");
-            this.Close();
+                MessageBox.Show("The department has been deleted!");
+                this.Close();
+            }
+          
 
         }
 

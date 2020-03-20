@@ -21,6 +21,8 @@ namespace KILR_Project
         }
         private void btnConfirm_Click(object sender, EventArgs e)
         {
+
+
             string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=kilrdb;";
             string query = "INSERT INTO department(`id`, `name`, `staffamount`, `managerid`,`date`) VALUES (NULL, '" + tbDepartmentName.Text + "', '" + tbMaxPeople.Text + "', '" + tbMinPeople.Text + "', '" + DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss") + "')";
             MySqlConnection databaseConnection = new MySqlConnection(connectionString);
@@ -30,12 +32,26 @@ namespace KILR_Project
 
             try
             {
-                databaseConnection.Open();
-                MySqlDataReader myReader = commandDatabase.ExecuteReader();
+                if (!string.IsNullOrWhiteSpace(tbDepartmentName.Text) && !string.IsNullOrWhiteSpace(tbMaxPeople.Text) && !string.IsNullOrWhiteSpace(tbMinPeople.Text))
+                {
+                    int parsedValue;
+                    if (!int.TryParse(tbMaxPeople.Text, out parsedValue))
+                    {
+                        MessageBox.Show("'Staff number' and 'manager id' are number fields only!");
+                        return;
+                    }
+                    if (!int.TryParse(tbMinPeople.Text, out parsedValue))
+                    {
+                        MessageBox.Show("'Staff number' and 'manager id' are number fields only!");
+                        return;
+                    }
+                    databaseConnection.Open();
+                    MySqlDataReader myReader = commandDatabase.ExecuteReader();
 
-                MessageBox.Show("Department succesfully created");
-                mainDepartmentInfo.PopulateList();
-                databaseConnection.Close();
+                    MessageBox.Show("Department succesfully created");
+                    mainDepartmentInfo.PopulateList();
+                    databaseConnection.Close();
+                }
             }
             catch (Exception ex)
             {

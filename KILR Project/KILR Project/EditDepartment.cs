@@ -34,12 +34,26 @@ namespace KILR_Project
 
             try
             {
-                databaseConnection.Open();
-                MySqlDataReader myReader = commandDatabase.ExecuteReader();
+                if (!string.IsNullOrWhiteSpace(tbDepartmentName.Text) && !string.IsNullOrWhiteSpace(tbMaxPeople.Text) && !string.IsNullOrWhiteSpace(tbMinPeople.Text))
+                {
+                    int parsedValue;
+                    if (!int.TryParse(tbMaxPeople.Text, out parsedValue))
+                    {
+                        MessageBox.Show("'Staff number' and 'manager id' are number fields only!");
+                        return;
+                    }
+                    if (!int.TryParse(tbMinPeople.Text, out parsedValue))
+                    {
+                        MessageBox.Show("'Staff number' and 'manager id' are number fields only!");
+                        return;
+                    }
+                    databaseConnection.Open();
+                    MySqlDataReader myReader = commandDatabase.ExecuteReader();
 
-                MessageBox.Show("Department succesfully edited");
-                mainDepartmentInfo.PopulateList();
-                databaseConnection.Close();
+                    MessageBox.Show("Department succesfully edited");
+                    mainDepartmentInfo.PopulateList();
+                    databaseConnection.Close();
+                }
             }
             catch (Exception ex)
             {
