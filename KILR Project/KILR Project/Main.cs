@@ -19,20 +19,48 @@ namespace KILR_Project
         string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=kilrdb;";
         StockManager sm;
         User user;
+        Employee employee;
+        EmployeeManager empMang;
         public Main(object user)
         {
             InitializeComponent();
             this.user = user as User;
 
             sm = new StockManager("Kristian");
+            empMang = new EmployeeManager();
 
-            PopulateList();
+            PopulateDepartmentsList();
+            PopulateEmployeesList();
             RefreshStock();
         }
 
         private void Button4_Click(object sender, EventArgs e)
         {
+            string HireDate = DateTime.Today.ToString("yyyy-MM-dd");
+            empMang.AddEmployee(tbFName.Text, tbSurname.Text, cbDep.SelectedIndex, (Position)cbPostition.SelectedIndex, tbEmail.Text, tbAddress.Text, (Shift)cbShift.SelectedIndex, HireDate, Convert.ToDouble(tbHWage.Text));
+            PopulateEmployeesList();
+        }
 
+        public void PopulateDepartmentsList()
+        {
+            try
+            {
+                MySqlConnection connection = new MySqlConnection(connectionString);
+                DataTable dt = new DataTable();
+                MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM department", connection);
+                connection.Open();
+
+                adapter.Fill(dt);
+                lbDepartments.DataSource = dt;
+                lbDepartments.DisplayMember = "name";
+
+                cbDep.DataSource = dt;
+                cbDep.DisplayMember = "name";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void GroupBox5_Enter(object sender, EventArgs e)
@@ -147,7 +175,6 @@ namespace KILR_Project
                 {
                     Product stock = sm.FindStock(id);
                     StockDetails sd = new StockDetails(stock, this, sm);
-                    this.Visible = false;
                     sd.Show();
                 }
                 else
@@ -268,23 +295,48 @@ namespace KILR_Project
         {
 
         }
-        public void PopulateList()
+        public void PopulateEmployeesList()
         {
-            try
+            lbEmployees.Items.Clear();
+            foreach (Employee e in empMang.GetAllEmployees())
             {
-                MySqlConnection connection = new MySqlConnection(connectionString);
-                DataTable dt = new DataTable();
-                MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM department", connection);
-                connection.Open();
-
-                adapter.Fill(dt);
-                lbDepartments.DataSource = null;
-                lbDepartments.DataSource = dt;
-                lbDepartments.DisplayMember = "name";
+                lbEmployees.Items.Add(e.GetInfo());
             }
-            catch (Exception ex)
+        }
+
+        private void btnEmpInfo_Click(object sender, EventArgs e)
+        {
+            MySqlConnection Cn = new MySqlConnection(connectionString);
+            MySqlCommand Cmd = Cn.CreateCommand();
+            Cmd.CommandText = $"select id from employee where id= {tbFindEmployee.Text}";
+            Cn.Open();
+            MySqlDataReader Rdr = Cmd.ExecuteReader();
+            int id = -1;
+            while (Rdr.Read())
             {
-                MessageBox.Show(ex.Message);
+                id = Convert.ToInt32(Rdr["id"]);
+            }
+            if (id > 0)
+            {
+                EmployeeInformation empInfo = new EmployeeInformation(id);
+                empInfo.Visible = true;
+            }
+            else
+            {
+                MessageBox.Show("No user with that ID!");
+            }
+        }
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void tabControl1_Selected(object sender, TabControlEventArgs e)
+        {
+            if (e.TabPageIndex == 0)
+            {
+                PopulateEmployeesList();
+                PopulateDepartmentsList();
             }
         }
 

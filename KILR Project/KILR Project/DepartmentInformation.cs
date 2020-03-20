@@ -54,7 +54,7 @@ namespace KILR_Project
             commandDatabase.CommandTimeout = 60;
             connection.Open();
             MySqlDataReader myReader = commandDatabase.ExecuteReader();
-            mainDepartmentInfo.PopulateList();
+            mainDepartmentInfo.PopulateDepartmentsList();
 
             MessageBox.Show("The department has been deleted!");
             this.Close();
