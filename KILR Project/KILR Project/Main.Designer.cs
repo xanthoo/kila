@@ -532,7 +532,7 @@
             this.groupBox3.Size = new System.Drawing.Size(253, 264);
             this.groupBox3.TabIndex = 17;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Add/Change Stock";
+            this.groupBox3.Text = "Add Stock";
             // 
             // tbStockBuying
             // 
