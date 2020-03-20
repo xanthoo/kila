@@ -48,7 +48,7 @@ namespace KILR_Project
         {
             try
             {
-                string name = tbName.Text;
+                string name = tbName.Text.Trim();
                 int quantity = Convert.ToInt32(tbQuantity.Text);
                 decimal sellingPrice = Math.Round(Convert.ToDecimal(tbSellingPrice.Text), 2);
                 decimal buyingPrice = Math.Round(Convert.ToDecimal(tbBuyingPrice.Text), 2);

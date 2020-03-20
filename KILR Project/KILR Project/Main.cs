@@ -23,22 +23,7 @@ namespace KILR_Project
             InitializeComponent();
             sm = new StockManager("Kristian");
 
-            try
-            {
-                MySqlConnection connection = new MySqlConnection(connectionString);
-                DataTable dt = new DataTable();
-                MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM department", connection);
-                connection.Open();
-
-                adapter.Fill(dt);
-                lbDepartments.DataSource = null;
-                lbDepartments.DataSource = dt;
-                lbDepartments.DisplayMember = "name";
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            PopulateList();
             RefreshStock();
         }
         private void Button4_Click(object sender, EventArgs e)
@@ -62,7 +47,10 @@ namespace KILR_Project
 
             if (lbDepartments.SelectedIndex > -1)
             {
-                DepartmentInformation departmentInfoForm = new DepartmentInformation(this);
+                System.Data.DataRowView selectedItem = lbDepartments.SelectedItem as System.Data.DataRowView;
+                var relevantID = (int)selectedItem.Row.ItemArray[0];
+
+                DepartmentInformation departmentInfoForm = new DepartmentInformation(this, relevantID);
                 CreateDepartment createDepartmentForm = new CreateDepartment(this);
 
                 departmentInfoForm.Show();
@@ -95,7 +83,7 @@ namespace KILR_Project
         {
             try
             {
-                string name = tbStockName.Text;
+                string name = tbStockName.Text.Trim();
                 int quantity = Convert.ToInt32(tbStockQuantity.Text);
                 decimal sellingPrice = Math.Round(Convert.ToDecimal(tbStockPrice.Text), 2);
                 decimal buyingPrice = Math.Round(Convert.ToDecimal(tbStockBuying.Text), 2);
@@ -269,6 +257,30 @@ namespace KILR_Project
                         lbStock.Items.Add(p.GetInfo());
                     }
                 }
+            }
+        }
+
+        private void TabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+        public void PopulateList()
+        {
+            try
+            {
+                MySqlConnection connection = new MySqlConnection(connectionString);
+                DataTable dt = new DataTable();
+                MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM department", connection);
+                connection.Open();
+
+                adapter.Fill(dt);
+                lbDepartments.DataSource = null;
+                lbDepartments.DataSource = dt;
+                lbDepartments.DisplayMember = "name";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }

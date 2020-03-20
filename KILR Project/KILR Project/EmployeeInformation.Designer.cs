@@ -64,6 +64,7 @@
             this.HeaderPanel.Name = "HeaderPanel";
             this.HeaderPanel.Size = new System.Drawing.Size(986, 63);
             this.HeaderPanel.TabIndex = 14;
+            this.HeaderPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.HeaderPanel_Paint);
             // 
             // Jupiterlbl
             // 

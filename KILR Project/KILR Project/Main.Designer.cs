@@ -748,6 +748,7 @@
             this.tabPage1.Size = new System.Drawing.Size(925, 484);
             this.tabPage1.TabIndex = 3;
             this.tabPage1.Text = "Departments";
+            this.tabPage1.Click += new System.EventHandler(this.TabPage1_Click);
             // 
             // button2
             // 
