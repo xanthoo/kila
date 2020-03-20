@@ -88,6 +88,7 @@
     <Compile Include="DepartmentInformation.designer.cs">
       <DependentUpon>DepartmentInformation.cs</DependentUpon>
     </Compile>
+    <Compile Include="DepartmentManager.cs" />
     <Compile Include="EditDepartment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,7 +97,9 @@
     </Compile>
     <Compile Include="Employee.cs" />
     <Compile Include="EmployeeManager.cs" />
+    <Compile Include="Position.cs" />
     <Compile Include="Product.cs" />
+    <Compile Include="Shift.cs" />
     <Compile Include="StockManager.cs" />
     <Compile Include="UpdateDepartment.cs">
       <SubType>Form</SubType>

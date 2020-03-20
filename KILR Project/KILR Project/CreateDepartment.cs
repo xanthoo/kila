@@ -49,7 +49,7 @@ namespace KILR_Project
                     MySqlDataReader myReader = commandDatabase.ExecuteReader();
 
                     MessageBox.Show("Department succesfully created");
-                    mainDepartmentInfo.PopulateList();
+                    mainDepartmentInfo.PopulateDepartmentsList();
                     databaseConnection.Close();
                 }
             }

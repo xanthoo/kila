@@ -32,10 +32,10 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.employeesPage = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.rbAdmin = new System.Windows.Forms.RadioButton();
+            this.rbEmployees = new System.Windows.Forms.RadioButton();
+            this.rbManagers = new System.Windows.Forms.RadioButton();
             this.btnFilter = new System.Windows.Forms.Button();
-            this.chckbxEmps = new System.Windows.Forms.CheckBox();
-            this.chckbxAdmin = new System.Windows.Forms.CheckBox();
-            this.chkbxManagers = new System.Windows.Forms.CheckBox();
             this.HeaderPanel = new System.Windows.Forms.Panel();
             this.Jupiterlbl = new System.Windows.Forms.Label();
             this.gbSearch = new System.Windows.Forms.GroupBox();
@@ -44,13 +44,13 @@
             this.tbFindEmployee = new System.Windows.Forms.TextBox();
             this.lbEmployees = new System.Windows.Forms.ListBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.cbPostition = new System.Windows.Forms.ComboBox();
+            this.tbHWage = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.tbEmail = new System.Windows.Forms.TextBox();
             this.tbAddress = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.cbShift = new System.Windows.Forms.ComboBox();
             this.cbDep = new System.Windows.Forms.ComboBox();
             this.tbSurname = new System.Windows.Forms.TextBox();
             this.tbFName = new System.Windows.Forms.TextBox();
@@ -99,6 +99,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
+            this.cbPostition = new System.Windows.Forms.ComboBox();
+            this.cbShift = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.employeesPage.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -131,6 +133,8 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(933, 515);
             this.tabControl1.TabIndex = 1;
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
+            this.tabControl1.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabControl1_Selected);
             // 
             // employeesPage
             // 
@@ -149,16 +153,49 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.rbAdmin);
+            this.groupBox4.Controls.Add(this.rbEmployees);
+            this.groupBox4.Controls.Add(this.rbManagers);
             this.groupBox4.Controls.Add(this.btnFilter);
-            this.groupBox4.Controls.Add(this.chckbxEmps);
-            this.groupBox4.Controls.Add(this.chckbxAdmin);
-            this.groupBox4.Controls.Add(this.chkbxManagers);
             this.groupBox4.Location = new System.Drawing.Point(237, 292);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(192, 175);
             this.groupBox4.TabIndex = 14;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Filter by Job Position";
+            // 
+            // rbAdmin
+            // 
+            this.rbAdmin.AutoSize = true;
+            this.rbAdmin.Location = new System.Drawing.Point(33, 89);
+            this.rbAdmin.Name = "rbAdmin";
+            this.rbAdmin.Size = new System.Drawing.Size(104, 19);
+            this.rbAdmin.TabIndex = 20;
+            this.rbAdmin.TabStop = true;
+            this.rbAdmin.Text = "Administration";
+            this.rbAdmin.UseVisualStyleBackColor = true;
+            // 
+            // rbEmployees
+            // 
+            this.rbEmployees.AutoSize = true;
+            this.rbEmployees.Location = new System.Drawing.Point(33, 59);
+            this.rbEmployees.Name = "rbEmployees";
+            this.rbEmployees.Size = new System.Drawing.Size(82, 19);
+            this.rbEmployees.TabIndex = 19;
+            this.rbEmployees.TabStop = true;
+            this.rbEmployees.Text = "Employees";
+            this.rbEmployees.UseVisualStyleBackColor = true;
+            // 
+            // rbManagers
+            // 
+            this.rbManagers.AutoSize = true;
+            this.rbManagers.Location = new System.Drawing.Point(33, 29);
+            this.rbManagers.Name = "rbManagers";
+            this.rbManagers.Size = new System.Drawing.Size(77, 19);
+            this.rbManagers.TabIndex = 18;
+            this.rbManagers.TabStop = true;
+            this.rbManagers.Text = "Managers";
+            this.rbManagers.UseVisualStyleBackColor = true;
             // 
             // btnFilter
             // 
@@ -170,39 +207,6 @@
             this.btnFilter.TabIndex = 11;
             this.btnFilter.Text = "Filter";
             this.btnFilter.UseVisualStyleBackColor = false;
-            // 
-            // chckbxEmps
-            // 
-            this.chckbxEmps.AutoSize = true;
-            this.chckbxEmps.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.chckbxEmps.Location = new System.Drawing.Point(33, 87);
-            this.chckbxEmps.Name = "chckbxEmps";
-            this.chckbxEmps.Size = new System.Drawing.Size(101, 24);
-            this.chckbxEmps.TabIndex = 2;
-            this.chckbxEmps.Text = "Employees";
-            this.chckbxEmps.UseVisualStyleBackColor = true;
-            // 
-            // chckbxAdmin
-            // 
-            this.chckbxAdmin.AutoSize = true;
-            this.chckbxAdmin.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.chckbxAdmin.Location = new System.Drawing.Point(33, 57);
-            this.chckbxAdmin.Name = "chckbxAdmin";
-            this.chckbxAdmin.Size = new System.Drawing.Size(129, 24);
-            this.chckbxAdmin.TabIndex = 1;
-            this.chckbxAdmin.Text = "Administration";
-            this.chckbxAdmin.UseVisualStyleBackColor = true;
-            // 
-            // chkbxManagers
-            // 
-            this.chkbxManagers.AutoSize = true;
-            this.chkbxManagers.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.chkbxManagers.Location = new System.Drawing.Point(33, 27);
-            this.chkbxManagers.Name = "chkbxManagers";
-            this.chkbxManagers.Size = new System.Drawing.Size(96, 24);
-            this.chkbxManagers.TabIndex = 0;
-            this.chkbxManagers.Text = "Managers";
-            this.chkbxManagers.UseVisualStyleBackColor = true;
             // 
             // HeaderPanel
             // 
@@ -249,6 +253,7 @@
             this.btnEmpInfo.TabIndex = 9;
             this.btnEmpInfo.Text = "Employee Information";
             this.btnEmpInfo.UseVisualStyleBackColor = false;
+            this.btnEmpInfo.Click += new System.EventHandler(this.btnEmpInfo_Click);
             // 
             // label1
             // 
@@ -279,13 +284,15 @@
             // 
             this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(121)))), ((int)(((byte)(3)))));
             this.groupBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.groupBox2.Controls.Add(this.cbShift);
             this.groupBox2.Controls.Add(this.cbPostition);
+            this.groupBox2.Controls.Add(this.tbHWage);
+            this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.tbEmail);
             this.groupBox2.Controls.Add(this.tbAddress);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.cbShift);
             this.groupBox2.Controls.Add(this.cbDep);
             this.groupBox2.Controls.Add(this.tbSurname);
             this.groupBox2.Controls.Add(this.tbFName);
@@ -302,13 +309,22 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Add Employee";
             // 
-            // cbPostition
+            // tbHWage
             // 
-            this.cbPostition.FormattingEnabled = true;
-            this.cbPostition.Location = new System.Drawing.Point(87, 137);
-            this.cbPostition.Name = "cbPostition";
-            this.cbPostition.Size = new System.Drawing.Size(123, 23);
-            this.cbPostition.TabIndex = 17;
+            this.tbHWage.Location = new System.Drawing.Point(87, 177);
+            this.tbHWage.Name = "tbHWage";
+            this.tbHWage.Size = new System.Drawing.Size(123, 23);
+            this.tbHWage.TabIndex = 21;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label12.Location = new System.Drawing.Point(22, 181);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(55, 17);
+            this.label12.TabIndex = 20;
+            this.label12.Text = "HWage:";
             // 
             // label3
             // 
@@ -353,14 +369,6 @@
             this.label8.Size = new System.Drawing.Size(60, 17);
             this.label8.TabIndex = 12;
             this.label8.Text = "Address:";
-            // 
-            // cbShift
-            // 
-            this.cbShift.FormattingEnabled = true;
-            this.cbShift.Location = new System.Drawing.Point(290, 103);
-            this.cbShift.Name = "cbShift";
-            this.cbShift.Size = new System.Drawing.Size(123, 23);
-            this.cbShift.TabIndex = 11;
             // 
             // cbDep
             // 
@@ -881,6 +889,30 @@
             this.label2.TabIndex = 10;
             this.label2.Text = "Statistics";
             // 
+            // cbPostition
+            // 
+            this.cbPostition.FormattingEnabled = true;
+            this.cbPostition.Items.AddRange(new object[] {
+            "Employee",
+            "Manager",
+            "Administrator"});
+            this.cbPostition.Location = new System.Drawing.Point(87, 136);
+            this.cbPostition.Name = "cbPostition";
+            this.cbPostition.Size = new System.Drawing.Size(123, 23);
+            this.cbPostition.TabIndex = 22;
+            // 
+            // cbShift
+            // 
+            this.cbShift.FormattingEnabled = true;
+            this.cbShift.Items.AddRange(new object[] {
+            "Night",
+            "Day",
+            "Afternoon"});
+            this.cbShift.Location = new System.Drawing.Point(290, 103);
+            this.cbShift.Name = "cbShift";
+            this.cbShift.Size = new System.Drawing.Size(123, 23);
+            this.cbShift.TabIndex = 23;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -936,7 +968,6 @@
         private System.Windows.Forms.TextBox tbFindEmployee;
         private System.Windows.Forms.ListBox lbEmployees;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ComboBox cbShift;
         private System.Windows.Forms.ComboBox cbDep;
         private System.Windows.Forms.TextBox tbSurname;
         private System.Windows.Forms.TextBox tbFName;
@@ -956,7 +987,6 @@
         private System.Windows.Forms.Label stockIDlb;
         private System.Windows.Forms.TextBox tbFindStock;
         private System.Windows.Forms.Button btnStockInfo;
-        private System.Windows.Forms.ComboBox cbPostition;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox tbEmail;
         private System.Windows.Forms.TextBox tbAddress;
@@ -976,9 +1006,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Button btnFilter;
-        private System.Windows.Forms.CheckBox chckbxEmps;
-        private System.Windows.Forms.CheckBox chckbxAdmin;
-        private System.Windows.Forms.CheckBox chkbxManagers;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox8;
@@ -996,6 +1023,13 @@
         private System.Windows.Forms.Button btnFilterStock;
         private System.Windows.Forms.CheckBox cbInactive;
         private System.Windows.Forms.CheckBox cbActive;
+        private System.Windows.Forms.RadioButton rbAdmin;
+        private System.Windows.Forms.RadioButton rbEmployees;
+        private System.Windows.Forms.RadioButton rbManagers;
+        private System.Windows.Forms.TextBox tbHWage;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.ComboBox cbPostition;
+        private System.Windows.Forms.ComboBox cbShift;
     }
 }
 
