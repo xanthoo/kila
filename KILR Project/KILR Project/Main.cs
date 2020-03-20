@@ -287,5 +287,10 @@ namespace KILR_Project
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void HeaderPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
