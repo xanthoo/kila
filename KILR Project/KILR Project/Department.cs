@@ -45,7 +45,7 @@ namespace KILR_Project
             List<Employee> people = new List<Employee>();
             people.Clear();
             MySqlConnection connection = new MySqlConnection(connectionString);
-            string sql = " SELECT * FROM `employee` WHERE department = " + this.id + ";";
+            string sql = " SELECT * FROM `employee` WHERE department = " + this.id + " AND firedate IS NULL;";
             DataTable dt = new DataTable();
             MySqlDataAdapter adapter;
             adapter = new MySqlDataAdapter(sql, connection);
@@ -109,7 +109,7 @@ namespace KILR_Project
             List<Employee> people = new List<Employee>();
             people.Clear();
             MySqlConnection connection = new MySqlConnection(connectionString);
-            string sql = " SELECT * FROM `employee` WHERE department <> " + this.id + ";";
+            string sql = " SELECT * FROM `employee` WHERE department <> " + this.id + " AND firedate IS NULL;";
             DataTable dt = new DataTable();
             MySqlDataAdapter adapter;
             adapter = new MySqlDataAdapter(sql, connection);

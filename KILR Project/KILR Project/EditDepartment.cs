@@ -99,12 +99,21 @@ namespace KILR_Project
         {
             int foundId = -1;
             Department d2 = dm.GetDepartment(departmentId);
-            foreach (Employee employee in d2.GetOtherEmployees())
+            try
             {
-                if (employee.GetId() == Convert.ToInt32(tbFindEmployee.Text)) {
-                    foundId = employee.GetId();
-                    break;
+                foreach (Employee employee in d2.GetOtherEmployees())
+                {
+                    if (employee.GetId() == Convert.ToInt32(tbFindEmployee.Text))
+                    {
+                        foundId = employee.GetId();
+                        break;
+                    }
                 }
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Incorrect format!");
+                return;
             }
 
             if (foundId != -1)
@@ -166,6 +175,11 @@ namespace KILR_Project
             {
                 MessageBox.Show("Employee was not found!");
             }
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
         }
         //private Department FoundDepartment()
         //{

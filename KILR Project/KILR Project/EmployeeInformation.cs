@@ -35,7 +35,13 @@ namespace KILR_Project
                 lblHireDate.Text = Rdr["hiredate"].ToString();
                 lblEmail.Text = Rdr["email"].ToString();
                 //lblHireDate.Text = Rdr["firedate"].ToString();
-                lblDepts.Text = Rdr["department"].ToString();
+                if (Rdr["department"].ToString() == "-1")
+                {
+                    lblDepts.Text = "No Department";
+                }
+                else {
+                    lblDepts.Text = Rdr["department"].ToString();
+                }
             }
 
             employeeManager = new EmployeeManager();

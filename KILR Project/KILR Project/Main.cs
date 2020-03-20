@@ -37,10 +37,18 @@ namespace KILR_Project
 
         private void Button4_Click(object sender, EventArgs e)
         {
-            string HireDate = DateTime.Today.ToString("yyyy-MM-dd");
+            try
+            {
+                string HireDate = DateTime.Today.ToString("yyyy-MM-dd");
             Department dep = dm.GetDepartmentByName(cbDep.SelectedItem.ToString());
             empMang.AddEmployee(tbFName.Text, tbSurname.Text, dep, (Position)cbPostition.SelectedIndex, tbEmail.Text, tbAddress.Text, (Shift)cbShift.SelectedIndex, HireDate, Convert.ToDouble(tbHWage.Text));
             PopulateEmployeesList();
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Incorrect format!");
+                return;
+            }
         }
 
         public void PopulateDepartmentsList()
@@ -68,7 +76,16 @@ namespace KILR_Project
 
         private void button7_Click(object sender, EventArgs e)
         {
-            Department department = dm.GetDepartment(Convert.ToInt32(textBoxDepartmentId.Text));
+            Department department = null;
+            try
+            {
+                department = dm.GetDepartment(Convert.ToInt32(textBoxDepartmentId.Text));
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Incorrect format!");
+                return;
+            }
             if (department == null)
             {
                 MessageBox.Show("Department not found.");
@@ -254,6 +271,16 @@ namespace KILR_Project
         {
             sm.GetAllStocks();
             lbStock.Items.Clear();
+
+            if (cbActive.Checked == false && cbInactive.Checked == false)
+            {
+                foreach (Product p in sm.GetAllStocks())
+                {
+                    lbStock.Items.Add(p.GetInfo());
+                }
+                return;
+            }
+
             foreach (Product p in sm.GetAllStocks())
             {
                 if (cbActive.Checked == true)
@@ -280,9 +307,38 @@ namespace KILR_Project
         public void PopulateEmployeesList()
         {
             lbEmployees.Items.Clear();
+            if (cbEmployees.Checked == false && cbAdministrators.Checked == false && cbManagers.Checked == false)
+            {
+                foreach (Employee e in empMang.GetAllEmployees())
+                {
+                    lbEmployees.Items.Add(e.GetInfo());
+                }
+                return;
+            }
+
             foreach (Employee e in empMang.GetAllEmployees())
             {
-                lbEmployees.Items.Add(e.GetInfo());
+                if (cbEmployees.Checked == true)
+                {
+                    if (e.GetEmployeePosition() == Position.EMPLOYEE)
+                    {
+                        lbEmployees.Items.Add(e.GetInfo());
+                    }
+                }
+                if (cbAdministrators.Checked == true)
+                {
+                    if (e.GetEmployeePosition() == Position.ADMINISTRATOR)
+                    {
+                        lbEmployees.Items.Add(e.GetInfo());
+                    }
+                }
+                if (cbManagers.Checked == true)
+                {
+                    if (e.GetEmployeePosition() == Position.MANAGER)
+                    {
+                        lbEmployees.Items.Add(e.GetInfo());
+                    }
+                }
             }
         }
 
@@ -340,7 +396,7 @@ namespace KILR_Project
 
         private void btnFilter_Click(object sender, EventArgs e)
         {
-
+            PopulateEmployeesList();
         }
     }
 }

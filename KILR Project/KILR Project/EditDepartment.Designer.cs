@@ -47,6 +47,9 @@
             this.label11 = new System.Windows.Forms.Label();
             this.lbDepartmentEmployees = new System.Windows.Forms.ListBox();
             this.lbOtherEmployees = new System.Windows.Forms.ListBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -233,12 +236,43 @@
             this.lbOtherEmployees.Size = new System.Drawing.Size(173, 355);
             this.lbOtherEmployees.TabIndex = 44;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(1782, -25);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(94, 13);
+            this.label4.TabIndex = 44;
+            this.label4.Text = "Employee number:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(313, 60);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(98, 13);
+            this.label5.TabIndex = 44;
+            this.label5.Text = "All other employees";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(503, 60);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(115, 13);
+            this.label6.TabIndex = 45;
+            this.label6.Text = "Department employees";
+            // 
             // EditDepartment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(121)))), ((int)(((byte)(3)))));
             this.ClientSize = new System.Drawing.Size(702, 624);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.lbOtherEmployees);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnGoBack);
@@ -257,6 +291,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -279,5 +314,8 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ListBox lbDepartmentEmployees;
         private System.Windows.Forms.ListBox lbOtherEmployees;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
     }
 }
