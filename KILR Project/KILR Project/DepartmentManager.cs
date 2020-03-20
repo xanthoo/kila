@@ -64,12 +64,12 @@ namespace KILR_Project
             }
             return null;
         }
-        public List<Department> GetDepartments()
+        public List<Department> GetDepartments(string filterName = "")
         {
             List<Department> departments = new List<Department>();
             departments.Clear();
             MySqlConnection connection = new MySqlConnection(connectionString);
-            string sql = " SELECT * FROM department;";
+            string sql = "SELECT * FROM department WHERE name LIKE '%" + filterName + "%';";
             MySqlCommand cmd = new MySqlCommand(sql, connection);
             connection.Open();
             MySqlDataReader reader = cmd.ExecuteReader();

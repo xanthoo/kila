@@ -47,6 +47,9 @@ namespace KILR_Project
         public String FiredDate { get; set; }
         public decimal HourlyWage { get; set; }
         public int Id { get; set; }
+        public int GetId() { 
+            return this.id;
+        }
 
         public String GetInfo()
         {

@@ -45,26 +45,10 @@ namespace KILR_Project
 
         public void PopulateDepartmentsList()
         {
-            //try
-            //{
-            //    MySqlConnection connection = new MySqlConnection(connectionString);
-            //    DataTable dt = new DataTable();
-            //    MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM department", connection);
-            //    connection.Open();
-
-            //    adapter.Fill(dt);
-            //    lbDepartments.DataSource = dt;
-            //    lbDepartments.DisplayMember = "name";
-
-            //    cbDep.DataSource = dt;
-            //    cbDep.DisplayMember = "name";
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message);
-            //}
+            List<Department> departments = dm.GetDepartments();
             lbDepartments.Items.Clear();
-            foreach(Department d in dm.GetDepartments())
+            cbDep.Items.Clear();
+            foreach (Department d in departments)
             {
                 lbDepartments.Items.Add(d.GetInfo());
                 cbDep.Items.Add(d.Name);
@@ -84,13 +68,14 @@ namespace KILR_Project
 
         private void button7_Click(object sender, EventArgs e)
         {
-
-            if (lbDepartments.SelectedIndex > -1)
+            Department department = dm.GetDepartment(Convert.ToInt32(textBoxDepartmentId.Text));
+            if (department == null)
             {
-                System.Data.DataRowView selectedItem = lbDepartments.SelectedItem as System.Data.DataRowView;
-                var relevantID = (int)selectedItem.Row.ItemArray[0];
-
-                DepartmentInformation departmentInfoForm = new DepartmentInformation(this, relevantID, this.dm);
+                MessageBox.Show("Department not found.");
+            }
+            else
+            {
+                DepartmentInformation departmentInfoForm = new DepartmentInformation(this, Convert.ToInt32(textBoxDepartmentId.Text), this.dm);
                 CreateDepartment createDepartmentForm = new CreateDepartment(this);
 
                 departmentInfoForm.Show();
@@ -100,22 +85,11 @@ namespace KILR_Project
 
         private void textBox8_TextChanged(object sender, EventArgs e)
         {
-            try
+            List<Department> departments = dm.GetDepartments(textBox8.Text);
+            lbDepartments.Items.Clear();
+            foreach (Department d in departments)
             {
-                MySqlConnection connection = new MySqlConnection(connectionString);
-                DataTable dt = new DataTable();
-                MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM department WHERE name LIKE '%" + textBox8.Text + "%'", connection);
-                connection.Open();
-
-                adapter.Fill(dt);
-                lbDepartments.DataSource = null;
-                lbDepartments.DataSource = dt;
-                lbDepartments.DisplayMember = "name";
-            }
-            catch (Exception ex)
-            {
-
-
+                lbDepartments.Items.Add(d.GetInfo());
             }
         }
 
@@ -355,6 +329,16 @@ namespace KILR_Project
         }
 
         private void EmployeesPage_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbDep_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnFilter_Click(object sender, EventArgs e)
         {
 
         }

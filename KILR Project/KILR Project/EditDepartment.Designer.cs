@@ -46,6 +46,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label11 = new System.Windows.Forms.Label();
             this.lbDepartmentEmployees = new System.Windows.Forms.ListBox();
+            this.lbOtherEmployees = new System.Windows.Forms.ListBox();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -173,6 +174,7 @@
             this.btnRmvEmp.TabIndex = 43;
             this.btnRmvEmp.Text = "Remove Employee from this Department";
             this.btnRmvEmp.UseVisualStyleBackColor = false;
+            this.btnRmvEmp.Click += new System.EventHandler(this.btnRmvEmp_Click);
             // 
             // btnAddEmp
             // 
@@ -184,6 +186,7 @@
             this.btnAddEmp.TabIndex = 42;
             this.btnAddEmp.Text = "Add Employee to this Department";
             this.btnAddEmp.UseVisualStyleBackColor = false;
+            this.btnAddEmp.Click += new System.EventHandler(this.btnAddEmp_Click);
             // 
             // tbFindEmployee
             // 
@@ -217,10 +220,18 @@
             // lbDepartmentEmployees
             // 
             this.lbDepartmentEmployees.FormattingEnabled = true;
-            this.lbDepartmentEmployees.Location = new System.Drawing.Point(346, 76);
+            this.lbDepartmentEmployees.Location = new System.Drawing.Point(506, 76);
             this.lbDepartmentEmployees.Name = "lbDepartmentEmployees";
-            this.lbDepartmentEmployees.Size = new System.Drawing.Size(263, 355);
+            this.lbDepartmentEmployees.Size = new System.Drawing.Size(173, 355);
             this.lbDepartmentEmployees.TabIndex = 42;
+            // 
+            // lbOtherEmployees
+            // 
+            this.lbOtherEmployees.FormattingEnabled = true;
+            this.lbOtherEmployees.Location = new System.Drawing.Point(316, 76);
+            this.lbOtherEmployees.Name = "lbOtherEmployees";
+            this.lbOtherEmployees.Size = new System.Drawing.Size(173, 355);
+            this.lbOtherEmployees.TabIndex = 44;
             // 
             // EditDepartment
             // 
@@ -228,6 +239,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(121)))), ((int)(((byte)(3)))));
             this.ClientSize = new System.Drawing.Size(702, 624);
+            this.Controls.Add(this.lbOtherEmployees);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnGoBack);
             this.Controls.Add(this.btnConfirm);
@@ -266,5 +278,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ListBox lbDepartmentEmployees;
+        private System.Windows.Forms.ListBox lbOtherEmployees;
     }
 }

@@ -72,8 +72,9 @@ namespace KILR_Project
 
         private void btnEditDep_Click(object sender, EventArgs e)
         {
- 
-            EditDepartment editDepartmentForm = new EditDepartment(this.mainDepartmentInfo,depInfo, departmentId);
+            Console.WriteLine("departmentId");
+            Console.WriteLine(departmentId);
+            EditDepartment editDepartmentForm = new EditDepartment(this.mainDepartmentInfo, depInfo, departmentId);
             editDepartmentForm.Show();
             this.Close();
         }
@@ -89,8 +90,8 @@ namespace KILR_Project
         }
         private void RefreshList()
         {
-            lbDepEmps.Items.Clear();
             Department d = dm.GetDepartment(departmentId);
+            lbDepEmps.Items.Clear();
             foreach (Employee e in d.GetEmployees())
             {
                 lbDepEmps.Items.Add(e.GetInfo());

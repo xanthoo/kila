@@ -45,23 +45,12 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.gbSearch = new System.Windows.Forms.GroupBox();
-            this.btnEmpInfo = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
-            this.tbFindEmployee = new System.Windows.Forms.TextBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.btnFilter = new System.Windows.Forms.Button();
-            this.chkbxEmps = new System.Windows.Forms.CheckBox();
-            this.chkbxAdmin = new System.Windows.Forms.CheckBox();
-            this.chckbxMngrs = new System.Windows.Forms.CheckBox();
             this.btnEditDep = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
             this.btnGo = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.gbSearch.SuspendLayout();
-            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -231,103 +220,6 @@
             this.label7.TabIndex = 39;
             this.label7.Text = "Manager ID:";
             // 
-            // gbSearch
-            // 
-            this.gbSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(121)))), ((int)(((byte)(3)))));
-            this.gbSearch.Controls.Add(this.btnEmpInfo);
-            this.gbSearch.Controls.Add(this.label11);
-            this.gbSearch.Controls.Add(this.tbFindEmployee);
-            this.gbSearch.Location = new System.Drawing.Point(12, 373);
-            this.gbSearch.Name = "gbSearch";
-            this.gbSearch.Size = new System.Drawing.Size(180, 175);
-            this.gbSearch.TabIndex = 43;
-            this.gbSearch.TabStop = false;
-            this.gbSearch.Text = "Search for Employee";
-            // 
-            // btnEmpInfo
-            // 
-            this.btnEmpInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(182)))), ((int)(((byte)(3)))));
-            this.btnEmpInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEmpInfo.Location = new System.Drawing.Point(31, 76);
-            this.btnEmpInfo.Name = "btnEmpInfo";
-            this.btnEmpInfo.Size = new System.Drawing.Size(130, 93);
-            this.btnEmpInfo.TabIndex = 9;
-            this.btnEmpInfo.Text = "Employee Information";
-            this.btnEmpInfo.UseVisualStyleBackColor = false;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(38, 23);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(123, 17);
-            this.label11.TabIndex = 8;
-            this.label11.Text = "Employee number:";
-            // 
-            // tbFindEmployee
-            // 
-            this.tbFindEmployee.Location = new System.Drawing.Point(31, 41);
-            this.tbFindEmployee.Name = "tbFindEmployee";
-            this.tbFindEmployee.Size = new System.Drawing.Size(132, 25);
-            this.tbFindEmployee.TabIndex = 7;
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.btnFilter);
-            this.groupBox4.Controls.Add(this.chkbxEmps);
-            this.groupBox4.Controls.Add(this.chkbxAdmin);
-            this.groupBox4.Controls.Add(this.chckbxMngrs);
-            this.groupBox4.Location = new System.Drawing.Point(198, 373);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(192, 175);
-            this.groupBox4.TabIndex = 44;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Filter by Job Position";
-            // 
-            // btnFilter
-            // 
-            this.btnFilter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(182)))), ((int)(((byte)(3)))));
-            this.btnFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFilter.Location = new System.Drawing.Point(33, 124);
-            this.btnFilter.Name = "btnFilter";
-            this.btnFilter.Size = new System.Drawing.Size(130, 45);
-            this.btnFilter.TabIndex = 11;
-            this.btnFilter.Text = "Filter";
-            this.btnFilter.UseVisualStyleBackColor = false;
-            // 
-            // chkbxEmps
-            // 
-            this.chkbxEmps.AutoSize = true;
-            this.chkbxEmps.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.chkbxEmps.Location = new System.Drawing.Point(33, 87);
-            this.chkbxEmps.Name = "chkbxEmps";
-            this.chkbxEmps.Size = new System.Drawing.Size(101, 24);
-            this.chkbxEmps.TabIndex = 2;
-            this.chkbxEmps.Text = "Employees";
-            this.chkbxEmps.UseVisualStyleBackColor = true;
-            // 
-            // chkbxAdmin
-            // 
-            this.chkbxAdmin.AutoSize = true;
-            this.chkbxAdmin.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.chkbxAdmin.Location = new System.Drawing.Point(33, 57);
-            this.chkbxAdmin.Name = "chkbxAdmin";
-            this.chkbxAdmin.Size = new System.Drawing.Size(129, 24);
-            this.chkbxAdmin.TabIndex = 1;
-            this.chkbxAdmin.Text = "Administration";
-            this.chkbxAdmin.UseVisualStyleBackColor = true;
-            // 
-            // chckbxMngrs
-            // 
-            this.chckbxMngrs.AutoSize = true;
-            this.chckbxMngrs.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.chckbxMngrs.Location = new System.Drawing.Point(33, 27);
-            this.chckbxMngrs.Name = "chckbxMngrs";
-            this.chckbxMngrs.Size = new System.Drawing.Size(96, 24);
-            this.chckbxMngrs.TabIndex = 0;
-            this.chckbxMngrs.Text = "Managers";
-            this.chckbxMngrs.UseVisualStyleBackColor = true;
-            // 
             // btnEditDep
             // 
             this.btnEditDep.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(182)))), ((int)(((byte)(3)))));
@@ -376,8 +268,6 @@
             this.Controls.Add(this.btnGo);
             this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.btnEditDep);
-            this.Controls.Add(this.groupBox4);
-            this.Controls.Add(this.gbSearch);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel2);
@@ -395,10 +285,6 @@
             this.panel2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.gbSearch.ResumeLayout(false);
-            this.gbSearch.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -419,15 +305,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.GroupBox gbSearch;
-        private System.Windows.Forms.Button btnEmpInfo;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox tbFindEmployee;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Button btnFilter;
-        private System.Windows.Forms.CheckBox chkbxEmps;
-        private System.Windows.Forms.CheckBox chkbxAdmin;
-        private System.Windows.Forms.CheckBox chckbxMngrs;
         private System.Windows.Forms.Button btnEditDep;
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.Button btnGo;
