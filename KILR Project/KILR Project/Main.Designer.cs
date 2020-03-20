@@ -60,6 +60,11 @@
             this.firstNamelbl = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
             this.stockPage = new System.Windows.Forms.TabPage();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.btnFilterStock = new System.Windows.Forms.Button();
+            this.cbInactive = new System.Windows.Forms.CheckBox();
+            this.cbActive = new System.Windows.Forms.CheckBox();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.tbStockBuying = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -101,6 +106,7 @@
             this.gbSearch.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.stockPage.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.Stock.SuspendLayout();
@@ -433,6 +439,8 @@
             // stockPage
             // 
             this.stockPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(121)))), ((int)(((byte)(3)))));
+            this.stockPage.Controls.Add(this.groupBox6);
+            this.stockPage.Controls.Add(this.btnRefresh);
             this.stockPage.Controls.Add(this.groupBox3);
             this.stockPage.Controls.Add(this.groupBox1);
             this.stockPage.Controls.Add(this.lbStock);
@@ -444,6 +452,66 @@
             this.stockPage.TabIndex = 1;
             this.stockPage.Text = "Stock";
             this.stockPage.Click += new System.EventHandler(this.StockPage_Click);
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.btnFilterStock);
+            this.groupBox6.Controls.Add(this.cbInactive);
+            this.groupBox6.Controls.Add(this.cbActive);
+            this.groupBox6.Location = new System.Drawing.Point(40, 343);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(192, 135);
+            this.groupBox6.TabIndex = 18;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Filter by Product Activity";
+            // 
+            // btnFilterStock
+            // 
+            this.btnFilterStock.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(182)))), ((int)(((byte)(3)))));
+            this.btnFilterStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFilterStock.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnFilterStock.Location = new System.Drawing.Point(32, 84);
+            this.btnFilterStock.Name = "btnFilterStock";
+            this.btnFilterStock.Size = new System.Drawing.Size(130, 45);
+            this.btnFilterStock.TabIndex = 11;
+            this.btnFilterStock.Text = "Filter";
+            this.btnFilterStock.UseVisualStyleBackColor = false;
+            this.btnFilterStock.Click += new System.EventHandler(this.BtnFilterStock_Click);
+            // 
+            // cbInactive
+            // 
+            this.cbInactive.AutoSize = true;
+            this.cbInactive.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cbInactive.Location = new System.Drawing.Point(33, 57);
+            this.cbInactive.Name = "cbInactive";
+            this.cbInactive.Size = new System.Drawing.Size(81, 24);
+            this.cbInactive.TabIndex = 1;
+            this.cbInactive.Text = "Inactive";
+            this.cbInactive.UseVisualStyleBackColor = true;
+            // 
+            // cbActive
+            // 
+            this.cbActive.AutoSize = true;
+            this.cbActive.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cbActive.Location = new System.Drawing.Point(33, 27);
+            this.cbActive.Name = "cbActive";
+            this.cbActive.Size = new System.Drawing.Size(70, 24);
+            this.cbActive.TabIndex = 0;
+            this.cbActive.Text = "Active";
+            this.cbActive.UseVisualStyleBackColor = true;
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(182)))), ((int)(((byte)(3)))));
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnRefresh.Location = new System.Drawing.Point(299, 427);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(337, 51);
+            this.btnRefresh.TabIndex = 13;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.BtnRefresh_Click);
             // 
             // groupBox3
             // 
@@ -464,7 +532,7 @@
             this.groupBox3.Size = new System.Drawing.Size(253, 264);
             this.groupBox3.TabIndex = 17;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Add/Change Stock";
+            this.groupBox3.Text = "Add Stock";
             // 
             // tbStockBuying
             // 
@@ -539,6 +607,7 @@
             // 
             this.btnAddStock.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(182)))), ((int)(((byte)(3)))));
             this.btnAddStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddStock.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnAddStock.Location = new System.Drawing.Point(18, 182);
             this.btnAddStock.Name = "btnAddStock";
             this.btnAddStock.Size = new System.Drawing.Size(229, 66);
@@ -559,7 +628,7 @@
             this.groupBox1.Controls.Add(this.btnStockInfo);
             this.groupBox1.Location = new System.Drawing.Point(652, 66);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(253, 374);
+            this.groupBox1.Size = new System.Drawing.Size(253, 349);
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Manipulate Stock";
@@ -570,9 +639,9 @@
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.Location = new System.Drawing.Point(87, 141);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(69, 21);
+            this.label4.Size = new System.Drawing.Size(72, 21);
             this.label4.TabIndex = 12;
-            this.label4.Text = "Amount";
+            this.label4.Text = "Quantity";
             // 
             // tbStockAmount
             // 
@@ -586,7 +655,7 @@
             this.btnSell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(182)))), ((int)(((byte)(3)))));
             this.btnSell.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSell.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnSell.Location = new System.Drawing.Point(8, 296);
+            this.btnSell.Location = new System.Drawing.Point(8, 284);
             this.btnSell.Name = "btnSell";
             this.btnSell.Size = new System.Drawing.Size(239, 51);
             this.btnSell.TabIndex = 10;
@@ -627,6 +696,7 @@
             // 
             this.btnStockInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(182)))), ((int)(((byte)(3)))));
             this.btnStockInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStockInfo.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnStockInfo.Location = new System.Drawing.Point(6, 76);
             this.btnStockInfo.Name = "btnStockInfo";
             this.btnStockInfo.Size = new System.Drawing.Size(241, 51);
@@ -641,7 +711,7 @@
             this.lbStock.ItemHeight = 15;
             this.lbStock.Location = new System.Drawing.Point(299, 66);
             this.lbStock.Name = "lbStock";
-            this.lbStock.Size = new System.Drawing.Size(337, 409);
+            this.lbStock.Size = new System.Drawing.Size(337, 349);
             this.lbStock.TabIndex = 15;
             // 
             // Stock
@@ -678,6 +748,7 @@
             this.tabPage1.Size = new System.Drawing.Size(925, 484);
             this.tabPage1.TabIndex = 3;
             this.tabPage1.Text = "Departments";
+            this.tabPage1.Click += new System.EventHandler(this.TabPage1_Click);
             // 
             // button2
             // 
@@ -832,6 +903,8 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.stockPage.ResumeLayout(false);
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -918,6 +991,11 @@
         private System.Windows.Forms.TextBox tbStockAmount;
         private System.Windows.Forms.Button btnSell;
         private System.Windows.Forms.Button btnBuy;
+        private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.Button btnFilterStock;
+        private System.Windows.Forms.CheckBox cbInactive;
+        private System.Windows.Forms.CheckBox cbActive;
     }
 }
 

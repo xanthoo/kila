@@ -26,5 +26,10 @@ namespace KILR_Project
         {
 
         }
+
+        private void HeaderPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

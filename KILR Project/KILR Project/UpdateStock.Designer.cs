@@ -40,13 +40,13 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnGoBack = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.rbInactive = new System.Windows.Forms.RadioButton();
+            this.rbActive = new System.Windows.Forms.RadioButton();
             this.tbName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.stockNameLbl = new System.Windows.Forms.Label();
-            this.rbActive = new System.Windows.Forms.RadioButton();
-            this.rbInactive = new System.Windows.Forms.RadioButton();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -79,7 +79,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(570, 23);
+            this.label4.Location = new System.Drawing.Point(87, 23);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(95, 20);
             this.label4.TabIndex = 32;
@@ -89,7 +89,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label10.Location = new System.Drawing.Point(50, 22);
+            this.label10.Location = new System.Drawing.Point(554, 21);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(68, 20);
             this.label10.TabIndex = 31;
@@ -99,7 +99,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label9.Location = new System.Drawing.Point(315, 22);
+            this.label9.Location = new System.Drawing.Point(315, 21);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(93, 20);
             this.label9.TabIndex = 30;
@@ -114,14 +114,14 @@
             // 
             // tbBuyingPrice
             // 
-            this.tbBuyingPrice.Location = new System.Drawing.Point(541, 46);
+            this.tbBuyingPrice.Location = new System.Drawing.Point(58, 46);
             this.tbBuyingPrice.Name = "tbBuyingPrice";
             this.tbBuyingPrice.Size = new System.Drawing.Size(156, 25);
             this.tbBuyingPrice.TabIndex = 34;
             // 
             // tbQuantity
             // 
-            this.tbQuantity.Location = new System.Drawing.Point(21, 46);
+            this.tbQuantity.Location = new System.Drawing.Point(509, 46);
             this.tbQuantity.Name = "tbQuantity";
             this.tbQuantity.Size = new System.Drawing.Size(156, 25);
             this.tbQuantity.TabIndex = 35;
@@ -152,6 +152,7 @@
             this.btnGoBack.TabIndex = 37;
             this.btnGoBack.Text = "Go Back";
             this.btnGoBack.UseVisualStyleBackColor = false;
+            this.btnGoBack.Click += new System.EventHandler(this.BtnGoBack_Click);
             // 
             // groupBox2
             // 
@@ -162,14 +163,36 @@
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Location = new System.Drawing.Point(0, 94);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(467, 88);
+            this.groupBox2.Size = new System.Drawing.Size(377, 88);
             this.groupBox2.TabIndex = 37;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Update Stock Details";
             // 
+            // rbInactive
+            // 
+            this.rbInactive.AutoSize = true;
+            this.rbInactive.Location = new System.Drawing.Point(297, 45);
+            this.rbInactive.Name = "rbInactive";
+            this.rbInactive.Size = new System.Drawing.Size(73, 21);
+            this.rbInactive.TabIndex = 37;
+            this.rbInactive.TabStop = true;
+            this.rbInactive.Text = "Inactive";
+            this.rbInactive.UseVisualStyleBackColor = true;
+            // 
+            // rbActive
+            // 
+            this.rbActive.AutoSize = true;
+            this.rbActive.Location = new System.Drawing.Point(228, 45);
+            this.rbActive.Name = "rbActive";
+            this.rbActive.Size = new System.Drawing.Size(63, 21);
+            this.rbActive.TabIndex = 36;
+            this.rbActive.TabStop = true;
+            this.rbActive.Text = "Active";
+            this.rbActive.UseVisualStyleBackColor = true;
+            // 
             // tbName
             // 
-            this.tbName.Location = new System.Drawing.Point(21, 44);
+            this.tbName.Location = new System.Drawing.Point(58, 45);
             this.tbName.Name = "tbName";
             this.tbName.Size = new System.Drawing.Size(156, 25);
             this.tbName.TabIndex = 35;
@@ -178,7 +201,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(68, 20);
+            this.label2.Location = new System.Drawing.Point(105, 21);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(50, 20);
             this.label2.TabIndex = 31;
@@ -188,7 +211,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(357, 21);
+            this.label3.Location = new System.Drawing.Point(266, 21);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(50, 20);
             this.label3.TabIndex = 30;
@@ -205,38 +228,17 @@
             this.btnUpdate.TabIndex = 38;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.BtnUpdate_Click);
             // 
             // stockNameLbl
             // 
             this.stockNameLbl.AutoSize = true;
             this.stockNameLbl.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.stockNameLbl.Location = new System.Drawing.Point(281, 61);
+            this.stockNameLbl.Location = new System.Drawing.Point(321, 61);
             this.stockNameLbl.Name = "stockNameLbl";
             this.stockNameLbl.Size = new System.Drawing.Size(146, 32);
             this.stockNameLbl.TabIndex = 39;
             this.stockNameLbl.Text = "Stock Name";
-            // 
-            // rbActive
-            // 
-            this.rbActive.AutoSize = true;
-            this.rbActive.Location = new System.Drawing.Point(319, 45);
-            this.rbActive.Name = "rbActive";
-            this.rbActive.Size = new System.Drawing.Size(63, 21);
-            this.rbActive.TabIndex = 36;
-            this.rbActive.TabStop = true;
-            this.rbActive.Text = "Active";
-            this.rbActive.UseVisualStyleBackColor = true;
-            // 
-            // rbInactive
-            // 
-            this.rbInactive.AutoSize = true;
-            this.rbInactive.Location = new System.Drawing.Point(388, 45);
-            this.rbInactive.Name = "rbInactive";
-            this.rbInactive.Size = new System.Drawing.Size(73, 21);
-            this.rbInactive.TabIndex = 37;
-            this.rbInactive.TabStop = true;
-            this.rbInactive.Text = "Inactive";
-            this.rbInactive.UseVisualStyleBackColor = true;
             // 
             // UpdateStock
             // 
@@ -255,6 +257,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UpdateStock";
             this.Text = "Update Stock";
+            this.Load += new System.EventHandler(this.UpdateStock_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);

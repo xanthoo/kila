@@ -40,31 +40,6 @@ namespace KILR_Project
                 databaseConnection.Close();
             }
         }
-        public bool DisableStock(Product p)
-        {
-            if (CheckIfStockExists(p.ID) == false && (p.IsActive == false))
-            {
-                return false;
-            }
-            else
-            {
-                p.IsActive = false;
-                return true;
-            }
-        }
-        public bool EnableStock(Product p)
-        {
-                if (CheckIfStockExists(p.ID) == false && (p.IsActive == true))
-                {
-                    return false;
-                }
-                else
-                {
-                    GetAllStocks().Remove(p);
-                    p.IsActive = true;
-                    return true;
-                }
-        }
         public Product FindStock(int id)
         {
             foreach (Product p in GetAllStocks())
@@ -125,6 +100,38 @@ namespace KILR_Project
             connection.Open();
             int effectedRows = cmd.ExecuteNonQuery();
             connection.Close();
+        }
+        public bool UpdateStock(Product p)
+        {
+            if (CheckIfStockExists(p.ID) == true)
+            {
+                MySqlConnection connection = new MySqlConnection(connectionString);
+                if (p.IsActive == true)
+                {
+                    string sql = " UPDATE `product` SET `productname` = '" + p.Name + "', `quantity` = '" + p.Quanitity + "', `sellingprice` = '" + p.SellingPrice + 
+                    "', `buyingprice` = '" + p.BuyingPrice + "', `stockactivity` = '"+1+"' WHERE `product`.`productid` = " + p.ID + ";";
+                    MySqlCommand cmd = new MySqlCommand(sql, connection);
+                    connection.Open();
+                    int effectedRows = cmd.ExecuteNonQuery();
+                    connection.Close();
+                    return true;
+
+                }
+                else
+                {
+                    string sql = " UPDATE `product` SET `productname` = '" + p.Name + "', `quantity` = '" + p.Quanitity + "', `sellingprice` = '" + p.SellingPrice +
+                        "', `buyingprice` = '" + p.BuyingPrice + "', `stockactivity` = '" + 0 + "' WHERE `product`.`productid` = " + p.ID + ";";
+                    MySqlCommand cmd = new MySqlCommand(sql, connection);
+                    connection.Open();
+                    int effectedRows = cmd.ExecuteNonQuery();
+                    connection.Close();
+                    return true;
+                }
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 
