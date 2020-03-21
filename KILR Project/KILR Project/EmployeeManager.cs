@@ -125,7 +125,7 @@ namespace KILR_Project
                 MySqlConnection connection = new MySqlConnection(connectionString);
                 MySqlCommand cmd = connection.CreateCommand();
                 string FireDate = DateTime.Today.ToString("yyyy-MM-dd");
-                cmd.CommandText = $"UPDATE employee SET firedate = " + FireDate + " WHERE id = " + id;
+                cmd.CommandText = $"UPDATE `employee` SET firedate = " + FireDate + " WHERE id = " +id+ "";
                 connection.Open();
                 MySqlDataReader Rdr = cmd.ExecuteReader();
                 return true;
@@ -136,11 +136,11 @@ namespace KILR_Project
                 return false;
             }
         }
-        public bool CheckIfEmployeeExists(Employee e)
+        public bool CheckIfEmployeeExists(int id)
         {
             foreach (Employee employee in GetAllEmployees())
             {
-                if (employee == e)
+                if (employee.Id == id)
                 {
                     return true;
                 }

@@ -32,8 +32,15 @@ namespace KILR_Project
             this.isActive = isActive;
         }
         public string GetInfo()
-        { 
-            return $"Id: {this.productId} - Name: {this.productName} - Current Quantitiy: {this.quanitity}";
+        {
+            if (this.IsActive == true)
+            {
+                return $"Id: {this.productId} - Name: {this.productName} - Current Quantitiy: {this.quanitity}";
+            }
+            else
+            {
+                return $"Id: {this.productId} - Name: {this.productName} - Inactive";
+            }
         }
     }
 
