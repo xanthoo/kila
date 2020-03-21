@@ -14,7 +14,7 @@ namespace KILR_Project
 {
     public partial class Main : Form
     {
-
+        //Completed
 
         string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=kilrdb;";
         StockManager sm;
