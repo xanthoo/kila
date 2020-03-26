@@ -69,6 +69,9 @@
             this.Stocklbl = new System.Windows.Forms.Label();
             this.employeesPage = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.cbAdministrators = new System.Windows.Forms.CheckBox();
+            this.cbEmployees = new System.Windows.Forms.CheckBox();
+            this.cbManagers = new System.Windows.Forms.CheckBox();
             this.btnFilter = new System.Windows.Forms.Button();
             this.HeaderPanel = new System.Windows.Forms.Panel();
             this.Jupiterlbl = new System.Windows.Forms.Label();
@@ -96,9 +99,6 @@
             this.firstNamelbl = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.cbEmployees = new System.Windows.Forms.CheckBox();
-            this.cbManagers = new System.Windows.Forms.CheckBox();
-            this.cbAdministrators = new System.Windows.Forms.CheckBox();
             this.tabPage1.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -564,6 +564,39 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Filter by Job Position";
             // 
+            // cbAdministrators
+            // 
+            this.cbAdministrators.AutoSize = true;
+            this.cbAdministrators.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cbAdministrators.Location = new System.Drawing.Point(33, 88);
+            this.cbAdministrators.Name = "cbAdministrators";
+            this.cbAdministrators.Size = new System.Drawing.Size(128, 24);
+            this.cbAdministrators.TabIndex = 23;
+            this.cbAdministrators.Text = "Administrators";
+            this.cbAdministrators.UseVisualStyleBackColor = true;
+            // 
+            // cbEmployees
+            // 
+            this.cbEmployees.AutoSize = true;
+            this.cbEmployees.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cbEmployees.Location = new System.Drawing.Point(33, 60);
+            this.cbEmployees.Name = "cbEmployees";
+            this.cbEmployees.Size = new System.Drawing.Size(101, 24);
+            this.cbEmployees.TabIndex = 22;
+            this.cbEmployees.Text = "Employees";
+            this.cbEmployees.UseVisualStyleBackColor = true;
+            // 
+            // cbManagers
+            // 
+            this.cbManagers.AutoSize = true;
+            this.cbManagers.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cbManagers.Location = new System.Drawing.Point(33, 30);
+            this.cbManagers.Name = "cbManagers";
+            this.cbManagers.Size = new System.Drawing.Size(96, 24);
+            this.cbManagers.TabIndex = 21;
+            this.cbManagers.Text = "Managers";
+            this.cbManagers.UseVisualStyleBackColor = true;
+            // 
             // btnFilter
             // 
             this.btnFilter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(182)))), ((int)(((byte)(3)))));
@@ -852,39 +885,6 @@
             this.tabControl1.TabIndex = 1;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             this.tabControl1.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabControl1_Selected);
-            // 
-            // cbEmployees
-            // 
-            this.cbEmployees.AutoSize = true;
-            this.cbEmployees.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.cbEmployees.Location = new System.Drawing.Point(33, 60);
-            this.cbEmployees.Name = "cbEmployees";
-            this.cbEmployees.Size = new System.Drawing.Size(101, 24);
-            this.cbEmployees.TabIndex = 22;
-            this.cbEmployees.Text = "Employees";
-            this.cbEmployees.UseVisualStyleBackColor = true;
-            // 
-            // cbManagers
-            // 
-            this.cbManagers.AutoSize = true;
-            this.cbManagers.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.cbManagers.Location = new System.Drawing.Point(33, 30);
-            this.cbManagers.Name = "cbManagers";
-            this.cbManagers.Size = new System.Drawing.Size(96, 24);
-            this.cbManagers.TabIndex = 21;
-            this.cbManagers.Text = "Managers";
-            this.cbManagers.UseVisualStyleBackColor = true;
-            // 
-            // cbAdministrators
-            // 
-            this.cbAdministrators.AutoSize = true;
-            this.cbAdministrators.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.cbAdministrators.Location = new System.Drawing.Point(33, 88);
-            this.cbAdministrators.Name = "cbAdministrators";
-            this.cbAdministrators.Size = new System.Drawing.Size(128, 24);
-            this.cbAdministrators.TabIndex = 23;
-            this.cbAdministrators.Text = "Administrators";
-            this.cbAdministrators.UseVisualStyleBackColor = true;
             // 
             // Main
             // 

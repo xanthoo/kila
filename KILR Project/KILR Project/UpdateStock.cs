@@ -50,20 +50,20 @@ namespace KILR_Project
             {
                 string name = tbName.Text.Trim();
                 int quantity = Convert.ToInt32(tbQuantity.Text);
-                decimal sellingPrice = Math.Round(Convert.ToDecimal(tbSellingPrice.Text), 2);
-                decimal buyingPrice = Math.Round(Convert.ToDecimal(tbBuyingPrice.Text), 2);
-                if (Regex.IsMatch(name, "^[A-Z]{1}[a-z]{2,30}$"))
+                decimal sellingPrice = Convert.ToDecimal(tbSellingPrice.Text);
+                decimal buyingPrice = Convert.ToDecimal(tbBuyingPrice.Text);
+                decimal roundSelling = Math.Round(sellingPrice, 2, MidpointRounding.ToEven);
+                decimal roundBuying = Math.Round(buyingPrice, 2, MidpointRounding.ToEven);
+                if (Regex.IsMatch(name, "^[A-Z, a-z, 0-9]{2,30}$"))
                 {
                     if (Regex.IsMatch(quantity.ToString(), "^[0-9]{0,7}$"))
                     {
-                        if (Regex.IsMatch(sellingPrice.ToString(), "^[0-9]{0,9}$") && Regex.IsMatch(buyingPrice.ToString(), "^[0-9]{0,9}$"))
-                        {
                             if (quantity >= 0 && sellingPrice >= 0 && buyingPrice >= 0)
                             {
                                 this.stock.Name = name;
                                 this.stock.Quanitity = quantity;
-                                this.stock.SellingPrice = sellingPrice;
-                                this.stock.BuyingPrice = buyingPrice;
+                                this.stock.SellingPrice = roundSelling;
+                                this.stock.BuyingPrice = roundBuying;
 
                                 if (rbActive.Checked == true)
                                 {
@@ -80,20 +80,15 @@ namespace KILR_Project
                             {
                                 MessageBox.Show("Cannot be less than 0!");
                             }
-                        }
-                        else
-                        {
-                            MessageBox.Show("Price has not been set correctly", "Make sure the information provided is correct", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-                        }
                     }
                     else
                     {
-                        MessageBox.Show("Quantity number is too large!");
+                        MessageBox.Show("Quantity number has not been set correctly!");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Product name must start with a capital letter and it must have a length of 3 to 30 characters!");
+                    MessageBox.Show("Product name must have a length of 3 to 30 characters!");
                 }
             }
                 catch(FormatException)

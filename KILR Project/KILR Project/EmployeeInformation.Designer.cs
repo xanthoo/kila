@@ -270,7 +270,7 @@
             this.btnRmv.Name = "btnRmv";
             this.btnRmv.Size = new System.Drawing.Size(434, 68);
             this.btnRmv.TabIndex = 38;
-            this.btnRmv.Text = "Remove Employee";
+            this.btnRmv.Text = "Fire Employee";
             this.btnRmv.UseVisualStyleBackColor = false;
             this.btnRmv.Click += new System.EventHandler(this.BtnRmv_Click);
             // 

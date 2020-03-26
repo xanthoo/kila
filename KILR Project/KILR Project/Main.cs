@@ -14,7 +14,7 @@ namespace KILR_Project
 {
     public partial class Main : Form
     {
-
+        //Completed
 
         string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=kilrdb;";
         StockManager sm;
@@ -44,9 +44,9 @@ namespace KILR_Project
             empMang.AddEmployee(tbFName.Text, tbSurname.Text, dep, (Position)cbPostition.SelectedIndex, tbEmail.Text, tbAddress.Text, (Shift)cbShift.SelectedIndex, HireDate, Convert.ToDouble(tbHWage.Text));
             PopulateEmployeesList();
             }
-            catch (FormatException)
+            catch (Exception)
             {
-                MessageBox.Show("Incorrect format!");
+                MessageBox.Show("Make sure the information provided is correct!!");
                 return;
             }
         }
@@ -58,7 +58,7 @@ namespace KILR_Project
             cbDep.Items.Clear();
             foreach (Department d in departments)
             {
-                lbDepartments.Items.Add(d.GetInfo());
+                lbDepartments.Items.Add(d.Name);
                 cbDep.Items.Add(d.Name);
             }
         }
@@ -116,15 +116,15 @@ namespace KILR_Project
             {
                 string name = tbStockName.Text.Trim();
                 int quantity = Convert.ToInt32(tbStockQuantity.Text);
-                decimal sellingPrice = Math.Round(Convert.ToDecimal(tbStockPrice.Text), 2);
-                decimal buyingPrice = Math.Round(Convert.ToDecimal(tbStockBuying.Text), 2);
-                if (Regex.IsMatch(name, "^[A-Z]{1}[a-z]{2,30}$"))
+                decimal sellingPrice = Convert.ToDecimal(tbStockPrice.Text);
+                decimal buyingPrice = Convert.ToDecimal(tbStockBuying.Text);
+                decimal roundSelling = Math.Round(sellingPrice, 2, MidpointRounding.ToEven);
+                decimal roundBuying = Math.Round(buyingPrice, 2, MidpointRounding.ToEven);
+                if (Regex.IsMatch(name, "^[A-Z, a-z, 0-9]{2,30}$"))
                 {
                     if (Regex.IsMatch(quantity.ToString(), "^[0-9]{0,7}$"))
                     {
-                        if (Regex.IsMatch(sellingPrice.ToString(), "^[0-9]{0,9}$") && Regex.IsMatch(buyingPrice.ToString(), "^[0-9]{0,9}$"))
-                            {
-                            if (sm.AddStock(new Product(0, name, quantity, sellingPrice, buyingPrice, true)) == true)
+                            if (sm.AddStock(new Product(0, name, quantity, roundSelling, roundBuying, true)) == true)
                             {
                                 MessageBox.Show("Stock succesfully created!");
                                 RefreshStock();
@@ -133,11 +133,6 @@ namespace KILR_Project
                             {
                                 MessageBox.Show("Check your connection to the database");
                             }
-                        }
-                        else
-                        {
-                            MessageBox.Show("Price has not been set correctly", "Make sure the information provided is correct", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-                        }
                     }
                     else
                     {
@@ -146,7 +141,7 @@ namespace KILR_Project
                 }
                 else
                 {
-                    MessageBox.Show("Product name must start with a capital letter and it must have a length of 3 to 30 characters!");
+                    MessageBox.Show("Product name must have a length of 3 to 30 characters!");
                 }
             }
             catch (Exception ex)
@@ -344,24 +339,29 @@ namespace KILR_Project
 
         private void btnEmpInfo_Click(object sender, EventArgs e)
         {
-            MySqlConnection Cn = new MySqlConnection(connectionString);
-            MySqlCommand Cmd = Cn.CreateCommand();
-            Cmd.CommandText = $"select id from employee where id= {tbFindEmployee.Text}";
-            Cn.Open();
-            MySqlDataReader Rdr = Cmd.ExecuteReader();
-            int id = -1;
-            while (Rdr.Read())
+            try
             {
-                id = Convert.ToInt32(Rdr["id"]);
+                    MySqlConnection Cn = new MySqlConnection(connectionString);
+                    MySqlCommand Cmd = Cn.CreateCommand();
+                    Cmd.CommandText = $"select id from employee where id= {tbFindEmployee.Text}";
+                    Cn.Open();
+                    MySqlDataReader Rdr = Cmd.ExecuteReader();
+                    int id = -1;
+                    while (Rdr.Read())
+                    {
+                        id = Convert.ToInt32(Rdr["id"]);
+                    }
+                    if (id > 0)
+                    {
+                        EmployeeInformation empInfo = new EmployeeInformation(id);
+                        empInfo.Visible = true;
+                    }
+                
+
             }
-            if (id > 0)
+            catch(Exception)
             {
-                EmployeeInformation empInfo = new EmployeeInformation(id);
-                empInfo.Visible = true;
-            }
-            else
-            {
-                MessageBox.Show("No user with that ID!");
+                MessageBox.Show("Make sure the information provided is correct!");
             }
         }
 

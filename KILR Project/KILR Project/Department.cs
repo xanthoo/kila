@@ -172,7 +172,7 @@ namespace KILR_Project
 
         public String GetInfo()
         {
-            return $"Department id: {this.id} , name: {this.name} and staff amount of {employees.Count} people";
+            return $"Department id: {this.id} , name: {this.name} and staff amount of {GetEmployees().Count} people";
         }
         
     }
