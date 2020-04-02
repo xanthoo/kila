@@ -124,6 +124,8 @@ namespace KILR_Project
                 {
                     if (Regex.IsMatch(quantity.ToString(), "^[0-9]{0,7}$"))
                     {
+                        if ((roundBuying > 0) && (roundSelling > 0))
+                        {
                             if (sm.AddStock(new Product(0, name, quantity, roundSelling, roundBuying, true)) == true)
                             {
                                 MessageBox.Show("Stock succesfully created!");
@@ -133,6 +135,12 @@ namespace KILR_Project
                             {
                                 MessageBox.Show("Check your connection to the database");
                             }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Negative numbers are not permitted!");
+                        }
+                        
                     }
                     else
                     {
@@ -193,8 +201,15 @@ namespace KILR_Project
                     if (amount > 0)
                     {
                         Product p = sm.FindStock(id);
-                        sm.Decrease(p, amount);
-                        RefreshStock();
+                        if (p.Quanitity >= amount)
+                        {
+                            sm.Decrease(p, amount);
+                            RefreshStock();
+                        }
+                        else
+                        {
+                            MessageBox.Show("The amount must not be bigger than the quanitity!");
+                        }
                     }
                     else
                     {
