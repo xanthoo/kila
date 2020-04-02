@@ -32,18 +32,20 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.Jupiterlbl = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.quantitylbl = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.pricelbl = new System.Windows.Forms.Label();
+            this.buyingLbl = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.stockNameLbl = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.btnRmvStock = new System.Windows.Forms.Button();
+            this.idlbl = new System.Windows.Forms.Label();
+            this.statuslbl = new System.Windows.Forms.Label();
             this.btnUpdStock = new System.Windows.Forms.Button();
             this.btnGoBack = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
@@ -67,7 +69,7 @@
             this.Jupiterlbl.Location = new System.Drawing.Point(240, -1);
             this.Jupiterlbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Jupiterlbl.Name = "Jupiterlbl";
-            this.Jupiterlbl.Size = new System.Drawing.Size(249, 54);
+            this.Jupiterlbl.Size = new System.Drawing.Size(202, 45);
             this.Jupiterlbl.TabIndex = 6;
             this.Jupiterlbl.Text = "Stock Details";
             // 
@@ -75,129 +77,114 @@
             // 
             this.groupBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(121)))), ((int)(((byte)(3)))));
             this.groupBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.groupBox3.Controls.Add(this.label5);
-            this.groupBox3.Controls.Add(this.label3);
-            this.groupBox3.Controls.Add(this.label2);
+            this.groupBox3.Controls.Add(this.quantitylbl);
             this.groupBox3.Controls.Add(this.label4);
+            this.groupBox3.Controls.Add(this.pricelbl);
+            this.groupBox3.Controls.Add(this.buyingLbl);
             this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox3.Location = new System.Drawing.Point(0, 148);
+            this.groupBox3.Location = new System.Drawing.Point(0, 163);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(671, 59);
             this.groupBox3.TabIndex = 29;
             this.groupBox3.TabStop = false;
             // 
-            // label5
+            // quantitylbl
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(595, 23);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(72, 23);
-            this.label5.TabIndex = 21;
-            this.label5.Text = "Amount";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(385, 23);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(72, 23);
-            this.label3.TabIndex = 20;
-            this.label3.Text = "Amount";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(156, 22);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 23);
-            this.label2.TabIndex = 19;
-            this.label2.Text = "Amount";
+            this.quantitylbl.AutoSize = true;
+            this.quantitylbl.Location = new System.Drawing.Point(543, 25);
+            this.quantitylbl.Name = "quantitylbl";
+            this.quantitylbl.Size = new System.Drawing.Size(0, 17);
+            this.quantitylbl.TabIndex = 22;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(461, 21);
+            this.label4.Location = new System.Drawing.Point(428, 23);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(162, 25);
-            this.label4.TabIndex = 18;
-            this.label4.Text = "Current Amount :";
+            this.label4.Size = new System.Drawing.Size(109, 20);
+            this.label4.TabIndex = 21;
+            this.label4.Text = "Total Quantity:";
+            // 
+            // pricelbl
+            // 
+            this.pricelbl.AutoSize = true;
+            this.pricelbl.Location = new System.Drawing.Point(327, 26);
+            this.pricelbl.Name = "pricelbl";
+            this.pricelbl.Size = new System.Drawing.Size(58, 17);
+            this.pricelbl.TabIndex = 20;
+            this.pricelbl.Text = "Amount";
+            // 
+            // buyingLbl
+            // 
+            this.buyingLbl.AutoSize = true;
+            this.buyingLbl.Location = new System.Drawing.Point(146, 26);
+            this.buyingLbl.Name = "buyingLbl";
+            this.buyingLbl.Size = new System.Drawing.Size(58, 17);
+            this.buyingLbl.TabIndex = 19;
+            this.buyingLbl.Text = "Amount";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label10.Location = new System.Drawing.Point(12, 20);
+            this.label10.Location = new System.Drawing.Point(51, 24);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(176, 25);
+            this.label10.Size = new System.Drawing.Size(99, 20);
             this.label10.TabIndex = 16;
-            this.label10.Text = "Minimum Amount:";
+            this.label10.Text = "Buying Price:";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label9.Location = new System.Drawing.Point(238, 21);
+            this.label9.Location = new System.Drawing.Point(233, 24);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(180, 25);
+            this.label9.Size = new System.Drawing.Size(97, 20);
             this.label9.TabIndex = 14;
-            this.label9.Text = "Maximum Amount:";
+            this.label9.Text = "Selling Price:";
             // 
             // stockNameLbl
             // 
             this.stockNameLbl.AutoSize = true;
             this.stockNameLbl.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.stockNameLbl.Location = new System.Drawing.Point(264, 61);
+            this.stockNameLbl.Location = new System.Drawing.Point(335, 61);
             this.stockNameLbl.Name = "stockNameLbl";
-            this.stockNameLbl.Size = new System.Drawing.Size(182, 41);
+            this.stockNameLbl.Size = new System.Drawing.Size(0, 32);
             this.stockNameLbl.TabIndex = 5;
-            this.stockNameLbl.Text = "Stock Name";
             // 
-            // label1
+            // idlbl
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(317, 93);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(39, 32);
-            this.label1.TabIndex = 19;
-            this.label1.Text = "ID";
+            this.idlbl.AutoSize = true;
+            this.idlbl.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.idlbl.Location = new System.Drawing.Point(334, 93);
+            this.idlbl.Name = "idlbl";
+            this.idlbl.Size = new System.Drawing.Size(0, 25);
+            this.idlbl.TabIndex = 19;
             // 
-            // label6
+            // statuslbl
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.Location = new System.Drawing.Point(301, 118);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(82, 32);
-            this.label6.TabIndex = 30;
-            this.label6.Text = "Status";
-            // 
-            // btnRmvStock
-            // 
-            this.btnRmvStock.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(182)))), ((int)(((byte)(3)))));
-            this.btnRmvStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRmvStock.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnRmvStock.Location = new System.Drawing.Point(55, 228);
-            this.btnRmvStock.Name = "btnRmvStock";
-            this.btnRmvStock.Size = new System.Drawing.Size(256, 82);
-            this.btnRmvStock.TabIndex = 31;
-            this.btnRmvStock.Text = "Remove Stock";
-            this.btnRmvStock.UseVisualStyleBackColor = false;
+            this.statuslbl.AutoSize = true;
+            this.statuslbl.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.statuslbl.Location = new System.Drawing.Point(335, 118);
+            this.statuslbl.Name = "statuslbl";
+            this.statuslbl.Size = new System.Drawing.Size(0, 25);
+            this.statuslbl.TabIndex = 30;
             // 
             // btnUpdStock
             // 
             this.btnUpdStock.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(182)))), ((int)(((byte)(3)))));
             this.btnUpdStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdStock.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnUpdStock.Location = new System.Drawing.Point(355, 228);
+            this.btnUpdStock.Location = new System.Drawing.Point(76, 228);
             this.btnUpdStock.Name = "btnUpdStock";
-            this.btnUpdStock.Size = new System.Drawing.Size(256, 82);
+            this.btnUpdStock.Size = new System.Drawing.Size(522, 82);
             this.btnUpdStock.TabIndex = 32;
             this.btnUpdStock.Text = "Update Stock Details";
             this.btnUpdStock.UseVisualStyleBackColor = false;
+            this.btnUpdStock.Click += new System.EventHandler(this.BtnUpdStock_Click);
             // 
             // btnGoBack
             // 
@@ -210,18 +197,51 @@
             this.btnGoBack.TabIndex = 33;
             this.btnGoBack.Text = "Go Back";
             this.btnGoBack.UseVisualStyleBackColor = false;
+            this.btnGoBack.Click += new System.EventHandler(this.BtnGoBack_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(296, 93);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(37, 25);
+            this.label1.TabIndex = 34;
+            this.label1.Text = "ID:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(265, 118);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(69, 25);
+            this.label2.TabIndex = 35;
+            this.label2.Text = "Status:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Location = new System.Drawing.Point(264, 67);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(69, 25);
+            this.label3.TabIndex = 36;
+            this.label3.Text = "Status:";
             // 
             // StockDetails
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(121)))), ((int)(((byte)(3)))));
             this.ClientSize = new System.Drawing.Size(671, 374);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnGoBack);
             this.Controls.Add(this.btnUpdStock);
-            this.Controls.Add(this.btnRmvStock);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.statuslbl);
+            this.Controls.Add(this.idlbl);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.stockNameLbl);
@@ -230,6 +250,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "StockDetails";
             this.Text = "Stock Details";
+            this.Load += new System.EventHandler(this.StockDetails_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -244,17 +265,19 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label Jupiterlbl;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label stockNameLbl;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button btnRmvStock;
+        private System.Windows.Forms.Label pricelbl;
+        private System.Windows.Forms.Label buyingLbl;
+        private System.Windows.Forms.Label idlbl;
+        private System.Windows.Forms.Label statuslbl;
         private System.Windows.Forms.Button btnUpdStock;
         private System.Windows.Forms.Button btnGoBack;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label quantitylbl;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
     }
 }

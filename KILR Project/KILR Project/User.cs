@@ -21,7 +21,13 @@ namespace KILR_Project
 
         public RoleEnum Role { get; set; }
         public String Username { get; set; }
-        public String Password { get; set; }
         public String Id { get; set; }
+
+        public User(String Id, String Username, RoleEnum Role)
+        {
+            this.Id = Id;
+            this.Username = Username;
+            this.Role = Role;
+        }
     }
 }

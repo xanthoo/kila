@@ -31,21 +31,21 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeeInformation));
             this.HeaderPanel = new System.Windows.Forms.Panel();
             this.Jupiterlbl = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.lblLName = new System.Windows.Forms.Label();
+            this.lblFName = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblShift = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
+            this.lblHireDate = new System.Windows.Forms.Label();
+            this.lblAddress = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
+            this.lblDepts = new System.Windows.Forms.Label();
             this.btnUpdtDetails = new System.Windows.Forms.Button();
             this.btnGoBack = new System.Windows.Forms.Button();
             this.btnRmv = new System.Windows.Forms.Button();
@@ -78,38 +78,38 @@
             this.Jupiterlbl.Text = "Employee Information";
             this.Jupiterlbl.Click += new System.EventHandler(this.Jupiterlbl_Click);
             // 
-            // label5
+            // lblEmail
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(99, 105);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(33, 17);
-            this.label5.TabIndex = 27;
-            this.label5.Text = "Text";
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Location = new System.Drawing.Point(123, 123);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(33, 17);
+            this.lblEmail.TabIndex = 27;
+            this.lblEmail.Text = "Text";
             // 
-            // label3
+            // lblLName
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(99, 67);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(33, 17);
-            this.label3.TabIndex = 26;
-            this.label3.Text = "Text";
+            this.lblLName.AutoSize = true;
+            this.lblLName.Location = new System.Drawing.Point(123, 73);
+            this.lblLName.Name = "lblLName";
+            this.lblLName.Size = new System.Drawing.Size(33, 17);
+            this.lblLName.TabIndex = 26;
+            this.lblLName.Text = "Text";
             // 
-            // label2
+            // lblFName
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(99, 27);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(33, 17);
-            this.label2.TabIndex = 25;
-            this.label2.Text = "Text";
+            this.lblFName.AutoSize = true;
+            this.lblFName.Location = new System.Drawing.Point(123, 32);
+            this.lblFName.Name = "lblFName";
+            this.lblFName.Size = new System.Drawing.Size(33, 17);
+            this.lblFName.TabIndex = 25;
+            this.lblFName.Text = "Text";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(43, 103);
+            this.label4.Location = new System.Drawing.Point(9, 120);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(50, 20);
             this.label4.TabIndex = 24;
@@ -119,7 +119,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label10.Location = new System.Drawing.Point(6, 26);
+            this.label10.Location = new System.Drawing.Point(6, 29);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(87, 20);
             this.label10.TabIndex = 23;
@@ -129,7 +129,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label9.Location = new System.Drawing.Point(9, 64);
+            this.label9.Location = new System.Drawing.Point(6, 70);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(84, 20);
             this.label9.TabIndex = 22;
@@ -137,145 +137,149 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.lblShift);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label17);
-            this.groupBox1.Controls.Add(this.label13);
+            this.groupBox1.Controls.Add(this.lblHireDate);
+            this.groupBox1.Controls.Add(this.lblAddress);
             this.groupBox1.Controls.Add(this.label18);
             this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Controls.Add(this.label20);
-            this.groupBox1.Controls.Add(this.label22);
-            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.lblDepts);
+            this.groupBox1.Controls.Add(this.lblEmail);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.lblFName);
+            this.groupBox1.Controls.Add(this.lblLName);
             this.groupBox1.Location = new System.Drawing.Point(12, 70);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(371, 192);
+            this.groupBox1.Size = new System.Drawing.Size(478, 269);
             this.groupBox1.TabIndex = 34;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Personal details";
             // 
-            // label1
+            // lblShift
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(284, 103);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(33, 17);
-            this.label1.TabIndex = 31;
-            this.label1.Text = "Text";
+            this.lblShift.AutoSize = true;
+            this.lblShift.Location = new System.Drawing.Point(123, 203);
+            this.lblShift.Name = "lblShift";
+            this.lblShift.Size = new System.Drawing.Size(33, 17);
+            this.lblShift.TabIndex = 31;
+            this.lblShift.Text = "Text";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.Location = new System.Drawing.Point(234, 101);
+            this.label6.Location = new System.Drawing.Point(16, 203);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(44, 20);
             this.label6.TabIndex = 30;
             this.label6.Text = "Shift:";
             // 
-            // label17
+            // lblHireDate
             // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(284, 67);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(33, 17);
-            this.label17.TabIndex = 27;
-            this.label17.Text = "Text";
+            this.lblHireDate.AutoSize = true;
+            this.lblHireDate.Location = new System.Drawing.Point(350, 70);
+            this.lblHireDate.Name = "lblHireDate";
+            this.lblHireDate.Size = new System.Drawing.Size(33, 17);
+            this.lblHireDate.TabIndex = 27;
+            this.lblHireDate.Text = "Text";
             // 
-            // label13
+            // lblAddress
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(99, 144);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(33, 17);
-            this.label13.TabIndex = 29;
-            this.label13.Text = "Text";
+            this.lblAddress.AutoSize = true;
+            this.lblAddress.Location = new System.Drawing.Point(123, 167);
+            this.lblAddress.Name = "lblAddress";
+            this.lblAddress.Size = new System.Drawing.Size(33, 17);
+            this.lblAddress.TabIndex = 29;
+            this.lblAddress.Text = "Text";
             // 
             // label18
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label18.Location = new System.Drawing.Point(180, 26);
+            this.label18.Location = new System.Drawing.Point(234, 26);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(101, 20);
+            this.label18.Size = new System.Drawing.Size(112, 20);
             this.label18.TabIndex = 22;
-            this.label18.Text = "Departments:";
+            this.label18.Text = "Department Id:";
+            this.label18.Click += new System.EventHandler(this.label18_Click);
             // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label14.Location = new System.Drawing.Point(35, 142);
+            this.label14.Location = new System.Drawing.Point(9, 165);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(58, 20);
+            this.label14.Size = new System.Drawing.Size(67, 20);
             this.label14.TabIndex = 28;
-            this.label14.Text = "Adress:";
+            this.label14.Text = "Address:";
             // 
             // label20
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label20.Location = new System.Drawing.Point(194, 67);
+            this.label20.Location = new System.Drawing.Point(234, 67);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(87, 20);
             this.label20.TabIndex = 24;
             this.label20.Text = "Date Hired:";
             // 
-            // label22
+            // lblDepts
             // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(284, 29);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(33, 17);
-            this.label22.TabIndex = 26;
-            this.label22.Text = "Text";
+            this.lblDepts.AutoSize = true;
+            this.lblDepts.Location = new System.Drawing.Point(370, 29);
+            this.lblDepts.Name = "lblDepts";
+            this.lblDepts.Size = new System.Drawing.Size(33, 17);
+            this.lblDepts.TabIndex = 26;
+            this.lblDepts.Text = "Text";
             // 
             // btnUpdtDetails
             // 
             this.btnUpdtDetails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(182)))), ((int)(((byte)(3)))));
             this.btnUpdtDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdtDetails.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnUpdtDetails.Location = new System.Drawing.Point(389, 70);
+            this.btnUpdtDetails.Location = new System.Drawing.Point(496, 81);
             this.btnUpdtDetails.Name = "btnUpdtDetails";
-            this.btnUpdtDetails.Size = new System.Drawing.Size(127, 192);
+            this.btnUpdtDetails.Size = new System.Drawing.Size(166, 258);
             this.btnUpdtDetails.TabIndex = 36;
             this.btnUpdtDetails.Text = "Update Details";
             this.btnUpdtDetails.UseVisualStyleBackColor = false;
+            this.btnUpdtDetails.Click += new System.EventHandler(this.BtnUpdtDetails_Click);
             // 
             // btnGoBack
             // 
             this.btnGoBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(182)))), ((int)(((byte)(3)))));
             this.btnGoBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGoBack.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnGoBack.Location = new System.Drawing.Point(12, 268);
+            this.btnGoBack.Location = new System.Drawing.Point(12, 345);
             this.btnGoBack.Name = "btnGoBack";
-            this.btnGoBack.Size = new System.Drawing.Size(158, 68);
+            this.btnGoBack.Size = new System.Drawing.Size(210, 68);
             this.btnGoBack.TabIndex = 37;
             this.btnGoBack.Text = "Go Back";
             this.btnGoBack.UseVisualStyleBackColor = false;
+            this.btnGoBack.Click += new System.EventHandler(this.BtnGoBack_Click);
             // 
             // btnRmv
             // 
             this.btnRmv.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(182)))), ((int)(((byte)(3)))));
             this.btnRmv.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRmv.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnRmv.Location = new System.Drawing.Point(176, 268);
+            this.btnRmv.Location = new System.Drawing.Point(228, 345);
             this.btnRmv.Name = "btnRmv";
-            this.btnRmv.Size = new System.Drawing.Size(340, 68);
+            this.btnRmv.Size = new System.Drawing.Size(434, 68);
             this.btnRmv.TabIndex = 38;
-            this.btnRmv.Text = "Remove Employee";
+            this.btnRmv.Text = "Fire Employee";
             this.btnRmv.UseVisualStyleBackColor = false;
+            this.btnRmv.Click += new System.EventHandler(this.BtnRmv_Click);
             // 
             // EmployeeInformation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(121)))), ((int)(((byte)(3)))));
-            this.ClientSize = new System.Drawing.Size(531, 345);
+            this.ClientSize = new System.Drawing.Size(673, 425);
             this.Controls.Add(this.btnRmv);
             this.Controls.Add(this.btnGoBack);
             this.Controls.Add(this.btnUpdtDetails);
@@ -299,23 +303,23 @@
 
         private System.Windows.Forms.Panel HeaderPanel;
         private System.Windows.Forms.Label Jupiterlbl;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblEmail;
+        private System.Windows.Forms.Label lblLName;
+        private System.Windows.Forms.Label lblFName;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label lblAddress;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label lblHireDate;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Button btnUpdtDetails;
         private System.Windows.Forms.Button btnGoBack;
         private System.Windows.Forms.Button btnRmv;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblShift;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label lblDepts;
     }
 }

@@ -219,6 +219,7 @@
             this.btnUpdtDts.TabIndex = 37;
             this.btnUpdtDts.Text = "Update Details";
             this.btnUpdtDts.UseVisualStyleBackColor = false;
+            this.btnUpdtDts.Click += new System.EventHandler(this.BtnUpdtDts_Click);
             // 
             // btnGoBack
             // 
@@ -231,6 +232,7 @@
             this.btnGoBack.TabIndex = 38;
             this.btnGoBack.Text = "Go Back";
             this.btnGoBack.UseVisualStyleBackColor = false;
+            this.btnGoBack.Click += new System.EventHandler(this.BtnGoBack_Click);
             // 
             // UpdateEmployee
             // 
