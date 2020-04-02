@@ -18,36 +18,32 @@ namespace KILR_Project
         {
             InitializeComponent();
             mainDepartmentInfo = mainForm;
+            FillCombo();
         }
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-
-
             string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=kilrdb;";
-            string query = "INSERT INTO department(`id`, `name`, `staffamount`, `managerid`,`date`) VALUES (NULL, '" + tbDepartmentName.Text + "', '" + tbMaxPeople.Text + "', '" + tbMinPeople.Text + "', '" + DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss") + "')";
+            string query = "INSERT INTO department(`id`, `name`, `staffamount`, `managerid`,`date`) VALUES (NULL, '" + tbDepartmentName.Text + "', '" + tbStaffNumber.Text + "', '" + cmbManagerId.Text + "', '" + DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss") + "')";
             MySqlConnection databaseConnection = new MySqlConnection(connectionString);
             MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
             commandDatabase.CommandTimeout = 60;
-
-
             try
             {
-                if (!string.IsNullOrWhiteSpace(tbDepartmentName.Text) && !string.IsNullOrWhiteSpace(tbMaxPeople.Text) && !string.IsNullOrWhiteSpace(tbMinPeople.Text))
+                if (!string.IsNullOrWhiteSpace(tbDepartmentName.Text) && !string.IsNullOrWhiteSpace(cmbManagerId.Text) && !string.IsNullOrWhiteSpace(tbStaffNumber.Text))
                 {
                     int parsedValue;
-                    if (!int.TryParse(tbMaxPeople.Text, out parsedValue))
+                    if (!int.TryParse(cmbManagerId.Text, out parsedValue))
                     {
                         MessageBox.Show("'Staff number' and 'manager id' are number fields only!");
                         return;
                     }
-                    if (!int.TryParse(tbMinPeople.Text, out parsedValue))
+                    if (!int.TryParse(tbStaffNumber.Text, out parsedValue))
                     {
                         MessageBox.Show("'Staff number' and 'manager id' are number fields only!");
                         return;
                     }
                     databaseConnection.Open();
                     MySqlDataReader myReader = commandDatabase.ExecuteReader();
-
                     MessageBox.Show("Department succesfully created");
                     mainDepartmentInfo.PopulateDepartmentsList();
                     databaseConnection.Close();
@@ -58,15 +54,24 @@ namespace KILR_Project
                 // Show any error message.
                 MessageBox.Show(ex.Message);
             }
-
-
-
-
         }
-
         private void btnGoBack_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+        public void FillCombo()
+        {
+            string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=kilrdb;";
+            string query = "SELECT * FROM EMPLOYEE WHERE position = 'manager'";
+            MySqlConnection databaseConnection = new MySqlConnection(connectionString);
+            MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
+            databaseConnection.Open();
+            MySqlDataReader myReader = commandDatabase.ExecuteReader();
+            while (myReader.Read())
+            {
+                string sname = myReader.GetString("id");
+                cmbManagerId.Items.Add(sname);
+            }
         }
     }
 }

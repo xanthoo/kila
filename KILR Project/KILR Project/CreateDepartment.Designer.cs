@@ -34,12 +34,12 @@
             this.depNamelbl = new System.Windows.Forms.Label();
             this.tbDepartmentName = new System.Windows.Forms.TextBox();
             this.btnConfirm = new System.Windows.Forms.Button();
-            this.tbMinPeople = new System.Windows.Forms.TextBox();
+            this.tbStaffNumber = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.tbMaxPeople = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnGoBack = new System.Windows.Forms.Button();
+            this.cmbManagerId = new System.Windows.Forms.ComboBox();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -96,12 +96,12 @@
             this.btnConfirm.UseVisualStyleBackColor = false;
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
-            // tbMinPeople
+            // tbStaffNumber
             // 
-            this.tbMinPeople.Location = new System.Drawing.Point(70, 121);
-            this.tbMinPeople.Name = "tbMinPeople";
-            this.tbMinPeople.Size = new System.Drawing.Size(146, 23);
-            this.tbMinPeople.TabIndex = 21;
+            this.tbStaffNumber.Location = new System.Drawing.Point(70, 121);
+            this.tbStaffNumber.Name = "tbStaffNumber";
+            this.tbStaffNumber.Size = new System.Drawing.Size(146, 23);
+            this.tbStaffNumber.TabIndex = 21;
             // 
             // label1
             // 
@@ -112,13 +112,6 @@
             this.label1.Size = new System.Drawing.Size(111, 21);
             this.label1.TabIndex = 20;
             this.label1.Text = "Staff number:";
-            // 
-            // tbMaxPeople
-            // 
-            this.tbMaxPeople.Location = new System.Drawing.Point(70, 187);
-            this.tbMaxPeople.Name = "tbMaxPeople";
-            this.tbMaxPeople.Size = new System.Drawing.Size(146, 23);
-            this.tbMaxPeople.TabIndex = 23;
             // 
             // label2
             // 
@@ -132,12 +125,12 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cmbManagerId);
             this.groupBox1.Controls.Add(this.tbDepartmentName);
-            this.groupBox1.Controls.Add(this.tbMaxPeople);
             this.groupBox1.Controls.Add(this.depNamelbl);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.tbMinPeople);
+            this.groupBox1.Controls.Add(this.tbStaffNumber);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupBox1.Location = new System.Drawing.Point(36, 65);
             this.groupBox1.Name = "groupBox1";
@@ -158,6 +151,14 @@
             this.btnGoBack.Text = "Go Back";
             this.btnGoBack.UseVisualStyleBackColor = false;
             this.btnGoBack.Click += new System.EventHandler(this.btnGoBack_Click);
+            // 
+            // cmbManagerId
+            // 
+            this.cmbManagerId.FormattingEnabled = true;
+            this.cmbManagerId.Location = new System.Drawing.Point(70, 196);
+            this.cmbManagerId.Name = "cmbManagerId";
+            this.cmbManagerId.Size = new System.Drawing.Size(146, 23);
+            this.cmbManagerId.TabIndex = 23;
             // 
             // CreateDepartment
             // 
@@ -192,7 +193,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnGoBack;
         public System.Windows.Forms.TextBox tbDepartmentName;
-        public System.Windows.Forms.TextBox tbMinPeople;
-        public System.Windows.Forms.TextBox tbMaxPeople;
+        public System.Windows.Forms.TextBox tbStaffNumber;
+        private System.Windows.Forms.ComboBox cmbManagerId;
     }
 }
