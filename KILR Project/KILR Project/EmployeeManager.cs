@@ -98,11 +98,11 @@ namespace KILR_Project
             }
             return null;
         }
-        public void AddEmployee(string fName, string lastName, Department d, Position position, string email, string address, Shift shift, String HireDate, double hourlyWage)
+        public void AddEmployee(string fName, string lastName, Department d, Position position, string email, string address, Shift shift, String HireDate, double hourlyWage, string password)
         {
             
-            string query = "INSERT INTO employee(`id`, `firstname`, `lastname`, `email`, `address`,`department`, `position`, `shift`, `hiredate`, `hourlywage`) VALUES (NULL, '" +
-            fName + "', '" + lastName + "', '" + email  + "', '" + address + "', '" + d.Id + "', '" + position + "', '" + shift + "', '" + HireDate + "', '" + hourlyWage + "')";
+            string query = "INSERT INTO employee(`id`, `firstname`, `lastname`, `email`, `address`,`department`, `position`, `shift`, `hiredate`, `hourlywage`, `password`) VALUES (NULL, '" +
+            fName + "', '" + lastName + "', '" + email  + "', '" + address + "', '" + d.Id + "', '" + position + "', '" + shift + "', '" + HireDate + "', '" + hourlyWage  + "', '" + password + "')";
             MySqlConnection databaseConnection = new MySqlConnection(connectionString);
             MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
             MySqlDataReader MyReader;

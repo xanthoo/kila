@@ -99,6 +99,8 @@
             this.firstNamelbl = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tbPassword = new System.Windows.Forms.TextBox();
+            this.lblPassword = new System.Windows.Forms.Label();
             this.tabPage1.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -125,9 +127,9 @@
             this.tabPage1.Controls.Add(this.groupBox5);
             this.tabPage1.Controls.Add(this.lbDepartments);
             this.tabPage1.Controls.Add(this.panel2);
-            this.tabPage1.Location = new System.Drawing.Point(4, 27);
+            this.tabPage1.Location = new System.Drawing.Point(4, 32);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(925, 484);
+            this.tabPage1.Size = new System.Drawing.Size(925, 479);
             this.tabPage1.TabIndex = 3;
             this.tabPage1.Text = "Departments";
             this.tabPage1.Click += new System.EventHandler(this.TabPage1_Click);
@@ -136,7 +138,7 @@
             // 
             this.textBoxDepartmentId.Location = new System.Drawing.Point(705, 381);
             this.textBoxDepartmentId.Name = "textBoxDepartmentId";
-            this.textBoxDepartmentId.Size = new System.Drawing.Size(142, 23);
+            this.textBoxDepartmentId.Size = new System.Drawing.Size(142, 27);
             this.textBoxDepartmentId.TabIndex = 11;
             // 
             // label10
@@ -144,7 +146,7 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(702, 363);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(87, 15);
+            this.label10.Size = new System.Drawing.Size(110, 20);
             this.label10.TabIndex = 11;
             this.label10.Text = "Department ID";
             // 
@@ -192,7 +194,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(20, 37);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(106, 15);
+            this.label5.Size = new System.Drawing.Size(136, 20);
             this.label5.TabIndex = 10;
             this.label5.Text = "Department Name\r\n";
             // 
@@ -200,14 +202,14 @@
             // 
             this.textBox8.Location = new System.Drawing.Point(23, 67);
             this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(142, 23);
+            this.textBox8.Size = new System.Drawing.Size(142, 27);
             this.textBox8.TabIndex = 9;
             this.textBox8.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
             // 
             // lbDepartments
             // 
             this.lbDepartments.FormattingEnabled = true;
-            this.lbDepartments.ItemHeight = 15;
+            this.lbDepartments.ItemHeight = 20;
             this.lbDepartments.Location = new System.Drawing.Point(36, 67);
             this.lbDepartments.Name = "lbDepartments";
             this.lbDepartments.Size = new System.Drawing.Size(855, 244);
@@ -231,7 +233,7 @@
             this.label6.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label6.Location = new System.Drawing.Point(348, -2);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(204, 45);
+            this.label6.Size = new System.Drawing.Size(253, 54);
             this.label6.TabIndex = 10;
             this.label6.Text = "Departments";
             // 
@@ -244,10 +246,10 @@
             this.stockPage.Controls.Add(this.groupBox1);
             this.stockPage.Controls.Add(this.lbStock);
             this.stockPage.Controls.Add(this.Stock);
-            this.stockPage.Location = new System.Drawing.Point(4, 27);
+            this.stockPage.Location = new System.Drawing.Point(4, 32);
             this.stockPage.Name = "stockPage";
             this.stockPage.Padding = new System.Windows.Forms.Padding(3);
-            this.stockPage.Size = new System.Drawing.Size(925, 484);
+            this.stockPage.Size = new System.Drawing.Size(925, 479);
             this.stockPage.TabIndex = 1;
             this.stockPage.Text = "Stock";
             this.stockPage.Click += new System.EventHandler(this.StockPage_Click);
@@ -283,7 +285,7 @@
             this.cbInactive.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.cbInactive.Location = new System.Drawing.Point(33, 57);
             this.cbInactive.Name = "cbInactive";
-            this.cbInactive.Size = new System.Drawing.Size(81, 24);
+            this.cbInactive.Size = new System.Drawing.Size(102, 29);
             this.cbInactive.TabIndex = 1;
             this.cbInactive.Text = "Inactive";
             this.cbInactive.UseVisualStyleBackColor = true;
@@ -294,7 +296,7 @@
             this.cbActive.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.cbActive.Location = new System.Drawing.Point(33, 27);
             this.cbActive.Name = "cbActive";
-            this.cbActive.Size = new System.Drawing.Size(70, 24);
+            this.cbActive.Size = new System.Drawing.Size(88, 29);
             this.cbActive.TabIndex = 0;
             this.cbActive.Text = "Active";
             this.cbActive.UseVisualStyleBackColor = true;
@@ -337,7 +339,7 @@
             // 
             this.tbStockBuying.Location = new System.Drawing.Point(122, 139);
             this.tbStockBuying.Name = "tbStockBuying";
-            this.tbStockBuying.Size = new System.Drawing.Size(124, 23);
+            this.tbStockBuying.Size = new System.Drawing.Size(124, 27);
             this.tbStockBuying.TabIndex = 23;
             // 
             // label13
@@ -346,7 +348,7 @@
             this.label13.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label13.Location = new System.Drawing.Point(11, 139);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(86, 17);
+            this.label13.Size = new System.Drawing.Size(109, 23);
             this.label13.TabIndex = 22;
             this.label13.Text = "Buying Price:\r\n";
             // 
@@ -354,7 +356,7 @@
             // 
             this.tbStockPrice.Location = new System.Drawing.Point(122, 103);
             this.tbStockPrice.Name = "tbStockPrice";
-            this.tbStockPrice.Size = new System.Drawing.Size(123, 23);
+            this.tbStockPrice.Size = new System.Drawing.Size(123, 27);
             this.tbStockPrice.TabIndex = 21;
             // 
             // label14
@@ -363,7 +365,7 @@
             this.label14.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label14.Location = new System.Drawing.Point(14, 103);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(83, 17);
+            this.label14.Size = new System.Drawing.Size(106, 23);
             this.label14.TabIndex = 20;
             this.label14.Text = "Selling Price:";
             // 
@@ -371,7 +373,7 @@
             // 
             this.tbStockQuantity.Location = new System.Drawing.Point(123, 69);
             this.tbStockQuantity.Name = "tbStockQuantity";
-            this.tbStockQuantity.Size = new System.Drawing.Size(124, 23);
+            this.tbStockQuantity.Size = new System.Drawing.Size(124, 27);
             this.tbStockQuantity.TabIndex = 15;
             this.tbStockQuantity.TextChanged += new System.EventHandler(this.TextBox5_TextChanged);
             // 
@@ -381,7 +383,7 @@
             this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label9.Location = new System.Drawing.Point(33, 69);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(64, 17);
+            this.label9.Size = new System.Drawing.Size(81, 23);
             this.label9.TabIndex = 14;
             this.label9.Text = "Quantity:";
             // 
@@ -389,7 +391,7 @@
             // 
             this.tbStockName.Location = new System.Drawing.Point(123, 33);
             this.tbStockName.Name = "tbStockName";
-            this.tbStockName.Size = new System.Drawing.Size(123, 23);
+            this.tbStockName.Size = new System.Drawing.Size(123, 27);
             this.tbStockName.TabIndex = 9;
             // 
             // stockNameLbl
@@ -398,7 +400,7 @@
             this.stockNameLbl.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.stockNameLbl.Location = new System.Drawing.Point(50, 33);
             this.stockNameLbl.Name = "stockNameLbl";
-            this.stockNameLbl.Size = new System.Drawing.Size(47, 17);
+            this.stockNameLbl.Size = new System.Drawing.Size(60, 23);
             this.stockNameLbl.TabIndex = 5;
             this.stockNameLbl.Text = "Name:";
             // 
@@ -438,7 +440,7 @@
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.Location = new System.Drawing.Point(87, 141);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(72, 21);
+            this.label4.Size = new System.Drawing.Size(90, 28);
             this.label4.TabIndex = 12;
             this.label4.Text = "Quantity";
             // 
@@ -446,7 +448,7 @@
             // 
             this.tbStockAmount.Location = new System.Drawing.Point(38, 165);
             this.tbStockAmount.Name = "tbStockAmount";
-            this.tbStockAmount.Size = new System.Drawing.Size(171, 23);
+            this.tbStockAmount.Size = new System.Drawing.Size(171, 27);
             this.tbStockAmount.TabIndex = 11;
             // 
             // btnSell
@@ -480,7 +482,7 @@
             this.stockIDlb.AutoSize = true;
             this.stockIDlb.Location = new System.Drawing.Point(13, 37);
             this.stockIDlb.Name = "stockIDlb";
-            this.stockIDlb.Size = new System.Drawing.Size(56, 15);
+            this.stockIDlb.Size = new System.Drawing.Size(69, 20);
             this.stockIDlb.TabIndex = 8;
             this.stockIDlb.Text = "Stock ID:";
             // 
@@ -488,7 +490,7 @@
             // 
             this.tbFindStock.Location = new System.Drawing.Point(75, 34);
             this.tbFindStock.Name = "tbFindStock";
-            this.tbFindStock.Size = new System.Drawing.Size(171, 23);
+            this.tbFindStock.Size = new System.Drawing.Size(171, 27);
             this.tbFindStock.TabIndex = 7;
             // 
             // btnStockInfo
@@ -507,10 +509,10 @@
             // lbStock
             // 
             this.lbStock.FormattingEnabled = true;
-            this.lbStock.ItemHeight = 15;
+            this.lbStock.ItemHeight = 20;
             this.lbStock.Location = new System.Drawing.Point(299, 66);
             this.lbStock.Name = "lbStock";
-            this.lbStock.Size = new System.Drawing.Size(337, 349);
+            this.lbStock.Size = new System.Drawing.Size(337, 344);
             this.lbStock.TabIndex = 15;
             // 
             // Stock
@@ -531,7 +533,7 @@
             this.Stocklbl.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Stocklbl.Location = new System.Drawing.Point(396, 0);
             this.Stocklbl.Name = "Stocklbl";
-            this.Stocklbl.Size = new System.Drawing.Size(97, 45);
+            this.Stocklbl.Size = new System.Drawing.Size(118, 54);
             this.Stocklbl.TabIndex = 10;
             this.Stocklbl.Text = "Stock";
             // 
@@ -543,10 +545,10 @@
             this.employeesPage.Controls.Add(this.gbSearch);
             this.employeesPage.Controls.Add(this.lbEmployees);
             this.employeesPage.Controls.Add(this.groupBox2);
-            this.employeesPage.Location = new System.Drawing.Point(4, 27);
+            this.employeesPage.Location = new System.Drawing.Point(4, 32);
             this.employeesPage.Name = "employeesPage";
             this.employeesPage.Padding = new System.Windows.Forms.Padding(3);
-            this.employeesPage.Size = new System.Drawing.Size(925, 484);
+            this.employeesPage.Size = new System.Drawing.Size(925, 479);
             this.employeesPage.TabIndex = 0;
             this.employeesPage.Text = "Employees";
             this.employeesPage.Click += new System.EventHandler(this.EmployeesPage_Click);
@@ -570,7 +572,7 @@
             this.cbAdministrators.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.cbAdministrators.Location = new System.Drawing.Point(33, 88);
             this.cbAdministrators.Name = "cbAdministrators";
-            this.cbAdministrators.Size = new System.Drawing.Size(128, 24);
+            this.cbAdministrators.Size = new System.Drawing.Size(161, 29);
             this.cbAdministrators.TabIndex = 23;
             this.cbAdministrators.Text = "Administrators";
             this.cbAdministrators.UseVisualStyleBackColor = true;
@@ -581,7 +583,7 @@
             this.cbEmployees.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.cbEmployees.Location = new System.Drawing.Point(33, 60);
             this.cbEmployees.Name = "cbEmployees";
-            this.cbEmployees.Size = new System.Drawing.Size(101, 24);
+            this.cbEmployees.Size = new System.Drawing.Size(126, 29);
             this.cbEmployees.TabIndex = 22;
             this.cbEmployees.Text = "Employees";
             this.cbEmployees.UseVisualStyleBackColor = true;
@@ -592,7 +594,7 @@
             this.cbManagers.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.cbManagers.Location = new System.Drawing.Point(33, 30);
             this.cbManagers.Name = "cbManagers";
-            this.cbManagers.Size = new System.Drawing.Size(96, 24);
+            this.cbManagers.Size = new System.Drawing.Size(119, 29);
             this.cbManagers.TabIndex = 21;
             this.cbManagers.Text = "Managers";
             this.cbManagers.UseVisualStyleBackColor = true;
@@ -628,7 +630,7 @@
             this.Jupiterlbl.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Jupiterlbl.Location = new System.Drawing.Point(355, -1);
             this.Jupiterlbl.Name = "Jupiterlbl";
-            this.Jupiterlbl.Size = new System.Drawing.Size(173, 45);
+            this.Jupiterlbl.Size = new System.Drawing.Size(212, 54);
             this.Jupiterlbl.TabIndex = 10;
             this.Jupiterlbl.Text = "Employees";
             // 
@@ -662,7 +664,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(38, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 15);
+            this.label1.Size = new System.Drawing.Size(139, 20);
             this.label1.TabIndex = 8;
             this.label1.Text = "Employee number:";
             // 
@@ -670,22 +672,24 @@
             // 
             this.tbFindEmployee.Location = new System.Drawing.Point(31, 41);
             this.tbFindEmployee.Name = "tbFindEmployee";
-            this.tbFindEmployee.Size = new System.Drawing.Size(132, 23);
+            this.tbFindEmployee.Size = new System.Drawing.Size(132, 27);
             this.tbFindEmployee.TabIndex = 7;
             // 
             // lbEmployees
             // 
             this.lbEmployees.FormattingEnabled = true;
-            this.lbEmployees.ItemHeight = 15;
+            this.lbEmployees.ItemHeight = 20;
             this.lbEmployees.Location = new System.Drawing.Point(433, 58);
             this.lbEmployees.Name = "lbEmployees";
-            this.lbEmployees.Size = new System.Drawing.Size(484, 394);
+            this.lbEmployees.Size = new System.Drawing.Size(484, 384);
             this.lbEmployees.TabIndex = 9;
             // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(121)))), ((int)(((byte)(3)))));
             this.groupBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.groupBox2.Controls.Add(this.lblPassword);
+            this.groupBox2.Controls.Add(this.tbPassword);
             this.groupBox2.Controls.Add(this.cbShift);
             this.groupBox2.Controls.Add(this.cbPostition);
             this.groupBox2.Controls.Add(this.tbHWage);
@@ -720,7 +724,7 @@
             "Afternoon"});
             this.cbShift.Location = new System.Drawing.Point(290, 103);
             this.cbShift.Name = "cbShift";
-            this.cbShift.Size = new System.Drawing.Size(123, 23);
+            this.cbShift.Size = new System.Drawing.Size(123, 28);
             this.cbShift.TabIndex = 23;
             // 
             // cbPostition
@@ -732,23 +736,23 @@
             "Administrator"});
             this.cbPostition.Location = new System.Drawing.Point(87, 136);
             this.cbPostition.Name = "cbPostition";
-            this.cbPostition.Size = new System.Drawing.Size(123, 23);
+            this.cbPostition.Size = new System.Drawing.Size(123, 28);
             this.cbPostition.TabIndex = 22;
             // 
             // tbHWage
             // 
             this.tbHWage.Location = new System.Drawing.Point(87, 177);
             this.tbHWage.Name = "tbHWage";
-            this.tbHWage.Size = new System.Drawing.Size(123, 23);
+            this.tbHWage.Size = new System.Drawing.Size(123, 27);
             this.tbHWage.TabIndex = 21;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label12.Location = new System.Drawing.Point(22, 181);
+            this.label12.Location = new System.Drawing.Point(22, 186);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(55, 17);
+            this.label12.Size = new System.Drawing.Size(70, 23);
             this.label12.TabIndex = 20;
             this.label12.Text = "HWage:";
             // 
@@ -756,9 +760,9 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(22, 137);
+            this.label3.Location = new System.Drawing.Point(7, 137);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 17);
+            this.label3.Size = new System.Drawing.Size(74, 23);
             this.label3.TabIndex = 16;
             this.label3.Text = "Position:";
             // 
@@ -766,23 +770,23 @@
             // 
             this.tbEmail.Location = new System.Drawing.Point(290, 66);
             this.tbEmail.Name = "tbEmail";
-            this.tbEmail.Size = new System.Drawing.Size(123, 23);
+            this.tbEmail.Size = new System.Drawing.Size(123, 27);
             this.tbEmail.TabIndex = 15;
             // 
             // tbAddress
             // 
             this.tbAddress.Location = new System.Drawing.Point(290, 33);
             this.tbAddress.Name = "tbAddress";
-            this.tbAddress.Size = new System.Drawing.Size(123, 23);
+            this.tbAddress.Size = new System.Drawing.Size(123, 27);
             this.tbAddress.TabIndex = 14;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label7.Location = new System.Drawing.Point(242, 65);
+            this.label7.Location = new System.Drawing.Point(225, 70);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(43, 17);
+            this.label7.Size = new System.Drawing.Size(55, 23);
             this.label7.TabIndex = 13;
             this.label7.Text = "Email:";
             // 
@@ -790,9 +794,9 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label8.Location = new System.Drawing.Point(233, 32);
+            this.label8.Location = new System.Drawing.Point(216, 33);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(60, 17);
+            this.label8.Size = new System.Drawing.Size(74, 23);
             this.label8.TabIndex = 12;
             this.label8.Text = "Address:";
             // 
@@ -801,7 +805,7 @@
             this.cbDep.FormattingEnabled = true;
             this.cbDep.Location = new System.Drawing.Point(87, 103);
             this.cbDep.Name = "cbDep";
-            this.cbDep.Size = new System.Drawing.Size(123, 23);
+            this.cbDep.Size = new System.Drawing.Size(123, 28);
             this.cbDep.TabIndex = 9;
             this.cbDep.SelectedIndexChanged += new System.EventHandler(this.cbDep_SelectedIndexChanged);
             // 
@@ -809,23 +813,23 @@
             // 
             this.tbSurname.Location = new System.Drawing.Point(87, 66);
             this.tbSurname.Name = "tbSurname";
-            this.tbSurname.Size = new System.Drawing.Size(123, 23);
+            this.tbSurname.Size = new System.Drawing.Size(123, 27);
             this.tbSurname.TabIndex = 10;
             // 
             // tbFName
             // 
             this.tbFName.Location = new System.Drawing.Point(87, 33);
             this.tbFName.Name = "tbFName";
-            this.tbFName.Size = new System.Drawing.Size(123, 23);
+            this.tbFName.Size = new System.Drawing.Size(123, 27);
             this.tbFName.TabIndex = 9;
             // 
             // shiftLbl
             // 
             this.shiftLbl.AutoSize = true;
             this.shiftLbl.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.shiftLbl.Location = new System.Drawing.Point(248, 103);
+            this.shiftLbl.Location = new System.Drawing.Point(225, 106);
             this.shiftLbl.Name = "shiftLbl";
-            this.shiftLbl.Size = new System.Drawing.Size(38, 17);
+            this.shiftLbl.Size = new System.Drawing.Size(49, 23);
             this.shiftLbl.TabIndex = 8;
             this.shiftLbl.Text = "Shift:";
             // 
@@ -835,7 +839,7 @@
             this.departmentLbl.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.departmentLbl.Location = new System.Drawing.Point(1, 103);
             this.departmentLbl.Name = "departmentLbl";
-            this.departmentLbl.Size = new System.Drawing.Size(84, 17);
+            this.departmentLbl.Size = new System.Drawing.Size(106, 23);
             this.departmentLbl.TabIndex = 7;
             this.departmentLbl.Text = "Department:";
             // 
@@ -843,9 +847,9 @@
             // 
             this.lastNamelbl.AutoSize = true;
             this.lastNamelbl.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lastNamelbl.Location = new System.Drawing.Point(6, 67);
+            this.lastNamelbl.Location = new System.Drawing.Point(1, 68);
             this.lastNamelbl.Name = "lastNamelbl";
-            this.lastNamelbl.Size = new System.Drawing.Size(75, 17);
+            this.lastNamelbl.Size = new System.Drawing.Size(95, 23);
             this.lastNamelbl.TabIndex = 6;
             this.lastNamelbl.Text = "Last Name:";
             // 
@@ -853,9 +857,9 @@
             // 
             this.firstNamelbl.AutoSize = true;
             this.firstNamelbl.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.firstNamelbl.Location = new System.Drawing.Point(7, 33);
+            this.firstNamelbl.Location = new System.Drawing.Point(1, 35);
             this.firstNamelbl.Name = "firstNamelbl";
-            this.firstNamelbl.Size = new System.Drawing.Size(77, 17);
+            this.firstNamelbl.Size = new System.Drawing.Size(97, 23);
             this.firstNamelbl.TabIndex = 5;
             this.firstNamelbl.Text = "First Name:";
             // 
@@ -863,9 +867,9 @@
             // 
             this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(182)))), ((int)(((byte)(3)))));
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Location = new System.Drawing.Point(292, 155);
+            this.btnAdd.Location = new System.Drawing.Point(290, 172);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(124, 45);
+            this.btnAdd.Size = new System.Drawing.Size(123, 51);
             this.btnAdd.TabIndex = 4;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
@@ -886,9 +890,26 @@
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             this.tabControl1.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabControl1_Selected);
             // 
+            // tbPassword
+            // 
+            this.tbPassword.Location = new System.Drawing.Point(290, 137);
+            this.tbPassword.Name = "tbPassword";
+            this.tbPassword.Size = new System.Drawing.Size(123, 27);
+            this.tbPassword.TabIndex = 24;
+            // 
+            // lblPassword
+            // 
+            this.lblPassword.AutoSize = true;
+            this.lblPassword.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblPassword.Location = new System.Drawing.Point(204, 134);
+            this.lblPassword.Name = "lblPassword";
+            this.lblPassword.Size = new System.Drawing.Size(86, 23);
+            this.lblPassword.TabIndex = 25;
+            this.lblPassword.Text = "Password:";
+            // 
             // Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(933, 519);
             this.Controls.Add(this.tabControl1);
@@ -998,6 +1019,8 @@
         private System.Windows.Forms.CheckBox cbAdministrators;
         private System.Windows.Forms.CheckBox cbEmployees;
         private System.Windows.Forms.CheckBox cbManagers;
+        private System.Windows.Forms.Label lblPassword;
+        private System.Windows.Forms.TextBox tbPassword;
     }
 }
 

@@ -49,6 +49,7 @@
             this.btnUpdtDetails = new System.Windows.Forms.Button();
             this.btnGoBack = new System.Windows.Forms.Button();
             this.btnRmv = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.HeaderPanel.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -73,7 +74,7 @@
             this.Jupiterlbl.Location = new System.Drawing.Point(114, 0);
             this.Jupiterlbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Jupiterlbl.Name = "Jupiterlbl";
-            this.Jupiterlbl.Size = new System.Drawing.Size(335, 45);
+            this.Jupiterlbl.Size = new System.Drawing.Size(414, 54);
             this.Jupiterlbl.TabIndex = 10;
             this.Jupiterlbl.Text = "Employee Information";
             this.Jupiterlbl.Click += new System.EventHandler(this.Jupiterlbl_Click);
@@ -83,7 +84,7 @@
             this.lblEmail.AutoSize = true;
             this.lblEmail.Location = new System.Drawing.Point(123, 123);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(33, 17);
+            this.lblEmail.Size = new System.Drawing.Size(41, 23);
             this.lblEmail.TabIndex = 27;
             this.lblEmail.Text = "Text";
             // 
@@ -92,7 +93,7 @@
             this.lblLName.AutoSize = true;
             this.lblLName.Location = new System.Drawing.Point(123, 73);
             this.lblLName.Name = "lblLName";
-            this.lblLName.Size = new System.Drawing.Size(33, 17);
+            this.lblLName.Size = new System.Drawing.Size(41, 23);
             this.lblLName.TabIndex = 26;
             this.lblLName.Text = "Text";
             // 
@@ -101,7 +102,7 @@
             this.lblFName.AutoSize = true;
             this.lblFName.Location = new System.Drawing.Point(123, 32);
             this.lblFName.Name = "lblFName";
-            this.lblFName.Size = new System.Drawing.Size(33, 17);
+            this.lblFName.Size = new System.Drawing.Size(41, 23);
             this.lblFName.TabIndex = 25;
             this.lblFName.Text = "Text";
             // 
@@ -111,7 +112,7 @@
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.Location = new System.Drawing.Point(9, 120);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(50, 20);
+            this.label4.Size = new System.Drawing.Size(64, 25);
             this.label4.TabIndex = 24;
             this.label4.Text = "Email:";
             // 
@@ -121,7 +122,7 @@
             this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label10.Location = new System.Drawing.Point(6, 29);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(87, 20);
+            this.label10.Size = new System.Drawing.Size(111, 25);
             this.label10.TabIndex = 23;
             this.label10.Text = "First Name:";
             // 
@@ -131,7 +132,7 @@
             this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label9.Location = new System.Drawing.Point(6, 70);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(84, 20);
+            this.label9.Size = new System.Drawing.Size(108, 25);
             this.label9.TabIndex = 22;
             this.label9.Text = "Last Name:";
             // 
@@ -163,7 +164,7 @@
             this.lblShift.AutoSize = true;
             this.lblShift.Location = new System.Drawing.Point(123, 203);
             this.lblShift.Name = "lblShift";
-            this.lblShift.Size = new System.Drawing.Size(33, 17);
+            this.lblShift.Size = new System.Drawing.Size(41, 23);
             this.lblShift.TabIndex = 31;
             this.lblShift.Text = "Text";
             // 
@@ -173,7 +174,7 @@
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label6.Location = new System.Drawing.Point(16, 203);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(44, 20);
+            this.label6.Size = new System.Drawing.Size(57, 25);
             this.label6.TabIndex = 30;
             this.label6.Text = "Shift:";
             // 
@@ -182,7 +183,7 @@
             this.lblHireDate.AutoSize = true;
             this.lblHireDate.Location = new System.Drawing.Point(350, 70);
             this.lblHireDate.Name = "lblHireDate";
-            this.lblHireDate.Size = new System.Drawing.Size(33, 17);
+            this.lblHireDate.Size = new System.Drawing.Size(41, 23);
             this.lblHireDate.TabIndex = 27;
             this.lblHireDate.Text = "Text";
             // 
@@ -191,7 +192,7 @@
             this.lblAddress.AutoSize = true;
             this.lblAddress.Location = new System.Drawing.Point(123, 167);
             this.lblAddress.Name = "lblAddress";
-            this.lblAddress.Size = new System.Drawing.Size(33, 17);
+            this.lblAddress.Size = new System.Drawing.Size(41, 23);
             this.lblAddress.TabIndex = 29;
             this.lblAddress.Text = "Text";
             // 
@@ -201,7 +202,7 @@
             this.label18.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label18.Location = new System.Drawing.Point(234, 26);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(112, 20);
+            this.label18.Size = new System.Drawing.Size(144, 25);
             this.label18.TabIndex = 22;
             this.label18.Text = "Department Id:";
             this.label18.Click += new System.EventHandler(this.label18_Click);
@@ -212,7 +213,7 @@
             this.label14.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label14.Location = new System.Drawing.Point(9, 165);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(67, 20);
+            this.label14.Size = new System.Drawing.Size(85, 25);
             this.label14.TabIndex = 28;
             this.label14.Text = "Address:";
             // 
@@ -222,7 +223,7 @@
             this.label20.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label20.Location = new System.Drawing.Point(234, 67);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(87, 20);
+            this.label20.Size = new System.Drawing.Size(110, 25);
             this.label20.TabIndex = 24;
             this.label20.Text = "Date Hired:";
             // 
@@ -231,7 +232,7 @@
             this.lblDepts.AutoSize = true;
             this.lblDepts.Location = new System.Drawing.Point(370, 29);
             this.lblDepts.Name = "lblDepts";
-            this.lblDepts.Size = new System.Drawing.Size(33, 17);
+            this.lblDepts.Size = new System.Drawing.Size(41, 23);
             this.lblDepts.TabIndex = 26;
             this.lblDepts.Text = "Text";
             // 
@@ -240,9 +241,9 @@
             this.btnUpdtDetails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(182)))), ((int)(((byte)(3)))));
             this.btnUpdtDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdtDetails.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnUpdtDetails.Location = new System.Drawing.Point(496, 81);
+            this.btnUpdtDetails.Location = new System.Drawing.Point(496, 80);
             this.btnUpdtDetails.Name = "btnUpdtDetails";
-            this.btnUpdtDetails.Size = new System.Drawing.Size(166, 258);
+            this.btnUpdtDetails.Size = new System.Drawing.Size(166, 129);
             this.btnUpdtDetails.TabIndex = 36;
             this.btnUpdtDetails.Text = "Update Details";
             this.btnUpdtDetails.UseVisualStyleBackColor = false;
@@ -268,18 +269,32 @@
             this.btnRmv.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnRmv.Location = new System.Drawing.Point(228, 345);
             this.btnRmv.Name = "btnRmv";
-            this.btnRmv.Size = new System.Drawing.Size(434, 68);
+            this.btnRmv.Size = new System.Drawing.Size(433, 68);
             this.btnRmv.TabIndex = 38;
             this.btnRmv.Text = "Fire Employee";
             this.btnRmv.UseVisualStyleBackColor = false;
             this.btnRmv.Click += new System.EventHandler(this.BtnRmv_Click);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(182)))), ((int)(((byte)(3)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.Location = new System.Drawing.Point(496, 215);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(166, 124);
+            this.button1.TabIndex = 39;
+            this.button1.Text = "Assign Shift";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            // 
             // EmployeeInformation
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(121)))), ((int)(((byte)(3)))));
             this.ClientSize = new System.Drawing.Size(673, 425);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnRmv);
             this.Controls.Add(this.btnGoBack);
             this.Controls.Add(this.btnUpdtDetails);
@@ -321,5 +336,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label lblDepts;
+        private System.Windows.Forms.Button button1;
     }
 }

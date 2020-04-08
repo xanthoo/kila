@@ -39,10 +39,19 @@ namespace KILR_Project
         {
             try
             {
-                string HireDate = DateTime.Today.ToString("yyyy-MM-dd");
-            Department dep = dm.GetDepartmentByName(cbDep.SelectedItem.ToString());
-            empMang.AddEmployee(tbFName.Text, tbSurname.Text, dep, (Position)cbPostition.SelectedIndex, tbEmail.Text, tbAddress.Text, (Shift)cbShift.SelectedIndex, HireDate, Convert.ToDouble(tbHWage.Text));
-            PopulateEmployeesList();
+                Regex regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
+                Match match = regex.Match(tbEmail.Text);
+                if (match.Success)
+                {
+                    string HireDate = DateTime.Today.ToString("yyyy-MM-dd");
+                    Department dep = dm.GetDepartmentByName(cbDep.SelectedItem.ToString());
+                    empMang.AddEmployee(tbFName.Text, tbSurname.Text, dep, (Position)cbPostition.SelectedIndex, tbEmail.Text, tbAddress.Text, (Shift)cbShift.SelectedIndex, HireDate, Convert.ToDouble(tbHWage.Text), tbPassword.Text);
+                    PopulateEmployeesList();
+                }
+                else
+                {
+                    MessageBox.Show("Please input a correct email!");
+                }
             }
             catch (Exception)
             {
@@ -412,6 +421,11 @@ namespace KILR_Project
         private void btnFilter_Click(object sender, EventArgs e)
         {
             PopulateEmployeesList();
+        }
+
+        private void RadioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }
