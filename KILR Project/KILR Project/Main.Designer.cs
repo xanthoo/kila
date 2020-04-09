@@ -47,6 +47,7 @@
             this.cbActive = new System.Windows.Forms.CheckBox();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.tbMinQuantity = new System.Windows.Forms.TextBox();
             this.tbStockBuying = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.tbStockPrice = new System.Windows.Forms.TextBox();
@@ -99,6 +100,7 @@
             this.firstNamelbl = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.label2 = new System.Windows.Forms.Label();
             this.tabPage1.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -257,9 +259,9 @@
             this.groupBox6.Controls.Add(this.btnFilterStock);
             this.groupBox6.Controls.Add(this.cbInactive);
             this.groupBox6.Controls.Add(this.cbActive);
-            this.groupBox6.Location = new System.Drawing.Point(40, 343);
+            this.groupBox6.Location = new System.Drawing.Point(40, 350);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(192, 135);
+            this.groupBox6.Size = new System.Drawing.Size(192, 128);
             this.groupBox6.TabIndex = 18;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Filter by Product Activity";
@@ -271,7 +273,7 @@
             this.btnFilterStock.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnFilterStock.Location = new System.Drawing.Point(32, 84);
             this.btnFilterStock.Name = "btnFilterStock";
-            this.btnFilterStock.Size = new System.Drawing.Size(130, 45);
+            this.btnFilterStock.Size = new System.Drawing.Size(130, 38);
             this.btnFilterStock.TabIndex = 11;
             this.btnFilterStock.Text = "Filter";
             this.btnFilterStock.UseVisualStyleBackColor = false;
@@ -316,6 +318,8 @@
             // 
             this.groupBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(121)))), ((int)(((byte)(3)))));
             this.groupBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.groupBox3.Controls.Add(this.label2);
+            this.groupBox3.Controls.Add(this.tbMinQuantity);
             this.groupBox3.Controls.Add(this.tbStockBuying);
             this.groupBox3.Controls.Add(this.label13);
             this.groupBox3.Controls.Add(this.tbStockPrice);
@@ -328,23 +332,30 @@
             this.groupBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox3.Location = new System.Drawing.Point(40, 66);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(253, 264);
+            this.groupBox3.Size = new System.Drawing.Size(253, 278);
             this.groupBox3.TabIndex = 17;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Add Stock";
             // 
+            // tbMinQuantity
+            // 
+            this.tbMinQuantity.Location = new System.Drawing.Point(70, 169);
+            this.tbMinQuantity.Name = "tbMinQuantity";
+            this.tbMinQuantity.Size = new System.Drawing.Size(122, 23);
+            this.tbMinQuantity.TabIndex = 25;
+            // 
             // tbStockBuying
             // 
-            this.tbStockBuying.Location = new System.Drawing.Point(122, 139);
+            this.tbStockBuying.Location = new System.Drawing.Point(122, 109);
             this.tbStockBuying.Name = "tbStockBuying";
-            this.tbStockBuying.Size = new System.Drawing.Size(124, 23);
+            this.tbStockBuying.Size = new System.Drawing.Size(122, 23);
             this.tbStockBuying.TabIndex = 23;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label13.Location = new System.Drawing.Point(11, 139);
+            this.label13.Location = new System.Drawing.Point(10, 109);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(86, 17);
             this.label13.TabIndex = 22;
@@ -352,16 +363,16 @@
             // 
             // tbStockPrice
             // 
-            this.tbStockPrice.Location = new System.Drawing.Point(122, 103);
+            this.tbStockPrice.Location = new System.Drawing.Point(122, 80);
             this.tbStockPrice.Name = "tbStockPrice";
-            this.tbStockPrice.Size = new System.Drawing.Size(123, 23);
+            this.tbStockPrice.Size = new System.Drawing.Size(122, 23);
             this.tbStockPrice.TabIndex = 21;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label14.Location = new System.Drawing.Point(14, 103);
+            this.label14.Location = new System.Drawing.Point(13, 80);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(83, 17);
             this.label14.TabIndex = 20;
@@ -369,9 +380,9 @@
             // 
             // tbStockQuantity
             // 
-            this.tbStockQuantity.Location = new System.Drawing.Point(123, 69);
+            this.tbStockQuantity.Location = new System.Drawing.Point(122, 51);
             this.tbStockQuantity.Name = "tbStockQuantity";
-            this.tbStockQuantity.Size = new System.Drawing.Size(124, 23);
+            this.tbStockQuantity.Size = new System.Drawing.Size(122, 23);
             this.tbStockQuantity.TabIndex = 15;
             this.tbStockQuantity.TextChanged += new System.EventHandler(this.TextBox5_TextChanged);
             // 
@@ -379,7 +390,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label9.Location = new System.Drawing.Point(33, 69);
+            this.label9.Location = new System.Drawing.Point(32, 52);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(64, 17);
             this.label9.TabIndex = 14;
@@ -387,16 +398,16 @@
             // 
             // tbStockName
             // 
-            this.tbStockName.Location = new System.Drawing.Point(123, 33);
+            this.tbStockName.Location = new System.Drawing.Point(122, 22);
             this.tbStockName.Name = "tbStockName";
-            this.tbStockName.Size = new System.Drawing.Size(123, 23);
+            this.tbStockName.Size = new System.Drawing.Size(122, 23);
             this.tbStockName.TabIndex = 9;
             // 
             // stockNameLbl
             // 
             this.stockNameLbl.AutoSize = true;
             this.stockNameLbl.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.stockNameLbl.Location = new System.Drawing.Point(50, 33);
+            this.stockNameLbl.Location = new System.Drawing.Point(50, 22);
             this.stockNameLbl.Name = "stockNameLbl";
             this.stockNameLbl.Size = new System.Drawing.Size(47, 17);
             this.stockNameLbl.TabIndex = 5;
@@ -407,7 +418,7 @@
             this.btnAddStock.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(182)))), ((int)(((byte)(3)))));
             this.btnAddStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddStock.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnAddStock.Location = new System.Drawing.Point(18, 182);
+            this.btnAddStock.Location = new System.Drawing.Point(18, 198);
             this.btnAddStock.Name = "btnAddStock";
             this.btnAddStock.Size = new System.Drawing.Size(229, 66);
             this.btnAddStock.TabIndex = 4;
@@ -886,6 +897,16 @@
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             this.tabControl1.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabControl1_Selected);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(28, 142);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(216, 20);
+            this.label2.TabIndex = 26;
+            this.label2.Text = "Minimum Quantity Permitted";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -998,6 +1019,8 @@
         private System.Windows.Forms.CheckBox cbAdministrators;
         private System.Windows.Forms.CheckBox cbEmployees;
         private System.Windows.Forms.CheckBox cbManagers;
+        private System.Windows.Forms.TextBox tbMinQuantity;
+        private System.Windows.Forms.Label label2;
     }
 }
 

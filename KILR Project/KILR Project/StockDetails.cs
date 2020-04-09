@@ -23,6 +23,7 @@ namespace KILR_Project
             this.sm = sm;
             buyingLbl.Text = p.BuyingPrice.ToString();
             stockNameLbl.Text = p.Name;
+            lblMinAmount.Text = p.MinimumQuantity.ToString();
             idlbl.Text = p.ID.ToString();
             pricelbl.Text = p.SellingPrice.ToString();
             quantitylbl.Text = p.Quanitity.ToString();
@@ -33,6 +34,14 @@ namespace KILR_Project
             else
             {
                 statuslbl.Text = "Inactive";
+            }
+            if(p.RestockRequest() == true)
+            {
+                lblRestockRequest.Visible = true;
+            }
+            else
+            {
+                lblRestockRequest.Visible = false;
             }
         }
 
@@ -52,6 +61,11 @@ namespace KILR_Project
             UpdateStock us = new UpdateStock(this, this.m, this.stock, sm);
             us.Show();
             this.Close();
+        }
+
+        private void GroupBox3_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }
