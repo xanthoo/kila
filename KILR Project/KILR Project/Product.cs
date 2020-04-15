@@ -14,6 +14,7 @@ namespace KILR_Project
         private decimal sellingPrice;
         private decimal buyingPrice;
         private bool isActive;
+        private int minimumQuantity;
 
         public int ID { get { return this.productId; } }
         public string Name { get { return this.productName; } set { this.productName = value; } }
@@ -21,8 +22,9 @@ namespace KILR_Project
         public decimal SellingPrice { get { return this.sellingPrice; } set { this.sellingPrice = value; } }
         public decimal BuyingPrice { get { return this.buyingPrice; } set { this.buyingPrice = value; } }
         public bool IsActive { get { return this.isActive; } set { this.isActive = value; } }
+        public int MinimumQuantity { get { return this.minimumQuantity; } set { this.minimumQuantity = value; } }
 
-        public Product(int id, string name, int quanitity, decimal sellingPrice, decimal buyingPrice, bool isActive)
+        public Product(int id, string name, int quanitity, decimal sellingPrice, decimal buyingPrice, bool isActive, int minimumQuantity)
         {
             this.productId = id;
             this.productName = name;
@@ -30,6 +32,18 @@ namespace KILR_Project
             this.sellingPrice = sellingPrice;
             this.buyingPrice = buyingPrice;
             this.isActive = isActive;
+            this.minimumQuantity = minimumQuantity;
+        }
+        public bool RestockRequest()
+        {
+            if(this.quanitity < this.minimumQuantity)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
         public string GetInfo()
         {

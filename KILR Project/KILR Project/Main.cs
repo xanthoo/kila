@@ -125,6 +125,7 @@ namespace KILR_Project
             {
                 string name = tbStockName.Text.Trim();
                 int quantity = Convert.ToInt32(tbStockQuantity.Text);
+                int minQuantity = Convert.ToInt32(tbMinQuantity.Text);
                 decimal sellingPrice = Convert.ToDecimal(tbStockPrice.Text);
                 decimal buyingPrice = Convert.ToDecimal(tbStockBuying.Text);
                 decimal roundSelling = Math.Round(sellingPrice, 2, MidpointRounding.ToEven);
@@ -133,9 +134,9 @@ namespace KILR_Project
                 {
                     if (Regex.IsMatch(quantity.ToString(), "^[0-9]{0,7}$"))
                     {
-                        if ((roundBuying > 0) && (roundSelling > 0))
+                        if ((roundBuying > 0) && (roundSelling > 0) && (minQuantity > 0))
                         {
-                            if (sm.AddStock(new Product(0, name, quantity, roundSelling, roundBuying, true)) == true)
+                            if (DB.AddStock(new Product(0, name, quantity, roundSelling, roundBuying, true, minQuantity)) == true)
                             {
                                 MessageBox.Show("Stock succesfully created!");
                                 RefreshStock();
@@ -214,6 +215,10 @@ namespace KILR_Project
                         {
                             sm.Decrease(p, amount);
                             RefreshStock();
+                            if (p.RestockRequest() == true)
+                            {
+                                MessageBox.Show(p.Name + " has fallen below the minimum quantity limit of " + p.MinimumQuantity, "Restock Request", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                            }
                         }
                         else
                         {
@@ -278,9 +283,9 @@ namespace KILR_Project
         }
         public void RefreshStock()
         {
-            sm.GetAllStocks();
+            DB.GetAllStocks();
             lbStock.Items.Clear();
-            foreach (Product p in sm.GetAllStocks())
+            foreach (Product p in DB.GetAllStocks())
             {
                 lbStock.Items.Add(p.GetInfo());
             }
@@ -288,19 +293,19 @@ namespace KILR_Project
 
         private void BtnFilterStock_Click(object sender, EventArgs e)
         {
-            sm.GetAllStocks();
+            DB.GetAllStocks();
             lbStock.Items.Clear();
 
             if (cbActive.Checked == false && cbInactive.Checked == false)
             {
-                foreach (Product p in sm.GetAllStocks())
+                foreach (Product p in DB.GetAllStocks())
                 {
                     lbStock.Items.Add(p.GetInfo());
                 }
                 return;
             }
 
-            foreach (Product p in sm.GetAllStocks())
+            foreach (Product p in DB.GetAllStocks())
             {
                 if (cbActive.Checked == true)
                 {

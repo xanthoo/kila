@@ -87,6 +87,7 @@
     <Compile Include="CreateDepartment.Designer.cs">
       <DependentUpon>CreateDepartment.cs</DependentUpon>
     </Compile>
+    <Compile Include="DB.cs" />
     <Compile Include="Department.cs" />
     <Compile Include="DepartmentInformation.cs">
       <SubType>Form</SubType>

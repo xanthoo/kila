@@ -27,6 +27,7 @@ namespace KILR_Project
             tbBuyingPrice.Text = p.BuyingPrice.ToString();
             tbName.Text = p.Name;
             tbQuantity.Text = p.Quanitity.ToString();
+            tbMinimumQuantity.Text = p.MinimumQuantity.ToString();
             tbSellingPrice.Text = p.SellingPrice.ToString();
             if(p.IsActive == true)
             {
@@ -50,6 +51,7 @@ namespace KILR_Project
             {
                 string name = tbName.Text.Trim();
                 int quantity = Convert.ToInt32(tbQuantity.Text);
+                int minimumQuantity = Convert.ToInt32(tbMinimumQuantity.Text);
                 decimal sellingPrice = Convert.ToDecimal(tbSellingPrice.Text);
                 decimal buyingPrice = Convert.ToDecimal(tbBuyingPrice.Text);
                 decimal roundSelling = Math.Round(sellingPrice, 2, MidpointRounding.ToEven);
@@ -58,12 +60,13 @@ namespace KILR_Project
                 {
                     if (Regex.IsMatch(quantity.ToString(), "^[0-9]{0,7}$"))
                     {
-                            if (quantity >= 0 && sellingPrice >= 0 && buyingPrice >= 0)
+                            if (quantity > 0 && sellingPrice > 0 && buyingPrice > 0 && minimumQuantity > 0)
                             {
                                 this.stock.Name = name;
                                 this.stock.Quanitity = quantity;
                                 this.stock.SellingPrice = roundSelling;
                                 this.stock.BuyingPrice = roundBuying;
+                                this.stock.MinimumQuantity = minimumQuantity;
 
                                 if (rbActive.Checked == true)
                                 {
@@ -73,7 +76,7 @@ namespace KILR_Project
                                 {
                                     this.stock.IsActive = false;
                                 }
-                                sm.UpdateStock(this.stock);
+                                DB.UpdateStock(this.stock);
                                 MessageBox.Show("Stock Updated!");
                             }
                             else
@@ -103,6 +106,11 @@ namespace KILR_Project
             sd = new StockDetails(stock, m, sm);
             sd.Show();
             this.Close();
+        }
+
+        private void GroupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

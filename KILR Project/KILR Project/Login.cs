@@ -19,7 +19,7 @@ namespace KILR_Project
         {
             InitializeComponent();
 
-            userManager = new UserManager(connectionString);
+            userManager = new UserManager();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
