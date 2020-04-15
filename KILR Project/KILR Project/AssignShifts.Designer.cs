@@ -31,13 +31,14 @@
             this.dtpShift = new System.Windows.Forms.DateTimePicker();
             this.cbShift = new System.Windows.Forms.ComboBox();
             this.btnAssign = new System.Windows.Forms.Button();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // dtpShift
             // 
-            this.dtpShift.Location = new System.Drawing.Point(311, 115);
+            this.dtpShift.Location = new System.Drawing.Point(192, 62);
             this.dtpShift.Name = "dtpShift";
-            this.dtpShift.Size = new System.Drawing.Size(200, 22);
+            this.dtpShift.Size = new System.Drawing.Size(149, 22);
             this.dtpShift.TabIndex = 0;
             this.dtpShift.ValueChanged += new System.EventHandler(this.DateTimePicker1_ValueChanged);
             // 
@@ -48,7 +49,7 @@
             "Day",
             "Night",
             "Afternoon"});
-            this.cbShift.Location = new System.Drawing.Point(110, 117);
+            this.cbShift.Location = new System.Drawing.Point(65, 60);
             this.cbShift.Name = "cbShift";
             this.cbShift.Size = new System.Drawing.Size(121, 24);
             this.cbShift.TabIndex = 1;
@@ -58,13 +59,22 @@
             this.btnAssign.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(182)))), ((int)(((byte)(3)))));
             this.btnAssign.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAssign.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnAssign.Location = new System.Drawing.Point(110, 210);
+            this.btnAssign.Location = new System.Drawing.Point(65, 214);
             this.btnAssign.Name = "btnAssign";
-            this.btnAssign.Size = new System.Drawing.Size(401, 80);
+            this.btnAssign.Size = new System.Drawing.Size(276, 87);
             this.btnAssign.TabIndex = 40;
             this.btnAssign.Text = "Assign Shift";
             this.btnAssign.UseVisualStyleBackColor = false;
             this.btnAssign.Click += new System.EventHandler(this.Button1_Click);
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 16;
+            this.listBox1.Location = new System.Drawing.Point(358, 62);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(194, 244);
+            this.listBox1.TabIndex = 41;
             // 
             // AssignShifts
             // 
@@ -72,6 +82,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(121)))), ((int)(((byte)(3)))));
             this.ClientSize = new System.Drawing.Size(578, 345);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.btnAssign);
             this.Controls.Add(this.cbShift);
             this.Controls.Add(this.dtpShift);
@@ -87,5 +98,6 @@
         private System.Windows.Forms.DateTimePicker dtpShift;
         private System.Windows.Forms.ComboBox cbShift;
         private System.Windows.Forms.Button btnAssign;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }
