@@ -127,7 +127,7 @@ namespace KILR_Project
                     {
                         if ((roundBuying > 0) && (roundSelling > 0) && (minQuantity > 0))
                         {
-                            if (sm.AddStock(new Product(0, name, quantity, roundSelling, roundBuying, true, minQuantity)) == true)
+                            if (DB.AddStock(new Product(0, name, quantity, roundSelling, roundBuying, true, minQuantity)) == true)
                             {
                                 MessageBox.Show("Stock succesfully created!");
                                 RefreshStock();
@@ -274,9 +274,9 @@ namespace KILR_Project
         }
         public void RefreshStock()
         {
-            sm.GetAllStocks();
+            DB.GetAllStocks();
             lbStock.Items.Clear();
-            foreach (Product p in sm.GetAllStocks())
+            foreach (Product p in DB.GetAllStocks())
             {
                 lbStock.Items.Add(p.GetInfo());
             }
@@ -284,19 +284,19 @@ namespace KILR_Project
 
         private void BtnFilterStock_Click(object sender, EventArgs e)
         {
-            sm.GetAllStocks();
+            DB.GetAllStocks();
             lbStock.Items.Clear();
 
             if (cbActive.Checked == false && cbInactive.Checked == false)
             {
-                foreach (Product p in sm.GetAllStocks())
+                foreach (Product p in DB.GetAllStocks())
                 {
                     lbStock.Items.Add(p.GetInfo());
                 }
                 return;
             }
 
-            foreach (Product p in sm.GetAllStocks())
+            foreach (Product p in DB.GetAllStocks())
             {
                 if (cbActive.Checked == true)
                 {
