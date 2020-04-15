@@ -79,13 +79,5 @@ namespace KILR_Project
         {
 
         }
-
-        private void Button1_Click(object sender, EventArgs e)
-        {
-            AssignShifts newForm = new AssignShifts(newId);
-            newForm.Show();
-            this.Close();
-
-        }
     }
 }
