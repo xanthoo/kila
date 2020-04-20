@@ -58,11 +58,9 @@
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.lbAllEmployees);
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox2.Location = new System.Drawing.Point(209, 62);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Location = new System.Drawing.Point(157, 50);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox2.Size = new System.Drawing.Size(728, 436);
+            this.groupBox2.Size = new System.Drawing.Size(546, 354);
             this.groupBox2.TabIndex = 26;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Add Employees";
@@ -71,10 +69,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(439, 22);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(329, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(176, 28);
+            this.label1.Size = new System.Drawing.Size(143, 21);
             this.label1.TabIndex = 27;
             this.label1.Text = "Added Employees";
             // 
@@ -83,10 +80,9 @@
             this.btnRmvEmp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(182)))), ((int)(((byte)(3)))));
             this.btnRmvEmp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRmvEmp.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnRmvEmp.Location = new System.Drawing.Point(305, 58);
-            this.btnRmvEmp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRmvEmp.Location = new System.Drawing.Point(229, 47);
             this.btnRmvEmp.Name = "btnRmvEmp";
-            this.btnRmvEmp.Size = new System.Drawing.Size(117, 169);
+            this.btnRmvEmp.Size = new System.Drawing.Size(88, 137);
             this.btnRmvEmp.TabIndex = 26;
             this.btnRmvEmp.Text = "<<<";
             this.btnRmvEmp.UseVisualStyleBackColor = false;
@@ -94,11 +90,9 @@
             // lbAddEmployees
             // 
             this.lbAddEmployees.FormattingEnabled = true;
-            this.lbAddEmployees.ItemHeight = 19;
-            this.lbAddEmployees.Location = new System.Drawing.Point(444, 58);
-            this.lbAddEmployees.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lbAddEmployees.Location = new System.Drawing.Point(333, 47);
             this.lbAddEmployees.Name = "lbAddEmployees";
-            this.lbAddEmployees.Size = new System.Drawing.Size(275, 365);
+            this.lbAddEmployees.Size = new System.Drawing.Size(207, 290);
             this.lbAddEmployees.TabIndex = 25;
             // 
             // btnAddEmp
@@ -106,10 +100,9 @@
             this.btnAddEmp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(182)))), ((int)(((byte)(3)))));
             this.btnAddEmp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddEmp.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnAddEmp.Location = new System.Drawing.Point(305, 262);
-            this.btnAddEmp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddEmp.Location = new System.Drawing.Point(229, 213);
             this.btnAddEmp.Name = "btnAddEmp";
-            this.btnAddEmp.Size = new System.Drawing.Size(117, 169);
+            this.btnAddEmp.Size = new System.Drawing.Size(88, 137);
             this.btnAddEmp.TabIndex = 11;
             this.btnAddEmp.Text = ">>>";
             this.btnAddEmp.UseVisualStyleBackColor = false;
@@ -118,21 +111,18 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(8, 22);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(6, 18);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(170, 28);
+            this.label4.Size = new System.Drawing.Size(138, 21);
             this.label4.TabIndex = 24;
             this.label4.Text = "Select Employees";
             // 
             // lbAllEmployees
             // 
             this.lbAllEmployees.FormattingEnabled = true;
-            this.lbAllEmployees.ItemHeight = 19;
-            this.lbAllEmployees.Location = new System.Drawing.Point(8, 58);
-            this.lbAllEmployees.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lbAllEmployees.Location = new System.Drawing.Point(6, 47);
             this.lbAllEmployees.Name = "lbAllEmployees";
-            this.lbAllEmployees.Size = new System.Drawing.Size(275, 365);
+            this.lbAllEmployees.Size = new System.Drawing.Size(207, 290);
             this.lbAllEmployees.TabIndex = 0;
             // 
             // panel1
@@ -142,19 +132,17 @@
             this.panel1.Controls.Add(this.Jupiterlbl);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(956, 54);
+            this.panel1.Size = new System.Drawing.Size(717, 44);
             this.panel1.TabIndex = 27;
             // 
             // Jupiterlbl
             // 
             this.Jupiterlbl.AutoSize = true;
             this.Jupiterlbl.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Jupiterlbl.Location = new System.Drawing.Point(324, -6);
-            this.Jupiterlbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Jupiterlbl.Location = new System.Drawing.Point(243, -5);
             this.Jupiterlbl.Name = "Jupiterlbl";
-            this.Jupiterlbl.Size = new System.Drawing.Size(297, 54);
+            this.Jupiterlbl.Size = new System.Drawing.Size(241, 45);
             this.Jupiterlbl.TabIndex = 6;
             this.Jupiterlbl.Text = "Add Employees";
             // 
@@ -165,11 +153,9 @@
             this.gbSearch.Controls.Add(this.tbFindEmployee);
             this.gbSearch.Controls.Add(this.btnSearchEmp);
             this.gbSearch.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.gbSearch.Location = new System.Drawing.Point(8, 62);
-            this.gbSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbSearch.Location = new System.Drawing.Point(6, 50);
             this.gbSearch.Name = "gbSearch";
-            this.gbSearch.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.gbSearch.Size = new System.Drawing.Size(193, 207);
+            this.gbSearch.Size = new System.Drawing.Size(145, 168);
             this.gbSearch.TabIndex = 28;
             this.gbSearch.TabStop = false;
             this.gbSearch.Text = "Search for an Employee";
@@ -177,29 +163,26 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(27, 58);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(20, 47);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(139, 20);
+            this.label2.Size = new System.Drawing.Size(107, 15);
             this.label2.TabIndex = 8;
             this.label2.Text = "Employee number:";
             // 
             // tbFindEmployee
             // 
-            this.tbFindEmployee.Location = new System.Drawing.Point(29, 80);
-            this.tbFindEmployee.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbFindEmployee.Location = new System.Drawing.Point(22, 65);
             this.tbFindEmployee.Name = "tbFindEmployee";
-            this.tbFindEmployee.Size = new System.Drawing.Size(139, 27);
+            this.tbFindEmployee.Size = new System.Drawing.Size(105, 23);
             this.tbFindEmployee.TabIndex = 7;
             // 
             // btnSearchEmp
             // 
             this.btnSearchEmp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(182)))), ((int)(((byte)(3)))));
             this.btnSearchEmp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearchEmp.Location = new System.Drawing.Point(29, 122);
-            this.btnSearchEmp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSearchEmp.Location = new System.Drawing.Point(22, 99);
             this.btnSearchEmp.Name = "btnSearchEmp";
-            this.btnSearchEmp.Size = new System.Drawing.Size(140, 49);
+            this.btnSearchEmp.Size = new System.Drawing.Size(105, 40);
             this.btnSearchEmp.TabIndex = 5;
             this.btnSearchEmp.Text = "Search";
             this.btnSearchEmp.UseVisualStyleBackColor = false;
@@ -210,40 +193,38 @@
             this.btnCreateDep.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(182)))), ((int)(((byte)(3)))));
             this.btnCreateDep.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCreateDep.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnCreateDep.Location = new System.Drawing.Point(217, 500);
-            this.btnCreateDep.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCreateDep.Location = new System.Drawing.Point(163, 406);
             this.btnCreateDep.Name = "btnCreateDep";
-            this.btnCreateDep.Size = new System.Drawing.Size(720, 103);
+            this.btnCreateDep.Size = new System.Drawing.Size(540, 84);
             this.btnCreateDep.TabIndex = 29;
             this.btnCreateDep.Text = "Create Department\r\n";
             this.btnCreateDep.UseVisualStyleBackColor = false;
+            this.btnCreateDep.Click += new System.EventHandler(this.btnCreateDep_Click);
             // 
             // btnGoBack
             // 
             this.btnGoBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(182)))), ((int)(((byte)(3)))));
             this.btnGoBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGoBack.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnGoBack.Location = new System.Drawing.Point(8, 276);
-            this.btnGoBack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGoBack.Location = new System.Drawing.Point(6, 224);
             this.btnGoBack.Name = "btnGoBack";
-            this.btnGoBack.Size = new System.Drawing.Size(193, 327);
+            this.btnGoBack.Size = new System.Drawing.Size(145, 266);
             this.btnGoBack.TabIndex = 28;
             this.btnGoBack.Text = "Go Back";
             this.btnGoBack.UseVisualStyleBackColor = false;
             // 
             // AddEmployeesToDept
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(121)))), ((int)(((byte)(3)))));
-            this.ClientSize = new System.Drawing.Size(956, 613);
+            this.ClientSize = new System.Drawing.Size(717, 498);
             this.Controls.Add(this.btnGoBack);
             this.Controls.Add(this.btnCreateDep);
             this.Controls.Add(this.gbSearch);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "AddEmployeesToDept";
             this.Text = "Add Employees";
             this.groupBox2.ResumeLayout(false);
