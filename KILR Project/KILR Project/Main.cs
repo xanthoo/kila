@@ -117,6 +117,7 @@ namespace KILR_Project
         {
             try
             {
+                string date = DateTime.Today.ToString("yyyy-MM-dd");
                 string name = tbStockName.Text.Trim();
                 int quantity = Convert.ToInt32(tbStockQuantity.Text);
                 int minQuantity = Convert.ToInt32(tbMinQuantity.Text);
@@ -130,7 +131,7 @@ namespace KILR_Project
                     {
                         if ((roundBuying > 0) && (roundSelling > 0) && (minQuantity > 0))
                         {
-                            if (DB.AddStock(new Product(0, name, quantity, roundSelling, roundBuying, true, minQuantity)) == true)
+                            if (DB.AddStock(new Product(0, name, quantity, roundSelling, roundBuying, true, minQuantity, date)) == true)
                             {
                                 MessageBox.Show("Stock succesfully created!");
                                 RefreshStock();

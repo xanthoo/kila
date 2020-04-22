@@ -27,6 +27,7 @@ namespace KILR_Project
             idlbl.Text = p.ID.ToString();
             pricelbl.Text = p.SellingPrice.ToString();
             quantitylbl.Text = p.Quanitity.ToString();
+            lblDateCreated.Text = p.DateCreated.ToString();
             if (p.IsActive == true)
             {
                 statuslbl.Text = "Active";

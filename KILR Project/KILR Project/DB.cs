@@ -46,7 +46,7 @@ namespace KILR_Project
 
         public static bool AddStock(Product p)
         {
-            string query = "INSERT INTO product(`productid`, `productname`, `quantity`,`sellingprice`,`buyingprice`,`stockactivity`,`minquantity`) VALUES(NULL, '" + p.Name + "', '" + p.Quanitity + "', '" + p.SellingPrice + "', '" + p.BuyingPrice + "', 1, '" + p.MinimumQuantity + "')";
+            string query = "INSERT INTO product(`productid`, `productname`, `quantity`,`sellingprice`,`buyingprice`,`stockactivity`,`minquantity`,`datecreated`) VALUES(NULL, '" + p.Name + "', '" + p.Quanitity + "', '" + p.SellingPrice + "', '" + p.BuyingPrice + "', 1, '" + p.MinimumQuantity + "', '" + p.DateCreated + "')";
 
             MySqlConnection databaseConnection = new MySqlConnection(connectionString);
             MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
@@ -79,7 +79,7 @@ namespace KILR_Project
             MySqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
-                products.Add(new Product(Convert.ToInt32(reader[0]), reader[1].ToString(), Convert.ToInt32(reader[2]), Convert.ToDecimal(reader[3]), Convert.ToDecimal(reader[4]), Convert.ToBoolean(reader[5]), Convert.ToInt32(reader[6])));
+                products.Add(new Product(Convert.ToInt32(reader[0]), reader[1].ToString(), Convert.ToInt32(reader[2]), Convert.ToDecimal(reader[3]), Convert.ToDecimal(reader[4]), Convert.ToBoolean(reader[5]), Convert.ToInt32(reader[6]), Convert.ToString(reader[7])));
             }
             connection.Close();
             return products;
