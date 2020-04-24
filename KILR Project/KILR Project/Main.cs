@@ -131,7 +131,7 @@ namespace KILR_Project
                     {
                         if ((roundBuying > 0) && (roundSelling > 0) && (minQuantity > 0))
                         {
-                            if (DB.AddStock(new Product(0, name, quantity, roundSelling, roundBuying, true, minQuantity, date)) == true)
+                            if (DB.AddStock(new Product(0, name, quantity, roundSelling, roundBuying, true, minQuantity, date, null)) == true)
                             {
                                 MessageBox.Show("Stock succesfully created!");
                                 RefreshStock();

@@ -73,5 +73,10 @@ namespace KILR_Project
                 cmbManagerId.Items.Add(sname);
             }
         }
+
+        private void CreateDepartment_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

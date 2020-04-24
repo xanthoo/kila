@@ -38,8 +38,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnGoBack = new System.Windows.Forms.Button();
             this.cmbManagerId = new System.Windows.Forms.ComboBox();
+            this.btnGoBack = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -139,6 +139,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Department Details";
             // 
+            // cmbManagerId
+            // 
+            this.cmbManagerId.FormattingEnabled = true;
+            this.cmbManagerId.Location = new System.Drawing.Point(70, 196);
+            this.cmbManagerId.Name = "cmbManagerId";
+            this.cmbManagerId.Size = new System.Drawing.Size(146, 23);
+            this.cmbManagerId.TabIndex = 23;
+            // 
             // btnGoBack
             // 
             this.btnGoBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(182)))), ((int)(((byte)(3)))));
@@ -151,14 +159,6 @@
             this.btnGoBack.Text = "Go Back";
             this.btnGoBack.UseVisualStyleBackColor = false;
             this.btnGoBack.Click += new System.EventHandler(this.btnGoBack_Click);
-            // 
-            // cmbManagerId
-            // 
-            this.cmbManagerId.FormattingEnabled = true;
-            this.cmbManagerId.Location = new System.Drawing.Point(70, 196);
-            this.cmbManagerId.Name = "cmbManagerId";
-            this.cmbManagerId.Size = new System.Drawing.Size(146, 23);
-            this.cmbManagerId.TabIndex = 23;
             // 
             // CreateDepartment
             // 
@@ -174,6 +174,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CreateDepartment";
             this.Text = "Create Department";
+            this.Load += new System.EventHandler(this.CreateDepartment_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.groupBox1.ResumeLayout(false);

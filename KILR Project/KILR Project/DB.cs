@@ -79,7 +79,7 @@ namespace KILR_Project
             MySqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
-                products.Add(new Product(Convert.ToInt32(reader[0]), reader[1].ToString(), Convert.ToInt32(reader[2]), Convert.ToDecimal(reader[3]), Convert.ToDecimal(reader[4]), Convert.ToBoolean(reader[5]), Convert.ToInt32(reader[6]), Convert.ToString(reader[7])));
+                products.Add(new Product(Convert.ToInt32(reader[0]), reader[1].ToString(), Convert.ToInt32(reader[2]), Convert.ToDecimal(reader[3]), Convert.ToDecimal(reader[4]), Convert.ToBoolean(reader[5]), Convert.ToInt32(reader[6]), Convert.ToString(reader[7]), Convert.ToString(reader[8])));
             }
             connection.Close();
             return products;
@@ -90,7 +90,7 @@ namespace KILR_Project
                 if (p.IsActive == true)
                 {
                     string sql = " UPDATE `product` SET `productname` = '" + p.Name + "', `quantity` = '" + p.Quanitity + "', `sellingprice` = '" + p.SellingPrice +
-                    "', `buyingprice` = '" + p.BuyingPrice + "', `stockactivity` = '" + 1 + "', `minquantity` = '" + p.MinimumQuantity + "' WHERE `product`.`productid` = " + p.ID + ";";
+                    "', `buyingprice` = '" + p.BuyingPrice + "', `stockactivity` = '" + 1 + "', `minquantity` = '" + p.MinimumQuantity + "', `dateupdated` = '" + DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss") + "' WHERE `product`.`productid` = " + p.ID + ";";
                     MySqlCommand cmd = new MySqlCommand(sql, connection);
                     connection.Open();
                     int effectedRows = cmd.ExecuteNonQuery();
@@ -100,9 +100,9 @@ namespace KILR_Project
                 }
                 else
                 {
-                    string sql = " UPDATE `product` SET `productname` = '" + p.Name + "', `quantity` = '" + p.Quanitity + "', `sellingprice` = '" + p.SellingPrice +
-                        "', `buyingprice` = '" + p.BuyingPrice + "', `stockactivity` = '" + 0 + "', `minquantity` = '" + p.MinimumQuantity + "' WHERE `product`.`productid` = " + p.ID + ";";
-                    MySqlCommand cmd = new MySqlCommand(sql, connection);
+                string sql = " UPDATE `product` SET `productname` = '" + p.Name + "', `quantity` = '" + p.Quanitity + "', `sellingprice` = '" + p.SellingPrice +
+                "', `buyingprice` = '" + p.BuyingPrice + "', `stockactivity` = '" + 0 + "', `minquantity` = '" + p.MinimumQuantity + "', `dateupdated` = '" + DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss") + "' WHERE `product`.`productid` = " + p.ID + ";";
+                MySqlCommand cmd = new MySqlCommand(sql, connection);
                     connection.Open();
                     int effectedRows = cmd.ExecuteNonQuery();
                     connection.Close();
