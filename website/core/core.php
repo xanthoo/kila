@@ -3,7 +3,8 @@ require_once "config.php";
 
 try {
     $db = new PDO('mysql:dbname=' . DBNAME . ';host=' . HOST, USER, PASS);
-} catch (PDOException $e) {
+} 
+catch (PDOException $e) {
     echo 'Connection failed: ' . $e->getMessage();
 }
 
@@ -25,3 +26,8 @@ if (isset($_SESSION["userid"])) {
 		$user = $query->fetch();
 	}
 }
+ function redirect(){
+	header('Location: index.php');
+	exit();
+}
+?>
