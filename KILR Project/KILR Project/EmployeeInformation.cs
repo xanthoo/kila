@@ -31,7 +31,7 @@ namespace KILR_Project
                 lblAddress.Text = Rdr["address"].ToString();
                 lblFName.Text = Rdr["firstname"].ToString();
                 lblLName.Text = Rdr["lastname"].ToString();
-                lblShift.Text = Rdr["shift"].ToString();
+                lblReleaseDate.Text = Rdr["firedate"].ToString();
                 lblHireDate.Text = Rdr["hiredate"].ToString();
                 lblEmail.Text = Rdr["email"].ToString();
                 //lblHireDate.Text = Rdr["firedate"].ToString();
@@ -71,13 +71,21 @@ namespace KILR_Project
 
         private void BtnRmv_Click(object sender, EventArgs e)
         {
-            employeeManager.RemoveEmployee(newId);
-            MessageBox.Show("Employee has been deleted");
+            string ReleaseDate = DateTime.Today.ToString("yyyy-MM-dd");
+            employeeManager.RemoveEmployee(newId, ReleaseDate);
+            MessageBox.Show("Employee has been released");
         }
 
         private void label18_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void BtnShift_Click(object sender, EventArgs e)
+        {
+            AssignShift shift = new AssignShift(newId);
+            shift.Show();
+            this.Close();
         }
     }
 }
