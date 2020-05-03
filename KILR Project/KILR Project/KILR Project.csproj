@@ -76,12 +76,6 @@
     <Compile Include="AddEmployeesToDept.Designer.cs">
       <DependentUpon>AddEmployeesToDept.cs</DependentUpon>
     </Compile>
-    <Compile Include="AssignShift.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AssignShift.Designer.cs">
-      <DependentUpon>AssignShift.cs</DependentUpon>
-    </Compile>
     <Compile Include="CreateDepartment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,9 +151,6 @@
     <Compile Include="UserManager.cs" />
     <EmbeddedResource Include="AddEmployeesToDept.resx">
       <DependentUpon>AddEmployeesToDept.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AssignShift.resx">
-      <DependentUpon>AssignShift.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CreateDepartment.resx">
       <DependentUpon>CreateDepartment.cs</DependentUpon>

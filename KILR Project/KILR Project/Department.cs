@@ -69,19 +69,19 @@ namespace KILR_Project
                         break;
                 }
 
-                //Shift shift = Shift.AFTERNOON;
-                //switch (row["shift"].ToString())
-                //{
-                //    case "AFTERNOON":
-                //        shift = Shift.AFTERNOON;
-                //        break;
-                //    case "DAY":
-                //        shift = Shift.DAY;
-                //        break;
-                //    case "NIGHT":
-                //        shift = Shift.NIGHT;
-                //        break;
-                //}
+                Shift shift = Shift.AFTERNOON;
+                switch (row["shift"].ToString())
+                {
+                    case "AFTERNOON":
+                        shift = Shift.AFTERNOON;
+                        break;
+                    case "DAY":
+                        shift = Shift.DAY;
+                        break;
+                    case "NIGHT":
+                        shift = Shift.NIGHT;
+                        break;
+                }
 
                 people.Add(
                     new Employee(
@@ -92,6 +92,7 @@ namespace KILR_Project
                         position,
                         row["email"].ToString(),
                         row["address"].ToString(),
+                        shift,
                         row["hiredate"].ToString(),
                         Convert.ToDouble(row["hourlywage"].ToString())
                     )
@@ -132,19 +133,19 @@ namespace KILR_Project
                         break;
                 }
 
-                //Shift shift = Shift.AFTERNOON;
-                //switch (row["shift"].ToString())
-                //{
-                //    case "AFTERNOON":
-                //        shift = Shift.AFTERNOON;
-                //        break;
-                //    case "DAY":
-                //        shift = Shift.DAY;
-                //        break;
-                //    case "NIGHT":
-                //        shift = Shift.NIGHT;
-                //        break;
-                //}
+                Shift shift = Shift.AFTERNOON;
+                switch (row["shift"].ToString())
+                {
+                    case "AFTERNOON":
+                        shift = Shift.AFTERNOON;
+                        break;
+                    case "DAY":
+                        shift = Shift.DAY;
+                        break;
+                    case "NIGHT":
+                        shift = Shift.NIGHT;
+                        break;
+                }
 
                 people.Add(
                     new Employee(
@@ -155,6 +156,7 @@ namespace KILR_Project
                         position,
                         row["email"].ToString(),
                         row["address"].ToString(),
+                        shift,
                         row["hiredate"].ToString(),
                         Convert.ToDouble(row["hourlywage"].ToString())
                     )
