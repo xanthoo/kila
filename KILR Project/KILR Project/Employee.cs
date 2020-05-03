@@ -21,7 +21,7 @@ namespace KILR_Project
         private String hiredDate;
         private String firedDate;
 
-        public Employee(int id, string fName, string lastName, int dep, Position position, string email, string address, Shift shift, String HireDate, double hourlyWage)
+        public Employee(int id, string fName, string lastName, int dep, Position position, string email, string address, String HireDate, double hourlyWage)
         {
             this.id = id;
             this.firstName = fName;
@@ -31,7 +31,6 @@ namespace KILR_Project
             this.address = address;
             this.email = email;
             this.hiredDate = HireDate;
-            this.employeeShift = shift;
             this.hourlyWage = hourlyWage;
         }
         public String FirstName { get; set; }

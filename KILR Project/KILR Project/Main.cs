@@ -42,10 +42,10 @@ namespace KILR_Project
         {
             try
             {
-                string HireDate = DateTime.Today.ToString("yyyy-MM-dd");
-            Department dep = dm.GetDepartmentByName(cbDep.SelectedItem.ToString());
-            empMang.AddEmployee(tbFName.Text, tbSurname.Text, dep, (Position)cbPostition.SelectedIndex, tbEmail.Text, tbAddress.Text, (Shift)cbShift.SelectedIndex, HireDate, Convert.ToDouble(tbHWage.Text));
-            PopulateEmployeesList();
+                string HireDate = dtpShift.Value.ToString("yyyy-MM-dd");
+                Department dep = dm.GetDepartmentByName(cbDep.SelectedItem.ToString());
+                empMang.AddEmployee(tbFName.Text, tbSurname.Text, dep, (Position)cbPostition.SelectedIndex, tbEmail.Text, tbAddress.Text, HireDate, Convert.ToDouble(tbHWage.Text), user.Encrypt(tbPassword.Text));
+                PopulateEmployeesList();
             }
             catch (Exception)
             {
@@ -145,7 +145,7 @@ namespace KILR_Project
                         {
                             MessageBox.Show("Negative numbers are not permitted!");
                         }
-                        
+
                     }
                     else
                     {
@@ -269,7 +269,7 @@ namespace KILR_Project
         }
         private void Main_Load(object sender, EventArgs e)
         {
-   
+
         }
 
         private void BtnRefresh_Click(object sender, EventArgs e)
@@ -309,9 +309,9 @@ namespace KILR_Project
                         lbStock.Items.Add(p.GetInfo());
                     }
                 }
-                if(cbInactive.Checked == true)
+                if (cbInactive.Checked == true)
                 {
-                    if(p.IsActive == false)
+                    if (p.IsActive == false)
                     {
                         lbStock.Items.Add(p.GetInfo());
                     }
@@ -363,29 +363,40 @@ namespace KILR_Project
 
         private void btnEmpInfo_Click(object sender, EventArgs e)
         {
-            try
+            if(!rbId.Checked && !rbName.Checked)
             {
-                    MySqlConnection Cn = new MySqlConnection(connectionString);
-                    MySqlCommand Cmd = Cn.CreateCommand();
-                    Cmd.CommandText = $"select id from employee where id= {tbFindEmployee.Text}";
-                    Cn.Open();
-                    MySqlDataReader Rdr = Cmd.ExecuteReader();
-                    int id = -1;
-                    while (Rdr.Read())
-                    {
-                        id = Convert.ToInt32(Rdr["id"]);
-                    }
-                    if (id > 0)
-                    {
-                        EmployeeInformation empInfo = new EmployeeInformation(id);
-                        empInfo.Visible = true;
-                    }
-                
-
+                MessageBox.Show("Please select a search criteria!");
             }
-            catch(Exception)
+            else
             {
-                MessageBox.Show("Make sure the information provided is correct!");
+                if (rbId.Checked)
+                {
+                    try
+                    {
+                       
+                        if(DB.GetEmployeeById(Convert.ToInt32(tbFindEmployee.Text)) == true)
+                        {
+                            EmployeeInformation empInfo = new EmployeeInformation(Convert.ToInt32(tbFindEmployee.Text));
+                            empInfo.Visible = true;
+                        }
+                        else
+                        {
+                            MessageBox.Show("No employee with such ID!");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.ToString());
+                    }
+                }
+                else
+                {
+                    lbEmployees.Items.Clear();
+                    foreach (var item in DB.GetEmployeesByName(tbFindEmployee.Text))
+                    {
+                        lbEmployees.Items.Add(item);
+                    }
+                }
             }
         }
 
