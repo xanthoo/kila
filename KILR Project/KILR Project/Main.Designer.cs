@@ -28,6 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.textBoxDepartmentId = new System.Windows.Forms.TextBox();
@@ -104,6 +110,11 @@
             this.firstNamelbl = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.btnEmployeeStats = new System.Windows.Forms.Button();
+            this.btnDepStats = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.tabPage1.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -118,6 +129,8 @@
             this.gbSearch.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabControl1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabPage1
@@ -346,7 +359,7 @@
             this.label2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(28, 142);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(272, 25);
+            this.label2.Size = new System.Drawing.Size(216, 20);
             this.label2.TabIndex = 26;
             this.label2.Text = "Minimum Quantity Permitted";
             // 
@@ -929,6 +942,7 @@
             this.tabControl1.Controls.Add(this.employeesPage);
             this.tabControl1.Controls.Add(this.stockPage);
             this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
@@ -937,6 +951,88 @@
             this.tabControl1.TabIndex = 1;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             this.tabControl1.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabControl1_Selected);
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(121)))), ((int)(((byte)(3)))));
+            this.tabPage2.Controls.Add(this.button1);
+            this.tabPage2.Controls.Add(this.btnDepStats);
+            this.tabPage2.Controls.Add(this.btnEmployeeStats);
+            this.tabPage2.Controls.Add(this.chart1);
+            this.tabPage2.Location = new System.Drawing.Point(4, 27);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(925, 484);
+            this.tabPage2.TabIndex = 4;
+            this.tabPage2.Text = "Statistic";
+            // 
+            // chart1
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(176, 18);
+            this.chart1.Name = "chart1";
+            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Manager";
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Employee";
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Administrator";
+            series4.ChartArea = "ChartArea1";
+            series4.Legend = "Legend1";
+            series4.Name = "Staff amount";
+            this.chart1.Series.Add(series1);
+            this.chart1.Series.Add(series2);
+            this.chart1.Series.Add(series3);
+            this.chart1.Series.Add(series4);
+            this.chart1.Size = new System.Drawing.Size(584, 420);
+            this.chart1.TabIndex = 0;
+            this.chart1.Text = "chart1";
+            // 
+            // btnEmployeeStats
+            // 
+            this.btnEmployeeStats.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(182)))), ((int)(((byte)(3)))));
+            this.btnEmployeeStats.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnEmployeeStats.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEmployeeStats.Location = new System.Drawing.Point(44, 18);
+            this.btnEmployeeStats.Name = "btnEmployeeStats";
+            this.btnEmployeeStats.Size = new System.Drawing.Size(103, 37);
+            this.btnEmployeeStats.TabIndex = 1;
+            this.btnEmployeeStats.Text = "Employee chart";
+            this.btnEmployeeStats.UseVisualStyleBackColor = false;
+            this.btnEmployeeStats.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnDepStats
+            // 
+            this.btnDepStats.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(182)))), ((int)(((byte)(3)))));
+            this.btnDepStats.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnDepStats.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDepStats.Location = new System.Drawing.Point(44, 61);
+            this.btnDepStats.Name = "btnDepStats";
+            this.btnDepStats.Size = new System.Drawing.Size(103, 53);
+            this.btnDepStats.TabIndex = 2;
+            this.btnDepStats.Text = "Department staff amount chart";
+            this.btnDepStats.UseVisualStyleBackColor = false;
+            this.btnDepStats.Click += new System.EventHandler(this.btnDepStats_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(182)))), ((int)(((byte)(3)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.Location = new System.Drawing.Point(44, 400);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(103, 38);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Clear chart";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // Main
             // 
@@ -974,6 +1070,8 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.tabControl1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1050,11 +1148,11 @@
         private System.Windows.Forms.CheckBox cbManagers;
         private System.Windows.Forms.TextBox tbMinQuantity;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label lblPassword;
-        private System.Windows.Forms.TextBox tbPassword;
-        private System.Windows.Forms.DateTimePicker dtpShift;
-        private System.Windows.Forms.RadioButton rbName;
-        private System.Windows.Forms.RadioButton rbId;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.Button btnEmployeeStats;
+        private System.Windows.Forms.Button btnDepStats;
+        private System.Windows.Forms.Button button1;
     }
 }
 

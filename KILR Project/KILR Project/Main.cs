@@ -17,6 +17,7 @@ namespace KILR_Project
         //Completed
 
         string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=kilrdb;";
+
         StockManager sm;
         User user;
         EmployeeManager empMang;
@@ -33,6 +34,8 @@ namespace KILR_Project
             PopulateDepartmentsList();
             PopulateEmployeesList();
             RefreshStock();
+
+
         }
 
         private void Button4_Click(object sender, EventArgs e)
@@ -114,6 +117,7 @@ namespace KILR_Project
         {
             try
             {
+                string date = DateTime.Today.ToString("yyyy-MM-dd");
                 string name = tbStockName.Text.Trim();
                 int quantity = Convert.ToInt32(tbStockQuantity.Text);
                 int minQuantity = Convert.ToInt32(tbMinQuantity.Text);
@@ -127,7 +131,7 @@ namespace KILR_Project
                     {
                         if ((roundBuying > 0) && (roundSelling > 0) && (minQuantity > 0))
                         {
-                            if (DB.AddStock(new Product(0, name, quantity, roundSelling, roundBuying, true, minQuantity)) == true)
+                            if (DB.AddStock(new Product(0, name, quantity, roundSelling, roundBuying, true, minQuantity, date, null)) == true)
                             {
                                 MessageBox.Show("Stock succesfully created!");
                                 RefreshStock();
@@ -430,9 +434,84 @@ namespace KILR_Project
             PopulateEmployeesList();
         }
 
-        private void RadioButton3_CheckedChanged(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
+            ClearChart();
+            ChartManager();
+            ChartEmployee();
+            ChartAdmin();
 
+        }
+
+        public void ChartManager()
+        {
+            MySqlConnection Cn = new MySqlConnection(connectionString);
+            MySqlCommand Cmd = Cn.CreateCommand();
+            Cmd.CommandText = $"select COUNT(*) as nrOfManagers from employee where position = 'MANAGER'";
+            Cn.Open();
+
+            MySqlDataReader reader = Cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                   chart1.Series["Manager"].Points.AddY(reader["nrOfManagers"].ToString());
+                }
+        }
+        public void ChartEmployee()
+        {
+            MySqlConnection Cn = new MySqlConnection(connectionString);
+            MySqlCommand Cmd = Cn.CreateCommand();
+            Cmd.CommandText = $"select COUNT(*) as nrOfEmployees from employee where position = 'EMPLOYEE'";
+            Cn.Open();
+
+            MySqlDataReader reader = Cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                chart1.Series["Employee"].Points.AddY(reader["nrOfEmployees"].ToString());
+            }
+        }
+        public void ChartAdmin()
+        {
+            MySqlConnection Cn = new MySqlConnection(connectionString);
+            MySqlCommand Cmd = Cn.CreateCommand();
+            Cmd.CommandText = $"select COUNT(*) as nrOfAdmins from employee where position = 'ADMINISTRATOR'";
+            Cn.Open();
+
+            MySqlDataReader reader = Cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                chart1.Series["Administrator"].Points.AddY(reader["nrOfAdmins"].ToString());
+            }
+        }
+
+        private void btnDepStats_Click(object sender, EventArgs e)
+        {
+            ClearChart();
+            ChartDepartmentStaffAmount();
+        }
+        public void ChartDepartmentStaffAmount()
+        {
+            MySqlConnection Cn = new MySqlConnection(connectionString);
+            MySqlCommand Cmd = Cn.CreateCommand();
+            Cmd.CommandText = $"select staffamount from department where staffamount > 1";
+            Cn.Open();
+
+            MySqlDataReader reader = Cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                chart1.Series["Staff amount"].Points.AddY(reader["staffamount"].ToString());
+            }
+        }
+        public void ClearChart()
+        {
+            foreach (var series in chart1.Series)
+            {
+                series.Points.Clear();
+            }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            ClearChart();
         }
     }
 }

@@ -21,5 +21,10 @@ namespace KILR_Project
         {
 
         }
+
+        private void btnCreateDep_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
