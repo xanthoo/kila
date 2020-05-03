@@ -16,69 +16,70 @@ namespace KILR_Project
         {
             /*try
             {*/
-            MySqlConnection connection = new MySqlConnection(connectionString);
-            DataTable dt = new DataTable();
-            MySqlDataAdapter adapter;
-            if (fired)
-            {
-                adapter = new MySqlDataAdapter("SELECT * FROM employee", connection);
-            }
-            else
-            {
-                adapter = new MySqlDataAdapter("SELECT * FROM employee WHERE firedate IS NULL", connection);
-            }
-            connection.Open();
-
-            adapter.Fill(dt);
-
-            List<Employee> employees = new List<Employee>();
-            foreach (DataRow row in dt.Rows)
-            {
-
-                Position position = Position.EMPLOYEE;
-                switch (row["position"].ToString())
+                MySqlConnection connection = new MySqlConnection(connectionString);
+                DataTable dt = new DataTable();
+                MySqlDataAdapter adapter;
+                if (fired)
                 {
-                    case "EMPLOYEE":
-                        position = Position.EMPLOYEE;
-                        break;
-                    case "MANAGER":
-                        position = Position.MANAGER;
-                        break;
-                    case "ADMINISTRATOR":
-                        position = Position.ADMINISTRATOR;
-                        break;
+                    adapter = new MySqlDataAdapter("SELECT * FROM employee", connection);
+                }
+                else
+                {
+                    adapter = new MySqlDataAdapter("SELECT * FROM employee WHERE firedate IS NULL", connection);
+                }
+                connection.Open();
+
+                adapter.Fill(dt);
+
+                List<Employee> employees = new List<Employee>();
+                foreach (DataRow row in dt.Rows)
+                {
+
+                    Position position = Position.EMPLOYEE;
+                    switch (row["position"].ToString())
+                    {
+                        case "EMPLOYEE":
+                            position = Position.EMPLOYEE;
+                            break;
+                        case "MANAGER":
+                            position = Position.MANAGER;
+                            break;
+                        case "ADMINISTRATOR":
+                            position = Position.ADMINISTRATOR;
+                            break;
+                    }
+
+                    Shift shift = Shift.AFTERNOON;
+                    switch (row["shift"].ToString())
+                    {
+                        case "AFTERNOON":
+                            shift = Shift.AFTERNOON;
+                            break;
+                        case "DAY":
+                            shift = Shift.DAY;
+                            break;
+                        case "NIGHT":
+                            shift = Shift.NIGHT;
+                            break;
+                    }
+
+                    employees.Add(
+                        new Employee(
+                            (int)row["id"],
+                            row["firstname"].ToString(),
+                            row["lastname"].ToString(),
+                            (int)row["department"],
+                            position,
+                            row["email"].ToString(),
+                            row["address"].ToString(),
+                            shift,
+                            row["hiredate"].ToString(),
+                            Convert.ToDouble(row["hourlywage"].ToString())
+                        )
+                    );
                 }
 
-                //Shift shift = Shift.AFTERNOON;
-                //switch (row["shift"].ToString())
-                //{
-                //    case "AFTERNOON":
-                //        shift = Shift.AFTERNOON;
-                //        break;
-                //    case "DAY":
-                //        shift = Shift.DAY;
-                //        break;
-                //    case "NIGHT":
-                //        shift = Shift.NIGHT;
-                //        break;
-                //}
-
-                employees.Add(
-                    new Employee(
-                        (int)row["id"],
-                        row["firstname"].ToString(),
-                        row["lastname"].ToString(),
-                        (int)row["department"],
-                        position,
-                        row["email"].ToString(),
-                        row["address"].ToString(),
-                        row["hiredate"].ToString(),
-                        Convert.ToDouble(row["hourlywage"].ToString())
-                    )
-                );
-            }
-
-            return employees;
+                return employees;
             /*}
             catch (Exception ex)
             {
@@ -97,10 +98,11 @@ namespace KILR_Project
             }
             return null;
         }
-        public void AddEmployee(string fName, string lastName, Department d, Position position, string email, string address, String HireDate, double hourlyWage, string password)
+        public void AddEmployee(string fName, string lastName, Department d, Position position, string email, string address, Shift shift, String HireDate, double hourlyWage)
         {
-            string query = "INSERT INTO employee(`firstname`, `lastname`, `email`, `address`,`department`, `position`, `hiredate`, `hourlywage`, `password`)" +
-                $" VALUES ('{fName}', '{lastName}', '{email}', '{address}', {d.Id}, '{position.ToString()}', '{HireDate}', {hourlyWage}, '{password}'  );";
+            
+            string query = "INSERT INTO employee(`id`, `firstname`, `lastname`, `email`, `address`,`department`, `position`, `shift`, `hiredate`, `hourlywage`) VALUES (NULL, '" +
+            fName + "', '" + lastName + "', '" + email  + "', '" + address + "', '" + d.Id + "', '" + position + "', '" + shift + "', '" + HireDate + "', '" + hourlyWage + "')";
             MySqlConnection databaseConnection = new MySqlConnection(connectionString);
             MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
             MySqlDataReader MyReader;
@@ -115,13 +117,15 @@ namespace KILR_Project
                 MessageBox.Show(ex.Message);
             }
         }
-        public bool RemoveEmployee(int id, string ReleaseDate)
+        public bool RemoveEmployee(int id)
         {
             try
             {
+
                 MySqlConnection connection = new MySqlConnection(connectionString);
                 MySqlCommand cmd = connection.CreateCommand();
-                cmd.CommandText = $"UPDATE `employee` SET firedate = " + ReleaseDate + " WHERE id = " + id + "";
+                string FireDate = DateTime.Today.ToString("yyyy-MM-dd");
+                cmd.CommandText = $"UPDATE `employee` SET firedate = " + FireDate + " WHERE id = " +id+ "";
                 connection.Open();
                 MySqlDataReader Rdr = cmd.ExecuteReader();
                 return true;
@@ -143,10 +147,10 @@ namespace KILR_Project
             }
             return false;
         }
-        public List<Employee> GetAssoicatedEmployees(Department d)
+        public List<Employee>GetAssoicatedEmployees(Department d)
         {
             List<Employee> employees = new List<Employee>();
-            foreach (Employee e in d.GetEmployees())
+            foreach(Employee e in d.GetEmployees())
             {
                 employees.Add(e);
             }
