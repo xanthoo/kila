@@ -61,8 +61,8 @@ namespace KILR_Project
             cbDep.Items.Clear();
             foreach (Department d in departments)
             {
-                lbDepartments.Items.Add(d.Name);
-                cbDep.Items.Add(d.Name);
+                lbDepartments.Items.Add(d.GetInfo());
+                cbDep.Items.Add(d.GetInfo());
             }
         }
 
