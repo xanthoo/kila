@@ -13,8 +13,14 @@ session_start();
 
 $user = null;
 if (isset($_SESSION["userid"])) {
+	$user = fetchUser();
+}
+
+function fetchUser() {
+	global $db;
+
 	$query = $db->prepare('
-		SELECT id, firstname, lastname FROM employee WHERE id = ?
+		SELECT id, firstname, lastname, address FROM employee WHERE id = ?
 	');
 	$query->bindParam(1, $_SESSION['userid']);
 	$query->execute();
@@ -22,11 +28,14 @@ if (isset($_SESSION["userid"])) {
 	if ($query->rowCount() === 0) {
 		session_unset();
 		session_regenerate_id();
+		return null;
 	} else {
-		$user = $query->fetch();
+		return $query->fetch();
 	}
 }
- function redirect(){
+
+
+function redirect(){
 	header('Location: index.php');
 	exit();
 }
