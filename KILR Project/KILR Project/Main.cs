@@ -38,22 +38,6 @@ namespace KILR_Project
 
         }
 
-        private void Button4_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                string HireDate = DateTime.Today.ToString("yyyy-MM-dd");
-            Department dep = dm.GetDepartmentByName(cbDep.SelectedItem.ToString());
-            empMang.AddEmployee(tbFName.Text, tbSurname.Text, dep, (Position)cbPostition.SelectedIndex, tbEmail.Text, tbAddress.Text, (Shift)cbShift.SelectedIndex, HireDate, Convert.ToDouble(tbHWage.Text));
-            PopulateEmployeesList();
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Make sure the information provided is correct!!");
-                return;
-            }
-        }
-
         public void PopulateDepartmentsList()
         {
             List<Department> departments = dm.GetDepartments();
@@ -62,7 +46,7 @@ namespace KILR_Project
             foreach (Department d in departments)
             {
                 lbDepartments.Items.Add(d.GetInfo());
-                cbDep.Items.Add(d.GetInfo());
+                cbDep.Items.Add(d.Name);
             }
         }
 
@@ -361,33 +345,7 @@ namespace KILR_Project
             }
         }
 
-        private void btnEmpInfo_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                    MySqlConnection Cn = new MySqlConnection(connectionString);
-                    MySqlCommand Cmd = Cn.CreateCommand();
-                    Cmd.CommandText = $"select id from employee where id= {tbFindEmployee.Text}";
-                    Cn.Open();
-                    MySqlDataReader Rdr = Cmd.ExecuteReader();
-                    int id = -1;
-                    while (Rdr.Read())
-                    {
-                        id = Convert.ToInt32(Rdr["id"]);
-                    }
-                    if (id > 0)
-                    {
-                        EmployeeInformation empInfo = new EmployeeInformation(id);
-                        empInfo.Visible = true;
-                    }
-                
-
-            }
-            catch(Exception)
-            {
-                MessageBox.Show("Make sure the information provided is correct!");
-            }
-        }
+        
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -501,6 +459,99 @@ namespace KILR_Project
         private void button1_Click_1(object sender, EventArgs e)
         {
             ClearChart();
+        }
+
+        private void GbSearch_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnEmpInfo_Click_1(object sender, EventArgs e)
+        {
+            if (!rbId.Checked && !rbName.Checked)
+            {
+                MessageBox.Show("Please select a search criteria!");
+            }
+            else
+            {
+                if (rbId.Checked)
+                {
+                    try
+                    {
+
+                        if (DB.GetEmployeeById(Convert.ToInt32(tbFindEmployee.Text)) == true)
+                        {
+                            EmployeeInformation empInfo = new EmployeeInformation(Convert.ToInt32(tbFindEmployee.Text));
+                            empInfo.Visible = true;
+                        }
+                        else
+                        {
+                            MessageBox.Show("No employee with such ID!");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.ToString());
+                    }
+                }
+                else
+                {
+                    lbEmployees.Items.Clear();
+                    foreach (var item in DB.GetEmployeesByName(tbFindEmployee.Text))
+                    {
+                        lbEmployees.Items.Add(item);
+                    }
+                }
+            }
+        }
+
+        private void BtnAdd_Click(object sender, EventArgs e)
+        {
+            if(!rbM.Checked && !rbF.Checked)
+            {
+                MessageBox.Show("Please select a gender!");
+            }
+            else
+            {
+                string gender = "F";
+                if (rbM.Checked)
+                {
+                    gender = "M";
+                }
+                try
+                {
+                    Regex regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
+                    Match match = regex.Match(tbEmail.Text);
+                    if (match.Success)
+                    {
+                        string HireDate = dtpShift.Value.ToString("yyyy-MM-dd");
+                        Department dep = dm.GetDepartmentByName(cbDep.SelectedItem.ToString());
+                        empMang.AddEmployee(tbFName.Text, tbSurname.Text, dep, (Position)cbPostition.SelectedIndex, tbEmail.Text, tbAddress.Text, HireDate, Convert.ToDouble(tbHWage.Text), user.Encrypt(tbPassword.Text), tbCity.Text, gender, tbZip.Text);
+                        PopulateEmployeesList();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Invalid email address!");
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                    return;
+                }
+            }
+            
+        }
+
+        private void ShiftLbl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GroupBox2_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -42,12 +42,14 @@ namespace KILR_Project
                         MessageBox.Show("'Staff number' and 'manager id' are number fields only!");
                         return;
                     }
+                    cmbManagerId.Items.Remove(cmbManagerId.SelectedItem);
                     databaseConnection.Open();
                     MySqlDataReader myReader = commandDatabase.ExecuteReader();
                     MessageBox.Show("Department succesfully created");
                     mainDepartmentInfo.PopulateDepartmentsList();
                     databaseConnection.Close();
                 }
+
             }
             catch (Exception ex)
             {
@@ -62,7 +64,7 @@ namespace KILR_Project
         public void FillCombo()
         {
             string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=kilrdb;";
-            string query = "SELECT * FROM EMPLOYEE WHERE position = 'manager'";
+            string query = "SELECT * FROM `Employee` Where department = 0 AND position = 'manager'";
             MySqlConnection databaseConnection = new MySqlConnection(connectionString);
             MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
             databaseConnection.Open();

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data;
 using MySql.Data.MySqlClient;
 
 namespace KILR_Project
@@ -31,15 +32,15 @@ namespace KILR_Project
                 lblAddress.Text = Rdr["address"].ToString();
                 lblFName.Text = Rdr["firstname"].ToString();
                 lblLName.Text = Rdr["lastname"].ToString();
-                lblShift.Text = Rdr["shift"].ToString();
+                lblReleaseDate.Text = Rdr["firedate"].ToString();
                 lblHireDate.Text = Rdr["hiredate"].ToString();
                 lblEmail.Text = Rdr["email"].ToString();
-                //lblHireDate.Text = Rdr["firedate"].ToString();
                 if (Rdr["department"].ToString() == "-1")
                 {
                     lblDepts.Text = "No Department";
                 }
-                else {
+                else
+                {
                     lblDepts.Text = Rdr["department"].ToString();
                 }
             }
@@ -57,27 +58,43 @@ namespace KILR_Project
 
         }
 
-        private void BtnUpdtDetails_Click(object sender, EventArgs e)
+
+        private void BtnRmv_Click(object sender, EventArgs e)
+        {
+            string ReleaseDate = DateTime.Today.ToString("yyyy-MM-dd");
+            employeeManager.RemoveEmployee(newId, ReleaseDate);
+            MessageBox.Show("Employee has been released");
+        }
+
+        private void label18_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnRmv_Click_1(object sender, EventArgs e)
+        {
+            string ReleaseDate = DateTime.Today.ToString("yyyy-MM-dd");
+            employeeManager.RemoveEmployee(newId, ReleaseDate);
+            MessageBox.Show("Employee has been released");
+        }
+
+        private void BtnShift_Click(object sender, EventArgs e)
+        {
+            AssignShift shift = new AssignShift(newId);
+            shift.Show();
+            this.Close();
+        }
+
+        private void BtnUpdtDetails_Click_1(object sender, EventArgs e)
         {
             UpdateEmployee update = new UpdateEmployee(newId);
             update.Show();
             this.Close();
         }
 
-        private void BtnGoBack_Click(object sender, EventArgs e)
+        private void BtnGoBack_Click_1(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void BtnRmv_Click(object sender, EventArgs e)
-        {
-            employeeManager.RemoveEmployee(newId);
-            MessageBox.Show("Employee has been deleted");
-        }
-
-        private void label18_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

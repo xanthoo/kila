@@ -34,22 +34,6 @@ namespace KILR_Project
                 tbJobPos.Text = Rdr["position"].ToString();
                 tbDep.Text = Rdr["department"].ToString();
             }
-            //try
-            //{
-            //    MySqlConnection connection = new MySqlConnection(connectionString);
-            //    DataTable dt = new DataTable();
-            //    MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM employee", connection);
-            //    connection.Open();
-
-            //    adapter.Fill(dt);
-            //    //lbDepartmentEmployees.DataSource = null;
-            //    //lbDepartmentEmployees.DataSource = dt;
-            //    //lbDepartmentEmployees.DisplayMember = "name";
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message);
-            //}
         }
 
         private void BtnGoBack_Click(object sender, EventArgs e)
