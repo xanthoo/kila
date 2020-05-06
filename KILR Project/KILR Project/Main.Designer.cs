@@ -77,16 +77,6 @@
             this.Stocklbl = new System.Windows.Forms.Label();
             this.employeesPage = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-<<<<<<< HEAD
-            this.tbZip = new System.Windows.Forms.TextBox();
-            this.lblZip = new System.Windows.Forms.Label();
-            this.rbF = new System.Windows.Forms.RadioButton();
-            this.rbM = new System.Windows.Forms.RadioButton();
-            this.lblGender = new System.Windows.Forms.Label();
-            this.tbCity = new System.Windows.Forms.TextBox();
-            this.lblCity = new System.Windows.Forms.Label();
-=======
->>>>>>> f6952b348cbaebf076a8a94633a211b1987d7c40
             this.dtpShift = new System.Windows.Forms.DateTimePicker();
             this.lblPassword = new System.Windows.Forms.Label();
             this.tbPassword = new System.Windows.Forms.TextBox();
@@ -125,8 +115,6 @@
             this.btnDepStats = new System.Windows.Forms.Button();
             this.btnEmployeeStats = new System.Windows.Forms.Button();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-<<<<<<< HEAD
-=======
             this.lblCity = new System.Windows.Forms.Label();
             this.tbCity = new System.Windows.Forms.TextBox();
             this.lblGender = new System.Windows.Forms.Label();
@@ -134,7 +122,6 @@
             this.rbF = new System.Windows.Forms.RadioButton();
             this.lblZip = new System.Windows.Forms.Label();
             this.tbZip = new System.Windows.Forms.TextBox();
->>>>>>> f6952b348cbaebf076a8a94633a211b1987d7c40
             this.tabPage1.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -165,11 +152,7 @@
             this.tabPage1.Controls.Add(this.panel2);
             this.tabPage1.Location = new System.Drawing.Point(4, 32);
             this.tabPage1.Name = "tabPage1";
-<<<<<<< HEAD
-            this.tabPage1.Size = new System.Drawing.Size(925, 563);
-=======
             this.tabPage1.Size = new System.Drawing.Size(925, 479);
->>>>>>> f6952b348cbaebf076a8a94633a211b1987d7c40
             this.tabPage1.TabIndex = 3;
             this.tabPage1.Text = "Departments";
             this.tabPage1.Click += new System.EventHandler(this.TabPage1_Click);
@@ -289,11 +272,7 @@
             this.stockPage.Location = new System.Drawing.Point(4, 32);
             this.stockPage.Name = "stockPage";
             this.stockPage.Padding = new System.Windows.Forms.Padding(3);
-<<<<<<< HEAD
-            this.stockPage.Size = new System.Drawing.Size(925, 563);
-=======
             this.stockPage.Size = new System.Drawing.Size(925, 479);
->>>>>>> f6952b348cbaebf076a8a94633a211b1987d7c40
             this.stockPage.TabIndex = 1;
             this.stockPage.Text = "Stock";
             this.stockPage.Click += new System.EventHandler(this.StockPage_Click);
@@ -575,11 +554,7 @@
             this.lbStock.ItemHeight = 20;
             this.lbStock.Location = new System.Drawing.Point(299, 66);
             this.lbStock.Name = "lbStock";
-<<<<<<< HEAD
-            this.lbStock.Size = new System.Drawing.Size(337, 334);
-=======
             this.lbStock.Size = new System.Drawing.Size(337, 344);
->>>>>>> f6952b348cbaebf076a8a94633a211b1987d7c40
             this.lbStock.TabIndex = 15;
             // 
             // Stock
@@ -612,21 +587,12 @@
             this.employeesPage.Controls.Add(this.groupBox4);
             this.employeesPage.Controls.Add(this.HeaderPanel);
             this.employeesPage.Controls.Add(this.lbEmployees);
-<<<<<<< HEAD
-            this.employeesPage.Location = new System.Drawing.Point(4, 27);
-            this.employeesPage.Name = "employeesPage";
-            this.employeesPage.Padding = new System.Windows.Forms.Padding(3);
-            this.employeesPage.Size = new System.Drawing.Size(925, 563);
-            this.employeesPage.TabIndex = 0;
-            this.employeesPage.Text = " Employees";
-=======
             this.employeesPage.Location = new System.Drawing.Point(4, 32);
             this.employeesPage.Name = "employeesPage";
             this.employeesPage.Padding = new System.Windows.Forms.Padding(3);
             this.employeesPage.Size = new System.Drawing.Size(925, 558);
             this.employeesPage.TabIndex = 0;
             this.employeesPage.Text = " ";
->>>>>>> f6952b348cbaebf076a8a94633a211b1987d7c40
             this.employeesPage.Click += new System.EventHandler(this.EmployeesPage_Click);
             // 
             // groupBox2
@@ -668,84 +634,11 @@
             this.groupBox2.Text = "Add Employee";
             this.groupBox2.Enter += new System.EventHandler(this.GroupBox2_Enter);
             // 
-<<<<<<< HEAD
-            // tbZip
-            // 
-            this.tbZip.Location = new System.Drawing.Point(319, 26);
-            this.tbZip.Name = "tbZip";
-            this.tbZip.Size = new System.Drawing.Size(123, 23);
-            this.tbZip.TabIndex = 33;
-            // 
-            // lblZip
-            // 
-            this.lblZip.AutoSize = true;
-            this.lblZip.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblZip.Location = new System.Drawing.Point(231, 31);
-            this.lblZip.Name = "lblZip";
-            this.lblZip.Size = new System.Drawing.Size(65, 17);
-            this.lblZip.TabIndex = 32;
-            this.lblZip.Text = "Zip Code:";
-            // 
-            // rbF
-            // 
-            this.rbF.AutoSize = true;
-            this.rbF.Location = new System.Drawing.Point(179, 268);
-            this.rbF.Name = "rbF";
-            this.rbF.Size = new System.Drawing.Size(31, 19);
-            this.rbF.TabIndex = 31;
-            this.rbF.TabStop = true;
-            this.rbF.Text = "F";
-            this.rbF.UseVisualStyleBackColor = true;
-            // 
-            // rbM
-            // 
-            this.rbM.AutoSize = true;
-            this.rbM.Location = new System.Drawing.Point(94, 268);
-            this.rbM.Name = "rbM";
-            this.rbM.Size = new System.Drawing.Size(36, 19);
-            this.rbM.TabIndex = 30;
-            this.rbM.TabStop = true;
-            this.rbM.Text = "M";
-            this.rbM.UseVisualStyleBackColor = true;
-            // 
-            // lblGender
-            // 
-            this.lblGender.AutoSize = true;
-            this.lblGender.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblGender.Location = new System.Drawing.Point(10, 269);
-            this.lblGender.Name = "lblGender";
-            this.lblGender.Size = new System.Drawing.Size(56, 17);
-            this.lblGender.TabIndex = 29;
-            this.lblGender.Text = "Gender:";
-            // 
-            // tbCity
-            // 
-            this.tbCity.Location = new System.Drawing.Point(94, 230);
-            this.tbCity.Name = "tbCity";
-            this.tbCity.Size = new System.Drawing.Size(123, 23);
-            this.tbCity.TabIndex = 28;
-            // 
-            // lblCity
-            // 
-            this.lblCity.AutoSize = true;
-            this.lblCity.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblCity.Location = new System.Drawing.Point(10, 230);
-            this.lblCity.Name = "lblCity";
-            this.lblCity.Size = new System.Drawing.Size(34, 17);
-            this.lblCity.TabIndex = 27;
-            this.lblCity.Text = "City:";
-            // 
-=======
->>>>>>> f6952b348cbaebf076a8a94633a211b1987d7c40
             // dtpShift
             // 
             this.dtpShift.Location = new System.Drawing.Point(318, 141);
             this.dtpShift.Name = "dtpShift";
-<<<<<<< HEAD
-            this.dtpShift.Size = new System.Drawing.Size(123, 23);
-=======
             this.dtpShift.Size = new System.Drawing.Size(123, 27);
->>>>>>> f6952b348cbaebf076a8a94633a211b1987d7c40
             this.dtpShift.TabIndex = 26;
             // 
             // lblPassword
@@ -754,11 +647,7 @@
             this.lblPassword.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblPassword.Location = new System.Drawing.Point(223, 185);
             this.lblPassword.Name = "lblPassword";
-<<<<<<< HEAD
-            this.lblPassword.Size = new System.Drawing.Size(69, 17);
-=======
             this.lblPassword.Size = new System.Drawing.Size(86, 23);
->>>>>>> f6952b348cbaebf076a8a94633a211b1987d7c40
             this.lblPassword.TabIndex = 25;
             this.lblPassword.Text = "Password:";
             // 
@@ -766,11 +655,7 @@
             // 
             this.tbPassword.Location = new System.Drawing.Point(319, 183);
             this.tbPassword.Name = "tbPassword";
-<<<<<<< HEAD
-            this.tbPassword.Size = new System.Drawing.Size(123, 23);
-=======
             this.tbPassword.Size = new System.Drawing.Size(123, 27);
->>>>>>> f6952b348cbaebf076a8a94633a211b1987d7c40
             this.tbPassword.TabIndex = 24;
             // 
             // cbPostition
@@ -876,11 +761,7 @@
             this.shiftLbl.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.shiftLbl.Location = new System.Drawing.Point(223, 148);
             this.shiftLbl.Name = "shiftLbl";
-<<<<<<< HEAD
-            this.shiftLbl.Size = new System.Drawing.Size(64, 17);
-=======
             this.shiftLbl.Size = new System.Drawing.Size(82, 23);
->>>>>>> f6952b348cbaebf076a8a94633a211b1987d7c40
             this.shiftLbl.TabIndex = 8;
             this.shiftLbl.Text = "HireDate:";
             this.shiftLbl.Click += new System.EventHandler(this.ShiftLbl_Click);
@@ -947,11 +828,7 @@
             this.rbName.AutoSize = true;
             this.rbName.Location = new System.Drawing.Point(104, 25);
             this.rbName.Name = "rbName";
-<<<<<<< HEAD
-            this.rbName.Size = new System.Drawing.Size(57, 19);
-=======
             this.rbName.Size = new System.Drawing.Size(71, 24);
->>>>>>> f6952b348cbaebf076a8a94633a211b1987d7c40
             this.rbName.TabIndex = 11;
             this.rbName.TabStop = true;
             this.rbName.Text = "Name";
@@ -962,11 +839,7 @@
             this.rbId.AutoSize = true;
             this.rbId.Location = new System.Drawing.Point(31, 25);
             this.rbId.Name = "rbId";
-<<<<<<< HEAD
-            this.rbId.Size = new System.Drawing.Size(38, 19);
-=======
             this.rbId.Size = new System.Drawing.Size(45, 24);
->>>>>>> f6952b348cbaebf076a8a94633a211b1987d7c40
             this.rbId.TabIndex = 10;
             this.rbId.TabStop = true;
             this.rbId.Text = "ID";
@@ -988,11 +861,7 @@
             // 
             this.tbFindEmployee.Location = new System.Drawing.Point(43, 56);
             this.tbFindEmployee.Name = "tbFindEmployee";
-<<<<<<< HEAD
-            this.tbFindEmployee.Size = new System.Drawing.Size(132, 23);
-=======
             this.tbFindEmployee.Size = new System.Drawing.Size(132, 27);
->>>>>>> f6952b348cbaebf076a8a94633a211b1987d7c40
             this.tbFindEmployee.TabIndex = 7;
             // 
             // groupBox4
@@ -1014,11 +883,7 @@
             this.cbAdministrators.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.cbAdministrators.Location = new System.Drawing.Point(33, 88);
             this.cbAdministrators.Name = "cbAdministrators";
-<<<<<<< HEAD
-            this.cbAdministrators.Size = new System.Drawing.Size(128, 24);
-=======
             this.cbAdministrators.Size = new System.Drawing.Size(161, 29);
->>>>>>> f6952b348cbaebf076a8a94633a211b1987d7c40
             this.cbAdministrators.TabIndex = 23;
             this.cbAdministrators.Text = "Administrators";
             this.cbAdministrators.UseVisualStyleBackColor = true;
@@ -1029,11 +894,7 @@
             this.cbEmployees.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.cbEmployees.Location = new System.Drawing.Point(33, 60);
             this.cbEmployees.Name = "cbEmployees";
-<<<<<<< HEAD
-            this.cbEmployees.Size = new System.Drawing.Size(101, 24);
-=======
             this.cbEmployees.Size = new System.Drawing.Size(126, 29);
->>>>>>> f6952b348cbaebf076a8a94633a211b1987d7c40
             this.cbEmployees.TabIndex = 22;
             this.cbEmployees.Text = "Employees";
             this.cbEmployees.UseVisualStyleBackColor = true;
@@ -1044,11 +905,7 @@
             this.cbManagers.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.cbManagers.Location = new System.Drawing.Point(33, 30);
             this.cbManagers.Name = "cbManagers";
-<<<<<<< HEAD
-            this.cbManagers.Size = new System.Drawing.Size(96, 24);
-=======
             this.cbManagers.Size = new System.Drawing.Size(119, 29);
->>>>>>> f6952b348cbaebf076a8a94633a211b1987d7c40
             this.cbManagers.TabIndex = 21;
             this.cbManagers.Text = "Managers";
             this.cbManagers.UseVisualStyleBackColor = true;
@@ -1084,22 +941,14 @@
             this.Jupiterlbl.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Jupiterlbl.Location = new System.Drawing.Point(355, -1);
             this.Jupiterlbl.Name = "Jupiterlbl";
-<<<<<<< HEAD
-            this.Jupiterlbl.Size = new System.Drawing.Size(173, 45);
-=======
             this.Jupiterlbl.Size = new System.Drawing.Size(212, 54);
->>>>>>> f6952b348cbaebf076a8a94633a211b1987d7c40
             this.Jupiterlbl.TabIndex = 10;
             this.Jupiterlbl.Text = "Employees";
             // 
             // lbEmployees
             // 
             this.lbEmployees.FormattingEnabled = true;
-<<<<<<< HEAD
-            this.lbEmployees.ItemHeight = 15;
-=======
             this.lbEmployees.ItemHeight = 20;
->>>>>>> f6952b348cbaebf076a8a94633a211b1987d7c40
             this.lbEmployees.Location = new System.Drawing.Point(463, 58);
             this.lbEmployees.Name = "lbEmployees";
             this.lbEmployees.Size = new System.Drawing.Size(454, 484);
@@ -1131,11 +980,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 32);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-<<<<<<< HEAD
-            this.tabPage2.Size = new System.Drawing.Size(925, 563);
-=======
             this.tabPage2.Size = new System.Drawing.Size(925, 479);
->>>>>>> f6952b348cbaebf076a8a94633a211b1987d7c40
             this.tabPage2.TabIndex = 4;
             this.tabPage2.Text = "Statistic";
             // 
@@ -1207,8 +1052,6 @@
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
             // 
-<<<<<<< HEAD
-=======
             // lblCity
             // 
             this.lblCity.AutoSize = true;
@@ -1275,7 +1118,6 @@
             this.tbZip.Size = new System.Drawing.Size(123, 27);
             this.tbZip.TabIndex = 33;
             // 
->>>>>>> f6952b348cbaebf076a8a94633a211b1987d7c40
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
