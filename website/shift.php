@@ -17,7 +17,7 @@ require_once "includes/header.php";
                  <select class="custom-select w-full bg-white focus:outline-none px-3 py-2" id="inputGroupSelect04" aria-label="Example select with button addon">
                     <option selected>Choose...</option>
                     <option value="jan">January</option>
-                    <option value="feb">Frbruary</option>
+                    <option value="feb">February</option>
                     <option value="mar">March</option>
                     <option value="apr">April</option>
                     <option value="may">May</option>
