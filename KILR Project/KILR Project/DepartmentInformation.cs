@@ -17,6 +17,7 @@ namespace KILR_Project
         CreateDepartment createDepartmentForm;
         DepartmentInformation depInfo;
         DepartmentManager dm;
+        Department department;
 
         int departmentId;
         string connectionString;
@@ -26,6 +27,7 @@ namespace KILR_Project
             departmentId = DepartmentID;
             mainDepartmentInfo = mainForm;
             this.dm = dm;
+            
 
             connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=kilrdb;";
             MySqlConnection connection = new MySqlConnection(connectionString);
@@ -54,20 +56,32 @@ namespace KILR_Project
         private void btnRemove_Click(object sender, EventArgs e)
         {
             DialogResult answer = MessageBox.Show("Are you sure you want to delete this department?", "Delete department", MessageBoxButtons.YesNo);
-            if (answer == DialogResult.Yes)
+            connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=kilrdb;";
+            MySqlConnection connection = new MySqlConnection(connectionString);
+            DataTable dt = new DataTable();
+            MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM employee WHERE department=" + departmentId, connection);
+            adapter.Fill(dt);
+            connection.Open();
+             if(dt.Rows.Count <= 1)
             {
-                MySqlConnection connection = new MySqlConnection(connectionString);
+                if (answer == DialogResult.Yes)
+                {
                 MySqlCommand commandDatabase = new MySqlCommand("DELETE from department where id=" + departmentId, connection);
                 commandDatabase.CommandTimeout = 60;
-                connection.Open();
+                
                 MySqlDataReader myReader = commandDatabase.ExecuteReader();
                 mainDepartmentInfo.PopulateDepartmentsList();
 
                 MessageBox.Show("The department has been deleted!");
                 this.Close();
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("You can't delete a department with employees in it.");
             }
      
-
         }
 
         private void btnGo_Click(object sender, EventArgs e)

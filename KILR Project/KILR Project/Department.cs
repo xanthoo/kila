@@ -39,7 +39,6 @@ namespace KILR_Project
             employees.Add(e);
         }
 
-
         public List<Employee> GetEmployees()
         {
             List<Employee> people = new List<Employee>();
