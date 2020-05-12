@@ -57,7 +57,7 @@ namespace KILR_Project
 
         public String GetInfo()
         {
-            return $"Id: {this.id} - Name: {this.firstName} {this.lastName}";
+            return $"Id: {this.id} - Name: {this.firstName} {this.lastName} DepId: {this.departmentId} Pos: {this.position}";
 
         }
     }

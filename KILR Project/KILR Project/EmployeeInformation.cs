@@ -14,8 +14,6 @@ namespace KILR_Project
 {
     public partial class EmployeeInformation : Form
     {
-        Main m;
-        Employee newEmp;
         EmployeeManager employeeManager;
         public int newId;
         public EmployeeInformation(int id)
@@ -32,7 +30,6 @@ namespace KILR_Project
                 lblAddress.Text = Rdr["address"].ToString();
                 lblFName.Text = Rdr["firstname"].ToString();
                 lblLName.Text = Rdr["lastname"].ToString();
-                lblReleaseDate.Text = Rdr["firedate"].ToString();
                 lblHireDate.Text = Rdr["hiredate"].ToString();
                 lblEmail.Text = Rdr["email"].ToString();
                 if (Rdr["department"].ToString() == "-1")
@@ -42,6 +39,15 @@ namespace KILR_Project
                 else
                 {
                     lblDepts.Text = Rdr["department"].ToString();
+                }
+                if(Rdr["firedate"].ToString() == "")
+                {
+                    lblReleaseDate.Text = "N/A";
+                }
+                else
+                {
+                    lblReleaseDate.Text = Rdr["firedate"].ToString();
+                    btnRmv.Enabled = false;
                 }
             }
 
@@ -61,9 +67,11 @@ namespace KILR_Project
 
         private void BtnRmv_Click(object sender, EventArgs e)
         {
-            string ReleaseDate = DateTime.Today.ToString("yyyy-MM-dd");
-            employeeManager.RemoveEmployee(newId, ReleaseDate);
-            MessageBox.Show("Employee has been released");
+            ReleaseEmployee r = new ReleaseEmployee(newId);
+            r.Show();
+            //string ReleaseDate = DateTime.Today.ToString("yyyy-MM-dd");
+            //employeeManager.RemoveEmployee(newId, ReleaseDate);
+            //MessageBox.Show("Employee has been released");
         }
 
         private void label18_Click(object sender, EventArgs e)
@@ -73,9 +81,9 @@ namespace KILR_Project
 
         private void BtnRmv_Click_1(object sender, EventArgs e)
         {
-            string ReleaseDate = DateTime.Today.ToString("yyyy-MM-dd");
-            employeeManager.RemoveEmployee(newId, ReleaseDate);
-            MessageBox.Show("Employee has been released");
+            ReleaseEmployee r = new ReleaseEmployee(newId);
+            r.Show();
+            this.Close();
         }
 
         private void BtnShift_Click(object sender, EventArgs e)
