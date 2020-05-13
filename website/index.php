@@ -129,7 +129,8 @@ require_once "includes/header.php";
 			</div>
 		</div>
 
-		<div class="flex flex-col items-center">
+		<div class="flex justify-between items-center">
+			<a href="shift.php" class="transition duration-150 ease-in-out text-center w-48 px-3 py-3 bg-orange-300 hover:bg-orange-400 text-orange-700 text-xl font-light focus:outline-none">View Shifts</a>
 			<button class="transition duration-150 ease-in-out w-48 px-3 py-3 bg-orange-500 hover:bg-orange-400 text-orange-100 text-xl font-light focus:outline-none">Save changes</button>
 		</div>
 	</form>
