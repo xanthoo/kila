@@ -18,10 +18,7 @@ if (
 		SELECT id FROM employee WHERE email = ? && password = ?
 	');
 	$query->bindParam(1, $_POST['email']);
-
-	// TODO: use SHA256 encryption when C# application starts using it
-	$query->bindParam(2, $_POST['password']);
-	// $query->bindParam(2, hash('sha256', $_POST['password']));
+	$query->bindParam(2, md5($_POST['password']));
 
 	$query->execute();
 	

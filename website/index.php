@@ -14,9 +14,7 @@ function processData() {
 		');
 
 		$query->bindParam(1, $user['id']);
-		// TODO: use SHA256 encryption when C# application starts using it
-		$query->bindParam(2, $_POST['password']);
-		// $query->bindParam(2, hash('sha256', $_POST['password']));
+		$query->bindParam(2, md5($_POST['password']));
 
 		$query->execute();
 
@@ -44,9 +42,7 @@ function processData() {
 	$query->bindParam(2, $_POST['lastname']);
 	$query->bindParam(3, $_POST['address']);
 	if (isset($_POST['newpassword']) && $_POST['newpassword'] !== '') {
-		// TODO: use SHA256 encryption when C# application starts using it
-		$query->bindParam(4, $_POST['newpassword']);
-		// $query->bindParam(4, hash('sha256', $_POST['password']));
+		$query->bindParam(4, md5($_POST['newpassword']));
 	}
 	$query->bindParam(isset($_POST['newpassword']) && $_POST['newpassword'] !== '' ? 5 : 4, $user['id']);
 
