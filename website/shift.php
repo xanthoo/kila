@@ -6,7 +6,7 @@ if ($user === null) {
 }
 
 $shifts = [];
-if (isset($_GET['month']) && isset($_GET['year'])) {
+if (isset($_GET['month']) && $_GET['month'] !== '' && isset($_GET['year']) && $_GET['year'] !== '') {
 	$dateFrom = date('Y-m-d', strtotime($_GET['year'] . '-' . $_GET['month']));
 	$dateTo = date('Y-m-d', strtotime(($_GET['month'] == 12 ? $_GET['year'] + 1 : $_GET['year']) . '-' . ($_GET['month'] == 12 ? 1 : $_GET['month'] + 1)));
 
