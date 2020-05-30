@@ -45,24 +45,22 @@ namespace KILR_Project
 
         //STOCK DATABASE MANAGER
 
-        public static bool AddStock(Product p)
+        public static void AddStock(Product p)
         {
             string query = "INSERT INTO product(`productid`, `productname`, `quantity`,`sellingprice`,`buyingprice`,`stockactivity`,`minquantity`,`datecreated`) VALUES(NULL, '" + p.Name + "', '" + p.Quanitity + "', '" + p.SellingPrice + "', '" + p.BuyingPrice + "', 1, '" + p.MinimumQuantity + "', '" + p.DateCreated + "')";
 
             MySqlConnection databaseConnection = new MySqlConnection(connectionString);
             MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
             commandDatabase.CommandTimeout = 60;
-
-
             try
             {
                 databaseConnection.Open();
                 MySqlDataReader myReader = commandDatabase.ExecuteReader();
-                return true;
+
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                return false;
+                throw new Exception("Check your connection to the database!");
             }
             finally
             {
@@ -71,46 +69,66 @@ namespace KILR_Project
         }
         public static List<Product> GetAllStocks()
         {
-            List<Product> products = new List<Product>();
-            products.Clear();
             MySqlConnection connection = new MySqlConnection(connectionString);
-            string sql = " SELECT * FROM product;";
-            MySqlCommand cmd = new MySqlCommand(sql, connection);
-            connection.Open();
-            MySqlDataReader reader = cmd.ExecuteReader();
-            while (reader.Read())
+            try
             {
-                products.Add(new Product(Convert.ToInt32(reader[0]), reader[1].ToString(), Convert.ToInt32(reader[2]), Convert.ToDecimal(reader[3]), Convert.ToDecimal(reader[4]), Convert.ToBoolean(reader[5]), Convert.ToInt32(reader[6]), Convert.ToString(reader[7]), Convert.ToString(reader[8])));
+                List<Product> products = new List<Product>();
+                products.Clear();
+                string sql = " SELECT * FROM product;";
+                MySqlCommand cmd = new MySqlCommand(sql, connection);
+                connection.Open();
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    products.Add(new Product(Convert.ToInt32(reader[0]), reader[1].ToString(), Convert.ToInt32(reader[2]), Convert.ToDecimal(reader[3]), Convert.ToDecimal(reader[4]), Convert.ToBoolean(reader[5]), Convert.ToInt32(reader[6]), Convert.ToString(reader[7]), Convert.ToString(reader[8])));
+                }
+                return products;
             }
-            connection.Close();
-            return products;
+            catch (Exception)
+            {
+                throw new Exception("Check your connection to the database!");
+            }
+            finally
+            {
+                connection.Close();
+            }
         }
         public static bool UpdateStock(Product p)
         {
             MySqlConnection connection = new MySqlConnection(connectionString);
-            if (p.IsActive == true)
+            try
             {
-                string sql = " UPDATE `product` SET `productname` = '" + p.Name + "', `quantity` = '" + p.Quanitity + "', `sellingprice` = '" + p.SellingPrice +
-                "', `buyingprice` = '" + p.BuyingPrice + "', `stockactivity` = '" + 1 + "', `minquantity` = '" + p.MinimumQuantity + "', `dateupdated` = '" + DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss") + "' WHERE `product`.`productid` = " + p.ID + ";";
-                MySqlCommand cmd = new MySqlCommand(sql, connection);
-                connection.Open();
-                int effectedRows = cmd.ExecuteNonQuery();
-                connection.Close();
-                return true;
+                if (p.IsActive == true)
+                {
+                    string sql = " UPDATE `product` SET `productname` = '" + p.Name + "', `quantity` = '" + p.Quanitity + "', `sellingprice` = '" + p.SellingPrice +
+                    "', `buyingprice` = '" + p.BuyingPrice + "', `stockactivity` = '" + 1 + "', `minquantity` = '" + p.MinimumQuantity + "', `dateupdated` = '" + DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss") + "' WHERE `product`.`productid` = " + p.ID + ";";
+                    MySqlCommand cmd = new MySqlCommand(sql, connection);
+                    connection.Open();
+                    int effectedRows = cmd.ExecuteNonQuery();
+                    return true;
 
+                }
+                else
+                {
+                    string sql = " UPDATE `product` SET `productname` = '" + p.Name + "', `quantity` = '" + p.Quanitity + "', `sellingprice` = '" + p.SellingPrice +
+                    "', `buyingprice` = '" + p.BuyingPrice + "', `stockactivity` = '" + 0 + "', `minquantity` = '" + p.MinimumQuantity + "', `dateupdated` = '" + DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss") + "' WHERE `product`.`productid` = " + p.ID + ";";
+                    MySqlCommand cmd = new MySqlCommand(sql, connection);
+                    connection.Open();
+                    int effectedRows = cmd.ExecuteNonQuery();
+                    return true;
+                }
             }
-            else
+            catch (Exception)
             {
-                string sql = " UPDATE `product` SET `productname` = '" + p.Name + "', `quantity` = '" + p.Quanitity + "', `sellingprice` = '" + p.SellingPrice +
-                "', `buyingprice` = '" + p.BuyingPrice + "', `stockactivity` = '" + 0 + "', `minquantity` = '" + p.MinimumQuantity + "', `dateupdated` = '" + DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss") + "' WHERE `product`.`productid` = " + p.ID + ";";
-                MySqlCommand cmd = new MySqlCommand(sql, connection);
-                connection.Open();
-                int effectedRows = cmd.ExecuteNonQuery();
+                throw new Exception("Check your connection to the database!");
+            }
+            finally
+            {
                 connection.Close();
-                return true;
             }
             
         }
+        //END OF STOCK SYSTEM
         public static List<string> GetShifts(int id)
         {
             List<string> shifts = new List<string>();
@@ -168,6 +186,5 @@ namespace KILR_Project
             }
             return false;
         }
-        //END OF STOCK DATABASE MANAGER
     }
 }

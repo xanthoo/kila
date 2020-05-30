@@ -27,7 +27,7 @@ namespace KILR_Project
             InitializeComponent();
             this.user = user as User;
 
-            sm = new StockManager("Product Manager");
+            sm = new StockManager(DB.GetAllStocks());
             empMang = new EmployeeManager();
             dm = new DepartmentManager("Jupiter Managers");
 
@@ -115,15 +115,9 @@ namespace KILR_Project
                     {
                         if ((roundBuying > 0) && (roundSelling > 0) && (minQuantity > 0))
                         {
-                            if (DB.AddStock(new Product(0, name, quantity, roundSelling, roundBuying, true, minQuantity, date, null)) == true)
-                            {
+                            sm.AddStock(new Product(sm.GenerateID(), name, quantity, roundSelling, roundBuying, true, minQuantity, date, null));
                                 MessageBox.Show("Stock succesfully created!");
                                 RefreshStock();
-                            }
-                            else
-                            {
-                                MessageBox.Show("Check your connection to the database");
-                            }
                         }
                         else
                         {
@@ -262,9 +256,8 @@ namespace KILR_Project
         }
         public void RefreshStock()
         {
-            DB.GetAllStocks();
             lbStock.Items.Clear();
-            foreach (Product p in DB.GetAllStocks())
+            foreach (Product p in sm.GetAllStocks())
             {
                 lbStock.Items.Add(p.GetInfo());
             }
@@ -272,19 +265,18 @@ namespace KILR_Project
 
         private void BtnFilterStock_Click(object sender, EventArgs e)
         {
-            DB.GetAllStocks();
             lbStock.Items.Clear();
 
             if (cbActive.Checked == false && cbInactive.Checked == false)
             {
-                foreach (Product p in DB.GetAllStocks())
+                foreach (Product p in sm.GetAllStocks())
                 {
                     lbStock.Items.Add(p.GetInfo());
                 }
                 return;
             }
 
-            foreach (Product p in DB.GetAllStocks())
+            foreach (Product p in sm.GetAllStocks())
             {
                 if (cbActive.Checked == true)
                 {
