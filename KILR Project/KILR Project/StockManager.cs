@@ -10,31 +10,34 @@ namespace KILR_Project
 {
     public class StockManager
     {
-        private string name;
-        public StockManager(string name)
+        private List<Product> stocks;
+        public StockManager(List<Product>products)
         {
-            this.name = name;
+            this.stocks = products;
         }
         public Product FindStock(int id)
         {
-            foreach (Product p in DB.GetAllStocks())
-            {
+            foreach (Product p in stocks)
                 if (p.ID == id)
-                {
                     return p;
-                }
-            }
+
             return null;
+        }
+        public List<Product> GetAllStocks()
+        {
+            return this.stocks.ToList();
+        }
+        public void AddStock(Product p)
+        {
+            stocks.Add(p);
+            DB.AddStock(p);
         }
         public bool CheckIfStockExists(int id)
         {
-            foreach (Product item in DB.GetAllStocks())
-            {
+            foreach (Product item in stocks)
                 if (id == item.ID)
-                {
                     return true;
-                }
-            }
+  
             return false;
         }
         public void Increase(Product p, int amount)
@@ -46,13 +49,13 @@ namespace KILR_Project
         {
             p.Quanitity -= amount;
             DB.UpdateStock(p);
-            //MySqlConnection connection = new MySqlConnection(connectionString);
-            //string sql = " UPDATE `product` SET `quantity` = '" + p.Quanitity + "' WHERE `product`.`productid` = " + p.ID + ";";
-            //MySqlCommand cmd = new MySqlCommand(sql, connection);
-            //cmd.Parameters.AddWithValue("@quantity", p.Quanitity);
-            //connection.Open();
-            //int effectedRows = cmd.ExecuteNonQuery();
-            //connection.Close();
+        }
+        public int GenerateID()
+        {
+            List<int>ids = new List<int>();
+            foreach (Product p in stocks)
+                ids.Add(p.ID);
+            return ids.Max() + 1;
         }
    
     }

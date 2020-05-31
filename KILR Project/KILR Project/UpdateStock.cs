@@ -67,6 +67,7 @@ namespace KILR_Project
                                 this.stock.SellingPrice = roundSelling;
                                 this.stock.BuyingPrice = roundBuying;
                                 this.stock.MinimumQuantity = minimumQuantity;
+                                this.stock.DateUpdated = DateTime.Now.ToString();
 
                                 if (rbActive.Checked == true)
                                 {

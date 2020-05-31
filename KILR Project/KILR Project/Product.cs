@@ -26,7 +26,7 @@ namespace KILR_Project
         public bool IsActive { get { return this.isActive; } set { this.isActive = value; } }
         public int MinimumQuantity { get { return this.minimumQuantity; } set { this.minimumQuantity = value; } }
         public string DateCreated { get { return this.dateCreated; } }
-        public string DateUpdated { get { return this.dateUpdated; } }
+        public string DateUpdated { get { return this.dateUpdated; } set { this.dateUpdated = value; } }
 
         public Product(int id, string name, int quanitity, decimal sellingPrice, decimal buyingPrice, bool isActive, int minimumQuantity, string dateCreated, string dateUpdated)
         {

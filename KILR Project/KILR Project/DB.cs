@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -44,24 +45,22 @@ namespace KILR_Project
 
         //STOCK DATABASE MANAGER
 
-        public static bool AddStock(Product p)
+        public static void AddStock(Product p)
         {
             string query = "INSERT INTO product(`productid`, `productname`, `quantity`,`sellingprice`,`buyingprice`,`stockactivity`,`minquantity`,`datecreated`) VALUES(NULL, '" + p.Name + "', '" + p.Quanitity + "', '" + p.SellingPrice + "', '" + p.BuyingPrice + "', 1, '" + p.MinimumQuantity + "', '" + p.DateCreated + "')";
 
             MySqlConnection databaseConnection = new MySqlConnection(connectionString);
             MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
             commandDatabase.CommandTimeout = 60;
-
-
             try
             {
                 databaseConnection.Open();
                 MySqlDataReader myReader = commandDatabase.ExecuteReader();
-                return true;
+
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                return false;
+                throw new Exception("Check your connection to the database!");
             }
             finally
             {
@@ -70,46 +69,66 @@ namespace KILR_Project
         }
         public static List<Product> GetAllStocks()
         {
-            List<Product> products = new List<Product>();
-            products.Clear();
             MySqlConnection connection = new MySqlConnection(connectionString);
-            string sql = " SELECT * FROM product;";
-            MySqlCommand cmd = new MySqlCommand(sql, connection);
-            connection.Open();
-            MySqlDataReader reader = cmd.ExecuteReader();
-            while (reader.Read())
+            try
             {
-                products.Add(new Product(Convert.ToInt32(reader[0]), reader[1].ToString(), Convert.ToInt32(reader[2]), Convert.ToDecimal(reader[3]), Convert.ToDecimal(reader[4]), Convert.ToBoolean(reader[5]), Convert.ToInt32(reader[6]), Convert.ToString(reader[7]), Convert.ToString(reader[8])));
+                List<Product> products = new List<Product>();
+                products.Clear();
+                string sql = " SELECT * FROM product;";
+                MySqlCommand cmd = new MySqlCommand(sql, connection);
+                connection.Open();
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    products.Add(new Product(Convert.ToInt32(reader[0]), reader[1].ToString(), Convert.ToInt32(reader[2]), Convert.ToDecimal(reader[3]), Convert.ToDecimal(reader[4]), Convert.ToBoolean(reader[5]), Convert.ToInt32(reader[6]), Convert.ToString(reader[7]), Convert.ToString(reader[8])));
+                }
+                return products;
             }
-            connection.Close();
-            return products;
+            catch (Exception)
+            {
+                throw new Exception("Check your connection to the database!");
+            }
+            finally
+            {
+                connection.Close();
+            }
         }
         public static bool UpdateStock(Product p)
         {
             MySqlConnection connection = new MySqlConnection(connectionString);
-            if (p.IsActive == true)
+            try
             {
-                string sql = " UPDATE `product` SET `productname` = '" + p.Name + "', `quantity` = '" + p.Quanitity + "', `sellingprice` = '" + p.SellingPrice +
-                "', `buyingprice` = '" + p.BuyingPrice + "', `stockactivity` = '" + 1 + "', `minquantity` = '" + p.MinimumQuantity + "', `dateupdated` = '" + DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss") + "' WHERE `product`.`productid` = " + p.ID + ";";
-                MySqlCommand cmd = new MySqlCommand(sql, connection);
-                connection.Open();
-                int effectedRows = cmd.ExecuteNonQuery();
-                connection.Close();
-                return true;
+                if (p.IsActive == true)
+                {
+                    string sql = " UPDATE `product` SET `productname` = '" + p.Name + "', `quantity` = '" + p.Quanitity + "', `sellingprice` = '" + p.SellingPrice +
+                    "', `buyingprice` = '" + p.BuyingPrice + "', `stockactivity` = '" + 1 + "', `minquantity` = '" + p.MinimumQuantity + "', `dateupdated` = '" + DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss") + "' WHERE `product`.`productid` = " + p.ID + ";";
+                    MySqlCommand cmd = new MySqlCommand(sql, connection);
+                    connection.Open();
+                    int effectedRows = cmd.ExecuteNonQuery();
+                    return true;
 
+                }
+                else
+                {
+                    string sql = " UPDATE `product` SET `productname` = '" + p.Name + "', `quantity` = '" + p.Quanitity + "', `sellingprice` = '" + p.SellingPrice +
+                    "', `buyingprice` = '" + p.BuyingPrice + "', `stockactivity` = '" + 0 + "', `minquantity` = '" + p.MinimumQuantity + "', `dateupdated` = '" + DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss") + "' WHERE `product`.`productid` = " + p.ID + ";";
+                    MySqlCommand cmd = new MySqlCommand(sql, connection);
+                    connection.Open();
+                    int effectedRows = cmd.ExecuteNonQuery();
+                    return true;
+                }
             }
-            else
+            catch (Exception)
             {
-                string sql = " UPDATE `product` SET `productname` = '" + p.Name + "', `quantity` = '" + p.Quanitity + "', `sellingprice` = '" + p.SellingPrice +
-                "', `buyingprice` = '" + p.BuyingPrice + "', `stockactivity` = '" + 0 + "', `minquantity` = '" + p.MinimumQuantity + "', `dateupdated` = '" + DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss") + "' WHERE `product`.`productid` = " + p.ID + ";";
-                MySqlCommand cmd = new MySqlCommand(sql, connection);
-                connection.Open();
-                int effectedRows = cmd.ExecuteNonQuery();
-                connection.Close();
-                return true;
+                throw new Exception("Check your connection to the database!");
             }
-            
+            finally
+            {
+                connection.Close();
+            }
+
         }
+        //END OF STOCK SYSTEM
         public static List<string> GetShifts(int id)
         {
             List<string> shifts = new List<string>();
@@ -167,6 +186,216 @@ namespace KILR_Project
             }
             return false;
         }
-        //END OF STOCK DATABASE MANAGER
+        public static bool UpdateEmployee(string firstName, string surname, string email, string address, string jobPosition, string department, int id)
+        {
+            string query = $"UPDATE employee SET firstname = '{firstName}', lastname = '{surname}', email = '{email}', address = '{address}', position = '{jobPosition}', department = '{department}' WHERE id = {id}";
+            MySqlConnection databaseConnection = new MySqlConnection(connectionString);
+            MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
+            MySqlDataReader MyReader;
+            commandDatabase.CommandTimeout = 60;
+            try
+            {
+                databaseConnection.Open();
+                MyReader = commandDatabase.ExecuteReader();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return false;
+        }
+        public static bool UpdateDepartment(string depName, string staffAmount, string managerId, int id)
+        {
+            string query = "UPDATE `department` SET `name`='" + depName + "',`staffamount`='" + staffAmount + "',`managerid`='" + managerId + "' WHERE id =" + id;
+            MySqlConnection databaseConnection = new MySqlConnection(connectionString);
+            MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
+            commandDatabase.CommandTimeout = 60;
+
+            try
+            {
+                if (!string.IsNullOrWhiteSpace(depName) && !string.IsNullOrWhiteSpace(staffAmount) && !string.IsNullOrWhiteSpace(managerId))
+                {
+                    int parsedValue;
+                    if (!int.TryParse(staffAmount, out parsedValue))
+                    {
+                        MessageBox.Show("'Staff number' and 'manager id' are number fields only!");
+                       
+                    }
+                    if (!int.TryParse(staffAmount, out parsedValue))
+                    {
+                        MessageBox.Show("'Staff number' and 'manager id' are number fields only!");
+                       
+                    }
+                    databaseConnection.Open();
+                    MySqlDataReader myReader = commandDatabase.ExecuteReader();
+
+                    MessageBox.Show("Department succesfully edited");
+                    
+                    databaseConnection.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                // Show any error message.
+                MessageBox.Show(ex.Message);
+            }
+            return false;
+        }
+        public static bool RemoveEmployeeFromDepartment(int departmentId, string findEmployees)
+        {
+            DepartmentManager dm;
+            dm = new DepartmentManager("Jupiter Managers");
+            int foundId = -1;
+            Department d2 = dm.GetDepartment(departmentId);
+            foreach (Employee employee in d2.GetEmployees())
+            {
+                if (employee.GetId() == Convert.ToInt32(findEmployees))
+                {
+                    foundId = employee.GetId();
+                    break;
+                }
+            }
+
+            if (foundId != -1)
+            {
+                string query = $"UPDATE employee SET department = -1 WHERE id = {foundId}";
+                MySqlConnection databaseConnection = new MySqlConnection(connectionString);
+                MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
+                MySqlDataReader MyReader;
+                commandDatabase.CommandTimeout = 60;
+                try
+                {
+                    databaseConnection.Open();
+                    MyReader = commandDatabase.ExecuteReader();
+                    
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Employee was not found!");
+            }
+            return false;
+        }
+        public static bool AddEmployeeFromDepartment(int departmentId, string findEmployees)
+        {
+            DepartmentManager dm;
+            dm = new DepartmentManager("Jupiter Managers");
+            int foundId = -1;
+            Department d2 = dm.GetDepartment(departmentId);
+            try
+            {
+                foreach (Employee employee in d2.GetOtherEmployees())
+                {
+                    if (employee.GetId() == Convert.ToInt32(findEmployees))
+                    {
+                        foundId = employee.GetId();
+                        break;
+                    }
+                }
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Incorrect format!");
+                
+            }
+
+            if (foundId != -1)
+            {
+                string query = $"UPDATE employee SET department = {departmentId} WHERE id = {foundId}";
+                MySqlConnection databaseConnection = new MySqlConnection(connectionString);
+                MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
+                MySqlDataReader MyReader;
+                commandDatabase.CommandTimeout = 60;
+                try
+                {
+                    databaseConnection.Open();
+                    MyReader = commandDatabase.ExecuteReader();
+                    
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Employee was not found!");
+            }
+            return false;
+        }
+        public static bool RemoveDepartment(int departmentId)
+        {
+           
+            DialogResult answer = MessageBox.Show("Are you sure you want to delete this department?", "Delete department", MessageBoxButtons.YesNo);
+            MySqlConnection connection = new MySqlConnection(connectionString);
+            DataTable dt = new DataTable();
+            MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM employee WHERE department=" + departmentId, connection);
+            adapter.Fill(dt);
+            connection.Open();
+            if (dt.Rows.Count <= 1)
+            {
+                if (answer == DialogResult.Yes)
+                {
+                    MySqlCommand commandDatabase = new MySqlCommand("DELETE from department where id=" + departmentId, connection);
+                    commandDatabase.CommandTimeout = 60;
+
+                    MySqlDataReader myReader = commandDatabase.ExecuteReader();
+                    
+
+                    MessageBox.Show("The department has been deleted!");
+                    
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("You can't delete a department with employees in it.");
+            }
+        return false;
+        }
+        public static bool ConfirmCreatedDepartment(string depName, string staffAmount, int managerId)
+        {
+            string query = "INSERT INTO department(`id`, `name`, `staffamount`, `managerid`,`date`) VALUES (NULL, '" + depName + "', '" + staffAmount + "', '" + managerId + "', '" + DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss") + "')";
+            MySqlConnection databaseConnection = new MySqlConnection(connectionString);
+            MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
+            commandDatabase.CommandTimeout = 60;
+            try
+            {
+                if (!string.IsNullOrWhiteSpace(depName) && !string.IsNullOrWhiteSpace(Convert.ToString(managerId)) && !string.IsNullOrWhiteSpace(staffAmount))
+                {
+                    int parsedValue;
+                    if (!int.TryParse(Convert.ToString(managerId), out parsedValue))
+                    {
+                        MessageBox.Show("'Staff number' and 'manager id' are number fields only!");
+                       
+                    }
+                    if (!int.TryParse(staffAmount, out parsedValue))
+                    {
+                        MessageBox.Show("'Staff number' and 'manager id' are number fields only!");
+                        
+                    }
+                    
+                    databaseConnection.Open();
+                    MySqlDataReader myReader = commandDatabase.ExecuteReader();
+                    MessageBox.Show("Department succesfully created");
+                    
+                    databaseConnection.Close();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                // Show any error message.
+                MessageBox.Show(ex.Message);
+            }
+            return false;
+        }
+        
     }
+    
 }

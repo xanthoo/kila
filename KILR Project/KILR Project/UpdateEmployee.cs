@@ -20,7 +20,7 @@ namespace KILR_Project
         {
             InitializeComponent();
             newId = id;
-            MySqlConnection Cn = new MySqlConnection("datasource=127.0.0.1;port=3306;username=root;password=;database=kilrdb;");
+            MySqlConnection Cn = new MySqlConnection(connectionString);
             MySqlCommand Cmd = Cn.CreateCommand();
             Cmd.CommandText = $"select * from employee where id= {id}";
             Cn.Open();
@@ -45,20 +45,7 @@ namespace KILR_Project
 
         private void BtnUpdtDts_Click(object sender, EventArgs e)
         {
-            string query = $"UPDATE employee SET firstname = '{tbFName.Text}', lastname = '{tbSurname.Text}', email = '{tbEmail.Text}', address = '{tbAddress.Text}', department = '{tbDep.Text}' WHERE id = {newId}";
-            MySqlConnection databaseConnection = new MySqlConnection(connectionString);
-            MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
-            MySqlDataReader MyReader;
-            commandDatabase.CommandTimeout = 60;
-            try
-            {
-                databaseConnection.Open();
-                MyReader = commandDatabase.ExecuteReader();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            DB.UpdateEmployee(tbFName.Text, tbSurname.Text, tbAddress.Text, tbAddress.Text, tbJobPos.Text, tbDep.Text, newId);
         }
     }
 }
