@@ -126,7 +126,7 @@ namespace KILR_Project
             {
                 connection.Close();
             }
-            
+
         }
         //END OF STOCK SYSTEM
         public static List<string> GetShifts(int id)
@@ -183,6 +183,25 @@ namespace KILR_Project
             if (newId > 0)
             {
                 return true;
+            }
+            return false;
+        }
+        public static bool UpdateEmployee(string firstName, string surname, string email, string address, string jobPosition, string department, int id)
+        {
+            string query = $"UPDATE employee SET firstname = '{firstName}', lastname = '{surname}', email = '{email}', address = '{address}', position = '{jobPosition}', department = '{department}' WHERE id = {id}";
+            MySqlConnection databaseConnection = new MySqlConnection(connectionString);
+            MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
+            MySqlDataReader MyReader;
+            commandDatabase.CommandTimeout = 60;
+            try
+            {
+                databaseConnection.Open();
+                MyReader = commandDatabase.ExecuteReader();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
             return false;
         }
