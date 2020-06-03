@@ -7,8 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 using System.Text.RegularExpressions;
+using MySql.Data.MySqlClient;
 
 namespace KILR_Project
 {
@@ -267,7 +267,7 @@ namespace KILR_Project
         {
             lbStock.Items.Clear();
 
-            if (cbActive.Checked == false && cbInactive.Checked == false)
+            if (cbActive.Checked == false && cbInactive.Checked == false && cbStockRequest.Checked == false)
             {
                 foreach (Product p in sm.GetAllStocks())
                 {
@@ -275,7 +275,6 @@ namespace KILR_Project
                 }
                 return;
             }
-
             foreach (Product p in sm.GetAllStocks())
             {
                 if (cbActive.Checked == true)
@@ -285,14 +284,22 @@ namespace KILR_Project
                         lbStock.Items.Add(p.GetInfo());
                     }
                 }
-                if(cbInactive.Checked == true)
+                if (cbInactive.Checked == true)
                 {
-                    if(p.IsActive == false)
+                    if (p.IsActive == false)
+                    {
+                        lbStock.Items.Add(p.GetInfo());
+                    }
+                }
+                if(cbStockRequest.Checked == true)
+                {
+                    if(p.RestockRequest() == true)
                     {
                         lbStock.Items.Add(p.GetInfo());
                     }
                 }
             }
+
         }
 
         private void TabPage1_Click(object sender, EventArgs e)

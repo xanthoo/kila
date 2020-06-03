@@ -122,6 +122,7 @@
             this.btnDepStats = new System.Windows.Forms.Button();
             this.btnEmployeeStats = new System.Windows.Forms.Button();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.cbStockRequest = new System.Windows.Forms.CheckBox();
             this.tabPage1.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -279,24 +280,25 @@
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.cbStockRequest);
             this.groupBox6.Controls.Add(this.btnFilterStock);
             this.groupBox6.Controls.Add(this.cbInactive);
             this.groupBox6.Controls.Add(this.cbActive);
             this.groupBox6.Location = new System.Drawing.Point(40, 350);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(192, 128);
+            this.groupBox6.Size = new System.Drawing.Size(253, 128);
             this.groupBox6.TabIndex = 18;
             this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Filter by Product Activity";
+            this.groupBox6.Text = "Filter by ";
             // 
             // btnFilterStock
             // 
             this.btnFilterStock.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(182)))), ((int)(((byte)(3)))));
             this.btnFilterStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFilterStock.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnFilterStock.Location = new System.Drawing.Point(32, 84);
+            this.btnFilterStock.Location = new System.Drawing.Point(32, 93);
             this.btnFilterStock.Name = "btnFilterStock";
-            this.btnFilterStock.Size = new System.Drawing.Size(130, 38);
+            this.btnFilterStock.Size = new System.Drawing.Size(175, 27);
             this.btnFilterStock.TabIndex = 11;
             this.btnFilterStock.Text = "Filter";
             this.btnFilterStock.UseVisualStyleBackColor = false;
@@ -306,22 +308,22 @@
             // 
             this.cbInactive.AutoSize = true;
             this.cbInactive.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.cbInactive.Location = new System.Drawing.Point(33, 57);
+            this.cbInactive.Location = new System.Drawing.Point(32, 41);
             this.cbInactive.Name = "cbInactive";
-            this.cbInactive.Size = new System.Drawing.Size(81, 24);
+            this.cbInactive.Size = new System.Drawing.Size(145, 24);
             this.cbInactive.TabIndex = 1;
-            this.cbInactive.Text = "Inactive";
+            this.cbInactive.Text = "Inactive Products";
             this.cbInactive.UseVisualStyleBackColor = true;
             // 
             // cbActive
             // 
             this.cbActive.AutoSize = true;
             this.cbActive.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.cbActive.Location = new System.Drawing.Point(33, 27);
+            this.cbActive.Location = new System.Drawing.Point(32, 18);
             this.cbActive.Name = "cbActive";
-            this.cbActive.Size = new System.Drawing.Size(70, 24);
+            this.cbActive.Size = new System.Drawing.Size(134, 24);
             this.cbActive.TabIndex = 0;
-            this.cbActive.Text = "Active";
+            this.cbActive.Text = "Active Products";
             this.cbActive.UseVisualStyleBackColor = true;
             // 
             // btnRefresh
@@ -554,7 +556,7 @@
             this.lbStock.ItemHeight = 15;
             this.lbStock.Location = new System.Drawing.Point(299, 66);
             this.lbStock.Name = "lbStock";
-            this.lbStock.Size = new System.Drawing.Size(337, 334);
+            this.lbStock.Size = new System.Drawing.Size(337, 349);
             this.lbStock.TabIndex = 15;
             // 
             // Stock
@@ -1118,6 +1120,17 @@
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
             // 
+            // cbStockRequest
+            // 
+            this.cbStockRequest.AutoSize = true;
+            this.cbStockRequest.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cbStockRequest.Location = new System.Drawing.Point(32, 63);
+            this.cbStockRequest.Name = "cbStockRequest";
+            this.cbStockRequest.Size = new System.Drawing.Size(175, 24);
+            this.cbStockRequest.TabIndex = 12;
+            this.cbStockRequest.Text = "Active Stock Requests";
+            this.cbStockRequest.UseVisualStyleBackColor = true;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1249,6 +1262,7 @@
         private System.Windows.Forms.RadioButton rbF;
         private System.Windows.Forms.RadioButton rbM;
         private System.Windows.Forms.Label lblGender;
+        private System.Windows.Forms.CheckBox cbStockRequest;
     }
 }
 
