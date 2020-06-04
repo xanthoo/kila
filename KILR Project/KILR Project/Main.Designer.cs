@@ -37,17 +37,18 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.textBoxDepartmentId = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.lblDepartmentId = new System.Windows.Forms.Label();
+            this.btnDepartmentInformation = new System.Windows.Forms.Button();
+            this.btnCreateDepartment = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.lblDepartmentName = new System.Windows.Forms.Label();
+            this.tbFindDepartmentName = new System.Windows.Forms.TextBox();
             this.lbDepartments = new System.Windows.Forms.ListBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.stockPage = new System.Windows.Forms.TabPage();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.cbStockRequest = new System.Windows.Forms.CheckBox();
             this.btnFilterStock = new System.Windows.Forms.Button();
             this.cbInactive = new System.Windows.Forms.CheckBox();
             this.cbActive = new System.Windows.Forms.CheckBox();
@@ -122,7 +123,6 @@
             this.btnDepStats = new System.Windows.Forms.Button();
             this.btnEmployeeStats = new System.Windows.Forms.Button();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.cbStockRequest = new System.Windows.Forms.CheckBox();
             this.tabPage1.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -145,15 +145,15 @@
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(121)))), ((int)(((byte)(3)))));
             this.tabPage1.Controls.Add(this.textBoxDepartmentId);
-            this.tabPage1.Controls.Add(this.label10);
-            this.tabPage1.Controls.Add(this.button7);
-            this.tabPage1.Controls.Add(this.button2);
+            this.tabPage1.Controls.Add(this.lblDepartmentId);
+            this.tabPage1.Controls.Add(this.btnDepartmentInformation);
+            this.tabPage1.Controls.Add(this.btnCreateDepartment);
             this.tabPage1.Controls.Add(this.groupBox5);
             this.tabPage1.Controls.Add(this.lbDepartments);
             this.tabPage1.Controls.Add(this.panel2);
             this.tabPage1.Location = new System.Drawing.Point(4, 27);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(925, 563);
+            this.tabPage1.Size = new System.Drawing.Size(914, 563);
             this.tabPage1.TabIndex = 3;
             this.tabPage1.Text = "Departments";
             this.tabPage1.Click += new System.EventHandler(this.TabPage1_Click);
@@ -165,46 +165,46 @@
             this.textBoxDepartmentId.Size = new System.Drawing.Size(142, 23);
             this.textBoxDepartmentId.TabIndex = 11;
             // 
-            // label10
+            // lblDepartmentId
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(702, 363);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(87, 15);
-            this.label10.TabIndex = 11;
-            this.label10.Text = "Department ID";
+            this.lblDepartmentId.AutoSize = true;
+            this.lblDepartmentId.Location = new System.Drawing.Point(702, 363);
+            this.lblDepartmentId.Name = "lblDepartmentId";
+            this.lblDepartmentId.Size = new System.Drawing.Size(87, 15);
+            this.lblDepartmentId.TabIndex = 11;
+            this.lblDepartmentId.Text = "Department ID";
             // 
-            // button7
+            // btnDepartmentInformation
             // 
-            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(182)))), ((int)(((byte)(3)))));
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button7.Location = new System.Drawing.Point(705, 410);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(197, 51);
-            this.button7.TabIndex = 20;
-            this.button7.Text = "Department Information";
-            this.button7.UseVisualStyleBackColor = false;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.btnDepartmentInformation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(182)))), ((int)(((byte)(3)))));
+            this.btnDepartmentInformation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDepartmentInformation.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnDepartmentInformation.Location = new System.Drawing.Point(705, 410);
+            this.btnDepartmentInformation.Name = "btnDepartmentInformation";
+            this.btnDepartmentInformation.Size = new System.Drawing.Size(197, 51);
+            this.btnDepartmentInformation.TabIndex = 20;
+            this.btnDepartmentInformation.Text = "Department Information";
+            this.btnDepartmentInformation.UseVisualStyleBackColor = false;
+            this.btnDepartmentInformation.Click += new System.EventHandler(this.button7_Click);
             // 
-            // button2
+            // btnCreateDepartment
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(182)))), ((int)(((byte)(3)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.Location = new System.Drawing.Point(36, 328);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(377, 133);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "Create Department\r\n";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnCreateDepartment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(182)))), ((int)(((byte)(3)))));
+            this.btnCreateDepartment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCreateDepartment.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnCreateDepartment.Location = new System.Drawing.Point(36, 328);
+            this.btnCreateDepartment.Name = "btnCreateDepartment";
+            this.btnCreateDepartment.Size = new System.Drawing.Size(377, 133);
+            this.btnCreateDepartment.TabIndex = 10;
+            this.btnCreateDepartment.Text = "Create Department\r\n";
+            this.btnCreateDepartment.UseVisualStyleBackColor = false;
+            this.btnCreateDepartment.Click += new System.EventHandler(this.button2_Click);
             // 
             // groupBox5
             // 
             this.groupBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(121)))), ((int)(((byte)(3)))));
-            this.groupBox5.Controls.Add(this.label5);
-            this.groupBox5.Controls.Add(this.textBox8);
+            this.groupBox5.Controls.Add(this.lblDepartmentName);
+            this.groupBox5.Controls.Add(this.tbFindDepartmentName);
             this.groupBox5.Location = new System.Drawing.Point(454, 328);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(204, 133);
@@ -213,22 +213,22 @@
             this.groupBox5.Text = "Search by Deparment name";
             this.groupBox5.Enter += new System.EventHandler(this.GroupBox5_Enter);
             // 
-            // label5
+            // lblDepartmentName
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(20, 37);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(106, 15);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Department Name\r\n";
+            this.lblDepartmentName.AutoSize = true;
+            this.lblDepartmentName.Location = new System.Drawing.Point(20, 37);
+            this.lblDepartmentName.Name = "lblDepartmentName";
+            this.lblDepartmentName.Size = new System.Drawing.Size(106, 15);
+            this.lblDepartmentName.TabIndex = 10;
+            this.lblDepartmentName.Text = "Department Name\r\n";
             // 
-            // textBox8
+            // tbFindDepartmentName
             // 
-            this.textBox8.Location = new System.Drawing.Point(23, 67);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(142, 23);
-            this.textBox8.TabIndex = 9;
-            this.textBox8.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
+            this.tbFindDepartmentName.Location = new System.Drawing.Point(23, 67);
+            this.tbFindDepartmentName.Name = "tbFindDepartmentName";
+            this.tbFindDepartmentName.Size = new System.Drawing.Size(142, 23);
+            this.tbFindDepartmentName.TabIndex = 9;
+            this.tbFindDepartmentName.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
             // 
             // lbDepartments
             // 
@@ -290,6 +290,17 @@
             this.groupBox6.TabIndex = 18;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Filter by ";
+            // 
+            // cbStockRequest
+            // 
+            this.cbStockRequest.AutoSize = true;
+            this.cbStockRequest.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cbStockRequest.Location = new System.Drawing.Point(32, 63);
+            this.cbStockRequest.Name = "cbStockRequest";
+            this.cbStockRequest.Size = new System.Drawing.Size(175, 24);
+            this.cbStockRequest.TabIndex = 12;
+            this.cbStockRequest.Text = "Active Stock Requests";
+            this.cbStockRequest.UseVisualStyleBackColor = true;
             // 
             // btnFilterStock
             // 
@@ -1033,7 +1044,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(933, 594);
+            this.tabControl1.Size = new System.Drawing.Size(922, 594);
             this.tabControl1.TabIndex = 1;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             this.tabControl1.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabControl1_Selected);
@@ -1120,22 +1131,11 @@
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
             // 
-            // cbStockRequest
-            // 
-            this.cbStockRequest.AutoSize = true;
-            this.cbStockRequest.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.cbStockRequest.Location = new System.Drawing.Point(32, 63);
-            this.cbStockRequest.Name = "cbStockRequest";
-            this.cbStockRequest.Size = new System.Drawing.Size(175, 24);
-            this.cbStockRequest.TabIndex = 12;
-            this.cbStockRequest.Text = "Active Stock Requests";
-            this.cbStockRequest.UseVisualStyleBackColor = true;
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(933, 606);
+            this.ClientSize = new System.Drawing.Size(922, 584);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -1177,12 +1177,12 @@
 
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TextBox textBoxDepartmentId;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label lblDepartmentId;
+        private System.Windows.Forms.Button btnDepartmentInformation;
+        private System.Windows.Forms.Button btnCreateDepartment;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.Label lblDepartmentName;
+        private System.Windows.Forms.TextBox tbFindDepartmentName;
         public System.Windows.Forms.ListBox lbDepartments;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label6;

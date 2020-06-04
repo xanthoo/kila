@@ -36,8 +36,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tbDepartmentName = new System.Windows.Forms.TextBox();
             this.tbMaxPeople = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblManagerId = new System.Windows.Forms.Label();
+            this.lblStaffNumber = new System.Windows.Forms.Label();
             this.tbMinPeople = new System.Windows.Forms.TextBox();
             this.depNamelbl = new System.Windows.Forms.Label();
             this.btnRmvEmp = new System.Windows.Forms.Button();
@@ -104,8 +104,8 @@
             // 
             this.groupBox1.Controls.Add(this.tbDepartmentName);
             this.groupBox1.Controls.Add(this.tbMaxPeople);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.lblManagerId);
+            this.groupBox1.Controls.Add(this.lblStaffNumber);
             this.groupBox1.Controls.Add(this.tbMinPeople);
             this.groupBox1.Controls.Add(this.depNamelbl);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -130,25 +130,25 @@
             this.tbMaxPeople.Size = new System.Drawing.Size(146, 23);
             this.tbMaxPeople.TabIndex = 23;
             // 
-            // label2
+            // lblManagerId
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(87, 163);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(99, 21);
-            this.label2.TabIndex = 22;
-            this.label2.Text = "Manager ID:";
+            this.lblManagerId.AutoSize = true;
+            this.lblManagerId.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblManagerId.Location = new System.Drawing.Point(87, 163);
+            this.lblManagerId.Name = "lblManagerId";
+            this.lblManagerId.Size = new System.Drawing.Size(99, 21);
+            this.lblManagerId.TabIndex = 22;
+            this.lblManagerId.Text = "Manager ID:";
             // 
-            // label1
+            // lblStaffNumber
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(87, 97);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(111, 21);
-            this.label1.TabIndex = 20;
-            this.label1.Text = "Staff number:";
+            this.lblStaffNumber.AutoSize = true;
+            this.lblStaffNumber.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblStaffNumber.Location = new System.Drawing.Point(87, 97);
+            this.lblStaffNumber.Name = "lblStaffNumber";
+            this.lblStaffNumber.Size = new System.Drawing.Size(111, 21);
+            this.lblStaffNumber.TabIndex = 20;
+            this.lblStaffNumber.Text = "Staff number:";
             // 
             // tbMinPeople
             // 
@@ -303,8 +303,8 @@
         private System.Windows.Forms.GroupBox groupBox1;
         public System.Windows.Forms.TextBox tbDepartmentName;
         public System.Windows.Forms.TextBox tbMaxPeople;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblManagerId;
+        private System.Windows.Forms.Label lblStaffNumber;
         public System.Windows.Forms.TextBox tbMinPeople;
         private System.Windows.Forms.Label depNamelbl;
         private System.Windows.Forms.Button btnRmvEmp;

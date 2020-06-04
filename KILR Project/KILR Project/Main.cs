@@ -89,7 +89,7 @@ namespace KILR_Project
 
         private void textBox8_TextChanged(object sender, EventArgs e)
         {
-            List<Department> departments = dm.GetDepartments(textBox8.Text);
+            List<Department> departments = dm.GetDepartments(tbFindDepartmentName.Text);
             lbDepartments.Items.Clear();
             foreach (Department d in departments)
             {

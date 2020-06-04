@@ -42,10 +42,10 @@ namespace KILR_Project
             DateTime date = (DateTime)dt.Rows[0].ItemArray[4];
 
             lblDepartmentName.Text = name;
-            label6.Text = date.ToString();
-            label4.Text = staffamount.ToString();
-            label1.Text = id.ToString();
-            label8.Text = managerid.ToString();
+            lblDateCreated.Text = date.ToString();
+            lblMaxStaffAmount.Text = staffamount.ToString();
+            lblDepartmentID.Text = id.ToString();
+            lblManagerId.Text = managerid.ToString();
             RefreshList();
 
             connection.Close();
