@@ -6,7 +6,7 @@ require_once "includes/header.php";
 ?>
 <div class="py-6 px-8 w-full my-auto bg-orange-200">
     <div class="mb-12">
-			<h1 class="text-2xl text-orange-900 text-center font-light mb-6">Generated Shifts</h1>
+			<h1 class="text-2xl text-orange-900 text-center font-light mb-6">Generate Shifts</h1>
 
 			<form>
 			<div class="grid grid-cols-2 col-gap-8">
