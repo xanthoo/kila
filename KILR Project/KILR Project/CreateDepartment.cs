@@ -24,7 +24,7 @@ namespace KILR_Project
         private void btnConfirm_Click(object sender, EventArgs e)
         {
             ConnectionString();
-            DB.ConfirmCreatedDepartment(tbDepartmentName.Text, tbStaffNumber.Text, Convert.ToInt32(cmbManagerId.Text));
+            DepartmentDataAccess.ConfirmCreatedDepartment(tbDepartmentName.Text, tbStaffNumber.Text, Convert.ToInt32(cmbManagerId.Text));
             mainDepartmentInfo.PopulateDepartmentsList();
             cmbManagerId.Items.Remove(cmbManagerId.SelectedItem);
         }

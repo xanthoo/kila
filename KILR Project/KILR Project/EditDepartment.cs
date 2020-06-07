@@ -32,7 +32,7 @@ namespace KILR_Project
         private void btnConfirm_Click(object sender, EventArgs e)
         {
             ConnectionString();
-            DB.UpdateDepartment(tbDepartmentName.Text, tbMaxPeople.Text, tbMinPeople.Text, departmentId);
+            DepartmentDataAccess.UpdateDepartment(tbDepartmentName.Text, tbMaxPeople.Text, tbMinPeople.Text, departmentId);
             mainDepartmentInfo.PopulateDepartmentsList();
 
         }
@@ -51,13 +51,13 @@ namespace KILR_Project
         private void btnAddEmp_Click(object sender, EventArgs e)
         {
 
-            DB.AddEmployeeFromDepartment(departmentId, tbFindEmployee.Text);
+            DepartmentDataAccess.AddEmployeeFromDepartment(departmentId, tbFindEmployee.Text);
             RefreshList();
         }
 
         private void btnRmvEmp_Click(object sender, EventArgs e)
         {
-            DB.RemoveEmployeeFromDepartment(departmentId, tbFindEmployee.Text);
+            DepartmentDataAccess.RemoveEmployeeFromDepartment(departmentId, tbFindEmployee.Text);
             RefreshList();
             
         }

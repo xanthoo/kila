@@ -53,7 +53,7 @@ namespace KILR_Project
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
-            DB.RemoveDepartment(departmentId);
+            DepartmentDataAccess.RemoveDepartment(departmentId);
             mainDepartmentInfo.PopulateDepartmentsList();
             this.Close();
         }
