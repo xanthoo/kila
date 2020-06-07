@@ -53,6 +53,8 @@
             this.lblDateCreated = new System.Windows.Forms.Label();
             this.lblUpdated = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.lblUpdatedBy = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
@@ -106,7 +108,7 @@
             this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox3.Location = new System.Drawing.Point(0, 199);
+            this.groupBox3.Location = new System.Drawing.Point(0, 228);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(802, 59);
             this.groupBox3.TabIndex = 29;
@@ -220,7 +222,7 @@
             this.btnUpdStock.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(182)))), ((int)(((byte)(3)))));
             this.btnUpdStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdStock.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnUpdStock.Location = new System.Drawing.Point(119, 264);
+            this.btnUpdStock.Location = new System.Drawing.Point(122, 293);
             this.btnUpdStock.Name = "btnUpdStock";
             this.btnUpdStock.Size = new System.Drawing.Size(522, 82);
             this.btnUpdStock.TabIndex = 32;
@@ -233,7 +235,7 @@
             this.btnGoBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(182)))), ((int)(((byte)(3)))));
             this.btnGoBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGoBack.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnGoBack.Location = new System.Drawing.Point(254, 352);
+            this.btnGoBack.Location = new System.Drawing.Point(253, 381);
             this.btnGoBack.Name = "btnGoBack";
             this.btnGoBack.Size = new System.Drawing.Size(256, 48);
             this.btnGoBack.TabIndex = 33;
@@ -309,12 +311,33 @@
             this.label8.TabIndex = 39;
             this.label8.Text = "Last Updated On:";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label7.Location = new System.Drawing.Point(205, 200);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(155, 25);
+            this.label7.TabIndex = 41;
+            this.label7.Text = "Last Updated By:";
+            // 
+            // lblUpdatedBy
+            // 
+            this.lblUpdatedBy.AutoSize = true;
+            this.lblUpdatedBy.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblUpdatedBy.Location = new System.Drawing.Point(362, 200);
+            this.lblUpdatedBy.Name = "lblUpdatedBy";
+            this.lblUpdatedBy.Size = new System.Drawing.Size(0, 25);
+            this.lblUpdatedBy.TabIndex = 42;
+            // 
             // StockDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(121)))), ((int)(((byte)(3)))));
-            this.ClientSize = new System.Drawing.Size(747, 404);
+            this.ClientSize = new System.Drawing.Size(747, 441);
+            this.Controls.Add(this.lblUpdatedBy);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.lblUpdated);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.lblDateCreated);
@@ -370,5 +393,7 @@
         private System.Windows.Forms.Label lblDateCreated;
         private System.Windows.Forms.Label lblUpdated;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblUpdatedBy;
     }
 }

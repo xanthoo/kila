@@ -17,13 +17,15 @@ namespace KILR_Project
         Product stock;
         StockDetails sd;
         StockManager sm;
-        public UpdateStock(StockDetails sd, Main m, Product p, StockManager sm)
+        User u;
+        public UpdateStock(StockDetails sd, Main m, Product p, StockManager sm, User u)
         {
             InitializeComponent();
             this.m = m;
             this.stock = p;
             this.sd = sd;
             this.sm = sm;
+            this.u = u; 
             tbBuyingPrice.Text = p.BuyingPrice.ToString();
             tbName.Text = p.Name;
             tbQuantity.Text = p.Quanitity.ToString();
@@ -62,13 +64,15 @@ namespace KILR_Project
                     {
                             if (quantity > 0 && sellingPrice > 0 && buyingPrice > 0 && minimumQuantity > 0)
                             {
+                            if (CheckIfProductChanged(name, quantity, minimumQuantity, sellingPrice, buyingPrice) == false)
+                            {
                                 this.stock.Name = name;
                                 this.stock.Quanitity = quantity;
                                 this.stock.SellingPrice = roundSelling;
                                 this.stock.BuyingPrice = roundBuying;
                                 this.stock.MinimumQuantity = minimumQuantity;
                                 this.stock.DateUpdated = DateTime.Now.ToString();
-
+                                this.stock.UpdatedBy = u.Username;
                                 if (rbActive.Checked == true)
                                 {
                                     this.stock.IsActive = true;
@@ -79,6 +83,11 @@ namespace KILR_Project
                                 }
                                 ProductDataAccess.UpdateStock(this.stock);
                                 MessageBox.Show("Stock Updated!");
+                            }
+                            else
+                            {
+                                MessageBox.Show("No changes have been made!");
+                            }
                             }
                             else
                             {
@@ -101,10 +110,17 @@ namespace KILR_Project
             }
             
         }
+        private bool CheckIfProductChanged(string name, int quantity, int minimumQuantity, decimal sellingPrice, decimal buyingPrice)
+        {
+            if (name == stock.Name && quantity == stock.Quanitity && minimumQuantity == stock.MinimumQuantity && sellingPrice == stock.SellingPrice && buyingPrice == stock.BuyingPrice && rbActive.Checked == stock.IsActive)
+                return true;
+            else
+                return false;
+        }
 
         private void BtnGoBack_Click(object sender, EventArgs e)
         {
-            sd = new StockDetails(stock, m, sm);
+            sd = new StockDetails(stock, m, sm, u);
             sd.Show();
             this.Close();
         }

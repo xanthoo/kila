@@ -13,7 +13,7 @@ public enum RoleEnum
 
 namespace KILR_Project
 {
-    class User
+    public class User
     {
         private RoleEnum role;
         private String password;

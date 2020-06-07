@@ -115,7 +115,7 @@ namespace KILR_Project
                     {
                         if ((roundBuying > 0) && (roundSelling > 0) && (minQuantity > 0))
                         {
-                            sm.AddStock(new Product(sm.GenerateID(), name, quantity, roundSelling, roundBuying, true, minQuantity, date, null));
+                            sm.AddStock(new Product(sm.GenerateID(), name, quantity, roundSelling, roundBuying, true, minQuantity, date, null, null));
                                 MessageBox.Show("Stock succesfully created!");
                                 RefreshStock();
                         }
@@ -159,7 +159,7 @@ namespace KILR_Project
                 if (sm.CheckIfStockExists(id) != false)
                 {
                     Product stock = sm.FindStock(id);
-                    StockDetails sd = new StockDetails(stock, this, sm);
+                    StockDetails sd = new StockDetails(stock, this, sm, user);
                     sd.Show();
                 }
                 else

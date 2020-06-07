@@ -15,12 +15,14 @@ namespace KILR_Project
         Main m;
         Product stock;
         StockManager sm;
-        public StockDetails(Product p, Main m, StockManager sm)
+        User u;
+        public StockDetails(Product p, Main m, StockManager sm, User u)
         {
             InitializeComponent();
             this.stock = p;
             this.m = m;
             this.sm = sm;
+            this.u = u;
             buyingLbl.Text = p.BuyingPrice.ToString();
             stockNameLbl.Text = p.Name;
             lblMinAmount.Text = p.MinimumQuantity.ToString();
@@ -28,10 +30,22 @@ namespace KILR_Project
             pricelbl.Text = p.SellingPrice.ToString();
             quantitylbl.Text = p.Quanitity.ToString();
             lblDateCreated.Text = p.DateCreated.Substring(0,10);
-            if (p.DateUpdated != "")
-                lblUpdated.Text = p.DateUpdated;
+            if (p.UpdatedBy != "")
+            {
+                lblUpdatedBy.Text = p.UpdatedBy;
+            }
             else
+            {
+                lblUpdatedBy.Text = "This Product has not been updated.";
+            }
+            if (p.DateUpdated != "")
+            {
+                lblUpdated.Text = p.DateUpdated;
+            }
+            else
+            {
                 lblUpdated.Text = "This Product has not been updated.";
+            }
             if (p.IsActive == true)
             {
                 statuslbl.Text = "Active";
@@ -40,7 +54,7 @@ namespace KILR_Project
             {
                 statuslbl.Text = "Inactive";
             }
-            if(p.RestockRequest() == true)
+            if (p.RestockRequest() == true)
             {
                 lblRestockRequest.Visible = true;
             }
@@ -63,7 +77,7 @@ namespace KILR_Project
 
         private void BtnUpdStock_Click(object sender, EventArgs e)
         {
-            UpdateStock us = new UpdateStock(this, this.m, this.stock, sm);
+            UpdateStock us = new UpdateStock(this, this.m, this.stock, sm, u);
             us.Show();
             this.Close();
         }
