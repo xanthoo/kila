@@ -30,7 +30,7 @@ namespace KILR_Project
             pricelbl.Text = p.SellingPrice.ToString();
             quantitylbl.Text = p.Quanitity.ToString();
             lblDateCreated.Text = p.DateCreated.Substring(0,10);
-            if (p.UpdatedBy != "")
+            if (!String.IsNullOrWhiteSpace(p.UpdatedBy))
             {
                 lblUpdatedBy.Text = p.UpdatedBy;
             }
@@ -38,7 +38,7 @@ namespace KILR_Project
             {
                 lblUpdatedBy.Text = "This Product has not been updated.";
             }
-            if (p.DateUpdated != "")
+            if (!String.IsNullOrWhiteSpace(p.DateUpdated))
             {
                 lblUpdated.Text = p.DateUpdated;
             }
