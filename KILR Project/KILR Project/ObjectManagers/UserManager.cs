@@ -13,7 +13,7 @@ namespace KILR_Project
     {
         public User GetUser(string username, string password)
         {
-            DataRow user = DB.FindUser(username, ComputeSha256Hash(password));
+            DataRow user = UserDataAccess.FindUser(username, ComputeSha256Hash(password));
             if (user == null) {
                 return null;
             }

@@ -30,7 +30,7 @@ namespace KILR_Project
         public void AddStock(Product p)
         {
             stocks.Add(p);
-            DB.AddStock(p);
+            ProductDataAccess.AddStock(p);
         }
         public bool CheckIfStockExists(int id)
         {
@@ -43,12 +43,12 @@ namespace KILR_Project
         public void Increase(Product p, int amount)
         {
             p.Quanitity += amount;
-            DB.UpdateStock(p);
+            ProductDataAccess.UpdateStock(p);
         }
         public void Decrease(Product p, int amount)
         {
             p.Quanitity -= amount;
-            DB.UpdateStock(p);
+            ProductDataAccess.UpdateStock(p);
         }
         public int GenerateID()
         {

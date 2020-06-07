@@ -27,7 +27,7 @@ namespace KILR_Project
             InitializeComponent();
             this.user = user as User;
 
-            sm = new StockManager(DB.GetAllStocks());
+            sm = new StockManager(ProductDataAccess.GetAllStocks());
             empMang = new EmployeeManager();
             dm = new DepartmentManager("Jupiter Managers");
 

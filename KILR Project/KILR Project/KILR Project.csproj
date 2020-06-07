@@ -86,25 +86,27 @@
     <Compile Include="CreateDepartment.Designer.cs">
       <DependentUpon>CreateDepartment.cs</DependentUpon>
     </Compile>
-    <Compile Include="DB.cs" />
-    <Compile Include="Department.cs" />
+    <Compile Include="DataAccess\DB.cs" />
+    <Compile Include="DataAccess\DepartmentDataAccess.cs" />
+    <Compile Include="Objects\Department.cs" />
     <Compile Include="DepartmentInformation.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DepartmentInformation.designer.cs">
       <DependentUpon>DepartmentInformation.cs</DependentUpon>
     </Compile>
-    <Compile Include="DepartmentManager.cs" />
+    <Compile Include="ObjectManagers\DepartmentManager.cs" />
     <Compile Include="EditDepartment.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="EditDepartment.designer.cs">
       <DependentUpon>EditDepartment.cs</DependentUpon>
     </Compile>
-    <Compile Include="Employee.cs" />
-    <Compile Include="EmployeeManager.cs" />
+    <Compile Include="Objects\Employee.cs" />
+    <Compile Include="ObjectManagers\EmployeeManager.cs" />
     <Compile Include="Position.cs" />
-    <Compile Include="Product.cs" />
+    <Compile Include="Objects\Product.cs" />
+    <Compile Include="DataAccess\ProductDataAccess.cs" />
     <Compile Include="ReleaseEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,7 +114,7 @@
       <DependentUpon>ReleaseEmployee.cs</DependentUpon>
     </Compile>
     <Compile Include="Shift.cs" />
-    <Compile Include="StockManager.cs" />
+    <Compile Include="ObjectManagers\StockManager.cs" />
     <Compile Include="UpdateDepartment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,8 +159,9 @@
     <Compile Include="UpdateEmployee.Designer.cs">
       <DependentUpon>UpdateEmployee.cs</DependentUpon>
     </Compile>
-    <Compile Include="User.cs" />
-    <Compile Include="UserManager.cs" />
+    <Compile Include="Objects\User.cs" />
+    <Compile Include="ObjectManagers\UserManager.cs" />
+    <Compile Include="DataAccess\UserDataAccess.cs" />
     <EmbeddedResource Include="AddEmployeesToDept.resx">
       <DependentUpon>AddEmployeesToDept.cs</DependentUpon>
     </EmbeddedResource>
@@ -222,5 +225,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

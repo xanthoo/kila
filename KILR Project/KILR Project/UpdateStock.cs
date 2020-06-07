@@ -77,7 +77,7 @@ namespace KILR_Project
                                 {
                                     this.stock.IsActive = false;
                                 }
-                                DB.UpdateStock(this.stock);
+                                ProductDataAccess.UpdateStock(this.stock);
                                 MessageBox.Show("Stock Updated!");
                             }
                             else
