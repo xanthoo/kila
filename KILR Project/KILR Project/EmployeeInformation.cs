@@ -16,6 +16,7 @@ namespace KILR_Project
     {
         EmployeeManager employeeManager;
         public int newId;
+
         public EmployeeInformation(int id)
         {
             InitializeComponent();
