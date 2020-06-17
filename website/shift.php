@@ -49,21 +49,21 @@ require_once "includes/header.php";
 				<label class="block mb-5">
 					<span class="text-lg text-orange-900 font-light ">Month</span>
                     <div class="input-group">
-                 <select id="month-select" name="month" class="custom-select w-full bg-white focus:outline-none px-3 py-2" id="inputGroupSelect04" aria-label="Example select with button addon">
-                    <option value="" <?php echo isset($_GET['month']) && $_GET['month'] === '' ? 'selected' : ''; ?>>Choose...</option>
-                    <option value="1" <?php echo isset($_GET['month']) && $_GET['month'] === '1' ? 'selected' : ''; ?>>January</option>
-                    <option value="2" <?php echo isset($_GET['month']) && $_GET['month'] === '2' ? 'selected' : ''; ?>>February</option>
-                    <option value="3" <?php echo isset($_GET['month']) && $_GET['month'] === '3' ? 'selected' : ''; ?>>March</option>
-                    <option value="4" <?php echo isset($_GET['month']) && $_GET['month'] === '4' ? 'selected' : ''; ?>>April</option>
-                    <option value="5" <?php echo isset($_GET['month']) && $_GET['month'] === '5' ? 'selected' : ''; ?>>May</option>
-                    <option value="6" <?php echo isset($_GET['month']) && $_GET['month'] === '6' ? 'selected' : ''; ?>>June</option>
-                    <option value="7" <?php echo isset($_GET['month']) && $_GET['month'] === '7' ? 'selected' : ''; ?>>July</option>
-                    <option value="8" <?php echo isset($_GET['month']) && $_GET['month'] === '8' ? 'selected' : ''; ?>>August</option>
-                    <option value="9" <?php echo isset($_GET['month']) && $_GET['month'] === '9' ? 'selected' : ''; ?>>September</option>
-                    <option value="10" <?php echo isset($_GET['month']) && $_GET['month'] === '10' ? 'selected' : ''; ?>>October</option>
-                    <option value="11" <?php echo isset($_GET['month']) && $_GET['month'] === '11' ? 'selected' : ''; ?>>November</option>
-                    <option value="12" <?php echo isset($_GET['month']) && $_GET['month'] === '12' ? 'selected' : ''; ?>>December</option>
-                    </select>
+						<select id="month-select" name="month" class="custom-select w-full bg-white focus:outline-none px-3 py-2" id="inputGroupSelect04" aria-label="Example select with button addon">
+							<option value="" <?php echo isset($_GET['month']) && $_GET['month'] === '' ? 'selected' : ''; ?>>Choose...</option>
+							<option value="1" <?php echo isset($_GET['month']) && $_GET['month'] === '1' ? 'selected' : ''; ?>>January</option>
+							<option value="2" <?php echo isset($_GET['month']) && $_GET['month'] === '2' ? 'selected' : ''; ?>>February</option>
+							<option value="3" <?php echo isset($_GET['month']) && $_GET['month'] === '3' ? 'selected' : ''; ?>>March</option>
+							<option value="4" <?php echo isset($_GET['month']) && $_GET['month'] === '4' ? 'selected' : ''; ?>>April</option>
+							<option value="5" <?php echo isset($_GET['month']) && $_GET['month'] === '5' ? 'selected' : ''; ?>>May</option>
+							<option value="6" <?php echo isset($_GET['month']) && $_GET['month'] === '6' ? 'selected' : ''; ?>>June</option>
+							<option value="7" <?php echo isset($_GET['month']) && $_GET['month'] === '7' ? 'selected' : ''; ?>>July</option>
+							<option value="8" <?php echo isset($_GET['month']) && $_GET['month'] === '8' ? 'selected' : ''; ?>>August</option>
+							<option value="9" <?php echo isset($_GET['month']) && $_GET['month'] === '9' ? 'selected' : ''; ?>>September</option>
+							<option value="10" <?php echo isset($_GET['month']) && $_GET['month'] === '10' ? 'selected' : ''; ?>>October</option>
+							<option value="11" <?php echo isset($_GET['month']) && $_GET['month'] === '11' ? 'selected' : ''; ?>>November</option>
+							<option value="12" <?php echo isset($_GET['month']) && $_GET['month'] === '12' ? 'selected' : ''; ?>>December</option>
+						</select>
                     </div>
 				</label>
 			</div>
@@ -88,8 +88,8 @@ require_once "includes/header.php";
        </div>
 	</div>
     <div class="flex flex-col items-right">
-			<a href="index.php" class="transition duration-150 ease-in-out text-center w-48 px-3 py-3 bg-orange-300 hover:bg-orange-400 text-orange-700 text-xl font-light focus:outline-none">View Details</a>
-		</div>
+		<a href="index.php" class="transition duration-150 ease-in-out text-center w-48 px-3 py-3 bg-orange-300 hover:bg-orange-400 text-orange-700 text-xl font-light focus:outline-none">View Details</a>
+	</div>
 </div>
 
 <script>

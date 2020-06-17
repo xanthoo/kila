@@ -20,7 +20,7 @@ function fetchUser() {
 	global $db;
 
 	$query = $db->prepare('
-		SELECT id, firstname, lastname, address FROM employee WHERE id = ?
+		SELECT id, firstname, lastname, address, position FROM employee WHERE id = ?
 	');
 	$query->bindParam(1, $_SESSION['userid']);
 	$query->execute();

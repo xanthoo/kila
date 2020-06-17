@@ -5,6 +5,11 @@ if ($user === null) {
 	die();
 }
 
+if ($user['position'] === 'MANAGER') {
+	header('Location: generate-shifts.php');
+	die();
+}
+
 function processData() {
 	global $db, $user, $message;
 
