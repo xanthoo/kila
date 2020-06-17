@@ -17,30 +17,30 @@ namespace KILR_Project
         {
             this.name = name;
         }
-        public bool AddDepartment(Department d)
-        {
-            string query = "INSERT INTO department(`id`, `name`, `staffamount`,`managerid`,`date`) VALUES(NULL, '" + d.Name + "', '" + d.MaxStaff + "', '" + d.ManagerID + "', '" + d.CreatedDate + "')";
+        //public bool AddDepartment(Department d)
+        //{
+        //    string query = "INSERT INTO department(`id`, `name`, `staffamount`,`managerid`,`date`) VALUES(NULL, '" + d.Name + "', '" + d.MaxStaff + "', '" + d.ManagerID + "', '" + d.CreatedDate + "')";
 
-            MySqlConnection databaseConnection = new MySqlConnection(connectionString);
-            MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
-            commandDatabase.CommandTimeout = 60;
+        //    MySqlConnection databaseConnection = new MySqlConnection(connectionString);
+        //    MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
+        //    commandDatabase.CommandTimeout = 60;
 
 
-            try
-            {
-                databaseConnection.Open();
-                MySqlDataReader myReader = commandDatabase.ExecuteReader();
-                return true;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
-            finally
-            {
-                databaseConnection.Close();
-            }
-        }
+        //    try
+        //    {
+        //        databaseConnection.Open();
+        //        MySqlDataReader myReader = commandDatabase.ExecuteReader();
+        //        return true;
+        //    }
+        //    catch (Exception)
+        //    {
+        //        return false;
+        //    }
+        //    finally
+        //    {
+        //        databaseConnection.Close();
+        //    }
+        //}
 
         public Department GetDepartment(int id)
         {
