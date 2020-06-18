@@ -18,8 +18,9 @@ function processData() {
 			SELECT id FROM employee WHERE id = ? && password = ?
 		');
 
+		$pw = md5($_POST['password']);
 		$query->bindParam(1, $user['id']);
-		$query->bindParam(2, md5($_POST['password']));
+		$query->bindParam(2, $pw);
 
 		$query->execute();
 

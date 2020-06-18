@@ -17,8 +17,9 @@ if (
 	$query = $db->prepare('
 		SELECT id FROM employee WHERE email = ? && password = ?
 	');
+	$pw = md5($_POST['password']);
 	$query->bindParam(1, $_POST['email']);
-	$query->bindParam(2, md5($_POST['password']));
+	$query->bindParam(2, $pw);
 
 	$query->execute();
 	
