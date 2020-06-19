@@ -14,14 +14,14 @@ namespace KILR_Project
 {
     public partial class Main : Form
     {
-        //Completed
-
         string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=kilrdb;";
 
         StockManager sm;
         User user;
         EmployeeManager empMang;
         DepartmentManager dm;
+        OrderManager om;
+        Order o;
         public Main(object user)
         {
             InitializeComponent();
@@ -30,12 +30,11 @@ namespace KILR_Project
             sm = new StockManager(ProductDataAccess.GetAllStocks());
             empMang = new EmployeeManager();
             dm = new DepartmentManager("Jupiter Managers");
+            om = new OrderManager(OrderDataAccess.GetAllOrders());
 
             PopulateDepartmentsList();
             PopulateEmployeesList();
-            RefreshStock();
-
-
+            PopulateStockList();
         }
 
         public void PopulateDepartmentsList()
@@ -117,7 +116,7 @@ namespace KILR_Project
                         {
                             sm.AddStock(new Product(sm.GenerateID(), name, quantity, roundSelling, roundBuying, true, minQuantity, date, null, null));
                                 MessageBox.Show("Stock succesfully created!");
-                                RefreshStock();
+                                PopulateStockList();
                         }
                         else
                         {
@@ -187,7 +186,7 @@ namespace KILR_Project
                         if (p.Quanitity >= amount)
                         {
                             sm.Decrease(p, amount);
-                            RefreshStock();
+                            PopulateStockList();
                             if (p.RestockRequest() == true)
                             {
                                 MessageBox.Show(p.Name + " has fallen below the minimum quantity limit of " + p.MinimumQuantity, "Restock Request", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
@@ -227,7 +226,7 @@ namespace KILR_Project
                     {
                         Product p = sm.FindStock(id);
                         sm.Increase(p, amount);
-                        RefreshStock();
+                        PopulateStockList();
                     }
                     else
                     {
@@ -252,14 +251,18 @@ namespace KILR_Project
 
         private void BtnRefresh_Click(object sender, EventArgs e)
         {
-            RefreshStock();
+            PopulateStockList();
         }
-        public void RefreshStock()
+        public void PopulateStockList()
         {
             lbStock.Items.Clear();
             foreach (Product p in sm.GetAllStocks())
             {
                 lbStock.Items.Add(p.GetInfo());
+                if (p.IsActive == true)
+                {
+                    lbAllProducts.Items.Add(p.GetInfoSmaller());
+                }
             }
         }
 
@@ -346,17 +349,13 @@ namespace KILR_Project
 
         
 
-        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-        }
-
         private void tabControl1_Selected(object sender, TabControlEventArgs e)
         {
             if (e.TabPageIndex == 0)
             {
                 PopulateEmployeesList();
                 PopulateDepartmentsList();
-                RefreshStock();
+                PopulateStockList();
             }
         }
 
@@ -551,6 +550,97 @@ namespace KILR_Project
         private void GroupBox2_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void Label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnAddOrder_Click(object sender, EventArgs e)
+        {
+            Product p = sm.FindStock(Convert.ToInt32(tbProductId.Text));
+            o.AddProduct(p);
+            lblTotal.Text = o.Total.ToString()+"€";
+            RefreshOrderItemsListBox();
+        }
+
+        private void CashierPage_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnCreateOrder_Click(object sender, EventArgs e)
+        {
+            string date = DateTime.Now.ToString();
+            panelHide.Visible = false;
+            btnCreateOrder.Visible = false;
+            o = new Order(om.GenerateUniqueID(), date, user.Username, 0);
+        }
+        private void RefreshOrderItemsListBox()
+        {
+            lbOrderProducts.Items.Clear();
+            foreach(Product item in o.GetAllOrderProducts())
+            {
+                lbOrderProducts.Items.Add(item.GetInfoSmaller());
+            }
+        }
+
+        private void Label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GroupBox8_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnRemoveSelectedOrder_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void LbOrderProducts_Click(object sender, EventArgs e)
+        {
+            int index = lbOrderProducts.SelectedIndex;
+            if (index != ListBox.NoMatches)
+            {
+                o.RemoveProduct(index);
+                lblTotal.Text = o.Total.ToString() + "€";
+                RefreshOrderItemsListBox();
+            }
+        }
+
+        private void LbAllProducts_Click(object sender, EventArgs e)
+        {
+            int index = lbAllProducts.SelectedIndex;
+            if (index != ListBox.NoMatches)
+            {
+                Product p = sm.FindStockByName(lbAllProducts.SelectedItem.ToString()) ;
+                o.AddProduct(p);
+                lblTotal.Text = o.Total.ToString() + "€";
+                RefreshOrderItemsListBox();
+            }
+        }
+
+        private void BtnCompleteOrder_Click(object sender, EventArgs e)
+        {
+            om.AddOrder(o);
+            lblTotal.Text = "0€";
+            o = null;
+            panelHide.Visible = true;
+            btnCreateOrder.Visible = true;
+            lbOrderProducts.Items.Clear();
+        }
+
+        private void TbSearch_TextChanged(object sender, EventArgs e)
+        {
+            List<Product> products = ProductDataAccess.SearchForProduct(tbSearch.Text);
+            lbAllProducts.Items.Clear();
+            foreach (Product p in products)
+            {
+                lbAllProducts.Items.Add(p.GetInfoSmaller());
+            }
         }
     }
 }

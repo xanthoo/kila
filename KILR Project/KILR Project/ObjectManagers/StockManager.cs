@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MySql.Data.MySqlClient;
-using System.Data;
 
 namespace KILR_Project
 {
@@ -21,6 +19,21 @@ namespace KILR_Project
                 if (p.ID == id)
                     return p;
 
+            return null;
+        }
+        public Product FindStockByIndex(int index)
+        {
+            return stocks[index];
+        }
+        public Product FindStockByName(string name)
+        {
+            foreach(Product p in stocks)
+            {
+                if(p.GetInfoSmaller() == name)
+                {
+                    return p;
+                }
+            }
             return null;
         }
         public List<Product> GetAllStocks()
