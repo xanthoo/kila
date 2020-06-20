@@ -31,8 +31,15 @@ namespace KILR_Project
         }
         public void AddProduct(Product p)
         {
-            items.Add(p);
-            Total += p.SellingPrice;
+            try
+            {
+                items.Add(p);
+                Total += p.SellingPrice;
+            }
+            catch (NullReferenceException)
+            {
+                throw new NullReferenceException("Invalid ID!");
+            }
         }
         public List<Product> GetAllOrderProducts()
         {

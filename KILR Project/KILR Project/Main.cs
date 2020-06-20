@@ -559,10 +559,21 @@ namespace KILR_Project
 
         private void BtnAddOrder_Click(object sender, EventArgs e)
         {
-            Product p = sm.FindStock(Convert.ToInt32(tbProductId.Text));
-            o.AddProduct(p);
-            lblTotal.Text = o.Total.ToString()+"€";
-            RefreshOrderItemsListBox();
+            try
+            {
+                Product p = sm.FindStock(Convert.ToInt32(tbProductId.Text));
+                o.AddProduct(p);
+                lblTotal.Text = o.Total.ToString() + "€";
+                RefreshOrderItemsListBox();
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Please make sure you only input numbers!");
+            }
+            catch (NullReferenceException nr)
+            {
+                MessageBox.Show(nr.Message);
+            }
         }
 
         private void CashierPage_Click(object sender, EventArgs e)
@@ -625,19 +636,26 @@ namespace KILR_Project
 
         private void BtnCompleteOrder_Click(object sender, EventArgs e)
         {
-            om.AddOrder(o);
-            lblTotal.Text = "0€";
-            o.CompleteOrder();
-            o = null;
-            panelHide.Visible = true;
-            btnCreateOrder.Visible = true;
-            lbOrderProducts.Items.Clear();
+            if (o.GetAllOrderProducts().Count != 0)
+            {
+                om.AddOrder(o);
+                lblTotal.Text = "0€";
+                o.CompleteOrder();
+                o = null;
+                panelHide.Visible = true;
+                btnCreateOrder.Visible = true;
+                lbOrderProducts.Items.Clear();
+            }
+            else
+            {
+                MessageBox.Show("You cannot add an emtpy order!");
+            }
 
         }
 
         private void TbSearch_TextChanged(object sender, EventArgs e)
         {
-            List<Product> products = ProductDataAccess.SearchForProduct(tbSearch.Text);
+            List<Product> products = ProductDataAccess.SearchForProduct(tbSearch.Text.Trim());
             lbAllProducts.Items.Clear();
             foreach (Product p in products)
             {

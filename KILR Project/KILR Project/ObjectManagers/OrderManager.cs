@@ -53,11 +53,19 @@ namespace KILR_Project
         public int GenerateUniqueID()
         {
             List<int> orderIDs = new List<int>();
-            foreach (Order o in orders)
+            if (orders.Count != 0)
             {
-                orderIDs.Add(o.ID);
+                foreach (Order o in orders)
+                {
+                    orderIDs.Add(o.ID);
+                }
+                return orderIDs.Max() + 1;
             }
-            return orderIDs.Max() + 1;
+            else
+            {
+                return 10000;
+            }
+           
         }
     }
 }
