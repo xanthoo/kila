@@ -69,6 +69,10 @@ namespace KILR_Project
         {
             return $"ID: {this.productId} - {this.productName} - Price: {this.SellingPrice}€";
         }
+        public string GetInfoReceipt()
+        {
+            return $"{this.productName} - Price: {this.SellingPrice}€";
+        }
     }
 
 }

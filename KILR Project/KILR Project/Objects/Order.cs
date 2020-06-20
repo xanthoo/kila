@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace KILR_Project
 {
     public class Order
@@ -16,9 +17,9 @@ namespace KILR_Project
 
         private List<Product> items;
         public int ID { get { return this.id; } set { this.id = value; } }
-        public string OrderedOn { get {return this.orderedOn; } private set { this.orderedOn = value; } }
+        public string OrderedOn { get { return this.orderedOn; } private set { this.orderedOn = value; } }
         public string MadeBy { get { return this.madeBy; } private set { this.madeBy = value; } }
-        public decimal Total { get { return this.total; } set {this.total = value; } }
+        public decimal Total { get { return this.total; } set { this.total = value; } }
         public int AmountOfItems { get { return items.Count(); } }
         public Order(int id, string orderedOn, string madeBy, decimal total)
         {
@@ -36,7 +37,7 @@ namespace KILR_Project
         public List<Product> GetAllOrderProducts()
         {
             List<Product> helperList = new List<Product>();
-            foreach(Product p in items)
+            foreach (Product p in items)
             {
                 helperList.Add(p);
             }
@@ -49,7 +50,8 @@ namespace KILR_Project
         }
         public void CompleteOrder()
         {
-            throw new NotImplementedException();
+            Receipt receipt = new Receipt(this);
+            receipt.GenerateReceieptinPDF();
         }
 
 

@@ -627,10 +627,12 @@ namespace KILR_Project
         {
             om.AddOrder(o);
             lblTotal.Text = "0€";
+            o.CompleteOrder();
             o = null;
             panelHide.Visible = true;
             btnCreateOrder.Visible = true;
             lbOrderProducts.Items.Clear();
+
         }
 
         private void TbSearch_TextChanged(object sender, EventArgs e)
