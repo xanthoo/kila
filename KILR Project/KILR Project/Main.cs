@@ -580,14 +580,6 @@ namespace KILR_Project
         {
 
         }
-
-        private void BtnCreateOrder_Click(object sender, EventArgs e)
-        {
-            string date = DateTime.Now.ToString();
-            panelHide.Visible = false;
-            btnCreateOrder.Visible = false;
-            o = new Order(om.GenerateUniqueID(), date, user.Username, 0);
-        }
         private void RefreshOrderItemsListBox()
         {
             lbOrderProducts.Items.Clear();
@@ -660,6 +652,58 @@ namespace KILR_Project
             foreach (Product p in products)
             {
                 lbAllProducts.Items.Add(p.GetInfoSmaller());
+            }
+        }
+
+        private void btnAbortOrder_Click(object sender, EventArgs e)
+        {
+            DialogResult result =  MessageBox.Show("Are you sure you want to abort this order?", "Notice", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                o.IsAborted = true;
+                om.AddOrder(o);
+                lblTotal.Text = "0€";
+                o = null;
+                panelHide.Visible = true;
+                btnCreateOrder.Visible = true;
+                lbOrderProducts.Items.Clear();
+                MessageBox.Show("Order has been aborted!");
+            }
+        }
+
+        private void BtnCreateOrder_Click_1(object sender, EventArgs e)
+        {
+            string date = DateTime.Now.ToString();
+            panelHide.Visible = false;
+            btnCreateOrder.Visible = false;
+            o = new Order(om.GenerateUniqueID(), date, user.Username, 0);
+        }
+
+        private void BtnAbortLast_Click(object sender, EventArgs e)
+        {
+            if (om.GetAllOrders().Count != 0)
+            {
+                List<Order> reverseList = om.GetAllOrders();
+                reverseList.Reverse();
+                Order lastOrder = reverseList[0];
+                if (lastOrder.IsAborted == false)
+                {
+                    DialogResult result = MessageBox.Show("Are you sure you want to abort this order?", "Notice", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (result == DialogResult.Yes)
+                    {
+                        om.AbortOrder(lastOrder);
+                        MessageBox.Show("Last order has been aborted!");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Last order has already been aborted!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Invalid Operation!");
             }
         }
     }

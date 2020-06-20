@@ -14,6 +14,7 @@ namespace KILR_Project
         private string madeBy;
         private decimal total;
         private int amountOfItems;
+        private bool isAborted;
 
         private List<Product> items;
         public int ID { get { return this.id; } set { this.id = value; } }
@@ -21,12 +22,23 @@ namespace KILR_Project
         public string MadeBy { get { return this.madeBy; } private set { this.madeBy = value; } }
         public decimal Total { get { return this.total; } set { this.total = value; } }
         public int AmountOfItems { get { return items.Count(); } }
+        public bool IsAborted { get { return this.isAborted; } set { this.isAborted = value; } }
         public Order(int id, string orderedOn, string madeBy, decimal total)
         {
             this.id = id;
             this.orderedOn = orderedOn;
             this.madeBy = madeBy;
             this.total = total;
+            this.isAborted = false;
+            this.items = new List<Product>();
+        }
+        public Order(int id, string orderedOn, string madeBy, decimal total, bool isAborted)
+        {
+            this.id = id;
+            this.orderedOn = orderedOn;
+            this.madeBy = madeBy;
+            this.total = total;
+            this.isAborted = isAborted;
             this.items = new List<Product>();
         }
         public void AddProduct(Product p)

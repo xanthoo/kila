@@ -16,9 +16,12 @@ namespace KILR_Project
         public void AddOrder(Order o)
         {
             orders.Add(o);
-            foreach (Product p in o.GetAllOrderProducts())
+            if (o.IsAborted == false)
             {
-                TransactionsDataAccess.AddTransaction(o, p);
+                foreach (Product p in o.GetAllOrderProducts())
+                {
+                    TransactionsDataAccess.AddTransaction(o, p);
+                }
             }
             OrderDataAccess.AddOrder(o);
         }
@@ -32,6 +35,11 @@ namespace KILR_Project
                 }
             }
             return null;
+        }
+        public void AbortOrder(Order o)
+        {
+            o.IsAborted = true;
+            OrderDataAccess.AbortOrder(o);
         }
         public List<Order> GetAllOrders()
         {
