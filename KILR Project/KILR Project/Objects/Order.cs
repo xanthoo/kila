@@ -72,6 +72,15 @@ namespace KILR_Project
             Receipt receipt = new Receipt(this);
             receipt.GenerateReceieptinPDF();
         }
+        public decimal OrderIncome()
+        {
+            decimal businessIncome = 0;
+            foreach(Product p in items)
+            {
+                businessIncome += p.SellingPrice - p.BuyingPrice;
+            }
+            return businessIncome;
+        }
 
 
     }

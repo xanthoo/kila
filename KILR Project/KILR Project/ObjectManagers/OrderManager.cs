@@ -55,7 +55,8 @@ namespace KILR_Project
         {
             foreach(Order o in orders)
             {
-                amount += o.Total;
+                if(o.IsAborted != true)
+                amount += o.OrderIncome();
             }
         }
         public int GenerateUniqueID()

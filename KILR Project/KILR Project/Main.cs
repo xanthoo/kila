@@ -608,6 +608,8 @@ namespace KILR_Project
             int index = lbOrderProducts.SelectedIndex;
             if (index != ListBox.NoMatches)
             {
+                Product p = sm.FindStockByName(lbOrderProducts.SelectedItem.ToString());
+                sm.Increase(p, 1);
                 o.RemoveProduct(index);
                 lblTotal.Text = o.Total.ToString() + "€";
                 RefreshOrderItemsListBox();
@@ -616,13 +618,21 @@ namespace KILR_Project
 
         private void LbAllProducts_Click(object sender, EventArgs e)
         {
-            int index = lbAllProducts.SelectedIndex;
-            if (index != ListBox.NoMatches)
+            try
             {
-                Product p = sm.FindStockByName(lbAllProducts.SelectedItem.ToString()) ;
-                o.AddProduct(p);
-                lblTotal.Text = o.Total.ToString() + "€";
-                RefreshOrderItemsListBox();
+                int index = lbAllProducts.SelectedIndex;
+                if (index != ListBox.NoMatches)
+                {
+                    Product p = sm.FindStockByName(lbAllProducts.SelectedItem.ToString());
+                    sm.Decrease(p, 1);
+                    o.AddProduct(p);
+                    lblTotal.Text = o.Total.ToString() + "€";
+                    RefreshOrderItemsListBox();
+                }
+            }
+            catch (InvalidOperationException io)
+            {
+                MessageBox.Show(io.Message);
             }
         }
 
@@ -687,13 +697,21 @@ namespace KILR_Project
                 List<Order> reverseList = om.GetAllOrders();
                 reverseList.Reverse();
                 Order lastOrder = reverseList[0];
+                DateTime futureTime = Convert.ToDateTime(lastOrder.OrderedOn).AddMinutes(5);
                 if (lastOrder.IsAborted == false)
                 {
-                    DialogResult result = MessageBox.Show("Are you sure you want to abort this order?", "Notice", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if (result == DialogResult.Yes)
+                    if (DateTime.Now < futureTime && lastOrder.MadeBy == user.Username)
                     {
-                        om.AbortOrder(lastOrder);
-                        MessageBox.Show("Last order has been aborted!");
+                        DialogResult result = MessageBox.Show("Are you sure you want to abort this order?", "Notice", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        if (result == DialogResult.Yes)
+                        {
+                            om.AbortOrder(lastOrder);
+                            MessageBox.Show("Last order has been aborted!");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Action is not permitted");
                     }
                 }
                 else
