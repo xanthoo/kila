@@ -60,8 +60,6 @@ namespace KILR_Project
         }
         public void Decrease(Product p, int amount)
         {
-            if (p.Quanitity > 1)
-            {
                 if (p.IsActive == true)
                 {
                     p.Quanitity -= amount;
@@ -71,11 +69,6 @@ namespace KILR_Project
                 {
                     throw new InvalidOperationException("This item is set as inactive!");
                 }
-            }
-            else
-            {
-                throw new InvalidOperationException("Item stock has depleted!");
-            }
         }
         public int GenerateID()
         {

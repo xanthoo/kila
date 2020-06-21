@@ -118,7 +118,7 @@ namespace KILR_Project
             {
                 MySqlConnection connection = new MySqlConnection(connectionString);
                 MySqlCommand cmd = connection.CreateCommand();
-                cmd.CommandText = $"UPDATE `employee` SET firedate =  {ReleaseDate}  WHERE id = " + id + "";
+                cmd.CommandText = $"UPDATE `employee` SET `firedate` =  '" + ReleaseDate + "'  WHERE id = " + id + "";
                 connection.Open();
                 MySqlDataReader Rdr = cmd.ExecuteReader();
                 return true;
@@ -149,7 +149,5 @@ namespace KILR_Project
             }
             return employees;
         }
-
-
     }
 }
