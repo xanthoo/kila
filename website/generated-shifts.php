@@ -72,11 +72,23 @@ for ($day = 0; $day <= ($toTime - $fromTime) / (24 * 60 * 60); $day++) {
 		}
 
 		if ($index % 3 === 0) {
-			$morning[] = $employee['id'];
+			if (count($morning) < 2) {
+				$morning[] = $employee['id'];
+			} else {
+				$dayShift[] = $employee['id'];
+			}
 		} else if ($index % 3 === 1) {
-			$dayShift[] = $employee['id'];
+			if (count($dayShift) < 2) {
+				$dayShift[] = $employee['id'];
+			} else {
+				$afternoon[] = $employee['id'];
+			}
 		} else if ($index % 3 === 2) {
-			$afternoon[] = $employee['id'];
+			if (count($afternoon) < 2) {
+				$afternoon[] = $employee['id'];
+			} else {
+				$morning[] = $employee['id'];
+			}
 		}
 	}
 
