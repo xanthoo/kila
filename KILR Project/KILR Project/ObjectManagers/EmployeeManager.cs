@@ -12,6 +12,11 @@ namespace KILR_Project
     class EmployeeManager
     {
         string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=kilrdb;";
+        private List<Employee> employees;
+        public EmployeeManager()
+        {
+            employees = new List<Employee>();
+        }
         public List<Employee> GetAllEmployees(bool fired = false)
         {
             /*try
@@ -74,7 +79,7 @@ namespace KILR_Project
                 return null;
             }*/
         }
-        public Employee GetEmployee(int id)
+        public Employee GetEmployee(int id) // not used
         {
             foreach (Employee employee in GetAllEmployees())
             {
@@ -87,49 +92,24 @@ namespace KILR_Project
         }
         public void AddEmployee(string fName, string lastName, Department d, Position position, string email, string address, String HireDate, double hourlyWage, string password, string city, string gender, string zipcode)
         {
-            string query;
-            if(position == Position.ADMINISTRATOR || position == Position.MANAGER)
-            {
-                query = "INSERT INTO employee(`firstname`, `lastname`, `email`, `address`,`department`, `position`, `hiredate`, `hourlywage`, `password`, `city`, `gender`, `zipcode`)" +
-                $" VALUES ('{fName}', '{lastName}', '{email}', '{address}', {0}, '{position.ToString()}', '{HireDate}', {hourlyWage}, '{password}', '{city}', '{gender}', '{zipcode}');";
-            }
-            else
-            {
-                query = "INSERT INTO employee(`firstname`, `lastname`, `email`, `address`,`department`, `position`, `hiredate`, `hourlywage`, `password`, `city`, `gender`, `zipcode`)" +
-                $" VALUES ('{fName}', '{lastName}', '{email}', '{address}', {d.Id}, '{position.ToString()}', '{HireDate}', {hourlyWage}, '{password}', '{city}', '{gender}', '{zipcode}');";
-            } 
-            MySqlConnection databaseConnection = new MySqlConnection(connectionString);
-            MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
-            MySqlDataReader MyReader;
-            commandDatabase.CommandTimeout = 60;
-            try
-            {
-                databaseConnection.Open();
-                MyReader = commandDatabase.ExecuteReader();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            Employee e = new Employee(1, fName, lastName, d.Id, position, email, address, HireDate, hourlyWage);
+            employees.Add(e);
+            DB.AddEmployee(fName, lastName, d, position, email, address, HireDate, hourlyWage, password, city, gender, zipcode);
         }
         public bool RemoveEmployee(int id, string ReleaseDate)
         {
-            try
+            foreach (Employee employee in GetAllEmployees())
             {
-                MySqlConnection connection = new MySqlConnection(connectionString);
-                MySqlCommand cmd = connection.CreateCommand();
-                cmd.CommandText = $"UPDATE `employee` SET `firedate` =  '" + ReleaseDate + "'  WHERE id = " + id + "";
-                connection.Open();
-                MySqlDataReader Rdr = cmd.ExecuteReader();
-                return true;
+                if (employee.Id == id)
+                {
+                    DB.RemoveEmployee(id, ReleaseDate);
+                    return true;
+                }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                return false;
-            }
+            return false;
+            
         }
-        public bool CheckIfEmployeeExists(int id)
+        public bool CheckIfEmployeeExists(int id) // not used!!!
         {
             foreach (Employee employee in GetAllEmployees())
             {
@@ -140,7 +120,7 @@ namespace KILR_Project
             }
             return false;
         }
-        public List<Employee> GetAssoicatedEmployees(Department d)
+        public List<Employee> GetAssoicatedEmployees(Department d) // not used!!!
         {
             List<Employee> employees = new List<Employee>();
             foreach (Employee e in d.GetEmployees())
@@ -148,6 +128,10 @@ namespace KILR_Project
                 employees.Add(e);
             }
             return employees;
+        }
+        public void UpdateEmployee(string firstName, string surname, string email, string address, string jobPosition, string department, int id, string city, string zip, double wage)
+        {
+            DB.UpdateEmployee(firstName, surname, email, address, jobPosition, department, id, city, zip, wage);
         }
     }
 }

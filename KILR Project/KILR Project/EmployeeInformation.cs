@@ -70,9 +70,7 @@ namespace KILR_Project
         {
             ReleaseEmployee r = new ReleaseEmployee(newId);
             r.Show();
-            //string ReleaseDate = DateTime.Today.ToString("yyyy-MM-dd");
-            //employeeManager.RemoveEmployee(newId, ReleaseDate);
-            //MessageBox.Show("Employee has been released");
+            
         }
 
         private void label18_Click(object sender, EventArgs e)

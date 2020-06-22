@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
@@ -13,12 +14,13 @@ namespace KILR_Project
 {
     public partial class UpdateEmployee : Form
     {
-
+        EmployeeManager em;
         public int newId;
         string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=kilrdb;";
         public UpdateEmployee(int id)
         {
             InitializeComponent();
+            em = new EmployeeManager();
             newId = id;
             MySqlConnection Cn = new MySqlConnection(connectionString);
             MySqlCommand Cmd = Cn.CreateCommand();
@@ -33,6 +35,9 @@ namespace KILR_Project
                 tbAddress.Text = Rdr["address"].ToString();
                 tbJobPos.Text = Rdr["position"].ToString();
                 tbDep.Text = Rdr["department"].ToString();
+                tbCity.Text = Rdr["city"].ToString();
+                tbWage.Text = Rdr["hourlywage"].ToString();
+                tbZipCode.Text = Rdr["zipcode"].ToString();
             }
         }
 
@@ -45,7 +50,16 @@ namespace KILR_Project
 
         private void BtnUpdtDts_Click(object sender, EventArgs e)
         {
-            DB.UpdateEmployee(tbFName.Text, tbSurname.Text, tbAddress.Text, tbAddress.Text, tbJobPos.Text, tbDep.Text, newId);
+            Regex regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
+            Match match = regex.Match(tbEmail.Text);
+            if (match.Success)
+            {
+                em.UpdateEmployee(tbFName.Text, tbSurname.Text, tbEmail.Text, tbAddress.Text, tbJobPos.Text, tbDep.Text, newId, tbCity.Text, tbZipCode.Text, Convert.ToDouble(tbWage.Text));
+            }
+            else
+            {
+                MessageBox.Show("Please provide a correct email!");
+            }
         }
     }
 }

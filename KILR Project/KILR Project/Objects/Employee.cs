@@ -23,7 +23,7 @@ namespace KILR_Project
 
         public Employee(int id, string fName, string lastName, int dep, Position position, string email, string address, String HireDate, double hourlyWage)
         {
-            this.id = id;
+            this.Id = id;
             this.firstName = fName;
             this.lastName = lastName;
             this.departmentId = dep;
@@ -57,7 +57,7 @@ namespace KILR_Project
 
         public String GetInfo()
         {
-            return $"Id: {this.id} - Name: {this.firstName} {this.lastName} DepId: {this.departmentId} Pos: {this.position}";
+            return $"Id: {this.Id} - Name: {this.firstName} {this.lastName} DepId: {this.departmentId} Pos: {this.position}";
 
         }
     }

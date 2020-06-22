@@ -477,7 +477,7 @@ namespace KILR_Project
                     try
                     {
 
-                        if (DB.GetEmployeeById(Convert.ToInt32(tbFindEmployee.Text)) == true)
+                        if (empMang.CheckIfEmployeeExists(Convert.ToInt32(tbFindEmployee.Text)) == true)
                         {
                             EmployeeInformation empInfo = new EmployeeInformation(Convert.ToInt32(tbFindEmployee.Text));
                             empInfo.Visible = true;

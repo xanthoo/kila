@@ -68,9 +68,9 @@ namespace KILR_Project
             }
             return false;
         }
-        public static bool UpdateEmployee(string firstName, string surname, string email, string address, string jobPosition, string department, int id, string city, string zip, double wage)
+        public static bool UpdateEmployee(string firstName, string surname, string email, string address, string jobPosition, string department, int id)
         {
-            string query = $"UPDATE employee SET firstname = '{firstName}', lastname = '{surname}', email = '{email}', address = '{address}', position = '{jobPosition}', department = '{department}', city = '{city}', zipcode = '{zip}', hourlywage = '{wage}' WHERE id = {id}";
+            string query = $"UPDATE employee SET firstname = '{firstName}', lastname = '{surname}', email = '{email}', address = '{address}', position = '{jobPosition}', department = '{department}' WHERE id = {id}";
             MySqlConnection databaseConnection = new MySqlConnection(connectionString);
             MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
             MySqlDataReader MyReader;
@@ -87,51 +87,7 @@ namespace KILR_Project
             }
             return false;
         }
-        public static void AddEmployee(string fName, string lastName, Department d, Position position, string email, string address, String HireDate, double hourlyWage, string password, string city, string gender, string zipcode)
-        {
-            string query;
-            if (position == Position.ADMINISTRATOR || position == Position.MANAGER)
-            {
-                query = "INSERT INTO employee(`firstname`, `lastname`, `email`, `address`,`department`, `position`, `hiredate`, `hourlywage`, `password`, `city`, `gender`, `zipcode`)" +
-                $" VALUES ('{fName}', '{lastName}', '{email}', '{address}', {0}, '{position.ToString()}', '{HireDate}', {hourlyWage}, '{password}', '{city}', '{gender}', '{zipcode}');";
-            }
-            else
-            {
-                query = "INSERT INTO employee(`firstname`, `lastname`, `email`, `address`,`department`, `position`, `hiredate`, `hourlywage`, `password`, `city`, `gender`, `zipcode`)" +
-                $" VALUES ('{fName}', '{lastName}', '{email}', '{address}', {d.Id}, '{position.ToString()}', '{HireDate}', {hourlyWage}, '{password}', '{city}', '{gender}', '{zipcode}');";
-            }
-            MySqlConnection databaseConnection = new MySqlConnection(connectionString);
-            MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
-            MySqlDataReader MyReader;
-            commandDatabase.CommandTimeout = 60;
-            try
-            {
-                databaseConnection.Open();
-                MyReader = commandDatabase.ExecuteReader();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-        public static bool RemoveEmployee(int id, string ReleaseDate)
-        {
-            try
-            {
-                MySqlConnection connection = new MySqlConnection(connectionString);
-                MySqlCommand cmd = connection.CreateCommand();
-                cmd.CommandText = $"UPDATE `employee` SET `firedate` =  '" + ReleaseDate + "'  WHERE id = " + id + "";
-                connection.Open();
-                MySqlDataReader Rdr = cmd.ExecuteReader();
-                return true;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                return false;
-            }
-        }
-
+      
     }
     
 }
