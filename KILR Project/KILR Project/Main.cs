@@ -142,7 +142,7 @@ namespace KILR_Project
 
         private void StockPage_Click(object sender, EventArgs e)
         {
-
+            PopulateStockList();
         }
 
         private void TextBox5_TextChanged(object sender, EventArgs e)
@@ -641,6 +641,7 @@ namespace KILR_Project
             if (o.GetAllOrderProducts().Count != 0)
             {
                 om.AddOrder(o);
+                o.AmountOfItems = o.GetAllOrderProducts().Count();
                 lblTotal.Text = "0€";
                 o.CompleteOrder();
                 o = null;
@@ -723,6 +724,20 @@ namespace KILR_Project
             {
                 MessageBox.Show("Invalid Operation!");
             }
+        }
+
+        private void Chart1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnCompanyStatistics_Click(object sender, EventArgs e)
+        {
+            IncomeManager im = new IncomeManager(om, TransactionsDataAccess.GetAllTranscations());
+            IncomeStatistics statistics = new IncomeStatistics(im, this);
+            this.Visible = false;
+            statistics.Show();
+
         }
     }
 }

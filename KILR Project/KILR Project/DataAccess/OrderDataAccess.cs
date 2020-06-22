@@ -15,11 +15,11 @@ namespace KILR_Project
             string query = "";
             if(o.IsAborted == true)
             {
-                query += "INSERT INTO orders(`id`, `ordered_on`, `made_by`, `total`, `items_quantity`, `is_aborted`) VALUES(NULL, '" + o.OrderedOn + "','" + o.MadeBy + "', '" + o.Total + "','" + o.AmountOfItems + "', 1)";
+                query += "INSERT INTO orders(`id`, `ordered_on`, `made_by`, `total`, `items_quantity`, `is_aborted`) VALUES('"+o.ID+"', '" + o.OrderedOn + "','" + o.MadeBy + "', '" + o.Total + "','" + o.AmountOfItems + "', 1)";
             }
             else
             {
-                query += "INSERT INTO orders(`id`, `ordered_on`, `made_by`, `total`, `items_quantity`, `is_aborted`) VALUES(NULL, '" + o.OrderedOn + "','" + o.MadeBy + "', '" + o.Total + "','" + o.AmountOfItems + "', 0)";
+                query += "INSERT INTO orders(`id`, `ordered_on`, `made_by`, `total`, `items_quantity`, `is_aborted`) VALUES('"+o.ID+"', '" + o.OrderedOn + "','" + o.MadeBy + "', '" + o.Total + "','" + o.AmountOfItems + "', 0)";
             }
             MySqlConnection databaseConnection = new MySqlConnection(connectionString);
             MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
@@ -45,6 +45,7 @@ namespace KILR_Project
             try
             {
                 List<Order> orders = new List<Order>();
+                List<Product> products = new List<Product>();
                 orders.Clear();
                 string sql = " SELECT * FROM orders;";
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
@@ -54,11 +55,11 @@ namespace KILR_Project
                 {
                     if (Convert.ToInt32(reader[5]) == 0)
                     {
-                        orders.Add(new Order(Convert.ToInt32(reader[0]), reader[1].ToString(), reader[2].ToString(), Convert.ToDecimal(reader[3]), false));
+                        orders.Add(new Order(Convert.ToInt32(reader[0]), reader[1].ToString(), reader[2].ToString(), Convert.ToDecimal(reader[3]), Convert.ToInt32(reader[4]), false));
                     }
                     else if(Convert.ToInt32(reader[5]) == 1)
                     {
-                        orders.Add(new Order(Convert.ToInt32(reader[0]), reader[1].ToString(), reader[2].ToString(), Convert.ToDecimal(reader[3]), true));
+                        orders.Add(new Order(Convert.ToInt32(reader[0]), reader[1].ToString(), reader[2].ToString(), Convert.ToDecimal(reader[3]), Convert.ToInt32(reader[4]), true));
                     }
                 }
                 return orders.ToList();
@@ -72,6 +73,7 @@ namespace KILR_Project
                 connection.Close();
             }
         }
+
         public static void AbortOrder(Order o)
         {
             MySqlConnection connection = new MySqlConnection(connectionString);

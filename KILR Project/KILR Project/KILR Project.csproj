@@ -96,6 +96,13 @@
     <Compile Include="DataAccess\DepartmentDataAccess.cs" />
     <Compile Include="DataAccess\OrderDataAccess.cs" />
     <Compile Include="DataAccess\TransactionsDataAccess.cs" />
+    <Compile Include="ObjectManagers\IncomeManager.cs" />
+    <Compile Include="IncomeStatistics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IncomeStatistics.Designer.cs">
+      <DependentUpon>IncomeStatistics.cs</DependentUpon>
+    </Compile>
     <Compile Include="Objects\Department.cs" />
     <Compile Include="DepartmentInformation.cs">
       <SubType>Form</SubType>
@@ -114,6 +121,7 @@
     <Compile Include="ObjectManagers\EmployeeManager.cs" />
     <Compile Include="Objects\Order.cs" />
     <Compile Include="ObjectManagers\OrderManager.cs" />
+    <Compile Include="Objects\Transaction.cs" />
     <Compile Include="Position.cs" />
     <Compile Include="Objects\Product.cs" />
     <Compile Include="DataAccess\ProductDataAccess.cs" />
@@ -187,6 +195,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EditDepartment.resx">
       <DependentUpon>EditDepartment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IncomeStatistics.resx">
+      <DependentUpon>IncomeStatistics.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReleaseEmployee.resx">
       <DependentUpon>ReleaseEmployee.cs</DependentUpon>

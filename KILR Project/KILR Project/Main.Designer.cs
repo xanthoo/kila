@@ -125,6 +125,7 @@
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.cashierPage = new System.Windows.Forms.TabPage();
             this.panelHide = new System.Windows.Forms.Panel();
+            this.btnAbortLast = new System.Windows.Forms.Button();
             this.btnCreateOrder = new System.Windows.Forms.Button();
             this.btnAbortOrder = new System.Windows.Forms.Button();
             this.tbSearch = new System.Windows.Forms.TextBox();
@@ -141,7 +142,7 @@
             this.btnCompleteOrder = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnAbortLast = new System.Windows.Forms.Button();
+            this.btnCompanyStatistics = new System.Windows.Forms.Button();
             this.tabPage1.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -1073,10 +1074,12 @@
             this.tabControl1.TabIndex = 1;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.CashierPage_Click);
             this.tabControl1.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabControl1_Selected);
+            this.tabControl1.Click += new System.EventHandler(this.StockPage_Click);
             // 
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(121)))), ((int)(((byte)(3)))));
+            this.tabPage2.Controls.Add(this.btnCompanyStatistics);
             this.tabPage2.Controls.Add(this.button1);
             this.tabPage2.Controls.Add(this.btnDepStats);
             this.tabPage2.Controls.Add(this.btnEmployeeStats);
@@ -1155,6 +1158,7 @@
             this.chart1.Size = new System.Drawing.Size(584, 420);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
+            this.chart1.Click += new System.EventHandler(this.Chart1_Click);
             // 
             // cashierPage
             // 
@@ -1183,6 +1187,19 @@
             this.panelHide.Name = "panelHide";
             this.panelHide.Size = new System.Drawing.Size(922, 512);
             this.panelHide.TabIndex = 28;
+            // 
+            // btnAbortLast
+            // 
+            this.btnAbortLast.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(182)))), ((int)(((byte)(3)))));
+            this.btnAbortLast.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAbortLast.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnAbortLast.Location = new System.Drawing.Point(251, 387);
+            this.btnAbortLast.Name = "btnAbortLast";
+            this.btnAbortLast.Size = new System.Drawing.Size(377, 93);
+            this.btnAbortLast.TabIndex = 12;
+            this.btnAbortLast.Text = "Abort Last Order";
+            this.btnAbortLast.UseVisualStyleBackColor = false;
+            this.btnAbortLast.Click += new System.EventHandler(this.BtnAbortLast_Click);
             // 
             // btnCreateOrder
             // 
@@ -1371,18 +1388,18 @@
             this.label1.Text = "Jupiter Cashier Application";
             this.label1.Click += new System.EventHandler(this.Label1_Click);
             // 
-            // btnAbortLast
+            // btnCompanyStatistics
             // 
-            this.btnAbortLast.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(182)))), ((int)(((byte)(3)))));
-            this.btnAbortLast.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAbortLast.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnAbortLast.Location = new System.Drawing.Point(251, 387);
-            this.btnAbortLast.Name = "btnAbortLast";
-            this.btnAbortLast.Size = new System.Drawing.Size(377, 93);
-            this.btnAbortLast.TabIndex = 12;
-            this.btnAbortLast.Text = "Abort Last Order";
-            this.btnAbortLast.UseVisualStyleBackColor = false;
-            this.btnAbortLast.Click += new System.EventHandler(this.BtnAbortLast_Click);
+            this.btnCompanyStatistics.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(182)))), ((int)(((byte)(3)))));
+            this.btnCompanyStatistics.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCompanyStatistics.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCompanyStatistics.Location = new System.Drawing.Point(44, 120);
+            this.btnCompanyStatistics.Name = "btnCompanyStatistics";
+            this.btnCompanyStatistics.Size = new System.Drawing.Size(103, 53);
+            this.btnCompanyStatistics.TabIndex = 4;
+            this.btnCompanyStatistics.Text = "Income Statistics";
+            this.btnCompanyStatistics.UseVisualStyleBackColor = false;
+            this.btnCompanyStatistics.Click += new System.EventHandler(this.BtnCompanyStatistics_Click);
             // 
             // Main
             // 
@@ -1544,6 +1561,7 @@
         private System.Windows.Forms.Panel panelHide;
         private System.Windows.Forms.Button btnCreateOrder;
         private System.Windows.Forms.Button btnAbortLast;
+        private System.Windows.Forms.Button btnCompanyStatistics;
     }
 }
 

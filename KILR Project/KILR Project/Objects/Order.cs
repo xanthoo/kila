@@ -21,7 +21,7 @@ namespace KILR_Project
         public string OrderedOn { get { return this.orderedOn; } private set { this.orderedOn = value; } }
         public string MadeBy { get { return this.madeBy; } private set { this.madeBy = value; } }
         public decimal Total { get { return this.total; } set { this.total = value; } }
-        public int AmountOfItems { get { return items.Count(); } }
+        public int AmountOfItems { get { return this.amountOfItems; } set { this.amountOfItems = value; } }
         public bool IsAborted { get { return this.isAborted; } set { this.isAborted = value; } }
         public Order(int id, string orderedOn, string madeBy, decimal total)
         {
@@ -32,12 +32,13 @@ namespace KILR_Project
             this.isAborted = false;
             this.items = new List<Product>();
         }
-        public Order(int id, string orderedOn, string madeBy, decimal total, bool isAborted)
+        public Order(int id, string orderedOn, string madeBy, decimal total,int quantity, bool isAborted)
         {
             this.id = id;
             this.orderedOn = orderedOn;
             this.madeBy = madeBy;
             this.total = total;
+            this.amountOfItems = quantity;
             this.isAborted = isAborted;
             this.items = new List<Product>();
         }
@@ -72,16 +73,16 @@ namespace KILR_Project
             Receipt receipt = new Receipt(this);
             receipt.GenerateReceieptinPDF();
         }
-        public decimal OrderIncome()
+        public string GetInfo()
         {
-            decimal businessIncome = 0;
-            foreach(Product p in items)
+            if (this.isAborted == false)
             {
-                businessIncome += p.SellingPrice - p.BuyingPrice;
+                return $"ID: {this.ID} - Handled By: {this.madeBy} - Date: {this.orderedOn} - Total: {this.total} - {this.amountOfItems} items purchased";
             }
-            return businessIncome;
+            else
+            {
+                return $"ID: {this.ID} - Handled By: {this.madeBy} - Date: {this.orderedOn} - Order Aborted";
+            }
         }
-
-
     }
 }

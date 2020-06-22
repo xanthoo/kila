@@ -45,20 +45,6 @@ namespace KILR_Project
         {
             return this.orders.ToList();
         }
-        public decimal GetTotalShopRevenue()
-        { 
-            decimal totalRevenue = 0;
-            CalculateTotalShopRevenue(ref totalRevenue);
-            return Math.Round(totalRevenue, 2, MidpointRounding.ToEven);
-        }
-        private void CalculateTotalShopRevenue(ref decimal amount)
-        {
-            foreach(Order o in orders)
-            {
-                if(o.IsAborted != true)
-                amount += o.OrderIncome();
-            }
-        }
         public int GenerateUniqueID()
         {
             List<int> orderIDs = new List<int>();
