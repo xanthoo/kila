@@ -15,7 +15,7 @@ if (
 	$_POST['password'] !== ''
 ) {
 	$query = $db->prepare('
-		SELECT id FROM employee WHERE email = ? && password = ?
+		SELECT id, firedate FROM employee WHERE email = ? && password = ?
 	');
 	$pw = md5($_POST['password']);
 	$query->bindParam(1, $_POST['email']);
@@ -24,11 +24,16 @@ if (
 	$query->execute();
 	
 	if ($query->rowCount()) {
-		session_regenerate_id();
-		$_SESSION["userid"] = $query->fetch()['id'];
+		$user = $query->fetch();
+		if ($user['firedate'] !== null) {
+			$message = 'You are not allowed to login.';
+		} else {
+			session_regenerate_id();
+			$_SESSION["userid"] = $user['id'];
 
-		$success = true;
-		$successRedirect = 'index.php';
+			$success = true;
+			$successRedirect = 'index.php';
+		}
 	} else {
 		$message = 'Incorrect login details.';
 	}
