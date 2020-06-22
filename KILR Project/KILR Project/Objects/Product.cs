@@ -65,6 +65,14 @@ namespace KILR_Project
                 return $"Id: {this.productId} - Name: {this.productName} - Inactive";
             }
         }
+        public string GetInfoSmaller()
+        {
+            return $"ID: {this.productId} - {this.productName} - Price: {this.SellingPrice}€";
+        }
+        public string GetInfoReceipt()
+        {
+            return $"{this.productName} - Price: {this.SellingPrice}€";
+        }
     }
 
 }

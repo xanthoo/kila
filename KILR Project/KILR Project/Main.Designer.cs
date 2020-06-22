@@ -123,6 +123,25 @@
             this.btnDepStats = new System.Windows.Forms.Button();
             this.btnEmployeeStats = new System.Windows.Forms.Button();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.cashierPage = new System.Windows.Forms.TabPage();
+            this.panelHide = new System.Windows.Forms.Panel();
+            this.btnCreateOrder = new System.Windows.Forms.Button();
+            this.btnAbortOrder = new System.Windows.Forms.Button();
+            this.tbSearch = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.lblTotal = new System.Windows.Forms.Label();
+            this.lbOrderProducts = new System.Windows.Forms.ListBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.lbAllProducts = new System.Windows.Forms.ListBox();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.btnAddOrder = new System.Windows.Forms.Button();
+            this.tbProductId = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.btnCompleteOrder = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnAbortLast = new System.Windows.Forms.Button();
             this.tabPage1.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -139,6 +158,11 @@
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            this.cashierPage.SuspendLayout();
+            this.panelHide.SuspendLayout();
+            this.groupBox8.SuspendLayout();
+            this.groupBox7.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabPage1
@@ -273,9 +297,9 @@
             this.stockPage.Location = new System.Drawing.Point(4, 27);
             this.stockPage.Name = "stockPage";
             this.stockPage.Padding = new System.Windows.Forms.Padding(3);
-            this.stockPage.Size = new System.Drawing.Size(925, 563);
+            this.stockPage.Size = new System.Drawing.Size(914, 563);
             this.stockPage.TabIndex = 1;
-            this.stockPage.Text = "Stock";
+            this.stockPage.Text = "Stocks";
             this.stockPage.Click += new System.EventHandler(this.StockPage_Click);
             // 
             // groupBox6
@@ -392,7 +416,7 @@
             // 
             // tbStockBuying
             // 
-            this.tbStockBuying.Location = new System.Drawing.Point(122, 109);
+            this.tbStockBuying.Location = new System.Drawing.Point(102, 109);
             this.tbStockBuying.Name = "tbStockBuying";
             this.tbStockBuying.Size = new System.Drawing.Size(122, 23);
             this.tbStockBuying.TabIndex = 23;
@@ -409,7 +433,7 @@
             // 
             // tbStockPrice
             // 
-            this.tbStockPrice.Location = new System.Drawing.Point(122, 80);
+            this.tbStockPrice.Location = new System.Drawing.Point(102, 80);
             this.tbStockPrice.Name = "tbStockPrice";
             this.tbStockPrice.Size = new System.Drawing.Size(122, 23);
             this.tbStockPrice.TabIndex = 21;
@@ -426,7 +450,7 @@
             // 
             // tbStockQuantity
             // 
-            this.tbStockQuantity.Location = new System.Drawing.Point(122, 51);
+            this.tbStockQuantity.Location = new System.Drawing.Point(102, 52);
             this.tbStockQuantity.Name = "tbStockQuantity";
             this.tbStockQuantity.Size = new System.Drawing.Size(122, 23);
             this.tbStockQuantity.TabIndex = 15;
@@ -444,7 +468,7 @@
             // 
             // tbStockName
             // 
-            this.tbStockName.Location = new System.Drawing.Point(122, 22);
+            this.tbStockName.Location = new System.Drawing.Point(103, 23);
             this.tbStockName.Name = "tbStockName";
             this.tbStockName.Size = new System.Drawing.Size(122, 23);
             this.tbStockName.TabIndex = 9;
@@ -603,7 +627,7 @@
             this.employeesPage.Location = new System.Drawing.Point(4, 27);
             this.employeesPage.Name = "employeesPage";
             this.employeesPage.Padding = new System.Windows.Forms.Padding(3);
-            this.employeesPage.Size = new System.Drawing.Size(925, 563);
+            this.employeesPage.Size = new System.Drawing.Size(914, 563);
             this.employeesPage.TabIndex = 0;
             this.employeesPage.Text = " Employees";
             this.employeesPage.Click += new System.EventHandler(this.EmployeesPage_Click);
@@ -1040,13 +1064,14 @@
             this.tabControl1.Controls.Add(this.stockPage);
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.cashierPage);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(922, 594);
             this.tabControl1.TabIndex = 1;
-            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.CashierPage_Click);
             this.tabControl1.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabControl1_Selected);
             // 
             // tabPage2
@@ -1059,9 +1084,9 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 27);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(925, 563);
+            this.tabPage2.Size = new System.Drawing.Size(914, 563);
             this.tabPage2.TabIndex = 4;
-            this.tabPage2.Text = "Statistic";
+            this.tabPage2.Text = "Statistics";
             // 
             // button1
             // 
@@ -1131,6 +1156,234 @@
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
             // 
+            // cashierPage
+            // 
+            this.cashierPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(121)))), ((int)(((byte)(3)))));
+            this.cashierPage.Controls.Add(this.panelHide);
+            this.cashierPage.Controls.Add(this.btnAbortOrder);
+            this.cashierPage.Controls.Add(this.tbSearch);
+            this.cashierPage.Controls.Add(this.label10);
+            this.cashierPage.Controls.Add(this.groupBox8);
+            this.cashierPage.Controls.Add(this.lbAllProducts);
+            this.cashierPage.Controls.Add(this.groupBox7);
+            this.cashierPage.Controls.Add(this.btnCompleteOrder);
+            this.cashierPage.Controls.Add(this.panel1);
+            this.cashierPage.Location = new System.Drawing.Point(4, 27);
+            this.cashierPage.Name = "cashierPage";
+            this.cashierPage.Size = new System.Drawing.Size(914, 563);
+            this.cashierPage.TabIndex = 5;
+            this.cashierPage.Text = "Cashier";
+            this.cashierPage.Click += new System.EventHandler(this.CashierPage_Click);
+            // 
+            // panelHide
+            // 
+            this.panelHide.Controls.Add(this.btnAbortLast);
+            this.panelHide.Controls.Add(this.btnCreateOrder);
+            this.panelHide.Location = new System.Drawing.Point(0, 48);
+            this.panelHide.Name = "panelHide";
+            this.panelHide.Size = new System.Drawing.Size(922, 512);
+            this.panelHide.TabIndex = 28;
+            // 
+            // btnCreateOrder
+            // 
+            this.btnCreateOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(182)))), ((int)(((byte)(3)))));
+            this.btnCreateOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCreateOrder.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnCreateOrder.Location = new System.Drawing.Point(251, 128);
+            this.btnCreateOrder.Name = "btnCreateOrder";
+            this.btnCreateOrder.Size = new System.Drawing.Size(377, 185);
+            this.btnCreateOrder.TabIndex = 11;
+            this.btnCreateOrder.Text = "Create a New Order";
+            this.btnCreateOrder.UseVisualStyleBackColor = false;
+            this.btnCreateOrder.Click += new System.EventHandler(this.BtnCreateOrder_Click_1);
+            // 
+            // btnAbortOrder
+            // 
+            this.btnAbortOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(182)))), ((int)(((byte)(3)))));
+            this.btnAbortOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAbortOrder.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnAbortOrder.Location = new System.Drawing.Point(14, 435);
+            this.btnAbortOrder.Name = "btnAbortOrder";
+            this.btnAbortOrder.Size = new System.Drawing.Size(380, 111);
+            this.btnAbortOrder.TabIndex = 27;
+            this.btnAbortOrder.Text = "Abort Order";
+            this.btnAbortOrder.UseVisualStyleBackColor = false;
+            this.btnAbortOrder.Click += new System.EventHandler(this.btnAbortOrder_Click);
+            // 
+            // tbSearch
+            // 
+            this.tbSearch.Font = new System.Drawing.Font("Segoe UI Semibold", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tbSearch.Location = new System.Drawing.Point(629, 61);
+            this.tbSearch.Multiline = true;
+            this.tbSearch.Name = "tbSearch";
+            this.tbSearch.Size = new System.Drawing.Size(251, 37);
+            this.tbSearch.TabIndex = 21;
+            this.tbSearch.TextChanged += new System.EventHandler(this.TbSearch_TextChanged);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label10.Location = new System.Drawing.Point(433, 61);
+            this.label10.Name = "label10";
+            this.label10.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label10.Size = new System.Drawing.Size(199, 32);
+            this.label10.TabIndex = 21;
+            this.label10.Text = "Search by Name:";
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.lblTotal);
+            this.groupBox8.Controls.Add(this.lbOrderProducts);
+            this.groupBox8.Controls.Add(this.label11);
+            this.groupBox8.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.groupBox8.Location = new System.Drawing.Point(433, 264);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(447, 264);
+            this.groupBox8.TabIndex = 25;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Order";
+            this.groupBox8.Enter += new System.EventHandler(this.GroupBox8_Enter);
+            // 
+            // lblTotal
+            // 
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblTotal.Location = new System.Drawing.Point(138, 0);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblTotal.Size = new System.Drawing.Size(41, 32);
+            this.lblTotal.TabIndex = 28;
+            this.lblTotal.Text = "0€";
+            // 
+            // lbOrderProducts
+            // 
+            this.lbOrderProducts.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lbOrderProducts.FormattingEnabled = true;
+            this.lbOrderProducts.ItemHeight = 30;
+            this.lbOrderProducts.Location = new System.Drawing.Point(6, 35);
+            this.lbOrderProducts.Name = "lbOrderProducts";
+            this.lbOrderProducts.Size = new System.Drawing.Size(436, 214);
+            this.lbOrderProducts.TabIndex = 24;
+            this.lbOrderProducts.Click += new System.EventHandler(this.LbOrderProducts_Click);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label11.Location = new System.Drawing.Point(75, 0);
+            this.label11.Name = "label11";
+            this.label11.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label11.Size = new System.Drawing.Size(74, 32);
+            this.label11.TabIndex = 27;
+            this.label11.Text = "Total:";
+            this.label11.Click += new System.EventHandler(this.Label11_Click);
+            // 
+            // lbAllProducts
+            // 
+            this.lbAllProducts.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lbAllProducts.FormattingEnabled = true;
+            this.lbAllProducts.ItemHeight = 30;
+            this.lbAllProducts.Location = new System.Drawing.Point(439, 104);
+            this.lbAllProducts.Name = "lbAllProducts";
+            this.lbAllProducts.Size = new System.Drawing.Size(441, 154);
+            this.lbAllProducts.TabIndex = 22;
+            this.lbAllProducts.Click += new System.EventHandler(this.LbAllProducts_Click);
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.btnAddOrder);
+            this.groupBox7.Controls.Add(this.tbProductId);
+            this.groupBox7.Controls.Add(this.label5);
+            this.groupBox7.Location = new System.Drawing.Point(14, 67);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(380, 145);
+            this.groupBox7.TabIndex = 21;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Add Product to Order";
+            // 
+            // btnAddOrder
+            // 
+            this.btnAddOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(182)))), ((int)(((byte)(3)))));
+            this.btnAddOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddOrder.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnAddOrder.Location = new System.Drawing.Point(12, 74);
+            this.btnAddOrder.Name = "btnAddOrder";
+            this.btnAddOrder.Size = new System.Drawing.Size(361, 59);
+            this.btnAddOrder.TabIndex = 20;
+            this.btnAddOrder.Text = "Add to Order";
+            this.btnAddOrder.UseVisualStyleBackColor = false;
+            this.btnAddOrder.Click += new System.EventHandler(this.BtnAddOrder_Click);
+            // 
+            // tbProductId
+            // 
+            this.tbProductId.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tbProductId.Location = new System.Drawing.Point(143, 17);
+            this.tbProductId.Multiline = true;
+            this.tbProductId.Name = "tbProductId";
+            this.tbProductId.Size = new System.Drawing.Size(230, 46);
+            this.tbProductId.TabIndex = 17;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.Location = new System.Drawing.Point(6, 24);
+            this.label5.Name = "label5";
+            this.label5.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label5.Size = new System.Drawing.Size(137, 32);
+            this.label5.TabIndex = 18;
+            this.label5.Text = "Product ID:";
+            // 
+            // btnCompleteOrder
+            // 
+            this.btnCompleteOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(182)))), ((int)(((byte)(3)))));
+            this.btnCompleteOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCompleteOrder.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnCompleteOrder.Location = new System.Drawing.Point(14, 264);
+            this.btnCompleteOrder.Name = "btnCompleteOrder";
+            this.btnCompleteOrder.Size = new System.Drawing.Size(380, 165);
+            this.btnCompleteOrder.TabIndex = 19;
+            this.btnCompleteOrder.Text = "Complete Order";
+            this.btnCompleteOrder.UseVisualStyleBackColor = false;
+            this.btnCompleteOrder.Click += new System.EventHandler(this.BtnCompleteOrder_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(182)))), ((int)(((byte)(3)))));
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(918, 48);
+            this.panel1.TabIndex = 16;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(182)))), ((int)(((byte)(3)))));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(238, -1);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(399, 45);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Jupiter Cashier Application";
+            this.label1.Click += new System.EventHandler(this.Label1_Click);
+            // 
+            // btnAbortLast
+            // 
+            this.btnAbortLast.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(182)))), ((int)(((byte)(3)))));
+            this.btnAbortLast.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAbortLast.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnAbortLast.Location = new System.Drawing.Point(251, 387);
+            this.btnAbortLast.Name = "btnAbortLast";
+            this.btnAbortLast.Size = new System.Drawing.Size(377, 93);
+            this.btnAbortLast.TabIndex = 12;
+            this.btnAbortLast.Text = "Abort Last Order";
+            this.btnAbortLast.UseVisualStyleBackColor = false;
+            this.btnAbortLast.Click += new System.EventHandler(this.BtnAbortLast_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1169,6 +1422,15 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            this.cashierPage.ResumeLayout(false);
+            this.cashierPage.PerformLayout();
+            this.panelHide.ResumeLayout(false);
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1263,6 +1525,25 @@
         private System.Windows.Forms.RadioButton rbM;
         private System.Windows.Forms.Label lblGender;
         private System.Windows.Forms.CheckBox cbStockRequest;
+        private System.Windows.Forms.TabPage cashierPage;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox tbProductId;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.ListBox lbOrderProducts;
+        private System.Windows.Forms.ListBox lbAllProducts;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.Button btnAddOrder;
+        private System.Windows.Forms.Button btnCompleteOrder;
+        private System.Windows.Forms.TextBox tbSearch;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lblTotal;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button btnAbortOrder;
+        private System.Windows.Forms.Panel panelHide;
+        private System.Windows.Forms.Button btnCreateOrder;
+        private System.Windows.Forms.Button btnAbortLast;
     }
 }
 
