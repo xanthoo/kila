@@ -48,7 +48,7 @@ namespace KILR_Project
         public int Id { get; set; }
         public int GetId()
         {
-            return this.id;
+            return this.Id;
         }
         public Position GetEmployeePosition()
         {
