@@ -32,7 +32,7 @@ namespace KILR_Project
         private void btnConfirm_Click(object sender, EventArgs e)
         {
             ConnectionString();
-            DepartmentDataAccess.UpdateDepartment(tbDepartmentName.Text, tbMaxPeople.Text, tbMinPeople.Text, departmentId);
+            DepartmentDataAccess.UpdateDepartment(tbDepartmentName.Text, tbMinPeople.Text, departmentId);
             mainDepartmentInfo.PopulateDepartmentsList();
 
         }

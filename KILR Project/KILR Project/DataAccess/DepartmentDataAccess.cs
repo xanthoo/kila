@@ -9,16 +9,16 @@ namespace KILR_Project
     public class DepartmentDataAccess
     {
         private static string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=kilrdb;";
-        public static bool UpdateDepartment(string depName, string staffAmount, string managerId, int id)
+        public static bool UpdateDepartment(string depName, string staffAmount, int id)
         {
-            string query = "UPDATE `department` SET `name`='" + depName + "',`staffamount`='" + staffAmount + "',`managerid`='" + managerId + "' WHERE id =" + id;
+            string query = "UPDATE `department` SET `name`='" + depName + "',`staffamount`='" + staffAmount + "',`managerid`='"  + "' WHERE id =" + id;
             MySqlConnection databaseConnection = new MySqlConnection(connectionString);
             MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
             commandDatabase.CommandTimeout = 60;
 
             try
             {
-                if (!string.IsNullOrWhiteSpace(depName) && !string.IsNullOrWhiteSpace(staffAmount) && !string.IsNullOrWhiteSpace(managerId))
+                if (!string.IsNullOrWhiteSpace(depName) && !string.IsNullOrWhiteSpace(staffAmount))
                 {
                     int parsedValue;
                     if (!int.TryParse(staffAmount, out parsedValue))

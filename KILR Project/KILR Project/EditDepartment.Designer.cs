@@ -35,8 +35,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tbDepartmentName = new System.Windows.Forms.TextBox();
-            this.tbMaxPeople = new System.Windows.Forms.TextBox();
-            this.lblManagerId = new System.Windows.Forms.Label();
             this.lblStaffNumber = new System.Windows.Forms.Label();
             this.tbMinPeople = new System.Windows.Forms.TextBox();
             this.depNamelbl = new System.Windows.Forms.Label();
@@ -103,8 +101,6 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.tbDepartmentName);
-            this.groupBox1.Controls.Add(this.tbMaxPeople);
-            this.groupBox1.Controls.Add(this.lblManagerId);
             this.groupBox1.Controls.Add(this.lblStaffNumber);
             this.groupBox1.Controls.Add(this.tbMinPeople);
             this.groupBox1.Controls.Add(this.depNamelbl);
@@ -122,23 +118,6 @@
             this.tbDepartmentName.Name = "tbDepartmentName";
             this.tbDepartmentName.Size = new System.Drawing.Size(146, 23);
             this.tbDepartmentName.TabIndex = 18;
-            // 
-            // tbMaxPeople
-            // 
-            this.tbMaxPeople.Location = new System.Drawing.Point(70, 187);
-            this.tbMaxPeople.Name = "tbMaxPeople";
-            this.tbMaxPeople.Size = new System.Drawing.Size(146, 23);
-            this.tbMaxPeople.TabIndex = 23;
-            // 
-            // lblManagerId
-            // 
-            this.lblManagerId.AutoSize = true;
-            this.lblManagerId.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblManagerId.Location = new System.Drawing.Point(87, 163);
-            this.lblManagerId.Name = "lblManagerId";
-            this.lblManagerId.Size = new System.Drawing.Size(99, 21);
-            this.lblManagerId.TabIndex = 22;
-            this.lblManagerId.Text = "Manager ID:";
             // 
             // lblStaffNumber
             // 
@@ -302,8 +281,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox1;
         public System.Windows.Forms.TextBox tbDepartmentName;
-        public System.Windows.Forms.TextBox tbMaxPeople;
-        private System.Windows.Forms.Label lblManagerId;
         private System.Windows.Forms.Label lblStaffNumber;
         public System.Windows.Forms.TextBox tbMinPeople;
         private System.Windows.Forms.Label depNamelbl;

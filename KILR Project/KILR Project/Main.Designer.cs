@@ -119,6 +119,7 @@
             this.lbEmployees = new System.Windows.Forms.ListBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btnCompanyStatistics = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnDepStats = new System.Windows.Forms.Button();
             this.btnEmployeeStats = new System.Windows.Forms.Button();
@@ -142,7 +143,6 @@
             this.btnCompleteOrder = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnCompanyStatistics = new System.Windows.Forms.Button();
             this.tabPage1.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -904,7 +904,7 @@
             // 
             this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(182)))), ((int)(((byte)(3)))));
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Location = new System.Drawing.Point(318, 230);
+            this.btnAdd.Location = new System.Drawing.Point(317, 218);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(124, 45);
             this.btnAdd.TabIndex = 4;
@@ -1090,6 +1090,19 @@
             this.tabPage2.Size = new System.Drawing.Size(914, 563);
             this.tabPage2.TabIndex = 4;
             this.tabPage2.Text = "Statistics";
+            // 
+            // btnCompanyStatistics
+            // 
+            this.btnCompanyStatistics.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(182)))), ((int)(((byte)(3)))));
+            this.btnCompanyStatistics.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCompanyStatistics.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCompanyStatistics.Location = new System.Drawing.Point(44, 120);
+            this.btnCompanyStatistics.Name = "btnCompanyStatistics";
+            this.btnCompanyStatistics.Size = new System.Drawing.Size(103, 53);
+            this.btnCompanyStatistics.TabIndex = 4;
+            this.btnCompanyStatistics.Text = "Income Statistics";
+            this.btnCompanyStatistics.UseVisualStyleBackColor = false;
+            this.btnCompanyStatistics.Click += new System.EventHandler(this.BtnCompanyStatistics_Click);
             // 
             // button1
             // 
@@ -1387,19 +1400,6 @@
             this.label1.TabIndex = 10;
             this.label1.Text = "Jupiter Cashier Application";
             this.label1.Click += new System.EventHandler(this.Label1_Click);
-            // 
-            // btnCompanyStatistics
-            // 
-            this.btnCompanyStatistics.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(182)))), ((int)(((byte)(3)))));
-            this.btnCompanyStatistics.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnCompanyStatistics.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCompanyStatistics.Location = new System.Drawing.Point(44, 120);
-            this.btnCompanyStatistics.Name = "btnCompanyStatistics";
-            this.btnCompanyStatistics.Size = new System.Drawing.Size(103, 53);
-            this.btnCompanyStatistics.TabIndex = 4;
-            this.btnCompanyStatistics.Text = "Income Statistics";
-            this.btnCompanyStatistics.UseVisualStyleBackColor = false;
-            this.btnCompanyStatistics.Click += new System.EventHandler(this.BtnCompanyStatistics_Click);
             // 
             // Main
             // 
